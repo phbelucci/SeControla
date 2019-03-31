@@ -1,2 +1,2 @@
 # SeControla
-$e Controla
+$€ Controla
