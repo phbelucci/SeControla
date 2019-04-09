@@ -25,11 +25,11 @@ create table USUARIO
 	AVATAR_US longblob,
 	COD_MOEDA int default 1 not null,
 	COD_NIVEL_ACESSO int not null, 
-	COD_US_ADM int default null,
+	COD_US_GRUPO int default null,
 
 	constraint foreign key FK_MOEDA(COD_MOEDA) references COTACAO(COD_MOEDA),
     constraint foreign key FK_NIVEL_AC(COD_NIVEL_ACESSO) references NIVEL_ACESSO(COD_NIVEL_AC),
-	constraint foreign key FK_US_ADM(COD_US_ADM) references USUARIO(COD_US)
+	constraint foreign key FK_US_GRUPO(COD_US_GRUPO) references USUARIO(COD_US)
 );
 
 create table CATEGORIA
@@ -45,7 +45,7 @@ create table SUBCATEGORIAS
 (
 	COD_SUBCAT int auto_increment primary key,
 	COD_CAT int not null,
-	DESCR_SUBCAT varchar(20) not null,
+	DESCR_SUBCAT varchar(40) not null,
 	
     constraint foreign key FK_CAT(COD_CAT) references CATEGORIA(COD_CAT)
 );
