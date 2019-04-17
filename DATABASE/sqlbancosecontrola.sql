@@ -1,4 +1,4 @@
-drop database secontrola;
+drop database if exists secontrola;
 create database secontrola;
 use secontrola;
 
