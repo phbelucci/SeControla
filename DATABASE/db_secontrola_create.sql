@@ -1,6 +1,6 @@
-drop database if exists secontrola;
-create database secontrola;
-use secontrola;
+drop database if exists db_secontrola;
+create database db_secontrola;
+use db_secontrola;
 
 create table COTACAO
 (
@@ -27,9 +27,9 @@ create table USUARIO
 	COD_NIVEL_ACESSO int not null, 
 	COD_US_GRUPO int default null,
 
-	constraint foreign key FK_MOEDA(COD_MOEDA) references COTACAO(COD_MOEDA),
-    constraint foreign key FK_NIVEL_AC(COD_NIVEL_ACESSO) references NIVEL_ACESSO(COD_NIVEL_AC),
-	constraint foreign key FK_US_GRUPO(COD_US_GRUPO) references USUARIO(COD_US)
+	constraint foreign key FK_MOEDA(COD_MOEDA) references COTACAO(COD_MOEDA) on delete cascade,
+    constraint foreign key FK_NIVEL_AC(COD_NIVEL_ACESSO) references NIVEL_ACESSO(COD_NIVEL_AC) on delete cascade,
+	constraint foreign key FK_US_GRUPO(COD_US_GRUPO) references USUARIO(COD_US) on delete cascade
 );
 
 create table CATEGORIA
@@ -47,7 +47,7 @@ create table SUBCATEGORIAS
 	COD_CAT int not null,
 	DESCR_SUBCAT varchar(40) not null,
 	
-    constraint foreign key FK_CAT(COD_CAT) references CATEGORIA(COD_CAT)
+    constraint foreign key FK_CAT(COD_CAT) references CATEGORIA(COD_CAT) on delete cascade
 );
 
 create table CONTA_BANCO
@@ -58,7 +58,7 @@ create table CONTA_BANCO
 	NUM_AGENCIA int not null,
 	SALDO real default 0.00,
     
-    constraint foreign key FK_BANC_US(COD_US) references USUARIO(COD_US)
+    constraint foreign key FK_BANC_US(COD_US) references USUARIO(COD_US) on delete cascade
 );
 
 create table FORMA_PGTO
@@ -80,11 +80,11 @@ create table RECEITA
  	COD_CONTA int default null,
 	COD_FORMA_PGTO int default null,
 
-	constraint foreign key FK_REC_US(COD_US) references USUARIO(COD_US),
-    constraint foreign key FK_REC_CAT(COD_CAT) references CATEGORIA(COD_CAT),
-    constraint foreign key FK_REC_SUBCAT(COD_SUBCAT) references SUBCATEGORIAS(COD_SUBCAT),
-    constraint foreign key FK_REC_CONTA(COD_CONTA) references CONTA_BANCO(COD_CONTA),
-    constraint foreign key FK_REC_FORMA_PGTO(COD_FORMA_PGTO) references FORMA_PGTO(COD_FORMA_PGTO)
+	constraint foreign key FK_REC_US(COD_US) references USUARIO(COD_US) on delete cascade,
+    constraint foreign key FK_REC_CAT(COD_CAT) references CATEGORIA(COD_CAT) on delete cascade,
+    constraint foreign key FK_REC_SUBCAT(COD_SUBCAT) references SUBCATEGORIAS(COD_SUBCAT) on delete cascade,
+    constraint foreign key FK_REC_CONTA(COD_CONTA) references CONTA_BANCO(COD_CONTA) on delete cascade,
+    constraint foreign key FK_REC_FORMA_PGTO(COD_FORMA_PGTO) references FORMA_PGTO(COD_FORMA_PGTO) on delete cascade
 );
 
 create table DESPESA
@@ -99,11 +99,11 @@ create table DESPESA
  	COD_CONTA int default null,
 	COD_FORMA_PGTO int default null,
 
-	constraint foreign key FK_DESP_USUARIO(COD_US) references USUARIO(COD_US),
-    constraint foreign key FK_DESP_CAT(COD_CAT) references CATEGORIA(COD_CAT),
-    constraint foreign key FK_DESP_SUBCAT(COD_SUBCAT) references SUBCATEGORIAS(COD_SUBCAT),
-    constraint foreign key FK_DESP_CONTA(COD_CONTA) references CONTA_BANCO(COD_CONTA),
-    constraint foreign key FK_DESP_FORMA_PGTO(COD_FORMA_PGTO) references FORMA_PGTO(COD_FORMA_PGTO)
+	constraint foreign key FK_DESP_USUARIO(COD_US) references USUARIO(COD_US) on delete cascade,
+    constraint foreign key FK_DESP_CAT(COD_CAT) references CATEGORIA(COD_CAT) on delete cascade,
+    constraint foreign key FK_DESP_SUBCAT(COD_SUBCAT) references SUBCATEGORIAS(COD_SUBCAT) on delete cascade,
+    constraint foreign key FK_DESP_CONTA(COD_CONTA) references CONTA_BANCO(COD_CONTA) on delete cascade,
+    constraint foreign key FK_DESP_FORMA_PGTO(COD_FORMA_PGTO) references FORMA_PGTO(COD_FORMA_PGTO) on delete cascade
 );
 
 

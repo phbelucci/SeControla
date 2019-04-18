@@ -1,6 +1,9 @@
+use db_secontrola;
 -- Total de despesa do grupo Domético no mês(Tela inicial)
--- Seleciona todas as despesas do grupo familia I
-SELECT u.nome_us, d.data_desp, d.valor, d.cod_conta FROM despesa d, usuario u WHERE d.cod_us=u.cod_us AND u.cod_us_grupo=2;
+SELECT sum(d.valor) FROM despesa d, usuario u WHERE d.cod_us=u.cod_us AND u.cod_us_grupo=2 and month(d.data_desp) = month(curdate());
+
+-- Lista de todas as despesas do grupo familia I
+SELECT u.nome_us, d.data_desp, d.valor, d.cod_conta FROM despesa d, usuario u WHERE d.cod_us=u.cod_us AND u.cod_us_grupo=2 AND MONTH(d.data_desp) = MONTH(CURDATE());
 -- Seleciona todas as despesas do grupo familia II
 SELECT u.nome_us, d.data_desp, d.valor, d.cod_conta FROM despesa d, usuario u WHERE d.cod_us=u.cod_us AND u.cod_us_grupo=5;
 
