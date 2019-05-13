@@ -8,12 +8,13 @@ import android.widget.TextView;
 
 public class inserirValores extends AppCompatActivity {
 
-
+    Button buttonPressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserir_valores);
 
+        buttonPressed = (Button) findViewById(R.id);
 
     }
 }
