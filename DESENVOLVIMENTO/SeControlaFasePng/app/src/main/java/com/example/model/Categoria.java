@@ -3,12 +3,12 @@ package com.example.model;
 
 public final class Categoria{
     private Integer codCat;
-    private TipoLancamento tipoLancamento;
+    private TipoLancamentoEnum tipoLancamentoEnum;
     private String Descricao;
 
-    public Categoria(Integer codCat, TipoLancamento tipoLancamento, String descricao) {
+    public Categoria(Integer codCat, TipoLancamentoEnum tipoLancamentoEnum, String descricao) {
         this.codCat = codCat;
-        this.tipoLancamento = tipoLancamento;
+        this.tipoLancamentoEnum = tipoLancamentoEnum;
         Descricao = descricao;
     }
 
@@ -20,7 +20,7 @@ public final class Categoria{
         return Descricao;
     }
 
-    public TipoLancamento getTipoLancamento() {
-        return tipoLancamento;
+    public TipoLancamentoEnum getTipoLancamentoEnum() {
+        return tipoLancamentoEnum;
     }
 }
