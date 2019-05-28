@@ -11,7 +11,7 @@ public class Usuario{
     private Login login;
 
     //com avatar
-    public Usuario(Integer codUs, String nomeUs, Image avatarUs, Integer codMoeda,String senha) {
+    public Usuario(Integer codUs, String nomeUs, String email, Image avatarUs, Integer codMoeda,String senha) {
         login = new Login(codUs, email, senha);
 
         this.codUs = codUs;

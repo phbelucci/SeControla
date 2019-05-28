@@ -18,10 +18,10 @@ public class Lancamento{
     private Categoria cat;
     private SubCategoria subCat;
     private TipoLancamento tipoLancamento;
-    private FormaPagamento formaPagamento;
+    private FormaPagamentoEnum formaPagamento;
 
     //com comprovante
-    public Lancamento(Integer codLanc, Integer codUs, Integer codMoeda, Integer codConta, Date data, Image comprovante, Double valor, Categoria cat, SubCategoria subCat, TipoLancamento tipoLancamento, FormaPagamento formaPagamento) {
+    public Lancamento(Integer codLanc, Integer codUs, Integer codMoeda, Integer codConta, Date data, Image comprovante, Double valor, Categoria cat, SubCategoria subCat, TipoLancamento tipoLancamento, FormaPagamentoEnum formaPagamento) {
         this.codLanc = codLanc;
         this.codUs = codUs;
         this.codMoeda = codMoeda;
@@ -36,7 +36,7 @@ public class Lancamento{
     }
 
     //sem comprovante
-    public Lancamento(Integer codLanc, Integer codUs, Integer codMoeda, Integer codConta, Date data, Double valor, Categoria cat, SubCategoria subCat, TipoLancamento tipoLancamento, FormaPagamento formaPagamento) {
+    public Lancamento(Integer codLanc, Integer codUs, Integer codMoeda, Integer codConta, Date data, Double valor, Categoria cat, SubCategoria subCat, TipoLancamento tipoLancamento, FormaPagamentoEnum formaPagamento) {
         this.codLanc = codLanc;
         this.codUs = codUs;
         this.codMoeda = codMoeda;
@@ -89,7 +89,7 @@ public class Lancamento{
         return tipoLancamento;
     }
 
-    public FormaPagamento getFormaPagamento() {
+    public FormaPagamentoEnum getFormaPagamento() {
         return formaPagamento;
     }
 
@@ -121,7 +121,7 @@ public class Lancamento{
         this.tipoLancamento = tipoLancamento;
     }
 
-    public void setFormaPagamento(FormaPagamento formaPagamento) {
+    public void setFormaPagamento(FormaPagamentoEnum formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 }
