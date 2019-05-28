@@ -1,6 +1,6 @@
 package com.example.model;
 
-public enum FormaPagamento{
+public enum FormaPagamentoEnum{
     DINHEIRO(1),
     DEBITO (2),
     CREDITO(3),
@@ -9,7 +9,7 @@ public enum FormaPagamento{
 
     public int opcao;
 
-    FormaPagamento(int opcao) {
+    FormaPagamentoEnum(int opcao) {
         this.opcao = opcao;
     }
 }

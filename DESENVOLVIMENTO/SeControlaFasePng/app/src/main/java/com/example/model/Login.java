@@ -2,9 +2,9 @@ package com.example.model;
 
 public class Login{
     
-    Integer final codUs;
-    String email;
-    String senha;
+    private final Integer codUs;
+    private String email;
+    private String senha;
 
     public Login(Integer codUs, String email, String senha) {
         this.codUs = codUs;
