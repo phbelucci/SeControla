@@ -1,13 +1,14 @@
 package com.example.model;
 
 
-public class Categoria{
+public final class Categoria{
     private Integer codCat;
-    //private com.example.primeiroprojeto.model.Categoria tipoLancamento;
+    private TipoLancamento tipoLancamento;
     private String Descricao;
 
-    public Categoria(Integer codCat, String descricao) {
+    public Categoria(Integer codCat, TipoLancamento tipoLancamento, String descricao) {
         this.codCat = codCat;
+        this.tipoLancamento = tipoLancamento;
         Descricao = descricao;
     }
 
@@ -17,5 +18,9 @@ public class Categoria{
 
     public String getDescricao() {
         return Descricao;
+    }
+
+    public TipoLancamento getTipoLancamento() {
+        return tipoLancamento;
     }
 }

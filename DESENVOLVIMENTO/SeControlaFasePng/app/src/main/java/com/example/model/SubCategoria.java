@@ -1,10 +1,9 @@
 package com.example.model;
 
 
-public final class SubCategoria{
-    private Integer codSubCat;
+public class SubCategoria{
+    private final Integer codSubCat;
     private Integer codCat;
-    //private com.example.primeiroprojeto.model.Categoria tipoLancamento;
     private String nome;
 
     public SubCategoria(Integer codSubCat, Integer codCat, String nome) {
@@ -23,5 +22,13 @@ public final class SubCategoria{
 
     public String getNome() {
         return nome;
+    }
+
+    public void setCodCat(Integer codCat) {
+        this.codCat = codCat;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
