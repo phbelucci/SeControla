@@ -1,4 +1,4 @@
-package com.example.primeiroprojeto.model;
+package com.example.model;
 
 public enum NivelAcesso{
     ADMIN_SIS,

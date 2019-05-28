@@ -1,7 +1,4 @@
-package com.example.primeiroprojeto.model;
-
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
-import org.omg.CORBA.PUBLIC_MEMBER;
+package com.example.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +114,7 @@ public class GrupoFamiliar{
                 return c;
         }
 
-        return NULL;
+        return null;
     }
     public Usuario getUsuario(Integer codUsuario){
         //testa se o usuario existe
@@ -131,7 +128,7 @@ public class GrupoFamiliar{
                 return u;
         }
 
-        return NULL;
+        return null;
     }
     public Lancamento getLancamento(Integer codLanc){
         if(!verificaLancamento(codLanc)){
@@ -144,7 +141,7 @@ public class GrupoFamiliar{
                 return l;
             }
         }
-        return NULL;
+        return null;
     }
 
 

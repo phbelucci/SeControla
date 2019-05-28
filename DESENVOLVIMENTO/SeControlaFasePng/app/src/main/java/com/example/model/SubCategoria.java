@@ -1,4 +1,4 @@
-package com.example.primeiroprojeto.model;
+package com.example.model;
 
 
 public final class SubCategoria{

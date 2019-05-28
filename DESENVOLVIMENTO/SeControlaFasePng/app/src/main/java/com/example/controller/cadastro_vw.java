@@ -1,14 +1,9 @@
-package com.example.secontrolafasefinal;
+package com.example.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import java.util.Scanner;
 
 public class cadastro_vw extends AppCompatActivity {
 

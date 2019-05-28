@@ -1,6 +1,6 @@
-package com.example.primeiroprojeto.model;
+package com.example.model;
 
-import javafx.scene.image.Image;
+import android.media.Image;
 
 public class Usuario{
 

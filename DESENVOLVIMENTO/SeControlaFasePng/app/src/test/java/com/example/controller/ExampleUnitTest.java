@@ -1,4 +1,4 @@
-package com.example.secontrolafasefinal;
+package com.example.controller;
 
 import org.junit.Test;
 

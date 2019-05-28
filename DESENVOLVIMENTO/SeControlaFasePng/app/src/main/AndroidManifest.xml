@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.example.secontrolafasefinal">
+    package="com.example.controller">
 
     <dist:module dist:instant="true" />
 
@@ -12,15 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cadastro_vw"></activity>
-        <activity android:name=".login_vw" />
-        <activity android:name=".resumoLancamento_vw" />
-        <activity android:name=".escolherCatReceitas_vw" />
-        <activity android:name=".escolherCatGastos_vw" />
-        <activity android:name=".listarLancamentos_vw" />
-        <activity android:name=".novoLancamento_vw" />
-        <activity android:name=".inicio_vw" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.controller.cadastro_vw"></activity>
+        <activity android:name="com.example.controller.login_vw" />
+        <activity android:name="com.example.controller.resumoLancamento_vw" />
+        <activity android:name="com.example.controller.escolherCatReceitas_vw" />
+        <activity android:name="com.example.controller.escolherCatGastos_vw" />
+        <activity android:name="com.example.controller.listarLancamentos_vw" />
+        <activity android:name="com.example.controller.novoLancamento_vw" />
+        <activity android:name="com.example.controller.inicio_vw" />
+        <activity android:name="com.example.controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.secontrolafasefinal;
+package com.example.controller;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

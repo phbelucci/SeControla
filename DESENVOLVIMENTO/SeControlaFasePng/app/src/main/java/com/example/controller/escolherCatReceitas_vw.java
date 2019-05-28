@@ -1,4 +1,4 @@
-package com.example.secontrolafasefinal;
+package com.example.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
