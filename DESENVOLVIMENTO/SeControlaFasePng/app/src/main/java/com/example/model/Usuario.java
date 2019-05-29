@@ -7,26 +7,26 @@ public class Usuario{
     private final Integer codUs;
     private String nomeUs;
     private Image avatarUs;
-    private Integer codMoeda;
     private Login login;
+    private Integer codGrupo;
 
     //com avatar
-    public Usuario(Integer codUs, String nomeUs, String email, Image avatarUs, Integer codMoeda,String senha) {
-        login = new Login(codUs, email, senha);
+    public Usuario(Integer codUs, String nomeUs, Integer codGrupo, String usuario, Image avatarUs,String senha) {
+        login = new Login(codUs, usuario, senha);
 
         this.codUs = codUs;
         this.nomeUs = nomeUs;
         this.avatarUs = avatarUs;
-        this.codMoeda = codMoeda;
+        this.codGrupo = codGrupo;
     }
 
     //sem avatar
-    public Usuario(Integer codUs, String nomeUs, Integer codMoeda, String email, String senha) {
-        login = new Login(codUs, email, senha);
+    public Usuario(Integer codUs, String nomeUs, Integer codGrupo, String usuario, String senha) {
+        login = new Login(codUs, usuario, senha);
 
         this.codUs = codUs;
         this.nomeUs = nomeUs;
-        this.codMoeda = codMoeda;
+        this.codGrupo = codGrupo;
     }
 
     public Integer getCodUs() {
@@ -41,16 +41,20 @@ public class Usuario{
         return avatarUs;
     }
 
-    public Integer getCodMoeda() {
-        return codMoeda;
+    public String getUsuario(){
+        return login.getUsuario();
     }
 
-    public String getEmail(){
-        return login.getEmail();
+    public Integer getCodGrupo() {
+        return codGrupo;
     }
 
-    public void setEmail(String email){
-        login.setEmail(email);
+    public void setCodGrupo(Integer codGrupo) {
+        this.codGrupo = codGrupo;
+    }
+
+    public void setUsuario(String usuario){
+        login.setUsuario(usuario);
     }
 
     public void setSenha(String senha){
@@ -63,10 +67,6 @@ public class Usuario{
 
     public void setAvatarUs(Image avatarUs) {
         this.avatarUs = avatarUs;
-    }
-
-    public void setCodMoeda(Integer codMoeda) {
-        this.codMoeda = codMoeda;
     }
 
 }

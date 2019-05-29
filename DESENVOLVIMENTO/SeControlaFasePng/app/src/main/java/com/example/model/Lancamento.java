@@ -10,6 +10,7 @@ public class Lancamento{
     private Integer codUs;
     private Integer codMoeda;
     private Integer codConta;
+    private Integer codGrupo;
 
     private final Date data;
     private Image comprovante;
@@ -21,9 +22,10 @@ public class Lancamento{
     private FormaPagamentoEnum formaPagamento;
 
     //com comprovante
-    public Lancamento(Integer codLanc, Integer codUs, Integer codMoeda, Integer codConta, Date data, Image comprovante, Double valor, Categoria cat, SubCategoria subCat, TipoLancamentoEnum tipoLancamentoEnum, FormaPagamentoEnum formaPagamento) {
+    public Lancamento(Integer codLanc, Integer codUs, Integer codGrupo, Integer codMoeda, Integer codConta, Date data, Image comprovante, Double valor, Categoria cat, SubCategoria subCat, TipoLancamentoEnum tipoLancamentoEnum, FormaPagamentoEnum formaPagamento) {
         this.codLanc = codLanc;
         this.codUs = codUs;
+        this.codGrupo = codGrupo;
         this.codMoeda = codMoeda;
         this.codConta = codConta;
         this.data = data;
@@ -35,22 +37,16 @@ public class Lancamento{
         this.formaPagamento = formaPagamento;
     }
 
-    //sem comprovante
-    public Lancamento(Integer codLanc, Integer codUs, Integer codMoeda, Integer codConta, Date data, Double valor, Categoria cat, SubCategoria subCat, TipoLancamentoEnum tipoLancamentoEnum, FormaPagamentoEnum formaPagamento) {
-        this.codLanc = codLanc;
-        this.codUs = codUs;
-        this.codMoeda = codMoeda;
-        this.codConta = codConta;
-        this.data = data;
-        this.valor = valor;
-        this.cat = cat;
-        this.subCat = subCat;
-        this.tipoLancamentoEnum = tipoLancamentoEnum;
-        this.formaPagamento = formaPagamento;
-    }
-
     public Integer getCodLanc() {
         return codLanc;
+    }
+
+    public Integer getCodGrupo() {
+        return codGrupo;
+    }
+
+    public void setCodGrupo(Integer codGrupo) {
+        this.codGrupo = codGrupo;
     }
 
     public Integer getCodUs() {
@@ -63,6 +59,10 @@ public class Lancamento{
 
     public Integer getCodConta() {
         return codConta;
+    }
+
+    public void setCodUs(Integer codUs) {
+        this.codUs = codUs;
     }
 
     public Date getData() {
