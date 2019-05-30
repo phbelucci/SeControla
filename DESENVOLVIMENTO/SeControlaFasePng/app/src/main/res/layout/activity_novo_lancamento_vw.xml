@@ -11,10 +11,15 @@
         android:id="@+id/frameLayout"
         android:layout_width="343dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/cardview_shadow_start_color"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -47,192 +52,220 @@
     <ImageView
         android:id="@+id/btnCancelar2"
         android:layout_width="224dp"
-        android:layout_height="65dp"
-        app:srcCompat="@drawable/btcancelar"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="621dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2"
+        app:srcCompat="@drawable/btcancelar" />
 
     <ImageView
         android:id="@+id/users2"
-        android:layout_width="376dp"
-        android:layout_height="68dp"
-        app:srcCompat="@drawable/users"
-        tools:layout_editor_absoluteY="517dp" />
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:srcCompat="@drawable/users" />
 
-    <ImageView
-        android:id="@+id/avatar2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/avatar2"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="601dp" />
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="209dp"
+        android:layout_height="281dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:foregroundGravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/users2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19">
 
-    <ImageView
-        android:id="@+id/avatar3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/avatar3"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="601dp" />
+        <TableRow
+            android:layout_width="239dp"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/avatar1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/avatar1"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="601dp" />
+            <ImageView
+                android:id="@+id/num1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n1" />
 
-    <ImageView
-        android:id="@+id/avatar4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/avatar4"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="601dp" />
+            <ImageView
+                android:id="@+id/num2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n2" />
 
-    <ImageView
-        android:id="@+id/btnOkCalc"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/btnok"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="436dp" />
+            <ImageView
+                android:id="@+id/num3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n3" />
 
-    <ImageView
-        android:id="@+id/num3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n3"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="196dp" />
+        </TableRow>
 
-    <ImageView
-        android:id="@+id/num9"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n9"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="356dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/num6"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n6"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="276dp" />
+            <ImageView
+                android:id="@+id/num4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n4" />
 
-    <ImageView
-        android:id="@+id/num2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n2"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="196dp" />
+            <ImageView
+                android:id="@+id/num5"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n5" />
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n1"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="276dp" />
+            <ImageView
+                android:id="@+id/num6"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n6" />
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n1"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="436dp" />
+        </TableRow>
 
-    <ImageView
-        android:id="@+id/num0"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n0"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="436dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/num8"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n8"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="356dp" />
+            <ImageView
+                android:id="@+id/num7"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n7" />
 
-    <ImageView
-        android:id="@+id/num5"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n5"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="276dp" />
+            <ImageView
+                android:id="@+id/num8"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n8" />
 
-    <ImageView
-        android:id="@+id/btnXCalc"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/btncancelar"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="436dp" />
+            <ImageView
+                android:id="@+id/num9"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n9" />
 
-    <ImageView
-        android:id="@+id/num7"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n7"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="356dp" />
+        </TableRow>
 
-    <ImageView
-        android:id="@+id/num4"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n4"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="276dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/num1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n1"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="196dp" />
+            <ImageView
+                android:id="@+id/btnOkCalc"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/btnok" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n1"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="356dp" />
+            <ImageView
+                android:id="@+id/num0"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/n0" />
 
-    <ImageView
-        android:id="@+id/numero2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/n2"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="196dp" />
+            <ImageView
+                android:id="@+id/btnXCalc"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|right"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/btncancelar" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginRight="165dp"
+        android:layout_marginBottom="8dp"
+        android:text="R$"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="232dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/users2">
+
+        <ImageView
+            android:id="@+id/avatar1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/avatar1" />
+
+        <ImageView
+            android:id="@+id/avatar2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center|top"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/avatar2" />
+
+        <ImageView
+            android:id="@+id/avatar3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|top"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/avatar3" />
+
+        <ImageView
+            android:id="@+id/avatar4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/avatar4" />
+    </TableRow>
 
 </android.support.constraint.ConstraintLayout>
