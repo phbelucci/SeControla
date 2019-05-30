@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_novo_lancamento_vw);
+        setContentView(R.layout.activity_manter_lancamentos_vw);
 
 
 
