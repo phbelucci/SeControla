@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listarLancamentos_vw">
+    android:background="@drawable/wallpaper_roxo_mobile"
+    tools:context="com.example.controller.manterPerfil_vw">
 
 </android.support.constraint.ConstraintLayout>

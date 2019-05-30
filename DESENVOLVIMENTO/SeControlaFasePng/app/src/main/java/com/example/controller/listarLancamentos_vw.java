@@ -8,6 +8,6 @@ public class listarLancamentos_vw extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resumo_gastos_vw);
+        setContentView(R.layout.activity_resumo_lancamento_vw);
     }
 }
