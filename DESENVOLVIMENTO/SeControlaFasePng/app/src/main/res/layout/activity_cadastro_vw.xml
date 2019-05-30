@@ -12,106 +12,57 @@
         android:id="@+id/logoLoginVwCadastro"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textNomeEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="41dp" />
 
     <Button
         android:id="@+id/btnCadastrar2"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_margin="@dimen/cardview_default_radius"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginRight="158dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/cardview_shadow_start_color"
         android:text="CADASTRAR"
         android:textAlignment="center"
         android:textColor="#FAF9F9"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="469dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNomeEmail"
-        app:srcCompat="@drawable/linha" />
+        app:srcCompat="@drawable/linha"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="213dp" />
 
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_margin="@dimen/cardview_default_radius"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="258dp"
-        android:layout_marginRight="258dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/cardview_shadow_start_color"
         android:text="VOLTAR"
         android:textAlignment="center"
         android:textColor="#FAF9F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadastrar2" />
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="556dp" />
 
     <TextView
         android:id="@+id/textNomeEmail"
         android:layout_width="260dp"
         android:layout_height="21dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
         android:text="Por favor informe Nome e Senha"
         android:textAlignment="center"
         android:textColor="#FCFCFC"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLoginVwCadastro" />
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="156dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="297dp"
         android:layout_height="142dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="276dp">
 
         <TextView
             android:id="@+id/textView6"

@@ -7,316 +7,232 @@
     android:background="@drawable/wallpaper_roxo_mobile"
     tools:context=".novoLancamento_vw">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="343dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/cardview_shadow_start_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            app:srcCompat="@drawable/avatar4" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="fill_vertical|end"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:foregroundGravity="center_vertical"
+            app:srcCompat="@drawable/settings" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|left|center_vertical|fill_vertical"
+            app:srcCompat="@drawable/logo" />
+    </FrameLayout>
+
     <ImageView
         android:id="@+id/btnCancelar2"
         android:layout_width="224dp"
         android:layout_height="65dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avatar2"
-        app:srcCompat="@drawable/btcancelar" />
+        app:srcCompat="@drawable/btcancelar"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="621dp" />
 
     <ImageView
         android:id="@+id/users2"
         android:layout_width="376dp"
         android:layout_height="68dp"
-        android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/avatar3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:srcCompat="@drawable/users" />
+        app:srcCompat="@drawable/users"
+        tools:layout_editor_absoluteY="517dp" />
 
     <ImageView
         android:id="@+id/avatar2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/avatar3"
-        app:layout_constraintStart_toEndOf="@+id/avatar1"
-        app:layout_constraintTop_toBottomOf="@+id/users2"
-        app:srcCompat="@drawable/avatar2" />
+        app:srcCompat="@drawable/avatar2"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="601dp" />
 
     <ImageView
         android:id="@+id/avatar3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/avatar4"
-        app:layout_constraintStart_toEndOf="@+id/avatar2"
-        app:layout_constraintTop_toBottomOf="@+id/users2"
-        app:srcCompat="@drawable/avatar3" />
+        app:srcCompat="@drawable/avatar3"
+        tools:layout_editor_absoluteX="193dp"
+        tools:layout_editor_absoluteY="601dp" />
 
     <ImageView
         android:id="@+id/avatar1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelar2"
-        app:layout_constraintEnd_toStartOf="@+id/avatar2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/users2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/avatar1" />
+        app:srcCompat="@drawable/avatar1"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="601dp" />
 
     <ImageView
         android:id="@+id/avatar4"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/avatar3"
-        app:layout_constraintTop_toBottomOf="@+id/users2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/avatar4" />
+        app:srcCompat="@drawable/avatar4"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="601dp" />
 
     <ImageView
         android:id="@+id/btnOkCalc"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/users2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView16"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/num0"
-        app:layout_constraintTop_toBottomOf="@+id/num9"
-        app:srcCompat="@drawable/btnok" />
+        app:srcCompat="@drawable/btnok"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="436dp" />
 
     <ImageView
         android:id="@+id/num3"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num6"
-        app:layout_constraintEnd_toStartOf="@+id/numero2"
-        app:layout_constraintHorizontal_bias="0.307"
-        app:layout_constraintStart_toEndOf="@+id/num2"
-        app:layout_constraintTop_toBottomOf="@+id/valorDigitado"
-        app:srcCompat="@drawable/n3" />
+        app:srcCompat="@drawable/n3"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="196dp" />
 
     <ImageView
         android:id="@+id/num9"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/btnOkCalc"
-        app:layout_constraintEnd_toStartOf="@+id/imageView14"
-        app:layout_constraintStart_toEndOf="@+id/num8"
-        app:layout_constraintTop_toBottomOf="@+id/num6"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/n9" />
+        app:srcCompat="@drawable/n9"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <ImageView
         android:id="@+id/num6"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num9"
-        app:layout_constraintEnd_toStartOf="@+id/imageView15"
-        app:layout_constraintStart_toEndOf="@+id/num5"
-        app:layout_constraintTop_toBottomOf="@+id/num3"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/n6" />
+        app:srcCompat="@drawable/n6"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="276dp" />
 
     <ImageView
         android:id="@+id/num2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="24dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num5"
-        app:layout_constraintEnd_toStartOf="@+id/num3"
-        app:layout_constraintStart_toEndOf="@+id/num1"
-        app:layout_constraintTop_toBottomOf="@+id/valorDigitado"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/n2" />
+        app:srcCompat="@drawable/n2"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="196dp" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/num6"
-        app:layout_constraintTop_toBottomOf="@+id/numero2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/n1" />
+        app:srcCompat="@drawable/n1"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="276dp" />
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/users2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnOkCalc"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
-        app:srcCompat="@drawable/n1" />
+        app:srcCompat="@drawable/n1"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="436dp" />
 
     <ImageView
         android:id="@+id/num0"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/users2"
-        app:layout_constraintEnd_toStartOf="@+id/btnOkCalc"
-        app:layout_constraintStart_toEndOf="@+id/btnXCalc"
-        app:layout_constraintTop_toBottomOf="@+id/num8"
-        app:srcCompat="@drawable/n0" />
+        app:srcCompat="@drawable/n0"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="436dp" />
 
     <ImageView
         android:id="@+id/num8"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num0"
-        app:layout_constraintEnd_toStartOf="@+id/num9"
-        app:layout_constraintStart_toEndOf="@+id/num7"
-        app:layout_constraintTop_toBottomOf="@+id/num5"
-        app:srcCompat="@drawable/n8" />
+        app:srcCompat="@drawable/n8"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <ImageView
         android:id="@+id/num5"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num8"
-        app:layout_constraintEnd_toStartOf="@+id/num6"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toEndOf="@+id/num4"
-        app:layout_constraintTop_toBottomOf="@+id/num2"
-        app:srcCompat="@drawable/n5" />
+        app:srcCompat="@drawable/n5"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="276dp" />
 
     <ImageView
         android:id="@+id/btnXCalc"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/users2"
-        app:layout_constraintEnd_toStartOf="@+id/num0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num7"
-        app:srcCompat="@drawable/btncancelar" />
+        app:srcCompat="@drawable/btncancelar"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="436dp" />
 
     <ImageView
         android:id="@+id/num7"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/btnXCalc"
-        app:layout_constraintEnd_toStartOf="@+id/num8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num4"
-        app:srcCompat="@drawable/n7" />
+        app:srcCompat="@drawable/n7"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <ImageView
         android:id="@+id/num4"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num7"
-        app:layout_constraintEnd_toStartOf="@+id/num5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num1"
-        app:srcCompat="@drawable/n4" />
+        app:srcCompat="@drawable/n4"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="276dp" />
 
     <ImageView
         android:id="@+id/num1"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/num4"
-        app:layout_constraintEnd_toStartOf="@+id/num2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valorDigitado"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/n1" />
+        app:srcCompat="@drawable/n1"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="196dp" />
 
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/num9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:srcCompat="@drawable/n1" />
+        app:srcCompat="@drawable/n1"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <ImageView
         android:id="@+id/numero2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/num3"
-        app:layout_constraintTop_toBottomOf="@+id/valorDigitado"
-        app:srcCompat="@drawable/n2" />
+        app:srcCompat="@drawable/n2"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="196dp" />
 
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="156dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/valorDigitado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <ImageView
-        android:id="@+id/valorDigitado"
-        android:layout_width="290dp"
-        android:layout_height="93dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/num3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView18"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/valorespreenchidos" />
 </android.support.constraint.ConstraintLayout>

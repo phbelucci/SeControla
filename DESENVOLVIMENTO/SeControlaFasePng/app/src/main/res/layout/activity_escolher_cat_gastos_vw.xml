@@ -7,202 +7,195 @@
     android:background="@drawable/wallpaper_roxo_mobile"
     tools:context=".escolherCatGastos_vw">
 
-    <ImageView
-        android:id="@+id/btnCatComida"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/gastoshigi"
-        app:layout_constraintHorizontal_bias="0.612"
-        app:layout_constraintStart_toEndOf="@+id/btnCatCarro"
-        app:layout_constraintTop_toBottomOf="@+id/titleCategoria"
-        app:srcCompat="@drawable/catgastoscomida" />
-
-    <ImageView
-        android:id="@+id/btnCatSaude"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gastoshigi"
-        app:srcCompat="@drawable/catgastossaude" />
-
-    <ImageView
-        android:id="@+id/bntCatLazer"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCatCarro"
-        app:srcCompat="@drawable/catgastoslazer" />
-
-    <ImageView
-        android:id="@+id/btnCatLivros"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="343dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/capturaImagem"
-        app:layout_constraintEnd_toStartOf="@+id/btnCatOutros"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bntCatLazer"
-        app:layout_constraintVertical_bias="0.0"
-
-        app:srcCompat="@drawable/catgastoslivros" />
-
-    <ImageView
-        android:id="@+id/gastoshigi"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:background="@color/cardview_shadow_start_color"
+        app:layout_constraintBottom_toTopOf="@+id/titleCategoria"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnCatComida"
-        app:srcCompat="@drawable/catgastoshigiene" />
-
-    <ImageView
-        android:id="@+id/btnCatMoradia"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCatSaude"
-        app:srcCompat="@drawable/catgastosmoradia" />
-
-    <ImageView
-        android:id="@+id/btnCatOutros"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnCatMoradia"
-        app:layout_constraintStart_toEndOf="@+id/btnCatLivros"
-        app:layout_constraintTop_toBottomOf="@+id/btnCatTaxas"
-        app:srcCompat="@drawable/catgastosoutros" />
-
-    <ImageView
-        android:id="@+id/btnCatTaxas"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnCatSaude"
-        app:layout_constraintHorizontal_bias="0.612"
-        app:layout_constraintStart_toEndOf="@+id/bntCatLazer"
-        app:layout_constraintTop_toBottomOf="@+id/btnCatComida"
-        app:srcCompat="@drawable/catgastostaxas" />
-
-    <ImageView
-        android:id="@+id/btnCatCarro"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnCatTaxas"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleCategoria"
-        app:srcCompat="@drawable/catgastoscarro" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            app:srcCompat="@drawable/avatar4" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="fill_vertical|end"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:foregroundGravity="center_vertical"
+            app:srcCompat="@drawable/settings" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|left|center_vertical|fill_vertical"
+            app:srcCompat="@drawable/logo" />
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/btnCancelar"
         android:layout_width="224dp"
         android:layout_height="65dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
         app:srcCompat="@drawable/btcancelar" />
-
-    <ImageView
-        android:id="@+id/btnCamera"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/capturaImagem"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/titleCategoria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/capturaImagem"
-        android:layout_width="196dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="CAPTURAR IMAGEM"
-        android:textColor="#FDFDFD"
-        android:textSize="18sp"
-        android:gravity="center_horizontal"
-        android:textAlignment="center"
-        app:layout_constrainedHeight="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCatOutros" />
 
     <TextView
         android:id="@+id/titleCategoria"
         android:layout_width="228dp"
         android:layout_height="44dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
         android:text="ESCOLHA A CATEGORIA"
         android:textAlignment="center"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCatComida"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="260dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleCategoria">
+
+        <ImageView
+            android:id="@+id/btnCatOutros"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|right"
+            app:srcCompat="@drawable/catgastosoutros" />
+
+        <ImageView
+            android:id="@+id/btnCatCarro"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|start|right"
+            app:srcCompat="@drawable/catgastoscarro" />
+
+        <ImageView
+            android:id="@+id/btnCatTaxas"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="start|top"
+            app:srcCompat="@drawable/catgastostaxas" />
+
+        <ImageView
+            android:id="@+id/btnCatMoradia"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|top"
+            app:srcCompat="@drawable/catgastosmoradia" />
+
+        <ImageView
+            android:id="@+id/gastoshigi"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|center"
+            app:srcCompat="@drawable/catgastoshigiene" />
+
+        <ImageView
+            android:id="@+id/bntCatLazer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|start"
+            app:srcCompat="@drawable/catgastoslazer" />
+
+        <ImageView
+            android:id="@+id/btnCatLivros"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/catgastoslivros" />
+
+        <ImageView
+            android:id="@+id/btnCatSaude"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|right"
+            app:srcCompat="@drawable/catgastossaude" />
+
+        <ImageView
+            android:id="@+id/btnCatComida"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="right|top"
+            app:srcCompat="@drawable/catgastoscomida" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="255dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
+
+        <TextView
+            android:id="@+id/capturaImagem"
+            android:layout_width="196dp"
+            android:layout_height="29dp"
+            android:layout_gravity="top|center"
+            android:gravity="center_horizontal"
+            android:text="CAPTURAR IMAGEM"
+            android:textAlignment="center"
+            android:textColor="#FDFDFD"
+            android:textSize="18sp"
+            app:layout_constrainedHeight="false" />
+
+        <ImageView
+            android:id="@+id/btnCamera"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
