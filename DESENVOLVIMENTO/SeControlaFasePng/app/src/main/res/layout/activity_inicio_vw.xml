@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNovoGastoInicio2"
-        app:srcCompat="@drawable/btnnovarenda" />
+        app:srcCompat="@drawable/btnnovarenda"
+        android:onClick="chamarTelaCategoriaReceitas"/>
 
     <ImageView
         android:id="@+id/btnNovoGastoInicio2"
@@ -36,7 +37,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"
-        app:srcCompat="@drawable/btnnovogasto" />
+        app:srcCompat="@drawable/btnnovogasto"
+        android:onClick="chamarTelaCategoriaGastos"/>
 
     <ImageView
         android:id="@+id/imageView11"
@@ -68,7 +70,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4" />
+            app:srcCompat="@drawable/avatar4"
+            android:onClick="chamarTelaManterPerfil"/>
 
         <ImageView
             android:id="@+id/imageView17"
@@ -78,7 +81,8 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
             android:foregroundGravity="center_vertical"
-            app:srcCompat="@drawable/settings" />
+            app:srcCompat="@drawable/settings"
+            android:onClick="chamarTelaManterPerfil"/>
 
         <ImageView
             android:id="@+id/imageView3"

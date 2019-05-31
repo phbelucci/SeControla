@@ -78,7 +78,8 @@
             android:layout_gravity="bottom|center"
             android:background="@drawable/entradatextologin"
             android:text="LOGAR"
-            android:textColor="#F7F6F6" />
+            android:textColor="#F7F6F6"
+            android:onClick="chamarTelaInicio"/>
     </FrameLayout>
 
     <FrameLayout
@@ -121,7 +122,8 @@
             android:background="@drawable/entradatextologin"
             android:text="Cadastrar-se"
             android:textAlignment="center"
-            android:textColor="#FAF9F9" />
+            android:textColor="#FAF9F9"
+            android:onClick="chamarTelaCadastro"/>
     </FrameLayout>
 
     <FrameLayout
