@@ -14,8 +14,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_vw);
 
 
-
     }
+
+    public void chamarTelaManterPerfil(View view){
+
+        Intent intent = new Intent(this, manterPerfil_vw.class);
+        startActivity(intent);
+    }
+
+    public void chamarTelaManterDependente(View view){
+
+        Intent intent = new Intent(this, manterDependente_vw.class);
+        startActivity(intent);
+    }
+
     public void chamarTelaCategoriaGastos(View view){
         Intent intent = new Intent(this, escolherCatGastos_vw.class);
         startActivity(intent);
@@ -27,28 +39,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public void chamarTelaManterPerfil(View view){
-
-        Intent intent = new Intent(this, manterPerfil_vw.class);
-        startActivity(intent);
-    }
     public void chamarTelaCadastro(View view){
 
-        Intent intent = new Intent(this, cadastro_vw.class);
+        Intent intent = new Intent( this, cadastro_vw.class);
         startActivity(intent);
-    }
-
-    public void chamarTelaManterDependente(View view){
-
-        Intent intent = new Intent(this, manterDependente_vw.class);
-        startActivity(intent);
+        finish();
     }
 
     public void chamarTelaInicio(View view){
 
         Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
+        finish();
     }
 }
 
