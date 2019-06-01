@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper_roxo_mobile"
-    tools:context=".resumoLancamento_vw">
+    tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -21,11 +21,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/btnPerfilResLanc"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginLeft="100dp"
+            android:onClick="chamarTelaManterPerfil"
             app:srcCompat="@drawable/avatar4" />
 
         <ImageView
@@ -37,7 +38,7 @@
             android:layout_marginRight="10dp"
             android:foregroundGravity="center_vertical"
             app:srcCompat="@drawable/settings"
-            android:onClick="chamarTelaManterPerfil"
+
             />
 
         <ImageView

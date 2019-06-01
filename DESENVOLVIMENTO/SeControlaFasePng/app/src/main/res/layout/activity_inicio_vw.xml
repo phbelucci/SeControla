@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper_roxo_mobile"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
     <ImageView
         android:id="@+id/btnNovaReceitaInicio2"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/btnPerfilInicio"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -82,7 +82,7 @@
             android:layout_marginRight="10dp"
             android:foregroundGravity="center_vertical"
             app:srcCompat="@drawable/settings"
-            android:onClick="chamarTelaManterPerfil"/>
+            />
 
         <ImageView
             android:id="@+id/imageView3"

@@ -8,8 +8,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void chamarTelaInicio(View view){
 
-        Intent intent = new Intent(this, inicio_vw.class);
+    public void chamarTelaManterPerfil(View view){
+
+        Intent intent = new Intent(this, manterPerfil_vw.class);
         startActivity(intent);
     }
-
     public void chamarTelaCadastro(View view){
 
         Intent intent = new Intent(this, cadastro_vw.class);
@@ -47,15 +45,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void chamarTelaManterPerfil(View view){
+    public void chamarTelaInicio(View view){
 
-        Intent intent = new Intent(this, manterPerfil_vw.class);
+        Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
     }
-
-
-
-
-
 }
 
