@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper_roxo_mobile"
-    tools:context=".MainActivity">
+    tools:context=".cadastro_vw">
 
     <ImageView
         android:id="@+id/logoLoginVwCadastro"
@@ -35,11 +35,10 @@
         android:layout_marginRight="80dp"
         android:layout_marginBottom="24dp"
         android:background="@color/cardview_shadow_start_color"
-        android:onClick="chamarTelaInicio"
         android:text="CADASTRAR"
         android:textAlignment="center"
         android:textColor="#FAF9F9"
-        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrarVwLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -61,7 +60,7 @@
         app:srcCompat="@drawable/linha" />
 
     <Button
-        android:id="@+id/btnVoltar"
+        android:id="@+id/btnCadastrarVwLogin"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="130dp"

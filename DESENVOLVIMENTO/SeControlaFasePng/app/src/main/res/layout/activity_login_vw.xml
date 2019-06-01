@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper_roxo_mobile"
     android:theme="@android:style/Theme.NoDisplay"
-    tools:context=".MainActivity">
+    tools:context=".login_vw">
 
     <ImageView
         android:id="@+id/logoLoginVwCadastro"
@@ -73,14 +73,15 @@
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/campoRepeteSenhaCadastro"
+            android:id="@+id/btnLogarVwLogin"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|center"
             android:background="@drawable/entradatextologin"
             android:text="LOGAR"
             android:textColor="#F7F6F6"
-            android:onClick="chamarTelaInicio"/>
+            android:onClick="chamarTelaInicio"
+            />
     </FrameLayout>
 
     <FrameLayout
@@ -115,7 +116,7 @@
             android:textColor="#FCFCFC" />
 
         <Button
-            android:id="@+id/btnVoltar"
+            android:id="@+id/btnCadastrarVwLogin"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center|top"
