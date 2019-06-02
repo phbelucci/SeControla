@@ -12,6 +12,6 @@ public class resumoLancamento_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_lancamento_vw);
     }
-  
+
 
 }

@@ -15,7 +15,18 @@ public class inicio_vw extends AppCompatActivity {
 
     }
 
+    public void chamarTelaCategoriaGastos(View view){
+        Intent intent = new Intent(this, escolherCatGastos_vw.class);
+        startActivity(intent);
 
+    }
+
+    public void chamarTelaCategoriaReceitas(View view){
+
+        Intent intent = new Intent(this, escolherCatReceitas_vw.class);
+        startActivity(intent);
+
+    }
 
 
 

@@ -22,7 +22,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNovoGastoInicio2"
         app:srcCompat="@drawable/btnnovarenda"
-        android:onClick="chamarTelaManterPerfil"/>
+        android:onClick="chamarTelaCategoriaReceitas"
+      />
 
     <ImageView
         android:id="@+id/btnNovoGastoInicio2"
@@ -71,7 +72,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="100dp"
             app:srcCompat="@drawable/avatar4"
-            android:onClick="chamarTelaManterPerfil"/>
+            />
 
         <ImageView
             android:id="@+id/imageView17"

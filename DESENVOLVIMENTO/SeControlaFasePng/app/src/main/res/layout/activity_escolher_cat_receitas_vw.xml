@@ -51,6 +51,7 @@
     </FrameLayout>
 
     <ImageView
+        android:onClick="chamarTelaInicio"
         android:id="@+id/btnCancelar"
         android:layout_width="224dp"
         android:layout_height="65dp"

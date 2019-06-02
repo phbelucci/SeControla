@@ -12,6 +12,11 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_cat_receitas_vw);
     }
+    public void chamarTelaInicio(View view){
 
+        Intent intent = new Intent(this, inicio_vw.class);
+        startActivity(intent);
+
+    }
 
 }

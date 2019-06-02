@@ -65,7 +65,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
-        app:srcCompat="@drawable/btcancelar" />
+        app:srcCompat="@drawable/btcancelar"
+        android:onClick="chamarTelaInicio"/>
 
     <TextView
         android:id="@+id/titleCategoria"
@@ -105,42 +106,48 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|right"
-            app:srcCompat="@drawable/catgastosoutros" />
+            app:srcCompat="@drawable/catgastosoutros"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/btnCatCarro"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|start|right"
-            app:srcCompat="@drawable/catgastoscarro" />
+            app:srcCompat="@drawable/catgastoscarro"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/btnCatTaxas"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="start|top"
-            app:srcCompat="@drawable/catgastostaxas" />
+            app:srcCompat="@drawable/catgastostaxas"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/btnCatMoradia"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|top"
-            app:srcCompat="@drawable/catgastosmoradia" />
+            app:srcCompat="@drawable/catgastosmoradia"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/gastoshigi"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|center"
-            app:srcCompat="@drawable/catgastoshigiene" />
+            app:srcCompat="@drawable/catgastoshigiene"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/bntCatLazer"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|start"
-            app:srcCompat="@drawable/catgastoslazer" />
+            app:srcCompat="@drawable/catgastoslazer"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/btnCatLivros"
@@ -148,21 +155,24 @@
             android:layout_height="80dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/catgastoslivros" />
+            app:srcCompat="@drawable/catgastoslivros"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/btnCatSaude"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|right"
-            app:srcCompat="@drawable/catgastossaude" />
+            app:srcCompat="@drawable/catgastossaude"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
             android:id="@+id/btnCatComida"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="right|top"
-            app:srcCompat="@drawable/catgastoscomida" />
+            app:srcCompat="@drawable/catgastoscomida"
+            android:onClick="chamarTelaManterLancamentos"/>
     </FrameLayout>
 
     <FrameLayout
@@ -178,7 +188,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
+        >
 
         <TextView
             android:id="@+id/capturaImagem"
