@@ -13,6 +13,19 @@ public class manterDependente_vw extends AppCompatActivity {
         setContentView(R.layout.activity_manter_dependente_vw);
     }
 
+    public void chamarTelaManterPerfil(View view){
+
+        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        startActivity(intent);
+
+    }
+    public void chamarTelaInicio(View view){
+
+        Intent intent = new Intent(this, inicio_vw.class);
+        startActivity(intent);
+
+    }
+
 
 
 }

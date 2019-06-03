@@ -36,16 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoLoginVwCadastro">
 
-        <Button
-            android:id="@+id/campoEntraNomeCadastro"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/entradatextologin"
-            android:text="USUÁRIO"
-            android:textColor="#FAF9F9" />
-
         <TextView
             android:id="@+id/textNomeEmail"
             android:layout_width="wrap_content"
@@ -53,6 +43,17 @@
             android:layout_gravity="center|top"
             android:text="Entre com seu usuário e senha"
             android:textColor="#FCFCFC" />
+
+        <EditText
+            android:id="@+id/campoEntraNomeCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/entradatextologin"
+            android:text="USUÁRIO"
+            android:textColor="#FAF9F9"
+            android:textAlignment="center"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -62,14 +63,15 @@
             android:layout_marginTop="25dp"
             app:srcCompat="@drawable/linha" />
 
-        <Button
+        <EditText
             android:id="@+id/campoEntraEmailCadastro"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center|top"
             android:layout_marginTop="30dp"
             android:background="@drawable/entradatextologin"
-            android:text="senha"
+            android:text="SENHA"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
@@ -116,7 +118,7 @@
             android:textColor="#FCFCFC" />
 
         <Button
-            android:id="@+id/btnCadastrarVwLogin"
+            android:id="@+id/btnVoltarLogin"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center|top"

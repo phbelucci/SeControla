@@ -19,11 +19,20 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void chamarTelaManterLancamentos(View view){
+    public void ChamarVwNovoLancamento(View view){
 
-        Intent intent = new Intent(this, manter_lancamentos_vw.class);
+        Intent intent = new Intent(this, novoLancamento_vw.class);
         startActivity(intent);
 
     }
+
+    public void chamarTelaManterPerfil(View view){
+
+        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        startActivity(intent);
+
+    }
+
+
 
 }

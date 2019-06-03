@@ -7,6 +7,7 @@
     android:background="@drawable/wallpaper_roxo_mobile"
     tools:context=".escolherCatGastos_vw">
 
+
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="343dp"
@@ -31,7 +32,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="100dp"
             app:srcCompat="@drawable/avatar4"
-            android:onClick="chamarTelaManterPerfil"/>
+            />
 
         <ImageView
             android:id="@+id/imageView17"
@@ -41,14 +42,16 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
             android:foregroundGravity="center_vertical"
-            app:srcCompat="@drawable/settings" />
+            app:srcCompat="@drawable/settings"
+            android:onClick="chamarTelaManterPerfil"/>
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start|left|center_vertical|fill_vertical"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:onClick="chamarTelaInicio"/>
     </FrameLayout>
 
     <ImageView
@@ -107,7 +110,7 @@
             android:layout_height="80dp"
             android:layout_gravity="bottom|right"
             app:srcCompat="@drawable/catgastosoutros"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatAplic"
@@ -115,7 +118,7 @@
             android:layout_height="80dp"
             android:layout_gravity="center|start|right"
             app:srcCompat="@drawable/catgastoscarro"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatSalario"
@@ -123,7 +126,7 @@
             android:layout_height="80dp"
             android:layout_gravity="start|top"
             app:srcCompat="@drawable/catgastostaxas"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatMoradia"
@@ -131,7 +134,7 @@
             android:layout_height="80dp"
             android:layout_gravity="center|top"
             app:srcCompat="@drawable/catgastosmoradia"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/gastoshigi"
@@ -139,7 +142,7 @@
             android:layout_height="80dp"
             android:layout_gravity="bottom|center"
             app:srcCompat="@drawable/catgastoshigiene"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatBenef"
@@ -147,7 +150,7 @@
             android:layout_height="80dp"
             android:layout_gravity="bottom|start"
             app:srcCompat="@drawable/catgastoslazer"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatLivros"
@@ -156,7 +159,7 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             app:srcCompat="@drawable/catgastoslivros"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatSaude"
@@ -164,7 +167,7 @@
             android:layout_height="80dp"
             android:layout_gravity="center|right"
             app:srcCompat="@drawable/catgastossaude"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
 
         <ImageView
             android:id="@+id/btnCatExtra"
@@ -172,7 +175,7 @@
             android:layout_height="80dp"
             android:layout_gravity="right|top"
             app:srcCompat="@drawable/catgastoscomida"
-            android:onClick="chamarTelaManterLancamentos"/>
+            android:onClick="ChamarVwNovoLancamento"/>
     </FrameLayout>
 
     <FrameLayout

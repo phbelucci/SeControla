@@ -40,14 +40,17 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
             android:foregroundGravity="center_vertical"
-            app:srcCompat="@drawable/settings" />
+            app:srcCompat="@drawable/settings"
+            android:onClick="chamarTelaManterPerfil"
+            />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start|left|center_vertical|fill_vertical"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:onClick="chamarTelaInicio"/>
     </FrameLayout>
 
     <ImageView
@@ -99,39 +102,39 @@
 
         <ImageView
             android:id="@+id/btnCatBenef"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="end"
+            android:onClick="ChamarVwNovoLancamento"
             app:srcCompat="@drawable/catreceitabeneficio"
-            tools:visibility="visible"
-            android:onClick="chamarTelaManterLancamentos"/>
+            tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/btnCatSalario"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="start"
-            android:onClick="chamarTelaManterLancamentos"
+            android:onClick="ChamarVwNovoLancamento"
             app:srcCompat="@drawable/catreceitasalario"
             tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/btnCatAplic"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="bottom"
+            android:onClick="ChamarVwNovoLancamento"
             app:srcCompat="@drawable/btnreceitaaplicacao"
-            tools:visibility="visible"
-            android:onClick="chamarTelaManterLancamentos"/>
+            tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/btnCatExtra"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_gravity="bottom|right"
+            android:onClick="ChamarVwNovoLancamento"
             app:srcCompat="@drawable/btnreceitaextra"
-            tools:visibility="visible"
-            android:onClick="chamarTelaManterLancamentos"/>
+            tools:visibility="visible" />
     </FrameLayout>
 
     <LinearLayout

@@ -20,13 +20,13 @@ public class login_vw extends AppCompatActivity {
 
         Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
-        finish();
+
     }
     public void chamarTelaCadastro(View view){
 
         Intent intent = new Intent( this, cadastro_vw.class);
         startActivity(intent);
-        finish();
+
     }
 
 

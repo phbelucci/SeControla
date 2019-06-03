@@ -28,6 +28,19 @@ public class inicio_vw extends AppCompatActivity {
 
     }
 
+    public void chamarTelaManterPerfil(View view){
+
+        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        startActivity(intent);
+
+    }
+    public void chamarTelaInicio(View view){
+
+        Intent intent = new Intent(this, inicio_vw.class);
+        startActivity(intent);
+
+    }
+
 
 
 
