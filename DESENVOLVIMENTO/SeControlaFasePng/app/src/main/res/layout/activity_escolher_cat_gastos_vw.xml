@@ -110,7 +110,7 @@
             android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
-            android:id="@+id/btnCatCarro"
+            android:id="@+id/btnCatAplic"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|start|right"
@@ -118,7 +118,7 @@
             android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
-            android:id="@+id/btnCatTaxas"
+            android:id="@+id/btnCatSalario"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="start|top"
@@ -142,7 +142,7 @@
             android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
-            android:id="@+id/bntCatLazer"
+            android:id="@+id/btnCatBenef"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|start"
@@ -167,7 +167,7 @@
             android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
-            android:id="@+id/btnCatComida"
+            android:id="@+id/btnCatExtra"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="right|top"

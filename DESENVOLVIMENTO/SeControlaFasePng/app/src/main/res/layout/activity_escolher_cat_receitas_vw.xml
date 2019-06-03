@@ -98,36 +98,40 @@
         app:layout_constraintTop_toBottomOf="@+id/titleCategoria">
 
         <ImageView
-            android:id="@+id/bntCatLazer"
+            android:id="@+id/btnCatBenef"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="end"
-            app:srcCompat="@drawable/catgastoslazer"
-            tools:visibility="visible" />
+            app:srcCompat="@drawable/catreceitabeneficio"
+            tools:visibility="visible"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
-            android:id="@+id/btnCatTaxas"
+            android:id="@+id/btnCatSalario"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="start"
-            app:srcCompat="@drawable/catgastostaxas"
+            android:onClick="chamarTelaManterLancamentos"
+            app:srcCompat="@drawable/catreceitasalario"
             tools:visibility="visible" />
 
         <ImageView
-            android:id="@+id/btnCatCarro"
+            android:id="@+id/btnCatAplic"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="bottom"
-            app:srcCompat="@drawable/catgastoscarro"
-            tools:visibility="visible" />
+            app:srcCompat="@drawable/btnreceitaaplicacao"
+            tools:visibility="visible"
+            android:onClick="chamarTelaManterLancamentos"/>
 
         <ImageView
-            android:id="@+id/btnCatComida"
+            android:id="@+id/btnCatExtra"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="bottom|right"
-            app:srcCompat="@drawable/catgastoscomida"
-            tools:visibility="visible" />
+            app:srcCompat="@drawable/btnreceitaextra"
+            tools:visibility="visible"
+            android:onClick="chamarTelaManterLancamentos"/>
     </FrameLayout>
 
     <LinearLayout
