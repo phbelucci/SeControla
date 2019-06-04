@@ -53,17 +53,19 @@
             android:onClick="chamarTelaInicio"/>
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/btnCancelar2"
-        android:layout_width="224dp"
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="32dp"
+        android:background="#623D84"
+        android:textColor="#F8F8F8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow2"
-        app:srcCompat="@drawable/btcancelar" />
+        tools:text="CONFIRMAR" />
 
     <ImageView
         android:id="@+id/users2"
@@ -79,11 +81,11 @@
         android:id="@+id/tableLayout"
         android:layout_width="209dp"
         android:layout_height="281dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:foregroundGravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/users2"
@@ -218,8 +220,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="165dp"
-        android:layout_marginRight="165dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginRight="250dp"
         android:layout_marginBottom="8dp"
         android:text="R$"
         android:textColor="#FFFFFF"
@@ -235,7 +237,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelar2"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirmar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/users2">
