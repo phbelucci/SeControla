@@ -2,7 +2,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.secontrola.controller">
+    package="com.example.controller">
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -14,18 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.secontrola.controller.manter_lancamentos_vw"></activity>
-        <activity android:name="com.secontrola.controller.manterDependente_vw" />
-        <activity android:name="com.secontrola.controller.manterPerfil_vw" />
-        <activity android:name="com.secontrola.controller.cadastro_vw" />
-        <activity android:name="com.secontrola.controller.login_vw" />
-        <activity android:name="com.secontrola.controller.resumoLancamento_vw" />
-        <activity android:name="com.secontrola.controller.escolherCatReceitas_vw" />
-        <activity android:name="com.secontrola.controller.escolherCatGastos_vw" />
-        <activity android:name="com.secontrola.controller.listarLancamentos_vw" />
-        <activity android:name="com.secontrola.controller.novoLancamento_vw" />
-        <activity android:name="com.secontrola.controller.inicio_vw" />
-        <activity android:name="com.secontrola.controller.MainActivity">
+        <activity android:name="com.example.controller.manter_lancamentos_vw"></activity>
+        <activity android:name="com.example.controller.manterDependente_vw" />
+        <activity android:name="com.example.controller.manterPerfil_vw" />
+        <activity android:name="com.example.controller.cadastro_vw" />
+        <activity android:name="com.example.controller.login_vw" />
+        <activity android:name="com.example.controller.resumoLancamento_vw" />
+        <activity android:name="com.example.controller.escolherCatReceitas_vw" />
+        <activity android:name="com.example.controller.escolherCatGastos_vw" />
+        <activity android:name="com.example.controller.listarLancamentos_vw" />
+        <activity android:name="com.example.controller.novoLancamento_vw" />
+        <activity android:name="com.example.controller.inicio_vw" />
+        <activity android:name="com.example.controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
