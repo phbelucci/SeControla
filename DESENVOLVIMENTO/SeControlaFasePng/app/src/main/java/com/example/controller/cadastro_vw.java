@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.EditText;
 
 public class cadastro_vw extends AppCompatActivity {
 
+
+    private String nomeUser;
+    private String senha;
+    private String senhaRepete;
     private EditText apagarTexto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,23 @@ public class cadastro_vw extends AppCompatActivity {
 
         Intent intent = new Intent(this,login_vw.class);
         startActivity(intent);
+
+    }
+
+
+    //Função será responsável por cadastrar um novo usuário no banco
+    public void cadastrarNovoUsuario(View v){
+
+        EditText pegaNome = findViewById(R.id.inputNomeVwCadastro);
+        nomeUser = pegaNome.getText().toString();
+        System.out.println(nomeUser);
+        EditText pegaSenha = findViewById(R.id.inputSenhaVwCadastro);
+        senha = pegaSenha.getText().toString();
+        System.out.println(senha);
+        EditText repeteSenha = findViewById(R.id.inputSenhaRepeteVwCadastro);
+        senhaRepete = repeteSenha.getText().toString();
+        System.out.println(senhaRepete);
+
 
     }
 
