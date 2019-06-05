@@ -131,8 +131,8 @@
                 android:inputType="text"
                 android:maxLength="50"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#F7F7F7"
-                android:typeface="normal"/>
+
+                android:textColorHint="#FFFFFF" />
 
         </android.support.design.widget.TextInputLayout>
 
