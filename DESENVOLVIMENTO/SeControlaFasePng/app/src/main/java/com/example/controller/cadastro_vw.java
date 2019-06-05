@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.model.CadastroModel;
+
 public class cadastro_vw extends AppCompatActivity {
 
 
@@ -14,6 +16,9 @@ public class cadastro_vw extends AppCompatActivity {
     private String senha;
     private String senhaRepete;
     private EditText apagarTexto;
+    CadastroModel cadastro = new CadastroModel();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +47,14 @@ public class cadastro_vw extends AppCompatActivity {
         senhaRepete = repeteSenha.getText().toString();
         System.out.println(senhaRepete);
 
+        if(cadastro.cadastrar(nomeUser, senha, senhaRepete)){
+            //fazer ação da tela depois
+            //abrir login
+        }else {
+            //permanece na cadastro
+            //mostrar na tela cadastro.getMensagem();
 
+        }
     }
 
 }

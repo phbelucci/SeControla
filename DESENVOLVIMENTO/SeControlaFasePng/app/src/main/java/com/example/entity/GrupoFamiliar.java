@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class GrupoFamiliar{
 
     private final Integer codGrupo;
     private Integer codAdmGrupo;
-    //private HashMap<String, List<com.example.primeiroprojeto.model.Usuario>> usuariosGrupo;
+    //private HashMap<String, List<com.example.primeiroprojeto.entity.Usuario>> usuariosGrupo;
     private List<Usuario> usuariosGrupo;
     private List<ContaBancaria> contasGrupo;
     private List<Lancamento> lancamentosGrupo;

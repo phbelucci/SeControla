@@ -1,10 +1,10 @@
-package com.example.model;
+package com.example.entity;
 
 import android.media.Image;
 
 public class Usuario{
 
-    private final Integer codUs;
+    private Integer codUs;
     private String nomeUs;
     private Image avatarUs;
     private Login login;
@@ -18,6 +18,11 @@ public class Usuario{
         this.nomeUs = nomeUs;
         this.avatarUs = avatarUs;
         this.codGrupo = codGrupo;
+    }
+
+    public Usuario(String nomeUs, String senha) {
+        this.nomeUs = nomeUs;
+        login.setSenha(senha);
     }
 
     //sem avatar
