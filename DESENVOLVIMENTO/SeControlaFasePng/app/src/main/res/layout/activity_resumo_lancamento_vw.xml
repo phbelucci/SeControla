@@ -11,93 +11,55 @@
         android:id="@+id/frameLayout"
         android:layout_width="343dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/cardview_shadow_start_color"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-        <ImageView
-            android:id="@+id/btnPerfilResLanc"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4" />
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="fill_vertical|end"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:foregroundGravity="center_vertical"
-            app:srcCompat="@drawable/settings"
-            android:onClick="chamarTelaManterPerfil"
-
-            />
+        tools:layout_editor_absoluteY="50dp">
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|left|center_vertical|fill_vertical"
-            app:srcCompat="@drawable/logo"
-            android:onClick="chamarTelaInicio"/>
+            android:layout_gravity="center|center_vertical"
+            android:onClick="chamarTelaInicio"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/btnPerfilInicio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="100dp"
+            android:onClick="chamarTelaManterPerfil"
+            app:srcCompat="@drawable/avatar4" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="left|center_vertical"
+            android:onClick="chamarTelaInicio"
+            app:srcCompat="@drawable/setavoltar" />
     </FrameLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="140dp"
         android:layout_height="45dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="22dp"
         android:background="@color/colorPrimary"
         android:text="EDITAR/SALVAR"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginLeft="133dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginRight="139dp"
-        android:layout_marginBottom="37dp"
-        android:background="@color/cardview_shadow_start_color"
-        android:text="VOLTAR"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        tools:layout_editor_absoluteY="545dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="300dp"
         android:layout_height="180dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:layout_marginBottom="3dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="315dp">
 
         <TextView
             android:id="@+id/textView13"
@@ -133,18 +95,10 @@
         android:id="@+id/cardView"
         android:layout_width="348dp"
         android:layout_height="108dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="33dp"
         android:background="@color/cardview_shadow_end_color"
         app:cardBackgroundColor="@color/cardview_shadow_end_color"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="144dp">
 
         <ImageView
             android:id="@+id/imageView20"

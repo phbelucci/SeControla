@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">SeControlaFaseFinal</string>
+    <string name="erroConexao">Não há conexão com a internet!</string>
+    <string name="erroUsNaoExiste">Usuário não Encontrado! Favor realizar o Cadastro.</string>
+    <string name="erroSenhaIncorreta">A Senha informada está incorreta!</string>
+    <string name="erroSenhaDifSenhaRepete">As senhas informadas não são iguais!</string>
+    <string name="usCadastroSucesso">Cadastrado com Sucesso!</string>
+    <string name="erroSenhaNula">O campo Senha e Repete Senha não podem ser vazios!</string>
+    <string name="imgSucesso">Imagem Salva!</string>
+    <string name="erroImg">Erro ao Salvar Imagem!</string>
+    <string name="erroSalvarUs">Erro ao Salvar Cadastro!</string>
+    <string name="erroIncluirDep">Erro ao incluir Dependente!</string>
+    <string name="erroEmail">E-mail não existe!</string>
+    <string name="naoEscolherFormaPagto">Favor escolher a forma de pagamento!</string>
+    <string name="erroExcluirLancamento">Erro ao excluir Lançamento!</string>
+    <string name="msgListaAtualizada">Lançamentos atualizados!</string>
+    <string name="naoEscolherCategoria">Favor escolher uma categoria!</string>
 </resources>

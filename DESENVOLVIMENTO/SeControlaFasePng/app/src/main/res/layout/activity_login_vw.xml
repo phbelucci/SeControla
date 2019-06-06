@@ -146,6 +146,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#FFFFFF"
+            app:boxBackgroundColor="#D3C4C4"
+            app:boxStrokeColor="#F7F2F2"
             app:counterEnabled="true"
             app:counterMaxLength="6"
             app:errorEnabled="true">

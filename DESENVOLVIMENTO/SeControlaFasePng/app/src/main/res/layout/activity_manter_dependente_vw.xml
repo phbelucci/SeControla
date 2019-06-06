@@ -11,63 +11,44 @@
         android:id="@+id/frameLayout"
         android:layout_width="343dp"
         android:layout_height="60dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="21dp"
         android:background="@color/cardview_shadow_start_color"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/btnPerfilManterDep"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4"
-            android:onClick="chamarTelaManterPerfil" />
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="fill_vertical|end"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:foregroundGravity="center_vertical"
-            app:srcCompat="@drawable/settings"
-            android:onClick="chamarTelaManterPerfil"
-            />
+        tools:layout_editor_absoluteY="50dp">
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|left|center_vertical|fill_vertical"
-            app:srcCompat="@drawable/logo"
-            android:onClick="chamarTelaInicio"/>
+            android:layout_gravity="center|center_vertical"
+            android:onClick="chamarTelaInicio"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/btnPerfilInicio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="100dp"
+            android:onClick="chamarTelaManterPerfil"
+            app:srcCompat="@drawable/avatar4" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="left|center_vertical"
+            android:onClick="chamarTelaInicio"
+            app:srcCompat="@drawable/setavoltar" />
     </FrameLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="286dp"
         android:layout_height="111dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11">
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="251dp">
 
         <TextView
             android:id="@+id/textView10"
@@ -92,31 +73,20 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginLeft="93dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginRight="92dp"
-        android:layout_marginBottom="34dp"
         android:text="Adicionar Dependente"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="168dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="195dp"
         android:layout_height="78dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="8dp"
+        android:background="#A30C0C0C"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="393dp">
 
         <TextView
             android:id="@+id/capturaImagem"
@@ -142,29 +112,21 @@
         android:id="@+id/button3"
         android:layout_width="135dp"
         android:layout_height="49dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="13dp"
         android:background="@color/cardview_shadow_start_color"
         android:text="ADICIONAR"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="510dp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="70dp"
         android:background="@color/cardview_shadow_start_color"
+        android:onClick="chamarTelaInicio"
         android:text="CANCELAR"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        android:onClick="chamarTelaInicio"/>
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="597dp" />
 
 </android.support.constraint.ConstraintLayout>

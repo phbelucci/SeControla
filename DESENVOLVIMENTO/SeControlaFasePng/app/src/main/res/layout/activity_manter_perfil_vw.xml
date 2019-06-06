@@ -7,19 +7,49 @@
     android:background="@drawable/wallpaper_roxo_mobile"
     tools:context=".manterPerfil_vw">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="343dp"
+        android:layout_height="60dp"
+        android:background="@color/cardview_shadow_start_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="50dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:onClick="chamarTelaInicio"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/btnPerfilInicio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="100dp"
+            android:onClick="chamarTelaManterPerfil"
+            app:srcCompat="@drawable/avatar4" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="left|center_vertical"
+            android:onClick="chamarTelaInicio"
+            app:srcCompat="@drawable/setavoltar" />
+    </FrameLayout>
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="195dp"
         android:layout_height="78dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/cardview_shadow_start_color"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="310dp">
 
         <TextView
             android:id="@+id/capturaImagem"
@@ -41,67 +71,13 @@
             app:srcCompat="@android:drawable/ic_menu_camera" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="343dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="18dp"
-        android:background="@color/cardview_shadow_start_color"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/btnPerfilManterPerf"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4"
-            android:onClick="chamarTelaManterPerfil"/>
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="fill_vertical|end"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:foregroundGravity="center_vertical"
-            app:srcCompat="@drawable/settings"
-            android:onClick="chamarTelaManterPerfil"
-            />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start|left|center_vertical|fill_vertical"
-            app:srcCompat="@drawable/logo"
-            android:onClick="chamarTelaInicio"/>
-    </FrameLayout>
-
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="317dp"
         android:layout_height="101dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="17dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="165dp">
 
         <TextView
             android:id="@+id/textView7"
@@ -136,44 +112,30 @@
         android:id="@+id/button5"
         android:layout_width="126dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/cardview_shadow_start_color"
         android:text="ALTERAR SENHA"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="422dp" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="64dp"
         android:background="@color/cardview_shadow_start_color"
         android:text="CANCELAR"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="599dp" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="175dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/cardview_shadow_start_color"
+        android:onClick="chamarTelaManterDependente"
         android:text="ADICIONAR DEPENDENTE"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        android:onClick="chamarTelaManterDependente"/>
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="507dp" />
 </android.support.constraint.ConstraintLayout>

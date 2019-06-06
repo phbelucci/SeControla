@@ -25,5 +25,12 @@ public class novoLancamento_vw extends AppCompatActivity {
 
     }
 
+    public void chamarTelaManterLancamentos(View view){
+
+        Intent intent = new Intent(this, manter_lancamentos_vw.class);
+        startActivity(intent);
+
+    }
+
 
 }
