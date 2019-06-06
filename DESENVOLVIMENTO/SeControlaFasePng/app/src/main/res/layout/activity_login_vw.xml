@@ -14,133 +14,173 @@
         android:layout_height="50dp"
         android:layout_marginStart="57dp"
         android:layout_marginLeft="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/mensagemUsVwLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout5"
-        android:layout_width="350dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+    <TextView
+        android:id="@+id/textNomeEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout6"
+        android:text="Entre com seu usuário e senha"
+        android:textAlignment="center"
+        android:textColor="#FCFCFC"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mensagemUsVwLogin">
+        app:layout_constraintTop_toBottomOf="@+id/mensagemUsVwLogin" />
 
-        <TextView
-            android:id="@+id/textNomeEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:text="Entre com seu usuário e senha"
-            android:textColor="#FCFCFC" />
+    <Button
+        android:id="@+id/btnCadastrarCadastro"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btnpadrao"
+        android:drawableLeft="@drawable/ok"
+        android:paddingLeft="20dp"
+        android:shadowColor="#A8A8A8"
+        android:onClick="chamarTelaInicio"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="LOGIN"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout5" />
 
-        <EditText
-            android:id="@+id/campoEntraNomeCadastro"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/entradatextologin"
-            android:text="USUÁRIO"
-            android:textAlignment="center"
-            android:textColor="#FAF9F9" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="25dp"
-            app:srcCompat="@drawable/linha" />
-
-        <EditText
-            android:id="@+id/campoEntraEmailCadastro"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/entradatextologin"
-            android:text="SENHA"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/btnLogarVwLogin"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom|center"
-            android:background="@drawable/entradatextologin"
-            android:onClick="chamarTelaInicio"
-            android:text="LOGAR"
-            android:textColor="#F7F6F6" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout6"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
+        android:text="Não tem Cadastro?"
+        android:textColor="#FCFCFC"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrarLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarCadastro" />
+
+    <Button
+        android:id="@+id/btnCadastrarLogin"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btnpadrao"
+        android:drawableLeft="@drawable/ok"
+        android:paddingLeft="20dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="CADASTRE-SE"
+        android:textAlignment="center"
+        android:onClick="chamarTelaCadastro"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/frameLayout5"
+        android:layout_width="357dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrarCadastro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNomeEmail"
+        >
+
+        <android.support.design.widget.TextInputLayout
+
+            android:id="@+id/campoEntraNomeVwLogin"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/linha" />
+            android:textColorHint="#FFFFFF"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/inputNomeVwLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:hint="NOME"
+                android:inputType="text"
+                android:maxLength="30"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textIsSelectable="false" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/campoEntraSenhaVwLogin"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:text="Não tem Cadastro?"
-            android:textColor="#FCFCFC" />
+            android:textColorHint="#FFFFFF"
+            app:counterEnabled="true"
+            app:counterMaxLength="6"
+            app:errorEnabled="true">
 
-        <Button
-            android:id="@+id/btnVoltarLogin"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/entradatextologin"
-            android:onClick="chamarTelaCadastro"
-            android:text="Cadastrar-se"
-            android:textAlignment="center"
-            android:textColor="#FAF9F9" />
-    </FrameLayout>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/inputSenhaVwLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:hint="SENHA"
+                android:inputType="textPassword"
+                android:maxLength="6"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:textColor="#FFFFFF" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/frameLayout7"
         android:layout_width="262dp"
         android:layout_height="104dp"
         android:layout_gravity="bottom|right"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarLogin">
 
         <TextView
             android:id="@+id/textView4"
@@ -195,10 +235,11 @@
         android:id="@+id/mensagemUsVwLogin"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="21dp"
         android:textColor="#38FA49"
         android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout5"
+        app:layout_constraintBottom_toTopOf="@+id/textNomeEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoLoginVwCadastro" />
