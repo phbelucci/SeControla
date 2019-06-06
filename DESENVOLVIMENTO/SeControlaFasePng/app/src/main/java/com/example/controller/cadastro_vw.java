@@ -6,8 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.model.CadastroModel;
+
+import org.w3c.dom.Text;
 
 public class cadastro_vw extends AppCompatActivity {
 
@@ -30,7 +33,6 @@ public class cadastro_vw extends AppCompatActivity {
 
         Intent intent = new Intent(this,login_vw.class);
         startActivity(intent);
-
     }
 
 
@@ -39,13 +41,21 @@ public class cadastro_vw extends AppCompatActivity {
 
         EditText pegaNome = findViewById(R.id.inputNomeVwCadastro);
         nomeUser = pegaNome.getText().toString();
-        System.out.println(nomeUser);
         EditText pegaSenha = findViewById(R.id.inputSenhaVwCadastro);
         senha = pegaSenha.getText().toString();
-        System.out.println(senha);
-        EditText repeteSenha = findViewById(R.id.inputSenhaRepeteVwCadastro);
-        senhaRepete = repeteSenha.getText().toString();
-        System.out.println(senhaRepete);
+        EditText pegaRepeteSenha = findViewById(R.id.inputSenhaRepeteVwCadastro);
+        senhaRepete = pegaRepeteSenha.getText().toString();
+        while(!senha.equals(senhaRepete)){
+            TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
+            mensagemErro.setText("Senha não confere! Favor digitar novamente!");
+            pegaSenha.setText("");
+            pegaRepeteSenha.setText("");
+            return;
+        }
+        if(senha.equals(senhaRepete)){
+            chamarTelaLogin(v);
+        }
+
 
         if(cadastro.cadastrar(nomeUser, senha, senhaRepete)){
             //fazer ação da tela depois
