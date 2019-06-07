@@ -11,10 +11,13 @@
         android:id="@+id/frameLayout"
         android:layout_width="343dp"
         android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="41dp"
         android:background="@color/cardview_shadow_start_color"
+        app:layout_constraintBottom_toTopOf="@+id/titleCategoria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="50dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -35,47 +38,80 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
+            android:layout_width="20dp"
             android:layout_height="35dp"
             android:layout_gravity="left|center_vertical"
             android:onClick="chamarTelaInicio"
             app:srcCompat="@drawable/setavoltar" />
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/btnCancelar"
-        android:layout_width="224dp"
-        android:layout_height="65dp"
-        android:onClick="chamarTelaInicio"
-        app:srcCompat="@drawable/btcancelar"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="617dp" />
+    <Button
+        android:id="@+id/btnCancelarVwCatRec"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/btnpadrao"
+        android:drawableLeft="@drawable/ok"
+        android:onClick="chamarVwNovoLancamento"
+        android:paddingLeft="20dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="CONFIRMAR"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
         android:id="@+id/titleCategoria"
         android:layout_width="234dp"
         android:layout_height="32dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="8dp"
         android:text="ESCOLHA A CATEGORIA"
         android:textAlignment="center"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="151dp" />
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="224dp">
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleCategoria">
 
         <ImageView
             android:id="@+id/btnCatBenef"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="end"
-            android:onClick="ChamarVwNovoLancamento"
-            app:srcCompat="@drawable/catreceitabeneficio"
+            app:srcCompat="@drawable/beneficio"
             tools:visibility="visible" />
 
         <ImageView
@@ -83,8 +119,7 @@
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="start"
-            android:onClick="ChamarVwNovoLancamento"
-            app:srcCompat="@drawable/catreceitasalario"
+            app:srcCompat="@drawable/salario"
             tools:visibility="visible" />
 
         <ImageView
@@ -92,8 +127,7 @@
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="bottom"
-            android:onClick="ChamarVwNovoLancamento"
-            app:srcCompat="@drawable/btnreceitaaplicacao"
+            app:srcCompat="@drawable/aplicacao"
             tools:visibility="visible" />
 
         <ImageView
@@ -101,8 +135,7 @@
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="bottom|right"
-            android:onClick="ChamarVwNovoLancamento"
-            app:srcCompat="@drawable/btnreceitaextra"
+            app:srcCompat="@drawable/extra"
             tools:visibility="visible" />
     </FrameLayout>
 
@@ -110,9 +143,17 @@
         android:id="@+id/linearLayout2"
         android:layout_width="200dp"
         android:layout_height="100dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="481dp">
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelarVwCatRec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
 
         <TextView
             android:id="@+id/capturaImagem"
@@ -120,7 +161,7 @@
             android:layout_height="29dp"
             android:layout_gravity="top|center"
             android:gravity="center_horizontal"
-            android:text="CAPTURAR IMAGEM"
+            android:text="FOTO COMPROVANTE"
             android:textAlignment="center"
             android:textColor="#FDFDFD"
             android:textSize="18sp"

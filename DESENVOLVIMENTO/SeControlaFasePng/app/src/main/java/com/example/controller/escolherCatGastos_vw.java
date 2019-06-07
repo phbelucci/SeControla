@@ -19,7 +19,7 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void ChamarVwNovoLancamento(View view){
+    public void chamarVwNovoLancamento(View view){
 
         Intent intent = new Intent(this, novoLancamento_vw.class);
         startActivity(intent);
