@@ -23,10 +23,12 @@ public class manterPerfil_vw extends AppCompatActivity {
 
         Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
-
     }
 
+    public void acessoCamera(View v){
+        //implementar metodo de acesso a camera ou chamar model para o acesso
 
+    }
 
 
 

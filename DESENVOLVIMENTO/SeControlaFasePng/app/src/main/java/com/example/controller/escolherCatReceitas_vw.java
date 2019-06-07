@@ -7,10 +7,12 @@ import android.view.View;
 
 public class escolherCatReceitas_vw extends AppCompatActivity {
 
+    manter_lancamentos_vw condicao = new manter_lancamentos_vw();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_cat_receitas_vw);
+
     }
     public void chamarTelaInicio(View view){
 
@@ -22,6 +24,9 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
     public void chamarVwNovoLancamento(View view){
         Intent intent = new Intent(this,novoLancamento_vw.class);
         startActivity(intent);
+        //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
+        condicao.ehGasto = false;
+
 
     }
 

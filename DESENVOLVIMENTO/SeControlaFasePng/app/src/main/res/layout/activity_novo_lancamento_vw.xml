@@ -108,13 +108,17 @@
             android:layout_width="239dp"
             android:layout_height="match_parent">
 
-            <ImageView
+            <Button
                 android:id="@+id/num1"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n1" />
+                android:background="@drawable/n1"
+                android:text="1"
+                android:textColor="#00FFFFFF"
+                app:srcCompat="@drawable/n1"
+                android:onClick="tratarTeclado"/>
 
             <ImageView
                 android:id="@+id/num2"
@@ -284,8 +288,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout7"
-        android:layout_width="90dp"
-        android:layout_height="314dp"
+        android:layout_width="85dp"
+        android:layout_height="281dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="140dp"
@@ -298,22 +302,24 @@
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
-        <ImageView
-            android:id="@+id/imageView12"
+        <Button
+            android:id="@+id/btnCartaoVwLancamento"
             android:layout_width="90dp"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/cartao" />
+            android:layout_height="90dp"
+            android:background="@drawable/cartao" />
 
-        <ImageView
-            android:id="@+id/imageView13"
+        <Button
+            android:id="@+id/btnDinheiroVwLancamento"
             android:layout_width="90dp"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
+            android:background="@drawable/dinheiro"
             app:srcCompat="@drawable/dinheiro" />
 
-        <ImageView
-            android:id="@+id/imageView14"
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btnTransVwLancamento"
             android:layout_width="90dp"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
+            android:background="@drawable/transfer"
             app:srcCompat="@drawable/transfer" />
     </LinearLayout>
 
