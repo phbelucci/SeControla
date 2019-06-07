@@ -97,8 +97,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="346dp"
-        android:layout_height="242dp"
+        android:layout_width="306dp"
+        android:layout_height="237dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
