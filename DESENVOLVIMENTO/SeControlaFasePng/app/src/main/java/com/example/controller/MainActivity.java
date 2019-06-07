@@ -5,12 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.conexao.BDConexaoMySQL;
+import com.mysql.jdbc.Connection;
+
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /* Conexao com banco:
+         * 1. Instancia a classe banco
+         * 2. Chama metodo execute passando parametros Comando e string SQL
+         */
+        BDConexaoMySQL bd = new BDConexaoMySQL();
+        System.out.println(bd.execute("SELECT", "select * from table"));
+
         setContentView(R.layout.activity_main);
 
 
