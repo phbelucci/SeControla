@@ -53,18 +53,20 @@ public class cadastro_vw extends AppCompatActivity {
             return;
         }
         if(senha.equals(senhaRepete)){
-            chamarTelaLogin(v);
+            //if(cadastro.cadastrar(nomeUser, senhaRepete)){
+                //fazer ação da tela depois
+
+                //abrir login
+                chamarTelaLogin(v);
+            //}else {
+                //permanece na cadastro
+                //mostrar na tela cadastro.getMensagem();
+
+            //}
         }
 
 
-        if(cadastro.cadastrar(nomeUser, senha, senhaRepete)){
-            //fazer ação da tela depois
-            //abrir login
-        }else {
-            //permanece na cadastro
-            //mostrar na tela cadastro.getMensagem();
 
-        }
     }
 
 }
