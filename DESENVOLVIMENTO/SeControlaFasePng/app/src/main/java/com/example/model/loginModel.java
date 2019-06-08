@@ -14,24 +14,29 @@ public class loginModel {
     // só decide quem vai fazer as coisas
 
 
-    /*public Optional<Usuario> logar(String nome, String senha){
+    public Usuario logar(String nome, String senha){
+
+        Usuario usuario = new Usuario(nome, senha);
 
         try {
-
-            Usuario usuario = new Usuario(nome, senha);
             UsuarioDAO dao = new UsuarioDAO();
-            dao.buscar(usuario);
+            usuario = dao.buscarPorNome(nome);
 
-            return usuario;
+            if(usuario.verificaSenha(senha)) {
 
+            }else{
+                mensagem="Senha incorreta";
+            }
         }catch (Exception e){
 
             //fazer tratamento da mensagem
             //mensagem =
             mensagem=e.getMessage();
         }
+
+        return usuario;
     }
-*/
+
     public String getMensagem(){
         return mensagem;
     }

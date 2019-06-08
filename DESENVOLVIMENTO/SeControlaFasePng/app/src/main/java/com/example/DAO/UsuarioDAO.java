@@ -4,16 +4,13 @@ import com.example.entity.Usuario;
 
 public class UsuarioDAO {
 
-    //  COD_US int primary key,
-    //	AVATAR_US longblob,
-    //	COD_NIVEL_ACESSO int not null,
-    //	COD_GRUPO int default null,
-    //
-    //	constraint foreign key FK_US_LOGIN(COD_US)
-    //	references LOGIN(COD_US) on delete cascade,
+    String consultaCodUs = ("SELECT COD_US FROM usuario WHERE nome_us=");
+    String consultaNomeUs = ("SELECT NOME_US FROM usuario WHERE nome_us=");
+    String consultaSenhaUs = ("SELECT SENHA_US FROM usuario WHERE nome_us=");
+    String consultaAvatar = ("SELECT AVATAR_US FROM usuario WHERE nome_us=");
+    String consultaCodNivelAcesso = ("SELECT COD_NIVEL_ACESSO FROM usuario WHERE nome_us=");
+    String consultaCodGrupo = ("SELECT COD_GRUPO FROM usuario WHERE nome_us=");
 
-    //	constraint foreign key FK_GRUPO(COD_GRUPO)
-    //	references GRUPO_FAMILIAR(COD_GRUPO) on delete cascade
 
     public void salvar(Usuario usuario){
         //INSERT NO BANCO
@@ -25,9 +22,19 @@ public class UsuarioDAO {
 
     }
 
-    public Usuario buscar(Usuario usuario){
-        String nome =  usuario.getNomeUs();
-        // SELECT * FROM
+    public Usuario buscarPorNome(String nome){
+
+        //BUSCAR BANCO
+
+        Usuario usuario = new Usuario(consultaCodUs + nome + ";", consultaCodNivelAcesso);
+        return usuario;
+    }
+
+    public Usuario buscarPorId(Integer codUs){
+
+        //BUSCAR BANCO
+        //Usar + codUs.toString() + ";"
+        Usuario usuario = new Usuario(consultaCodUs, consultaCodNivelAcesso);
 
         return usuario;
     }

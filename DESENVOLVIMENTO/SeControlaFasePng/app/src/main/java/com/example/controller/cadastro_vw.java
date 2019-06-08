@@ -61,7 +61,7 @@ public class cadastro_vw extends AppCompatActivity {
             if(cadastro.cadastrar(nomeUser, senhaRepete)){
                 //fazer ação da tela depois
 
-                //abrir login
+                //abrir inicio
                 chamarTelaInicio(v);
             }else {
                 //permanece na cadastro

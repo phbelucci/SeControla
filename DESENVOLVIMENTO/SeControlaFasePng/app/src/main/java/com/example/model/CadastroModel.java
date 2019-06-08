@@ -1,6 +1,8 @@
 package com.example.model;
 
+import com.example.DAO.LoginDAO;
 import com.example.DAO.UsuarioDAO;
+import com.example.entity.Login;
 import com.example.entity.Usuario;
 
 public class CadastroModel {
@@ -9,20 +11,21 @@ public class CadastroModel {
     // só decide quem vai fazer as coisas
     private String nome;
     private String senha;
+    private Usuario usuario;
 
     public boolean cadastrar(String nome, String senha){
 
 
         try {
-            Usuario usuario = new Usuario(nome, senha);
+            usuario = new Usuario(nome,senha);
             UsuarioDAO dao = new UsuarioDAO();
             dao.salvar(usuario);
-            dao.buscar(usuario);
-            mensagem= "Usuário Cdastrado.";
+            dao.buscarPorNome(nome);
+
+            mensagem= "Usuário Cadastrado.";
             System.out.println(usuario);
             return true;
         }catch (Exception e){
-
             //fazer tratamento da mensagem
             //mensagem =
             mensagem=e.getMessage();
