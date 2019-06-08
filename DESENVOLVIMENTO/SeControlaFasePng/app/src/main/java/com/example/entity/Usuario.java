@@ -7,12 +7,13 @@ public class Usuario{
     private Integer codUs;
     private String nomeUs;
     private Image avatarUs;
-    private Login login;
+    //private Login login;
     private Integer codGrupo;
+    private String senhaUs;
 
     //com avatar
     public Usuario(Integer codUs, String nomeUs, Integer codGrupo, String usuario, Image avatarUs,String senha) {
-        login = new Login(codUs, usuario, senha);
+        //login = new Login(codUs, usuario, senha);
 
         this.codUs = codUs;
         this.nomeUs = nomeUs;
@@ -23,12 +24,12 @@ public class Usuario{
     public Usuario(String nomeUs, String senha) {
         //login = new Login(codUs, usuario, senha);
         this.nomeUs = nomeUs;
-        login.setSenha(senha);
+        //login.setSenha(senha);
     }
 
     //sem avatar
     public Usuario(Integer codUs, String nomeUs, Integer codGrupo, String usuario, String senha) {
-        login = new Login(codUs, usuario, senha);
+        //login = new Login(codUs, usuario, senha);
 
         this.codUs = codUs;
         this.nomeUs = nomeUs;
@@ -47,9 +48,9 @@ public class Usuario{
         return avatarUs;
     }
 
-    public String getUsuario(){
+    /*public String getUsuario(){
         return login.getUsuario();
-    }
+    }*/
 
     public Integer getCodGrupo() {
         return codGrupo;
@@ -59,13 +60,13 @@ public class Usuario{
         this.codGrupo = codGrupo;
     }
 
-    public void setUsuario(String usuario){
+    /*public void setUsuario(String usuario){
         login.setUsuario(usuario);
-    }
+    }*/
 
-    public void setSenha(String senha){
+    /*public void setSenha(String senha){
         login.setSenha(senha);
-    }
+    }*/
 
     public void setNomeUs(String nomeUs) {
         this.nomeUs = nomeUs;
@@ -73,6 +74,13 @@ public class Usuario{
 
     public void setAvatarUs(Image avatarUs) {
         this.avatarUs = avatarUs;
+    }
+
+    public boolean verificaSenha(String senha){
+        if (this.senhaUs.equals(senha)){
+            return true;
+        }
+        return false;
     }
 
 }
