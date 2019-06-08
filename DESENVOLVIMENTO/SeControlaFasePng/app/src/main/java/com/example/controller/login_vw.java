@@ -11,10 +11,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.CharArrayWriter;
+import java.nio.charset.Charset;
+
 public class login_vw extends AppCompatActivity {
 
-    String senha;
-    String nome;
+    private String nomeUser;
+    private String senha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,15 +26,19 @@ public class login_vw extends AppCompatActivity {
     }
 
     public void chamarTelaInicio(View view){
-        TextInputEditText campoNome = findViewById(R.id.campoEntraNomeVwLogin);
-        TextInputEditText campoSenha = findViewById(R.id.campoEntraSenhaVwLogin);
-        TextView exibeMsg = findViewById(R.id.mensagemUsVwLogin);
-        while(campoSenha.getText().equals("")){
-            exibeMsg.setText(R.string.erroCamposVazios);
-            campoNome.setBackgroundColor(R.style.AppTheme);
-            campoSenha.setBackgroundColor(R.style.AppTheme);
 
+
+        EditText pegaNome = findViewById(R.id.inputNomeVwLogin);
+        nomeUser = pegaNome.getText().toString();
+        EditText pegaSenha = findViewById(R.id.inputSenhaVwLogin);
+        senha = pegaSenha.getText().toString();
+        while (nomeUser.isEmpty()||senha.isEmpty()){
+            TextView mensagemErro = findViewById(R.id.mensagemUsVwLogin);
+            mensagemErro.setText(R.string.erroCamposVazios);
+            return;
         }
+
+
         Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
 
