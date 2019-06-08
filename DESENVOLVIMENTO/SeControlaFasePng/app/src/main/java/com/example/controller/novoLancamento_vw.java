@@ -3,11 +3,14 @@ package com.example.controller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.style.BulletSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -32,11 +35,19 @@ public class novoLancamento_vw extends AppCompatActivity {
     TextView digito5;
     TextView digito6;
     TextView digito7;
+    TextView mostraValorFinal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_lancamento_vw);
+
+        this.mostraValorFinal = (TextView) findViewById(R.id.mostraValorFinalVwNovoLancamento);
+        Bundle pegaDados  = getIntent().getExtras();
+        novoLancamento_vw novo = new novoLancamento_vw();
+        mostraValorFinal.setText(pegaDados.getCharSequence("categoriaEscolhida"));
+
     }
 
     public void chamarTelaManterPerfil(View view){
@@ -67,6 +78,8 @@ public class novoLancamento_vw extends AppCompatActivity {
         TextView setTotal = findViewById(R.id.mostraValorFinalVwNovoLancamento);
         setTotal.setText(num);
     }
+
+
 
 
 }

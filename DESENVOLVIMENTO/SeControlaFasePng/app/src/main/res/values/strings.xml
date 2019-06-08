@@ -6,6 +6,7 @@
     <string name="erroSenhaDifSenhaRepete">As senhas informadas não são iguais!</string>
     <string name="usCadastroSucesso">Cadastrado com Sucesso!</string>
     <string name="erroSenhaNula">O campo Senha e Repete Senha não podem ser vazios!</string>
+    <string name="erroCamposVazios">Os campos em destaque não podem ser vazios!</string>
     <string name="imgSucesso">Imagem Salva!</string>
     <string name="erroImg">Erro ao Salvar Imagem!</string>
     <string name="erroSalvarUs">Erro ao Salvar Cadastro!</string>

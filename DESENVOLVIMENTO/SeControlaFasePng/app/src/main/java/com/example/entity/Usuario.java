@@ -21,7 +21,7 @@ public class Usuario{
     }
 
     public Usuario(String nomeUs, String senha) {
-        login = new Login(codUs, usuario, senha);
+        //login = new Login(codUs, usuario, senha);
         this.nomeUs = nomeUs;
         login.setSenha(senha);
     }

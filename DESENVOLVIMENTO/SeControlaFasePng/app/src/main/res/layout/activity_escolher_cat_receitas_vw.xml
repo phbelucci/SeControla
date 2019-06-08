@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titleCategoria">
 
         <ImageView
-            android:id="@+id/btnCatBenef"
+            android:id="@+id/btnCatDiversao"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="end"
@@ -115,7 +115,7 @@
             tools:visibility="visible" />
 
         <ImageView
-            android:id="@+id/btnCatSalario"
+            android:id="@+id/btnCatTaxas"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="start"
@@ -123,7 +123,7 @@
             tools:visibility="visible" />
 
         <ImageView
-            android:id="@+id/btnCatAplic"
+            android:id="@+id/btnCatCarro"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="bottom"
@@ -131,7 +131,7 @@
             tools:visibility="visible" />
 
         <ImageView
-            android:id="@+id/btnCatExtra"
+            android:id="@+id/btnCatComida"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="bottom|right"

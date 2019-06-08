@@ -2,7 +2,7 @@ package com.example.entity;
 
 public class Login{
     
-    private final Integer codUs;
+    private Integer codUs;
     private String usuario;
     private String senha;
 

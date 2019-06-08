@@ -113,42 +113,52 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|right"
-            app:srcCompat="@drawable/outros" />
+            app:srcCompat="@drawable/outros"
+            android:onClick="destacarActivityOutros"/>
 
         <ImageView
-            android:id="@+id/btnCatAplic"
+            android:id="@+id/btnCatCarro"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|start|right"
-            app:srcCompat="@drawable/carro" />
+            app:srcCompat="@drawable/carro"
+            />
 
         <ImageView
-            android:id="@+id/btnCatSalario"
+            android:id="@+id/btnCatTaxas"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="start|top"
-            app:srcCompat="@drawable/taxas" />
+            app:srcCompat="@drawable/taxas"
+            android:onClick="destacarActivityTaxas"
+            />
 
         <ImageView
-            android:id="@+id/btnCatMoradia"
+            android:id="@+id/btnCatCasa"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|top"
-            app:srcCompat="@drawable/casa" />
+            app:srcCompat="@drawable/casa"
+            android:onClick="destacarActivityCasa"
+            />
 
         <ImageView
-            android:id="@+id/gastoshigi"
+            android:id="@+id/btnCatHigi"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|center"
-            app:srcCompat="@drawable/higiene" />
+            app:srcCompat="@drawable/higiene"
+            android:onClick="destacarActivityHigiene"
+            />
 
         <ImageView
-            android:id="@+id/btnCatBenef"
+            android:id="@+id/btnCatDiversao"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|start"
-            app:srcCompat="@drawable/diversao" />
+            app:srcCompat="@drawable/diversao"
+            android:onClick="destacarActivityDiversao"
+            />
 
         <ImageView
             android:id="@+id/btnCatLivros"
@@ -156,21 +166,26 @@
             android:layout_height="80dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/livros" />
+            app:srcCompat="@drawable/livros"
+            android:onClick="destacarActivityLivros"/>
 
         <ImageView
             android:id="@+id/btnCatSaude"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|right"
-            app:srcCompat="@drawable/saude" />
+            app:srcCompat="@drawable/saude"
+            android:onClick="destacarActivitySaude"
+            />
 
         <ImageView
-            android:id="@+id/btnCatExtra"
+            android:id="@+id/btnCatComida"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="right|top"
-            app:srcCompat="@drawable/comida" />
+            app:srcCompat="@drawable/comida"
+            android:onClick="destacarActivityComida"
+           />
     </FrameLayout>
 
     <FrameLayout
