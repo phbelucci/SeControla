@@ -7,9 +7,6 @@ import android.view.View;
 
 public class escolherCatGastos_vw extends AppCompatActivity {
 
-    manter_lancamentos_vw condicao = new manter_lancamentos_vw();
-
-    boolean ehGasto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +24,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         Intent intent = new Intent(this, novoLancamento_vw.class);
         startActivity(intent);
         //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
-        condicao.ehGasto = true;
 
     }
 
@@ -35,6 +31,12 @@ public class escolherCatGastos_vw extends AppCompatActivity {
 
         Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
         startActivity(intent);
+
+    }
+
+    public void destaqueCatEscolhida(View v){
+        Bundle idCategoria = new Bundle();
+
 
     }
 

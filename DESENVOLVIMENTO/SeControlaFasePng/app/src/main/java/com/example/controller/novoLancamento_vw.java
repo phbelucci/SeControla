@@ -38,6 +38,7 @@ public class novoLancamento_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_lancamento_vw);
     }
+
     public void chamarTelaManterPerfil(View view){
 
         Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);

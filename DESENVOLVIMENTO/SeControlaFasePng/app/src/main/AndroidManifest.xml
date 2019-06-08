@@ -26,7 +26,7 @@
         <activity android:name=".listarLancamentos_vw" />
         <activity android:name=".novoLancamento_vw" />
         <activity android:name=".inicio_vw" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".main_vw">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

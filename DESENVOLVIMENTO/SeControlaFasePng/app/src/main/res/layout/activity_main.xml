@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper_roxo_mobile"
-    tools:context=".MainActivity">
+    tools:context=".main_vw">
 
     <ImageView
         android:id="@+id/logoMain"

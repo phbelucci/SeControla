@@ -7,7 +7,8 @@ public class CadastroModel {
 
     String mensagem="";
     // só decide quem vai fazer as coisas
-
+    private String nome;
+    private String senha;
 
     public boolean cadastrar(String nome, String senha){
 
@@ -16,7 +17,9 @@ public class CadastroModel {
             Usuario usuario = new Usuario(nome, senha);
             UsuarioDAO dao = new UsuarioDAO();
             dao.salvar(usuario);
+            dao.buscar(usuario);
             mensagem= "Usuário Cdastrado.";
+            System.out.println(usuario);
             return true;
         }catch (Exception e){
 

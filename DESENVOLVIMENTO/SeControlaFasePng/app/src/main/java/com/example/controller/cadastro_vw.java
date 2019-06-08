@@ -18,7 +18,6 @@ public class cadastro_vw extends AppCompatActivity {
     private String nomeUser;
     private String senha;
     private String senhaRepete;
-    private EditText apagarTexto;
     CadastroModel cadastro = new CadastroModel();
 
 
@@ -35,6 +34,12 @@ public class cadastro_vw extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void chamarTelaInicio(View view){
+
+        Intent intent = new Intent(this, inicio_vw.class);
+        startActivity(intent);
+
+    }
 
     //Função será responsável por cadastrar um novo usuário no banco
     public void cadastrarNovoUsuario(View v){
@@ -53,16 +58,18 @@ public class cadastro_vw extends AppCompatActivity {
             return;
         }
         if(senha.equals(senhaRepete)){
-            //if(cadastro.cadastrar(nomeUser, senhaRepete)){
+            if(cadastro.cadastrar(nomeUser, senhaRepete)){
                 //fazer ação da tela depois
 
                 //abrir login
-                chamarTelaLogin(v);
-            //}else {
+                chamarTelaInicio(v);
+            }else {
                 //permanece na cadastro
                 //mostrar na tela cadastro.getMensagem();
+                TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
+                mensagemErro.setText(cadastro.getMensagem());
 
-            //}
+            }
         }
 
 

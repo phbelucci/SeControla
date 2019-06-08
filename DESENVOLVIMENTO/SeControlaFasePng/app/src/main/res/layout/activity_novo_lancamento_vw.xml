@@ -315,7 +315,7 @@
             android:background="@drawable/dinheiro"
             app:srcCompat="@drawable/dinheiro" />
 
-        <android.support.design.button.MaterialButton
+        <Button
             android:id="@+id/btnTransVwLancamento"
             android:layout_width="90dp"
             android:layout_height="90dp"

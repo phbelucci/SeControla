@@ -14,7 +14,7 @@ public class loginModel {
     // só decide quem vai fazer as coisas
 
 
-    public Optional<Usuario> logar(String nome, String senha){
+    /*public Optional<Usuario> logar(String nome, String senha){
 
         try {
 
@@ -31,7 +31,7 @@ public class loginModel {
             mensagem=e.getMessage();
         }
     }
-
+*/
     public String getMensagem(){
         return mensagem;
     }
