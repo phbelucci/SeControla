@@ -22,11 +22,11 @@ public class loginModel {
             UsuarioDAO dao = new UsuarioDAO();
             usuario = dao.buscarPorNome(nome);
 
-            if(usuario.verificaSenha(senha)) {
+            /*if(usuario.verificaSenha(senha)) {
 
             }else{
                 mensagem="Senha incorreta";
-            }
+            }*/
         }catch (Exception e){
 
             //fazer tratamento da mensagem

@@ -1,6 +1,9 @@
 package com.example.DAO;
 
 import com.example.entity.Usuario;
+import com.example.service.HTTPService;
+
+import java.util.concurrent.ExecutionException;
 
 public class UsuarioDAO {
 
@@ -24,10 +27,20 @@ public class UsuarioDAO {
 
     public Usuario buscarPorNome(String nome){
 
-        //BUSCAR BANCO
+        HTTPService service = new HTTPService(nome);
 
-        Usuario usuario = new Usuario(consultaCodUs + nome + ";", consultaCodNivelAcesso);
-        return usuario;
+        try {
+
+            Usuario usuarioRetornado = service.execute().get();
+            return usuarioRetornado;
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     public Usuario buscarPorId(Integer codUs){
