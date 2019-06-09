@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="se_controla:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/se_controla</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="se_controla/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="se_controla" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
