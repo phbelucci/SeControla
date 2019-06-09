@@ -21,7 +21,6 @@ public class cadastro_vw extends AppCompatActivity {
     private String senhaRepete;
     CadastroModel cadastro = new CadastroModel();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
