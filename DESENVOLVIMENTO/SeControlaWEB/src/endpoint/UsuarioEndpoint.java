@@ -3,31 +3,23 @@ package endpoint;
 
 import com.google.gson.Gson;
 import entity.Usuario;
-import jdk.nashorn.internal.objects.annotations.Setter;
-
 import javax.ws.rs.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Path("usuario/")
 public class UsuarioEndpoint {
 
 
-
-
     @GET
     @Path("get/{nome}/{senha}")
-    @Produces("text/plain")
+    @Produces("applicattion/json")
     public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
 
-        /*
-        List<UsuarioTO> lista = new ArrayList<UsuarioTO>();
-
-        UsuarioTO u = new UsuarioTO(nome, senha);
+        Usuario u = new Usuario(nome, senha);
 
         Gson g = new Gson();
-        */
-        return nome + " " + senha;
+
+        return g.toJson(u);
     }
 
     @PUT
