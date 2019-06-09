@@ -30,6 +30,13 @@ public class manterPerfil_vw extends AppCompatActivity {
 
     }
 
+    public void chamarTelaCadastro(View view){
+
+        Intent intent = new Intent( this, cadastro_vw.class);
+        startActivity(intent);
+
+    }
+
 
 
 }

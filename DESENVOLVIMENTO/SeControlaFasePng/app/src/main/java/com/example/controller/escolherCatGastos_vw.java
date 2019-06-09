@@ -11,17 +11,13 @@ import static com.example.controller.R.drawable.carrodestaque;
 public class escolherCatGastos_vw extends AppCompatActivity {
 
 
-
-    private boolean estaAtivo;
+    private int idCat;
+    private String nomeCat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_cat_gastos_vw);
     }
-
-
-
-
 
 
     public void chamarTelaInicio(View view){
@@ -33,7 +29,7 @@ public class escolherCatGastos_vw extends AppCompatActivity {
 
         Bundle mandarCategoria = new Bundle();
 
-        ImageView activitySelecionada = findViewById(R.id.btnCatCarro);
+        ImageView activitySelecionada = findViewById(R.id.btnAplica);
         mandarCategoria.putCharSequence("categoriaEscolhida",activitySelecionada.getContentDescription());
 
         Intent intent = new Intent(this, novoLancamento_vw.class);
@@ -49,54 +45,142 @@ public class escolherCatGastos_vw extends AppCompatActivity {
 
     }
 
+    /*Metodos para destaque dos botões VW escolher_cat_gastos
+    taxas   - 1
+    casa    - 2
+    comida  - 3
+    carro   - 4
+    livros  - 5
+    saude -  6
+    diversao - 7
+    higiene - 8
+    outros - 9
+   */
+    public void aplicarDestaque(int i, String n){
+        idCat = i;
+        nomeCat = n;
+        ImageView activitySelecionada;
+        ImageView taxas = findViewById(R.id.btnSalario);
+        taxas.setImageResource(R.drawable.taxas);
+        ImageView casa = findViewById(R.id.btnCatCasa);
+        casa.setImageResource(R.drawable.casa);
+        ImageView comida = findViewById(R.id.btnExtra);
+        comida.setImageResource(R.drawable.comida);
+        ImageView carro = findViewById(R.id.btnAplica);
+        carro.setImageResource(R.drawable.carro);
+        ImageView livros = findViewById(R.id.btnCatLivros);
+        livros.setImageResource(R.drawable.livros);
+        ImageView saude = findViewById(R.id.btnCatSaude);
+        saude.setImageResource(R.drawable.saude);
+        ImageView diversao = findViewById(R.id.btnBeneficio);
+        diversao.setImageResource(R.drawable.diversao);
+        ImageView higiene = findViewById(R.id.btnCatHigi);
+        higiene.setImageResource(R.drawable.higiene);
+        ImageView outros = findViewById(R.id.btnCatOutros);
+        outros.setImageResource(R.drawable.outros);
 
+        switch (idCat){
+            case 1:
+                activitySelecionada = findViewById(R.id.btnSalario);
+                activitySelecionada.setImageResource(R.drawable.taxasdestaque);
+                
+                break;
+            case 2:
+                activitySelecionada = findViewById(R.id.btnCatCasa);
+                activitySelecionada.setImageResource(R.drawable.casadestaque);
+                
+                break;
+            case 3:
+                activitySelecionada = findViewById(R.id.btnExtra);
+                activitySelecionada.setImageResource(R.drawable.comidadestaque);
+                
+                break;
+            case 4:
+                activitySelecionada = findViewById(R.id.btnAplica);
+                activitySelecionada.setImageResource(carrodestaque);
+                
+                break;
+            case 5:
+                activitySelecionada = findViewById(R.id.btnCatLivros);
+                activitySelecionada.setImageResource(R.drawable.livrosdestaque);
+                
+                break;
+            case 6:
+                activitySelecionada = findViewById(R.id.btnCatSaude);
+                activitySelecionada.setImageResource(R.drawable.saudedestaque);
+                
+                break;
+            case 7:
+                activitySelecionada = findViewById(R.id.btnBeneficio);
+                activitySelecionada.setImageResource(R.drawable.diversaodestaque);
+                
+                break;
+            case 8:
+                activitySelecionada = findViewById(R.id.btnCatHigi);
+                activitySelecionada.setImageResource(R.drawable.higienedestaque);
+                
+                break;
+            case 9:
+                activitySelecionada = findViewById(R.id.btnCatOutros);
+                activitySelecionada.setImageResource(R.drawable.outrosdestaque);
+                
+                break;
 
-    //Metodos para destaque dos botões VW escolher_cat_gastos
-    public void destacarActivity(View v){
-        if(!estaAtivo){
-            ImageView activitySelecionada  = findViewById(R.id.btnCatCarro);
-            activitySelecionada.setImageResource(carrodestaque);
-            estaAtivo = true;
         }
+        idCat = 0;
+
+    }
+
+    public void destacarActivityTaxas(View v){
+        idCat = 1;
+        nomeCat = "Taxas";
+        aplicarDestaque(idCat,nomeCat);
     }
     public void destacarActivityCasa(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatCasa);
-        activitySelecionada.setImageResource(R.drawable.casadestaque);
+        idCat = 2;
+        nomeCat = "Casa";
+        aplicarDestaque(idCat,nomeCat);
+    }
 
-    }
-    public void destacarActivitySaude(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatSaude);
-        activitySelecionada.setImageResource(R.drawable.saudedestaque);
-
-    }
-    public void destacarActivityHigiene(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatHigi);
-        activitySelecionada.setImageResource(R.drawable.higienedestaque);
-    }
-    public void destacarActivityOutros(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatOutros);
-        activitySelecionada.setImageResource(R.drawable.outrosdestaque);
-
-    }
     public void destacarActivityComida(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatComida);
-        activitySelecionada.setImageResource(R.drawable.comidadestaque);
+        idCat = 3;
+        nomeCat = "Comida";
+        aplicarDestaque(idCat,nomeCat);
+    }
+    public void destacarActivityCarro(View v){
+        idCat = 4;
+        nomeCat = "Carro";
+        aplicarDestaque(idCat,nomeCat);
 
     }
     public void destacarActivityLivros(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatLivros);
-        activitySelecionada.setImageResource(R.drawable.livrosdestaque);
+        idCat = 5;
+        nomeCat = "Livros";
+        aplicarDestaque(idCat,nomeCat);
+    }
+
+    public void destacarActivitySaude(View v){
+        idCat = 6;
+        nomeCat = "Saúde";
+        aplicarDestaque(idCat,nomeCat);
+
     }
     public void destacarActivityDiversao(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatDiversao);
-        activitySelecionada.setImageResource(R.drawable.casadestaque);
+        idCat = 7;
+        nomeCat = "Diversão";
+        aplicarDestaque(idCat,nomeCat);
     }
-    public void destacarActivityTaxas(View v){
-        ImageView activitySelecionada = findViewById(R.id.btnCatTaxas);
-        activitySelecionada.setImageResource(R.drawable.taxasdestaque);
+    public void destacarActivityHigiene(View v){
+        idCat = 8;
+        nomeCat = "Higiene";
+        aplicarDestaque(idCat,nomeCat);
     }
+    public void destacarActivityOutros(View v){
+        idCat = 9;
+        nomeCat = "Outros";
+        aplicarDestaque(idCat,nomeCat);
 
-
+    }
 
 
 }

@@ -128,9 +128,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@drawable/btnpadrao"
-            android:onClick="chamarTelaInicio"
+            android:onClick="chamarTelaCadastro"
             android:shadowRadius="5"
-            android:text="ALTERAR SENHA"
+            android:text="INCLUIR DEPENDENTE"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
