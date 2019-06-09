@@ -3,7 +3,6 @@ package com.example.service;
 import android.os.AsyncTask;
 
 import com.example.entity.Usuario;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -11,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HTTPService extends AsyncTask<Void, Void, Usuario> {
+public class HTTPService extends AsyncTask<Void, Void, String> {
 
     private String nome;
 
@@ -20,27 +19,28 @@ public class HTTPService extends AsyncTask<Void, Void, Usuario> {
     }
 
     @Override
-    protected Usuario doInBackground(Void ... voids){
+    protected String doInBackground(Void ... voids){
 
-        StringBuilder retorno = new StringBuilder();
+        StringBuilder resposta = new StringBuilder();
 
         try {
-            //inserir a URL abaixo:
-            URL url = new URL("http://192.168.1.16:8080/SeControla_WS_REST/webresources/secontrola");
+            URL url = new URL("http://localhost:8080/se_controla/usuario/get/adila/123");
+
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept", "application/text");
             connection.setConnectTimeout(5000);
+
             connection.connect();
 
             Scanner scanner = new Scanner(url.openStream());
 
             while (scanner.hasNext()){
-                retorno.append(scanner.next());
+                resposta.append(scanner.next());
             }
 
-            System.out.println(retorno);
+            System.out.println(resposta);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -48,6 +48,11 @@ public class HTTPService extends AsyncTask<Void, Void, Usuario> {
             e.printStackTrace();
         }
 
-        return new Gson().fromJson(retorno.toString(), Usuario.class);
+
+        //return new Gson().fromJson(resposta.toString(), Usuario.class);
+
+
+        return resposta.toString();
+
     }
 }

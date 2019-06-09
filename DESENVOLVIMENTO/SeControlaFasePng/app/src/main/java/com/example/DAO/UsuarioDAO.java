@@ -25,13 +25,13 @@ public class UsuarioDAO {
 
     }
 
-    public Usuario buscarPorNome(String nome){
+    public String buscarPorNome(String nome){
 
         HTTPService service = new HTTPService(nome);
 
         try {
 
-            Usuario usuarioRetornado = service.execute().get();
+            String usuarioRetornado = service.execute().get();
             return usuarioRetornado;
 
         } catch (ExecutionException e) {

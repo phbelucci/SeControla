@@ -14,9 +14,9 @@ public class loginModel {
     // só decide quem vai fazer as coisas
 
 
-    public Usuario logar(String nome, String senha){
+    public String logar(String nome, String senha){
 
-        Usuario usuario = new Usuario(nome, senha);
+        String usuario = "";
 
         try {
             UsuarioDAO dao = new UsuarioDAO();
