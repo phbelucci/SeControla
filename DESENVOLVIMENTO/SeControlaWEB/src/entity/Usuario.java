@@ -38,8 +38,6 @@ public class Usuario {
     }
 
 
-
-
     public boolean verificaSenha(String senha){
         if (this.senhaUs.equals(senha)){
             return true;
@@ -47,5 +45,23 @@ public class Usuario {
         return false;
     }
 
+    public Integer getCodUs() {
+        return codUs;
+    }
 
+    public String getNomeUs() {
+        return nomeUs;
+    }
+
+    public String getSenhaUs() {
+        return senhaUs;
+    }
+
+    public Integer getCodNivelAcesso() {
+        return codNivelAcesso;
+    }
+
+    public Integer getCodGrupo() {
+        return codGrupo;
+    }
 }

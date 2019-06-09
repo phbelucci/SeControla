@@ -1,7 +1,8 @@
+import endpoint.ConectadoEndPoint;
 import endpoint.HelloWorldEndPoint;
 import endpoint.UsuarioEndpoint;
 
-import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +15,11 @@ public class App extends Application{
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        h.add( HelloWorldEndPoint.class );
+        h.add(ConectadoEndPoint.class);
+        h.add(HelloWorldEndPoint.class );
         h.add(UsuarioEndpoint.class);
         return h;
     }
+
 }
+

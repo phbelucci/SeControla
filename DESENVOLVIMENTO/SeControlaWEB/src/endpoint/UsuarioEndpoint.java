@@ -5,20 +5,20 @@ import com.google.gson.Gson;
 import entity.Usuario;
 import jdk.nashorn.internal.objects.annotations.Setter;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Path("usuario/")
 public class UsuarioEndpoint {
 
+
+
+
     @GET
     @Path("get/{nome}/{senha}")
-    @Produces("application/json")
-    public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha){
+    @Produces("text/plain")
+    public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
 
         /*
         List<UsuarioTO> lista = new ArrayList<UsuarioTO>();
@@ -30,7 +30,15 @@ public class UsuarioEndpoint {
         return nome + " " + senha;
     }
 
+    @PUT
+    @Path("set/novo/{nome}/{senha}")
+    @Consumes("application/text")
+    public void setUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
 
+        Usuario u = new Usuario(nome, senha);
 
+        System.out.println(u.getNomeUs() +" "+ u.getSenhaUs());
+
+    }
 
 }
