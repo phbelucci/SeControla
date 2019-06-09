@@ -26,13 +26,20 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     }
     public void chamarVwNovoLancamento(View view){
 
+        //Inicia a criação do pacote
         Bundle mandarCategoria = new Bundle();
 
+        //indica qual o tipo de objeto
         ImageView activitySelecionada = findViewById(R.id.btnAplica);
+        //indica a chave para o que deseja empacotar e o atributo do objeto que deseja empacotar (bundle)
+        //1º atributo dos parenteses chave
+        //2º atributo dos parenteses atributo empacotado
         mandarCategoria.putCharSequence("categoriaEscolhida",activitySelecionada.getContentDescription());
-
+        //cria uma Intent para chamar a nova Activity(tela)
         Intent intent = new Intent(this, novoLancamento_vw.class);
+        //carrega o bunble na Intent
         intent.putExtras(mandarCategoria);
+        //Starta a nova tela
         startActivity(intent);
         //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
     }

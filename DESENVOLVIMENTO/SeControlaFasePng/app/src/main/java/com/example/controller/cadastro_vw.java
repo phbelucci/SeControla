@@ -61,15 +61,11 @@ public class cadastro_vw extends AppCompatActivity {
         while (nomeUser.isEmpty()||senha.isEmpty()){
             TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
             mensagemErro.setText(R.string.erroCamposVazios);
-            pegaNome.setBackgroundColor(Color.parseColor("#BFDEF702"));
-            pegaSenha.setBackgroundColor(Color.parseColor("#BFDEF702"));
-            pegaRepeteSenha.setBackgroundColor(Color.parseColor("#BFDEF702"));
+            pegaNome.setBackgroundResource(R.drawable.bordaserro);
+            pegaSenha.setBackgroundResource(R.drawable.bordaserro);
+            pegaRepeteSenha.setBackgroundResource(R.drawable.bordaserro);
             return;
         }
-
-
-
-
 
         if(senha.equals(senhaRepete)){
             if(cadastro.cadastrar(nomeUser, senhaRepete)){

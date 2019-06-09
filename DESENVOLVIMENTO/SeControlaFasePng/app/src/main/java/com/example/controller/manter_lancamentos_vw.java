@@ -34,5 +34,9 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void chamarTelaCategoriaReceitas(View view){
+        startActivity(new Intent(this, escolherCatReceitas_vw.class));
+
+    }
 
 }

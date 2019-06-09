@@ -24,7 +24,6 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:onClick="chamarTelaInicio"
             app:srcCompat="@drawable/logo" />
 
         <ImageView
@@ -38,11 +37,11 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="20dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="left|center_vertical"
-            android:onClick="chamarTelaInicio"
-            app:srcCompat="@drawable/setavoltar" />
+            android:onClick="chamarTelaLogin"
+            app:srcCompat="@drawable/deslogar" />
     </FrameLayout>
 
     <Button

@@ -17,9 +17,10 @@ import java.util.List;
 public class novoLancamento_vw extends AppCompatActivity {
 
 
-    Integer botaoclicado = null;
-    Integer contQtdCliquesTeclado;
-    TextView mostraValorFinal;
+    private String botaoclicado = null;
+    private int contQtdCliquesTeclado = 0;
+    private TextView mostraValorFinal;
+    private String somaCampo;
 
 
     @Override
@@ -27,52 +28,133 @@ public class novoLancamento_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_lancamento_vw);
 
-        /*
-        this.mostraValorFinal = (TextView) findViewById(R.id.mostraValorFinalVwNovoLancamento);
-        Bundle pegaDados  = getIntent().getExtras();
-        novoLancamento_vw novo = new novoLancamento_vw();
-        mostraValorFinal.setText(pegaDados.getCharSequence("categoriaEscolhida"));
-        */
-
     }
 
     public void chamarTelaManterPerfil(View view){
-
-        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(getBaseContext(), manterPerfil_vw.class));
 
     }
     public void chamarTelaInicio(View view){
-
-        Intent intent = new Intent(this, inicio_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(this, inicio_vw.class));
 
     }
 
     public void chamarTelaManterLancamentos(View view){
-
-        Intent intent = new Intent(this, manter_lancamentos_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(this, manter_lancamentos_vw.class));
 
     }
 
-    public void tratarTeclado1 (View v){
-        Button pegaContent = findViewById(R.id.num1);
-        CharSequence num;
-        num = pegaContent.getText();
-        System.out.println(num);
-        TextView setTotal = findViewById(R.id.mostraValorFinalVwNovoLancamento);
-        setTotal.setText(num);
+    public void mostrarNumTela(String n){
+        TextView campoEscolhido = findViewById(R.id.mostraValorFinalVwNovoLancamento);
+        botaoclicado = n;
+        switch (contQtdCliquesTeclado){
+
+            case 1:
+                somaCampo = botaoclicado;
+                campoEscolhido.setText(somaCampo+",00");
+                break;
+            case 2:
+                somaCampo = somaCampo + botaoclicado;
+                campoEscolhido.setText(somaCampo);
+                break;
+            case 3:
+                somaCampo = somaCampo + botaoclicado;
+                campoEscolhido.setText(somaCampo);
+                break;
+            case 4:
+                somaCampo = somaCampo + botaoclicado;
+                campoEscolhido.setText(somaCampo);
+                break;
+            case 5:
+                somaCampo = somaCampo + botaoclicado;
+                campoEscolhido.setText(somaCampo);
+                break;
+            case 6:
+                somaCampo = somaCampo + botaoclicado;
+                campoEscolhido.setText(somaCampo);
+                break;
+            case 7:
+                somaCampo = somaCampo + botaoclicado;
+                campoEscolhido.setText(somaCampo);
+                break;
+
+        }
+    }
+
+    public void tratarTeclado0(View v){
+        botaoclicado = "0";
+        contQtdCliquesTeclado++;
+        mostrarNumTela(botaoclicado);
+
+    }
+    public void tratarTeclado1(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "1";
+        mostrarNumTela(botaoclicado);
+
     }
 
     public void tratarTeclado2(View v){
-        Button pegaContent = findViewById(R.id.num1);
-        CharSequence num;
-        num = pegaContent.getText();
-        System.out.println(num);
-        TextView setTotal = findViewById(R.id.mostraValorFinalVwNovoLancamento);
-        setTotal.setText(num);
+        contQtdCliquesTeclado++;
+        botaoclicado = "2";
+        mostrarNumTela(botaoclicado);
+
     }
+    public void tratarTeclado3(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "3";
+        mostrarNumTela(botaoclicado);
+
+    }
+    public void tratarTeclado4(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "4";
+        mostrarNumTela(botaoclicado);
+
+
+    }
+    public void tratarTeclado5(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "5";
+        mostrarNumTela(botaoclicado);
+    }
+    public void tratarTeclado6(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "6";
+        mostrarNumTela(botaoclicado);
+    }
+    public void tratarTeclado7(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "7";
+        mostrarNumTela(botaoclicado);
+
+    }
+    public void tratarTeclado8(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "8";
+        mostrarNumTela(botaoclicado);
+
+    }
+    public void tratarTeclado9(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "9";
+        mostrarNumTela(botaoclicado);
+    }
+    public void tratarTecladoC(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "C";
+        mostrarNumTela(botaoclicado);
+    }
+    public void tratarTecladoApagar(View v){
+        contQtdCliquesTeclado++;
+        botaoclicado = "A";
+        mostrarNumTela(botaoclicado);
+    }
+
+
+
+
+
 
 
 
