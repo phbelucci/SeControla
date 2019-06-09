@@ -1,6 +1,6 @@
 package entity;
 
-public class UsuarioTO {
+public class Usuario {
 
     private Integer codUs;
     private String nomeUs;
@@ -22,14 +22,14 @@ public class UsuarioTO {
     }
     */
 
-    public UsuarioTO(String nomeUs, String senha) {
+    public Usuario(String nomeUs, String senha) {
         //login = new Login(codUs, usuario, senha);
         this.nomeUs = nomeUs;
         //login.setSenha(senha);
     }
 
     //sem avatar
-    public UsuarioTO(Integer codUs, String nomeUs, Integer codGrupo, String usuario, String senha) {
+    public Usuario(Integer codUs, String nomeUs, Integer codGrupo, String usuario, String senha) {
         //login = new Login(codUs, usuario, senha);
 
         this.codUs = codUs;
