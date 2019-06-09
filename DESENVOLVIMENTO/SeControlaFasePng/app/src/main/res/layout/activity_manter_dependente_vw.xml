@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="APELIDO"
+            android:text="SENHA"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
     </LinearLayout>
@@ -84,13 +84,13 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="119dp"
-        android:layout_marginLeft="119dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginRight="117dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Adicionar Dependente"
+        android:text="Dependentes"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
@@ -100,57 +100,33 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="195dp"
-        android:layout_height="78dp"
+        android:layout_width="260dp"
+        android:layout_height="198dp"
         android:layout_marginStart="108dp"
         android:layout_marginLeft="108dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
-        android:layout_marginBottom="8dp"
-        android:background="#A30C0C0C"
+        android:layout_marginBottom="32dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
-        <TextView
-            android:id="@+id/capturaImagem"
-            android:layout_width="196dp"
-            android:layout_height="29dp"
-            android:layout_gravity="top|center"
-            android:gravity="center_horizontal"
-            android:text="CAPTURAR FOTO"
-            android:textAlignment="center"
-            android:textColor="#FDFDFD"
-            android:textSize="18sp"
-            app:layout_constrainedHeight="false" />
-
-        <ImageView
-            android:id="@+id/btnCamera"
-            android:layout_width="50dp"
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="230dp"
             android:layout_height="50dp"
-            android:layout_gravity="bottom|center"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btnpadrao"
+            android:onClick="chamarTelaInicio"
+            android:shadowRadius="5"
+            android:text="INCLUIR NOVO"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="135dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="138dp"
-        android:layout_marginLeft="138dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="138dp"
-        android:layout_marginRight="138dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/cardview_shadow_start_color"
-        android:text="ADICIONAR"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </android.support.constraint.ConstraintLayout>

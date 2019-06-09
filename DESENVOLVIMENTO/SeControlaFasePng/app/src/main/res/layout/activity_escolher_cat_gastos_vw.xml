@@ -117,15 +117,16 @@
             android:onClick="destacarActivityOutros"/>
 
         <ImageView
-            android:id="@+id/btnCatCarro"
+            android:id="@+id/btnAplica"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center|start|right"
+            android:onClick="destacarActivityCarro"
             app:srcCompat="@drawable/carro"
             />
 
         <ImageView
-            android:id="@+id/btnCatTaxas"
+            android:id="@+id/btnSalario"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="start|top"
@@ -152,7 +153,7 @@
             />
 
         <ImageView
-            android:id="@+id/btnCatDiversao"
+            android:id="@+id/btnBeneficio"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="bottom|start"
@@ -179,7 +180,7 @@
             />
 
         <ImageView
-            android:id="@+id/btnCatComida"
+            android:id="@+id/btnExtra"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="right|top"

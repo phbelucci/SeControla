@@ -107,36 +107,40 @@
         app:layout_constraintTop_toBottomOf="@+id/titleCategoria">
 
         <ImageView
-            android:id="@+id/btnCatDiversao"
+            android:id="@+id/btnBeneficio"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="end"
             app:srcCompat="@drawable/beneficio"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:onClick="destacarActivityBeneficio"/>
 
         <ImageView
-            android:id="@+id/btnCatTaxas"
+            android:id="@+id/btnSalario"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="start"
             app:srcCompat="@drawable/salario"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:onClick="destacarActivitySalario"/>
 
         <ImageView
-            android:id="@+id/btnCatCarro"
+            android:id="@+id/btnAplica"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="bottom"
             app:srcCompat="@drawable/aplicacao"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:onClick="destacarActivityAplicacao"/>
 
         <ImageView
-            android:id="@+id/btnCatComida"
+            android:id="@+id/btnExtra"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_gravity="bottom|right"
             app:srcCompat="@drawable/extra"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:onClick="destacarActivityExtra"/>
     </FrameLayout>
 
     <LinearLayout

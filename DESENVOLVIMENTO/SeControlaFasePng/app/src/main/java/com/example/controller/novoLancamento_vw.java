@@ -43,10 +43,12 @@ public class novoLancamento_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_lancamento_vw);
 
+        /*
         this.mostraValorFinal = (TextView) findViewById(R.id.mostraValorFinalVwNovoLancamento);
         Bundle pegaDados  = getIntent().getExtras();
         novoLancamento_vw novo = new novoLancamento_vw();
         mostraValorFinal.setText(pegaDados.getCharSequence("categoriaEscolhida"));
+        */
 
     }
 
