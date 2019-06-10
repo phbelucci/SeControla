@@ -2,6 +2,7 @@ package endpoint;
 
 
 import com.google.gson.Gson;
+import dao.UsuarioDAO;
 import entity.Usuario;
 import javax.ws.rs.*;
 
@@ -17,9 +18,12 @@ public class UsuarioEndpoint {
 
         Usuario u = new Usuario(nome, senha);
 
-        Gson g = new Gson();
+        UsuarioDAO dao = new UsuarioDAO();
+        dao.inserir(u);
 
-        return g.toJson(u);
+        //Gson g = new Gson();
+
+        return nome + " " + senha;
     }
 
     @PUT

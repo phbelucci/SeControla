@@ -26,7 +26,7 @@ public class Usuario {
         this.codUs = 1;
         this.nomeUs = nomeUs;
         this.senhaUs=senha;
-        this.codGrupo = 0;
+        this.codGrupo = 1;
         this.codNivelAcesso = 2;
     }
 
