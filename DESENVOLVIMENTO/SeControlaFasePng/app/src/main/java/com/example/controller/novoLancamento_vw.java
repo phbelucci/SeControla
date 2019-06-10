@@ -21,6 +21,8 @@ public class novoLancamento_vw extends AppCompatActivity {
     private int contQtdCliquesTeclado = 0;
     private TextView mostraValorFinal;
     private String somaCampo;
+    private int formaPagtoEscolhida=0;
+    private int formaPagtoSelecionada;
     String digito1 = null;
     String digito2 = null;
     String digito3 = null;
@@ -157,11 +159,61 @@ public class novoLancamento_vw extends AppCompatActivity {
         mostrarNumTela(botaoclicado);
     }
 
+    public void armazenarFormaPagto(String s){
+        Button i;
+        formaPagtoSelecionada = Integer.parseInt(s);
+
+        Button cartao = findViewById(R.id.btnCartaoVwLancamento);
+        Button dinheiro = findViewById(R.id.btnDinheiroVwLancamento);
+        Button transf = findViewById(R.id.btnTransVwLancamento);
+        cartao.setBackgroundResource(R.drawable.cartao);
+        dinheiro.setBackgroundResource(R.drawable.dinheiro);
+        transf.setBackgroundResource(R.drawable.transfer);
+
+        switch (formaPagtoSelecionada){
+            case 1:
+                i = findViewById(R.id.btnCartaoVwLancamento);
+                i.setBackgroundResource(R.drawable.cartardestaque);
+                formaPagtoEscolhida = formaPagtoSelecionada;
+                break;
+            case 2:
+                i = findViewById(R.id.btnDinheiroVwLancamento);
+                i.setBackgroundResource(R.drawable.dinheirodestaque);
+                formaPagtoEscolhida = formaPagtoSelecionada;
+                break;
+            case 3:
+                i = findViewById(R.id.btnTransVwLancamento);
+                i.setBackgroundResource(R.drawable.transfdestaque);
+                formaPagtoEscolhida = formaPagtoSelecionada;
+                break;
+        }
+        formaPagtoSelecionada= 0;
+    }
+
+    public void setFormaPagtoCartao(View v){
+        Button b = findViewById(R.id.btnCartaoVwLancamento);
+        String s = b.getContentDescription().toString();
+        System.out.println(s);
+        armazenarFormaPagto(s);
 
 
+    }
+    public void setFormaPagtoDinheiro(View v){
+        Button b = findViewById(R.id.btnDinheiroVwLancamento);
+        String s = b.getContentDescription().toString();
+        System.out.println(s);
+        armazenarFormaPagto(s);
 
+    }
+    public void setFormaPagtoTransf(View v){
+        Button b = findViewById(R.id.btnTransVwLancamento);
+        String s = b.getContentDescription().toString();
+        System.out.println(s);
+        armazenarFormaPagto(s);
 
+    }
 
+    
 
 
 }
