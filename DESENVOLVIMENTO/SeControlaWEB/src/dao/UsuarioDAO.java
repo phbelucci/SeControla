@@ -14,7 +14,7 @@ public class UsuarioDAO {
 
 
 
-    public boolean inserir(){
+    public boolean inserir(String nome, String senha){
 
 
         Boolean retorno = false;
@@ -26,7 +26,7 @@ public class UsuarioDAO {
                 u.getCodGrupo().toString()+");";*/
         try {
             Connection con = (Connection) BDFabricaConexao.getConnection();
-            String sql = "select * from USUARIO;";
+            String sql = "INSERT  NOME_US from USUARIO;";
             Statement stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);
 
