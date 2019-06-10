@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,6 @@ public class cadastro_vw extends AppCompatActivity {
     private String senha;
     private String senhaRepete;
     CadastroModel cadastro = new CadastroModel();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +52,25 @@ public class cadastro_vw extends AppCompatActivity {
         senhaRepete = pegaRepeteSenha.getText().toString();
         while(!senha.equals(senhaRepete)){
             TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
-            mensagemErro.setText("Senha não confere! Favor digitar novamente!");
+            mensagemErro.setText(R.string.erroSenhaDifSenhaRepete);
             pegaSenha.setText("");
             pegaRepeteSenha.setText("");
             return;
         }
+
+        while (nomeUser.isEmpty()||senha.isEmpty()){
+            TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
+            mensagemErro.setText(R.string.erroCamposVazios);
+            pegaNome.setBackgroundColor(Color.parseColor("#BFDEF702"));
+            pegaSenha.setBackgroundColor(Color.parseColor("#BFDEF702"));
+            pegaRepeteSenha.setBackgroundColor(Color.parseColor("#BFDEF702"));
+            return;
+        }
+
+
+
+
+
         if(senha.equals(senhaRepete)){
             TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
             mensagemErro.setText(cadastro.cadastrar(nomeUser, senhaRepete));

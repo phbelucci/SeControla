@@ -23,9 +23,11 @@ public class Usuario {
     */
 
     public Usuario(String nomeUs, String senha) {
-        //login = new Login(codUs, usuario, senha);
+        this.codUs = 1;
         this.nomeUs = nomeUs;
-        //login.setSenha(senha);
+        this.senhaUs=senha;
+        this.codGrupo = 1;
+        this.codNivelAcesso = 2;
     }
 
     //sem avatar

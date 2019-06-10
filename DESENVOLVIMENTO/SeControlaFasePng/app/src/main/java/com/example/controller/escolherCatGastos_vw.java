@@ -19,7 +19,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         setContentView(R.layout.activity_escolher_cat_gastos_vw);
     }
 
-
     public void chamarTelaInicio(View view){
         Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
@@ -36,7 +35,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         intent.putExtras(mandarCategoria);
         startActivity(intent);
         //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
-
     }
 
     public void chamarTelaManterPerfil(View view){
@@ -44,7 +42,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         startActivity(intent);
 
     }
-
     /*Metodos para destaque dos botões VW escolher_cat_gastos
     taxas   - 1
     casa    - 2
@@ -141,7 +138,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         nomeCat = "Casa";
         aplicarDestaque(idCat,nomeCat);
     }
-
     public void destacarActivityComida(View v){
         idCat = 3;
         nomeCat = "Comida";
@@ -158,7 +154,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         nomeCat = "Livros";
         aplicarDestaque(idCat,nomeCat);
     }
-
     public void destacarActivitySaude(View v){
         idCat = 6;
         nomeCat = "Saúde";
