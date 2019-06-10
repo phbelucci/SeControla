@@ -4,6 +4,9 @@ import com.example.DAO.LoginDAO;
 import com.example.DAO.UsuarioDAO;
 import com.example.entity.Login;
 import com.example.entity.Usuario;
+import com.example.service.HTTPService;
+
+import java.util.concurrent.ExecutionException;
 
 public class CadastroModel {
 
@@ -13,10 +16,24 @@ public class CadastroModel {
     private String senha;
     private Usuario usuario;
 
-    public boolean cadastrar(String nome, String senha){
+    public String cadastrar(String nome, String senha){
 
+
+
+        HTTPService service = new HTTPService(nome+"/"+senha);
+        String retorno="";
 
         try {
+            retorno = service.execute().get();
+            System.out.println(retorno);
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        /*
             usuario = new Usuario(nome,senha);
             UsuarioDAO dao = new UsuarioDAO();
             dao.salvar(usuario);
@@ -25,12 +42,13 @@ public class CadastroModel {
             mensagem= "Usuário Cadastrado.";
             System.out.println(usuario);
             return true;
-        }catch (Exception e){
+        //}catch (Exception e){
             //fazer tratamento da mensagem
             //mensagem =
-            mensagem=e.getMessage();
+            //mensagem=e.getMessage();
             return false;
-        }
+        }*/
+        return retorno;
     }
 
     public String getMensagem(){

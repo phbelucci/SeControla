@@ -15,7 +15,6 @@ public class main_vw extends AppCompatActivity implements Runnable {
         setContentView(R.layout.activity_main);
         Handler handler = new Handler();
         handler.postDelayed(this,1500);
-
     }
 
     @Override

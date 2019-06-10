@@ -72,6 +72,10 @@ public class cadastro_vw extends AppCompatActivity {
 
 
         if(senha.equals(senhaRepete)){
+            TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
+            mensagemErro.setText(cadastro.cadastrar(nomeUser, senhaRepete));
+
+            /*
             if(cadastro.cadastrar(nomeUser, senhaRepete)){
                 //fazer ação da tela depois
 
@@ -83,7 +87,7 @@ public class cadastro_vw extends AppCompatActivity {
                 TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
                 mensagemErro.setText(cadastro.getMensagem());
 
-            }
+            }*/
         }
 
 
