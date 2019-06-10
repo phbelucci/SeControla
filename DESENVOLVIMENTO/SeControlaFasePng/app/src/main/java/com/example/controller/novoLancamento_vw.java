@@ -16,25 +16,9 @@ import java.util.List;
 
 public class novoLancamento_vw extends AppCompatActivity {
 
-    String btn1;
-    String btn2;
-    String btn3;
-    String btn4;
-    String btn5;
-    String btn6;
-    String btn7;
-    String btn8;
-    String btn9;
-    String btn0;
-    Integer soma;
+
+    Integer botaoclicado = null;
     Integer contQtdCliquesTeclado;
-    TextView digito1;
-    TextView digito2;
-    TextView digito3;
-    TextView digito4;
-    TextView digito5;
-    TextView digito6;
-    TextView digito7;
     TextView mostraValorFinal;
 
 
@@ -72,7 +56,7 @@ public class novoLancamento_vw extends AppCompatActivity {
 
     }
 
-    public void tratarTeclado (View v){
+    public void tratarTeclado1 (View v){
         Button pegaContent = findViewById(R.id.num1);
         CharSequence num;
         num = pegaContent.getText();
@@ -81,6 +65,14 @@ public class novoLancamento_vw extends AppCompatActivity {
         setTotal.setText(num);
     }
 
+    public void tratarTeclado2(View v){
+        Button pegaContent = findViewById(R.id.num1);
+        CharSequence num;
+        num = pegaContent.getText();
+        System.out.println(num);
+        TextView setTotal = findViewById(R.id.mostraValorFinalVwNovoLancamento);
+        setTotal.setText(num);
+    }
 
 
 

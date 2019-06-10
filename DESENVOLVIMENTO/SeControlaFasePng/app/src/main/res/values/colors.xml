@@ -3,4 +3,5 @@
     <color name="colorPrimary">#81F27F</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#EF0A21</color>
+    <color name="vermelhotransp">#BFDEF702</color>
 </resources>

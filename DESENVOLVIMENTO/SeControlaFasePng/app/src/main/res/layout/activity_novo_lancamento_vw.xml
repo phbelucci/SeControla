@@ -115,10 +115,10 @@
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 android:background="@drawable/n1"
-                android:text="1"
+                android:onClick="tratarTeclado1"
+                android:contentDescription="1"
                 android:textColor="#00FFFFFF"
-                app:srcCompat="@drawable/n1"
-                android:onClick="tratarTeclado"/>
+                app:srcCompat="@drawable/n1" />
 
             <ImageView
                 android:id="@+id/num2"
@@ -126,7 +126,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n2" />
+                app:srcCompat="@drawable/n2"
+                android:contentDescription="2"/>
 
             <ImageView
                 android:id="@+id/num3"
@@ -134,7 +135,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n3" />
+                app:srcCompat="@drawable/n3"
+                android:contentDescription="3"/>
 
         </TableRow>
 
@@ -148,7 +150,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n4" />
+                app:srcCompat="@drawable/n4"
+                android:contentDescription="4"/>
 
             <ImageView
                 android:id="@+id/num5"
@@ -156,7 +159,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n5" />
+                app:srcCompat="@drawable/n5"
+                android:contentDescription="5"/>
 
             <ImageView
                 android:id="@+id/num6"
@@ -164,7 +168,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n6" />
+                app:srcCompat="@drawable/n6"
+                android:contentDescription="6"/>
 
         </TableRow>
 
@@ -178,7 +183,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n7" />
+                app:srcCompat="@drawable/n7"
+                android:contentDescription="7"/>
 
             <ImageView
                 android:id="@+id/num8"
@@ -186,7 +192,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n8" />
+                app:srcCompat="@drawable/n8"
+                android:contentDescription="8"/>
 
             <ImageView
                 android:id="@+id/num9"
@@ -194,7 +201,8 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n9" />
+                app:srcCompat="@drawable/n9"
+                android:contentDescription=""/>
 
         </TableRow>
 
@@ -204,11 +212,11 @@
 
             <ImageView
                 android:id="@+id/btnOkCalc"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="bottom|right"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/btnok" />
+                app:srcCompat="@drawable/setavoltarum" />
 
             <ImageView
                 android:id="@+id/num0"
@@ -222,9 +230,9 @@
                 android:id="@+id/btnXCalc"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_gravity="bottom|right"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/btncancelar" />
+                app:srcCompat="@drawable/btnexcluir" />
         </TableRow>
     </TableLayout>
 
@@ -306,21 +314,24 @@
             android:id="@+id/btnCartaoVwLancamento"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:background="@drawable/cartao" />
+            android:background="@drawable/cartao"
+            android:contentDescription="1"/>
 
         <Button
             android:id="@+id/btnDinheiroVwLancamento"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:background="@drawable/dinheiro"
-            app:srcCompat="@drawable/dinheiro" />
+            app:srcCompat="@drawable/dinheiro"
+            android:contentDescription="2"/>
 
         <Button
             android:id="@+id/btnTransVwLancamento"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:background="@drawable/transfer"
-            app:srcCompat="@drawable/transfer" />
+            app:srcCompat="@drawable/transfer"
+            android:contentDescription="3"/>
     </LinearLayout>
 
     <TextView
