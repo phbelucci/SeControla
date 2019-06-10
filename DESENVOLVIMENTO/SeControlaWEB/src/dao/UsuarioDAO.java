@@ -1,16 +1,20 @@
 package dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import connection.BDFabricaConexao;
-import connection.Conexao;
 import entity.Usuario;
 
 public class UsuarioDAO {
 
-    public boolean inserir(Usuario u){
+
+
+    public boolean inserir(){
 
 
         Boolean retorno = false;

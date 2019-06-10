@@ -5,6 +5,7 @@ package connection;
  * and open the template in the editor.
  */
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,7 +26,7 @@ public class BDConexaoMySQL extends BDConexao {
         this.servidor = "localhost";
         this.bd = "db_secontrola";
         this.usuario = "secontrola";
-        this.senha = "cadastrosecontrola";
+        this.senha = "_cadastrosecontrola";
     }
 
     @Override
