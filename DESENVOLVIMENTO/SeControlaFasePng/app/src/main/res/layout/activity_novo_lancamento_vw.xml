@@ -329,23 +329,24 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:background="@drawable/cartao"
-            android:contentDescription="1"/>
+            android:contentDescription="1"
+            android:onClick="setFormaPagtoCartao"/>
 
         <Button
             android:id="@+id/btnDinheiroVwLancamento"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:background="@drawable/dinheiro"
-            app:srcCompat="@drawable/dinheiro"
-            android:contentDescription="2"/>
+            android:contentDescription="2"
+            android:onClick="setFormaPagtoDinheiro"/>
 
         <Button
             android:id="@+id/btnTransVwLancamento"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:background="@drawable/transfer"
-            app:srcCompat="@drawable/transfer"
-            android:contentDescription="3"/>
+            android:contentDescription="3"
+            android:onClick="setFormaPagtoTransf"/>
     </LinearLayout>
 
     <TextView
