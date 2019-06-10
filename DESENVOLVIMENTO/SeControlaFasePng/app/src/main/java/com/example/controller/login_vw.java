@@ -32,7 +32,9 @@ public class login_vw extends AppCompatActivity {
         nomeUser = pegaNome.getText().toString();
         EditText pegaSenha = findViewById(R.id.inputSenhaVwLogin);
         senha = pegaSenha.getText().toString();
+
         TextView mensagemErro = findViewById(R.id.mensagemUsVwLogin);
+      
         if(nomeUser.isEmpty()&& senha.isEmpty()){
             mensagemErro.setText(R.string.erroCamposVazios);
             pegaNome.setBackgroundResource(R.drawable.bordaserro);
@@ -49,6 +51,8 @@ public class login_vw extends AppCompatActivity {
 
         }
 
+
+
         Intent intent = new Intent(this, inicio_vw.class);
         startActivity(intent);
 
@@ -58,8 +62,6 @@ public class login_vw extends AppCompatActivity {
         startActivity(new Intent( this, cadastro_vw.class));
 
     }
-
-
 
 
 }
