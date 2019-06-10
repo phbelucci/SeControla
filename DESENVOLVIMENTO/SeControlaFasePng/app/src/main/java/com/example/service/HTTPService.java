@@ -24,8 +24,8 @@ public class HTTPService extends AsyncTask<Void, Void, String> {
         StringBuilder resposta = new StringBuilder();
 
         try {
-            URL url = new URL("http://localhost:8080/se_controla/usuario/get/adila/123");
-
+            //URL url = new URL("http://scbhostname.ddns.net:8080/se_controla/usuario/get/adila/123");
+            URL url = new URL("http://192.168.0.101:8080/se_controla/helloworld");
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
