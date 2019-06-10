@@ -1,6 +1,6 @@
-import endpoint.ConectadoEndPoint;
-import endpoint.HelloWorldEndPoint;
-import endpoint.UsuarioEndpoint;
+import controller.ConectadoEndPoint;
+import controller.HelloWorldEndPoint;
+import controller.UsuarioEndpoint;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;

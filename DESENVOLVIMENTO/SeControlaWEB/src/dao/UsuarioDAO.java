@@ -1,16 +1,20 @@
 package dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import connection.BDFabricaConexao;
-import connection.Conexao;
 import entity.Usuario;
 
 public class UsuarioDAO {
 
-    public boolean inserir(Usuario u){
+
+
+    public boolean inserir(String nome, String senha){
 
 
         Boolean retorno = false;
@@ -22,7 +26,7 @@ public class UsuarioDAO {
                 u.getCodGrupo().toString()+");";*/
         try {
             Connection con = (Connection) BDFabricaConexao.getConnection();
-            String sql = "select * from USUARIO;";
+            String sql = "INSERT  NOME_US from USUARIO;";
             Statement stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);
 
