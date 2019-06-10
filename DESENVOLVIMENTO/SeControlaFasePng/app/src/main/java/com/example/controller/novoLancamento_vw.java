@@ -21,6 +21,13 @@ public class novoLancamento_vw extends AppCompatActivity {
     private int contQtdCliquesTeclado = 0;
     private TextView mostraValorFinal;
     private String somaCampo;
+    String digito1 = null;
+    String digito2 = null;
+    String digito3 = null;
+    String digito4 = null;
+    String digito5 = null;
+    String digito6 = null;
+    String digito7 = null;
 
 
     @Override
@@ -41,7 +48,6 @@ public class novoLancamento_vw extends AppCompatActivity {
 
     public void chamarTelaManterLancamentos(View view){
         startActivity(new Intent(this, manter_lancamentos_vw.class));
-
     }
 
     public void mostrarNumTela(String n){
@@ -50,32 +56,32 @@ public class novoLancamento_vw extends AppCompatActivity {
         switch (contQtdCliquesTeclado){
 
             case 1:
-                somaCampo = botaoclicado;
-                campoEscolhido.setText(somaCampo+",00");
+                digito1 = botaoclicado;
+                campoEscolhido.setText(digito1+",00");
                 break;
             case 2:
-                somaCampo = somaCampo + botaoclicado;
-                campoEscolhido.setText(somaCampo);
+                digito2 = botaoclicado;
+                campoEscolhido.setText(digito1+","+digito2+"0");
                 break;
             case 3:
-                somaCampo = somaCampo + botaoclicado;
-                campoEscolhido.setText(somaCampo);
+                digito3 = botaoclicado;
+                campoEscolhido.setText(digito1+","+digito2+digito3);
                 break;
             case 4:
-                somaCampo = somaCampo + botaoclicado;
-                campoEscolhido.setText(somaCampo);
+                digito4 = botaoclicado;
+                campoEscolhido.setText(digito1+digito2+","+digito3+digito4);
                 break;
             case 5:
-                somaCampo = somaCampo + botaoclicado;
-                campoEscolhido.setText(somaCampo);
+                digito5 = botaoclicado;
+                campoEscolhido.setText(digito1+digito2+digito3+","+digito4+digito5);
                 break;
             case 6:
-                somaCampo = somaCampo + botaoclicado;
-                campoEscolhido.setText(somaCampo);
+                digito6 = botaoclicado;
+                campoEscolhido.setText(digito1+"."+digito2+digito3+digito4+","+digito5+digito6);
                 break;
             case 7:
-                somaCampo = somaCampo + botaoclicado;
-                campoEscolhido.setText(somaCampo);
+                digito7 = botaoclicado;
+                campoEscolhido.setText(digito1+digito2+"."+digito3+digito4+digito5+","+digito6+digito7);
                 break;
 
         }
