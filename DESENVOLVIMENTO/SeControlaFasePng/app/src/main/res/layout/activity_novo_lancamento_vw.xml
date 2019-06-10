@@ -125,6 +125,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
+                android:onClick="tratarTeclado2"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n2"
                 android:contentDescription="2"/>
@@ -133,6 +134,7 @@
                 android:id="@+id/num3"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:onClick="tratarTeclado3"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n3"
@@ -151,7 +153,8 @@
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n4"
-                android:contentDescription="4"/>
+                android:contentDescription="4"
+                android:onClick="tratarTeclado4"/>
 
             <ImageView
                 android:id="@+id/num5"
@@ -160,7 +163,8 @@
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n5"
-                android:contentDescription="5"/>
+                android:contentDescription="5"
+                android:onClick="tratarTeclado5"/>
 
             <ImageView
                 android:id="@+id/num6"
@@ -169,7 +173,8 @@
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n6"
-                android:contentDescription="6"/>
+                android:contentDescription="6"
+                android:onClick="tratarTeclado6"/>
 
         </TableRow>
 
@@ -184,7 +189,8 @@
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n7"
-                android:contentDescription="7"/>
+                android:contentDescription="7"
+                android:onClick="tratarTeclado7"/>
 
             <ImageView
                 android:id="@+id/num8"
@@ -193,7 +199,8 @@
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/n8"
-                android:contentDescription="8"/>
+                android:contentDescription="8"
+                android:onClick="tratarTeclado8"/>
 
             <ImageView
                 android:id="@+id/num9"
@@ -201,8 +208,9 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
+                android:contentDescription="9"
                 app:srcCompat="@drawable/n9"
-                android:contentDescription=""/>
+                android:onClick="tratarTeclado9"/>
 
         </TableRow>
 
@@ -211,12 +219,14 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/btnOkCalc"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/btnC"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/setavoltarum" />
+                app:srcCompat="@drawable/apagar"
+                android:contentDescription="C"
+                android:onClick="tratarTecladoC"/>
 
             <ImageView
                 android:id="@+id/num0"
@@ -224,7 +234,9 @@
                 android:layout_height="70dp"
                 android:layout_gravity="bottom|right"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/n0" />
+                app:srcCompat="@drawable/n0"
+                android:contentDescription="0"
+                android:onClick="tratarTeclado0"/>
 
             <ImageView
                 android:id="@+id/btnXCalc"
@@ -232,7 +244,9 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/btnexcluir" />
+                app:srcCompat="@drawable/apagartudo"
+                android:contentDescription="A"
+                android:onClick="tratarTecladoApagar"/>
         </TableRow>
     </TableLayout>
 
@@ -337,18 +351,22 @@
     <TextView
         android:id="@+id/mostraValorFinalVwNovoLancamento"
         android:layout_width="166dp"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="90dp"
         android:layout_marginRight="90dp"
         android:layout_marginBottom="23dp"
+        android:gravity="bottom|center|center_vertical"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="35dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.258" />
 
 </android.support.constraint.ConstraintLayout>

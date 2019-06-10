@@ -25,9 +25,8 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
 
     }
 
-    public void chamarVwNovoLancamento(View view){
-        Intent intent = new Intent(this,novoLancamento_vw.class);
-        startActivity(intent);
+    public void chamarVwNovoLancamento(View v){
+        startActivity(new Intent(this,novoLancamento_vw.class));
         //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
 
 

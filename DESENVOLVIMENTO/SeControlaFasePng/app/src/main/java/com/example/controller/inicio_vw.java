@@ -16,35 +16,30 @@ public class inicio_vw extends AppCompatActivity {
     }
 
     public void chamarTelaCategoriaGastos(View view){
-        Intent intent = new Intent(this, escolherCatGastos_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(this, escolherCatGastos_vw.class));
 
+    }
+    public void chamarTelaLogin(View v){
+        startActivity(new Intent(getBaseContext(),login_vw.class));
     }
 
     public void chamarTelaManterLancamentos(View view){
-
-        Intent intent = new Intent(this, manter_lancamentos_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(this, manter_lancamentos_vw.class));
 
     }
 
     public void chamarTelaCategoriaReceitas(View view){
-
-        Intent intent = new Intent(this, escolherCatReceitas_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(this, escolherCatReceitas_vw.class));
 
     }
 
     public void chamarTelaManterPerfil(View view){
 
-        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(getBaseContext(), manterPerfil_vw.class));
 
     }
     public void chamarTelaInicio(View view){
-
-        Intent intent = new Intent(this, inicio_vw.class);
-        startActivity(intent);
+        startActivity(new Intent(this, inicio_vw.class));
 
     }
 

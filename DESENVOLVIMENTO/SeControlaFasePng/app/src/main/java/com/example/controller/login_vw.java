@@ -33,13 +33,23 @@ public class login_vw extends AppCompatActivity {
         EditText pegaSenha = findViewById(R.id.inputSenhaVwLogin);
         senha = pegaSenha.getText().toString();
 
-
-        while (nomeUser.isEmpty()||senha.isEmpty()){
-            TextView mensagemErro = findViewById(R.id.mensagemUsVwLogin);
+        TextView mensagemErro = findViewById(R.id.mensagemUsVwLogin);
+      
+        if(nomeUser.isEmpty()&& senha.isEmpty()){
             mensagemErro.setText(R.string.erroCamposVazios);
+            pegaNome.setBackgroundResource(R.drawable.bordaserro);
+            pegaSenha.setBackgroundResource(R.drawable.bordaserro);
             return;
         }
+        else if(senha.isEmpty()){
+            mensagemErro.setText(R.string.erroCamposVazios);
+            pegaSenha.setBackgroundResource(R.drawable.bordaserro);
+            return;
+        } else if(nomeUser.isEmpty()){
+            mensagemErro.setText(R.string.erroCamposVazios);
+            pegaNome.setBackgroundResource(R.drawable.bordaserro);
 
+        }
 
 
 
@@ -49,8 +59,7 @@ public class login_vw extends AppCompatActivity {
     }
     public void chamarTelaCadastro(View view){
 
-        Intent intent = new Intent( this, cadastro_vw.class);
-        startActivity(intent);
+        startActivity(new Intent( this, cadastro_vw.class));
 
     }
 
