@@ -25,8 +25,8 @@ public class BDConexaoMySQL extends BDConexao {
         this.porta = 3306;
         this.servidor = "localhost";
         this.bd = "db_secontrola";
-        this.usuario = "secontrola";
-        this.senha = "_cadastrosecontrola";
+        this.usuario = "root";
+        this.senha = "ifsp1234";
     }
 
     @Override

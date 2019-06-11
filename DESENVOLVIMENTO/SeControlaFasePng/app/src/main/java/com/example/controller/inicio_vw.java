@@ -5,14 +5,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.entity.GrupoFamiliar;
+import com.example.entity.Usuario;
+
 
 public class inicio_vw extends AppCompatActivity {
+
+    Usuario u;
+    GrupoFamiliar g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_vw);
 
+        try {
+            Bundle parametros = getIntent().getExtras();
+            u = (Usuario) parametros.getSerializable("Usuario");
+            g = (GrupoFamiliar) parametros.getSerializable("Grupo");
+            System.out.println("TESTE: " + u.getNomeUs());
+        }catch (Exception e){
+            System.out.println("TESTE: " + e.getMessage());
+        }
     }
 
     public void chamarTelaCategoriaGastos(View view){

@@ -9,9 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.entity.GrupoFamiliar;
+import com.example.entity.Usuario;
+import com.example.model.LoginModel;
+
 import org.w3c.dom.Text;
 
 import java.io.CharArrayWriter;
+import java.io.Serializable;
 import java.nio.charset.Charset;
 
 public class login_vw extends AppCompatActivity {
@@ -34,13 +39,14 @@ public class login_vw extends AppCompatActivity {
         senha = pegaSenha.getText().toString();
 
         TextView mensagemErro = findViewById(R.id.mensagemUsVwLogin);
-      
-        if(nomeUser.isEmpty()&& senha.isEmpty()){
+
+        if(nomeUser.isEmpty()|| senha.isEmpty()){
             mensagemErro.setText(R.string.erroCamposVazios);
             pegaNome.setBackgroundResource(R.drawable.bordaserro);
             pegaSenha.setBackgroundResource(R.drawable.bordaserro);
             return;
         }
+        /*
         else if(senha.isEmpty()){
             mensagemErro.setText(R.string.erroCamposVazios);
             pegaSenha.setBackgroundResource(R.drawable.bordaserro);
@@ -50,12 +56,24 @@ public class login_vw extends AppCompatActivity {
             pegaNome.setBackgroundResource(R.drawable.bordaserro);
 
         }
+        */
+        LoginModel login = new LoginModel();
+        if(!login.logar(nomeUser, senha)) {
+            mensagemErro.setText(login.getMensagem());
+            return;
+        }
 
+        Usuario u = login.getUsuario();
+        // **** Pendente:   Buscar o grupo aqui de acordo com o usuario
+        GrupoFamiliar g = new GrupoFamiliar(1,u);
 
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", (Serializable)g);
 
         Intent intent = new Intent(this, inicio_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
-
     }
     public void chamarTelaCadastro(View view){
 
