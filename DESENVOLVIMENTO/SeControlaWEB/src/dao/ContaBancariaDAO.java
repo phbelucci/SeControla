@@ -1,7 +1,7 @@
 package dao;
 
 import connection.BDFabricaConexao;
-import entity.Lancamento;
+import entity.ContaBancaria;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-public class LancamentoDAO {
+public class ContaBancariaDAO {
     Connection con;
     Statement stm;
     int rset;
@@ -30,22 +30,22 @@ public class LancamentoDAO {
         }
     }
 
-    public List<Lancamento> buscarTodosLancamentos(Integer codGrupo) {
+
+    public List<ContaBancaria> buscarTodasContasBancarias(Integer codGrupo) {
         return null;
     }
 
-    public List<Lancamento> buscarTodosLancamentosUsuario(Integer codUs) {
+    public List<ContaBancaria> buscarTodasContasBancariasUsuario(Integer codUs) {
         return null;
     }
 
-    public Lancamento inserirLancamento(Integer codUs) {
+    public ContaBancaria inserirContaBancaria(Integer codUs) {
+
         return null;
     }
 
-    public boolean deletaLancamento(Integer codLancamento) {
+    public boolean deletaContaBancaria(Integer codContaBancaria) {
+
         return true;
     }
-
-
-
 }
