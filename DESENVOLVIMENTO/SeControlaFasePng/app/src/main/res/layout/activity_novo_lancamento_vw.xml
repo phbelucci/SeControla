@@ -224,7 +224,7 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/apagar"
+                app:srcCompat="@drawable/limpar"
                 android:contentDescription="C"
                 android:onClick="tratarTecladoC"/>
 
@@ -244,7 +244,7 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/apagartudo"
+                app:srcCompat="@drawable/apagar"
                 android:contentDescription="A"
                 android:onClick="tratarTecladoApagar"/>
         </TableRow>

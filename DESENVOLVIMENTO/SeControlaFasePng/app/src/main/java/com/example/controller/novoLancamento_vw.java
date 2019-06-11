@@ -55,34 +55,111 @@ public class novoLancamento_vw extends AppCompatActivity {
     public void mostrarNumTela(String n){
         TextView campoEscolhido = findViewById(R.id.mostraValorFinalVwNovoLancamento);
         botaoclicado = n;
+        if (contQtdCliquesTeclado > 7){
+            contQtdCliquesTeclado--;
+        };
+
         switch (contQtdCliquesTeclado){
 
             case 1:
                 digito1 = botaoclicado;
-                campoEscolhido.setText(digito1+",00");
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado--;
+                    break;
+                }
+                else if(botaoclicado.equals("0")){
+                    campoEscolhido.setText(",00");
+                    break;
+                } else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
+                campoEscolhido.setText(",0"+digito1);
                 break;
+
             case 2:
                 digito2 = botaoclicado;
-                campoEscolhido.setText(digito1+","+digito2+"0");
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(digito1+",00");
+                    contQtdCliquesTeclado--;
+                    break;
+                }else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
+                campoEscolhido.setText(","+digito1+digito2);
                 break;
+
             case 3:
                 digito3 = botaoclicado;
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(digito1+","+digito2+"0");
+                    contQtdCliquesTeclado--;
+                    break;
+                } else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
                 campoEscolhido.setText(digito1+","+digito2+digito3);
                 break;
+
             case 4:
                 digito4 = botaoclicado;
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(digito1+","+digito2+digito3);
+                    contQtdCliquesTeclado--;
+                    break;
+                } else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
                 campoEscolhido.setText(digito1+digito2+","+digito3+digito4);
                 break;
+
             case 5:
                 digito5 = botaoclicado;
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(digito1+digito2+","+digito3+digito4);
+                    contQtdCliquesTeclado--;
+                    break;
+                } else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
                 campoEscolhido.setText(digito1+digito2+digito3+","+digito4+digito5);
                 break;
+
             case 6:
                 digito6 = botaoclicado;
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(digito1+digito2+digito3+","+digito4+digito5);
+                    contQtdCliquesTeclado--;
+                    break;
+                } else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
                 campoEscolhido.setText(digito1+"."+digito2+digito3+digito4+","+digito5+digito6);
                 break;
+
             case 7:
                 digito7 = botaoclicado;
+                if(botaoclicado.equals("A")){
+                    campoEscolhido.setText(digito1+"."+digito2+digito3+digito4+","+digito5+digito6);
+                    contQtdCliquesTeclado--;
+                    break;
+                } else if(botaoclicado.equals("C")){
+                    campoEscolhido.setText(",00");
+                    contQtdCliquesTeclado = 0;
+                    break;
+                }
                 campoEscolhido.setText(digito1+digito2+"."+digito3+digito4+digito5+","+digito6+digito7);
                 break;
 
@@ -149,12 +226,10 @@ public class novoLancamento_vw extends AppCompatActivity {
         mostrarNumTela(botaoclicado);
     }
     public void tratarTecladoC(View v){
-        contQtdCliquesTeclado++;
         botaoclicado = "C";
         mostrarNumTela(botaoclicado);
     }
     public void tratarTecladoApagar(View v){
-        contQtdCliquesTeclado++;
         botaoclicado = "A";
         mostrarNumTela(botaoclicado);
     }
