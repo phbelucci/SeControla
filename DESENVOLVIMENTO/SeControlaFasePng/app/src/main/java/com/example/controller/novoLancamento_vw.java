@@ -20,7 +20,9 @@ public class novoLancamento_vw extends AppCompatActivity {
     private String botaoclicado = null;
     private int contQtdCliquesTeclado = 0;
     private TextView mostraValorFinal;
-    private String somaCampo;
+    private String valorFinalVw;
+    private String categoriaFinalVw;
+    private String formaPagtoFinalVw;
     private int formaPagtoEscolhida=0;
     private int formaPagtoSelecionada;
     String digito1 = null;
@@ -37,19 +39,29 @@ public class novoLancamento_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_lancamento_vw);
 
+        Bundle pegaCategoria = getIntent().getExtras();
+        categoriaFinalVw = pegaCategoria.getString("categoriaEscolhida");
+        System.out.println(categoriaFinalVw);
+
     }
 
-    public void chamarTelaManterPerfil(View view){
-        startActivity(new Intent(getBaseContext(), manterPerfil_vw.class));
-
-    }
     public void chamarTelaInicio(View view){
         startActivity(new Intent(this, inicio_vw.class));
 
     }
 
     public void chamarTelaManterLancamentos(View view){
-        startActivity(new Intent(this, manter_lancamentos_vw.class));
+
+        //envia os dados para popular a lista dinamicamente
+        System.out.println(valorFinalVw);
+        Bundle novoLancamento = new Bundle();
+        novoLancamento.putString("valorfinal",valorFinalVw);
+        novoLancamento.putString("categoria",categoriaFinalVw);
+        novoLancamento.putString("formapagto",formaPagtoFinalVw);
+
+        Intent intent = new Intent(this, manter_lancamentos_vw.class);
+        intent.putExtras(novoLancamento);
+        startActivity(intent);
     }
 
     public void mostrarNumTela(String n){
@@ -76,13 +88,14 @@ public class novoLancamento_vw extends AppCompatActivity {
                     contQtdCliquesTeclado = 0;
                     break;
                 }
-                campoEscolhido.setText(",0"+digito1);
+                campoEscolhido.setText("0,0"+digito1);
+                valorFinalVw = "R$ "+"0,0"+digito1;
                 break;
 
             case 2:
                 digito2 = botaoclicado;
                 if(botaoclicado.equals("A")){
-                    campoEscolhido.setText(digito1+",00");
+                    campoEscolhido.setText("0,0"+digito1);
                     contQtdCliquesTeclado--;
                     break;
                 }else if(botaoclicado.equals("C")){
@@ -90,13 +103,14 @@ public class novoLancamento_vw extends AppCompatActivity {
                     contQtdCliquesTeclado = 0;
                     break;
                 }
-                campoEscolhido.setText(","+digito1+digito2);
+                campoEscolhido.setText("0,"+digito1+digito2);
+                valorFinalVw = "R$ "+"0,"+digito1+digito2;
                 break;
 
             case 3:
                 digito3 = botaoclicado;
                 if(botaoclicado.equals("A")){
-                    campoEscolhido.setText(digito1+","+digito2+"0");
+                    campoEscolhido.setText("0,"+digito1+digito2);
                     contQtdCliquesTeclado--;
                     break;
                 } else if(botaoclicado.equals("C")){
@@ -105,6 +119,7 @@ public class novoLancamento_vw extends AppCompatActivity {
                     break;
                 }
                 campoEscolhido.setText(digito1+","+digito2+digito3);
+                valorFinalVw = "R$ "+digito1+","+digito2+digito3;
                 break;
 
             case 4:
@@ -119,6 +134,7 @@ public class novoLancamento_vw extends AppCompatActivity {
                     break;
                 }
                 campoEscolhido.setText(digito1+digito2+","+digito3+digito4);
+                valorFinalVw = "R$ "+digito1+digito2+","+digito3+digito4;
                 break;
 
             case 5:
@@ -133,6 +149,7 @@ public class novoLancamento_vw extends AppCompatActivity {
                     break;
                 }
                 campoEscolhido.setText(digito1+digito2+digito3+","+digito4+digito5);
+                valorFinalVw = "R$ "+digito1+digito2+digito3+","+digito4+digito5;
                 break;
 
             case 6:
@@ -147,6 +164,7 @@ public class novoLancamento_vw extends AppCompatActivity {
                     break;
                 }
                 campoEscolhido.setText(digito1+"."+digito2+digito3+digito4+","+digito5+digito6);
+                valorFinalVw = "R$ "+digito1+"."+digito2+digito3+digito4+","+digito5+digito6;
                 break;
 
             case 7:
@@ -161,6 +179,7 @@ public class novoLancamento_vw extends AppCompatActivity {
                     break;
                 }
                 campoEscolhido.setText(digito1+digito2+"."+digito3+digito4+digito5+","+digito6+digito7);
+                valorFinalVw = "R$ "+digito1+digito2+"."+digito3+digito4+digito5+","+digito6+digito7;
                 break;
 
         }
@@ -250,16 +269,19 @@ public class novoLancamento_vw extends AppCompatActivity {
                 i = findViewById(R.id.btnCartaoVwLancamento);
                 i.setBackgroundResource(R.drawable.cartardestaque);
                 formaPagtoEscolhida = formaPagtoSelecionada;
+
                 break;
             case 2:
                 i = findViewById(R.id.btnDinheiroVwLancamento);
                 i.setBackgroundResource(R.drawable.dinheirodestaque);
                 formaPagtoEscolhida = formaPagtoSelecionada;
+
                 break;
             case 3:
                 i = findViewById(R.id.btnTransVwLancamento);
                 i.setBackgroundResource(R.drawable.transfdestaque);
                 formaPagtoEscolhida = formaPagtoSelecionada;
+
                 break;
         }
         formaPagtoSelecionada= 0;
@@ -268,7 +290,8 @@ public class novoLancamento_vw extends AppCompatActivity {
     public void setFormaPagtoCartao(View v){
         Button b = findViewById(R.id.btnCartaoVwLancamento);
         String s = b.getContentDescription().toString();
-        System.out.println(s);
+        formaPagtoFinalVw = "Cartão";
+        System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
 
 
@@ -276,14 +299,17 @@ public class novoLancamento_vw extends AppCompatActivity {
     public void setFormaPagtoDinheiro(View v){
         Button b = findViewById(R.id.btnDinheiroVwLancamento);
         String s = b.getContentDescription().toString();
-        System.out.println(s);
+
+        formaPagtoFinalVw = "Dinheiro";
+        System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
 
     }
     public void setFormaPagtoTransf(View v){
         Button b = findViewById(R.id.btnTransVwLancamento);
         String s = b.getContentDescription().toString();
-        System.out.println(s);
+        formaPagtoFinalVw = "Transferência";
+        System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
 
     }
