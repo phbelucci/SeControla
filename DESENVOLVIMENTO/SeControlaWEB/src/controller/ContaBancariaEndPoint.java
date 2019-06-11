@@ -27,12 +27,15 @@ public class ContaBancariaEndPoint {
     }*/
 
     @PUT
-    @Path("put/{INSERIR_TODOS_DADOS}")
+    @Path("put/{codGrupo}/{numConta}/{numAgencia}/{saldo}") //(COD_GRUPO, NUM_CONTA, NUM_AGENCIA, SALDO)
     @Produces("applicattion/json")
-    public String insereContaBancaria(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {//precisa arrumar para conter todos os dados do ContaBancaria
+    public String insereContaBancaria(@PathParam("codGrupo") Integer codGrupo,
+                                      @PathParam("numConta") Integer numConta,
+                                      @PathParam("numAgencia")Integer numAgencia,
+                                      @PathParam("saldo") Double saldo) {//precisa arrumar para conter todos os dados do ContaBancaria
         ContaBancariaDAO dao = new ContaBancariaDAO();
         Gson g = new Gson();
-        return g.toJson(dao.inserirContaBancaria(codUs)); //precisa arrumar para conter todos os dados do ContaBancaria
+        return g.toJson(dao.inserirContaBancaria(codGrupo, numConta, numAgencia, saldo)); //precisa arrumar para conter todos os dados do ContaBancaria
     }
 
     @DELETE
@@ -49,12 +52,13 @@ public class ContaBancariaEndPoint {
         return g.toJson("null");
     }
 
-
-    
     @POST
-    @Path("update/{INSERIR_TODOS_DADOS}")
+    @Path("update/{codGrupo}/{numConta}/{numAgencia}/{saldo}")
     @Produces("applicattion/json")
-    public String atualizaContaBancaria(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {
+    public String atualizaContaBancaria(@PathParam("codGrupo") Integer codGrupo,
+                                        @PathParam("numConta") Integer numConta,
+                                        @PathParam("numAgencia")Integer numAgencia,
+                                        @PathParam("saldo") Double saldo) {//precisa arrumar para conter todos os dados do ContaBancaria
 
         //implementação futura
         //return "ok";

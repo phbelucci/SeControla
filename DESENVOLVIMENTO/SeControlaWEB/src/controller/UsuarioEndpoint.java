@@ -3,6 +3,7 @@ package controller;
 
 import com.google.gson.Gson;
 import connection.BDFabricaConexao;
+import dao.ContaBancariaDAO;
 import dao.UsuarioDAO;
 import entity.Usuario;
 import javax.ws.rs.*;
@@ -33,7 +34,6 @@ public class UsuarioEndpoint {
     @Path("get/{nome}/{senha}")
     @Produces("applicattion/json")
     public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
-    //public String getUsuario() {
         UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
@@ -45,29 +45,38 @@ public class UsuarioEndpoint {
     @PUT
     @Path("put/{nome}/{senha}")
     @Consumes("application/text")
-    public boolean puUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
+    public String putUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
+        UsuarioDAO dao = new UsuarioDAO();
 
-        Usuario u = new Usuario(nome, senha);
-        Boolean retorno = false;
+        Gson g = new Gson();
 
-        try{
-        Connection con = (Connection) BDFabricaConexao.getConnection();
-        String sql = "INSERT INTO USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO) VALUES ("
-                +u.getNomeUs()+", "
-                +u.getSenhaUs()+", "
-                +u.getCodNivelAcesso()+", "
-                +u.getCodGrupo()+";";
+        return g.toJson(dao.inserirUsuarioNovo(nome, senha));
+    }
 
-        Statement stm = (Statement) con.createStatement();
-        ResultSet rset = stm.executeQuery(sql);
+    @DELETE
+    @Path("delete/{codUs}")
+    @Produces("applicattion/json")
+    public String deletaUsuario(@PathParam("codUs") Integer codUs) {
+        UsuarioDAO dao = new UsuarioDAO();
+        Gson g = new Gson();
 
-
-        } catch (SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+        if(dao.deletaUsuario(codUs)){
+            return g.toJson("ok");
         }
 
-        return true;
+        return g.toJson("null");
+    }
+
+
+
+    @POST
+    @Path("update/{INSERIR_TODOS_DADOS}")
+    @Produces("applicattion/json")
+    public String atualizaContaBancaria(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {
+
+        //implementação futura
+        //return "ok";
+        return null;
     }
 
 }

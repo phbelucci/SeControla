@@ -10,6 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import connection.BDFabricaConexao;
+import entity.ContaBancaria;
+import entity.NivelAcessoEnum;
 import entity.Usuario;
 
 public class UsuarioDAO {
@@ -132,43 +134,56 @@ public class UsuarioDAO {
         return listAll;
     }
 
-/*
-    public boolean inserirUsuarioNovo(String nome, String senha){
 
-        //INSERIR USUARIO INCOMPLETO -- RETORNAR USUARIO INCOMPLETO PARA PEGAR O ID
-        //CRIA GRUPO COM O ID CRIADO -- RETORNAR ID GRUPO
-        //
+    public Usuario inserirUsuarioNovo(String nome, String senha){
+
+        Usuario u;
+
+        String sqlInsertUsuarioVazio = String.format("INSERT INTO USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO) " +
+                "VALUES (%s, %s, 2, null;", nome, senha);
+        String sqlUsuario = "SELECT * FROM USUARIO;";
 
 
-        String sql = "INSERT INTO USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO) \n" +
-                "VALUES ("
+        String sqlSelectGrupo = "SELECT * FROM GRUPO_FAMILIAR;";
 
-        try {
-            this.con = (Connection) BDFabricaConexao.getConnection();
+        String sqlInsertGrupo = "INSERT INTO GRUPO_FAMILIAR(COD_US) VALUES(";
 
-            this.stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
+        try{
+            conectaBD(sqlInsertUsuarioVazio,"IN", true);
+            ResultSet query = (ResultSet) conectaBD(sqlUsuario,"SE", false);
 
-            while (rset.next()) {
-                if (rset.getString("NOME_US").equals(nome)||
-                        rset.getString("NOME_US").toLowerCase().equals(nome)) {
+            u=new Usuario();
 
-                    u = new Usuario();
-                    u.setCodUs(rset.setInt("COD_US"));
-                    u.setNomeUs(rset.getString("NOME_US"));
-                    u.setSenhaUs(rset.getString("SENHA_US"));
-                    u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                    u.setCodGrupo(rset.getInt("COD_GRUPO"));
-
-                    if(u.verificaSenha(senha)){
-                        con.close();
-                        return u;
-                    }
+            while(query.next()){
+                if(query.getString("NOME_US").equals(nome))
+                {
+                    u.setCodUs(query.getInt("COD_US"));
                 }
             }
 
-        }catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+            conectaBD(sqlInsertGrupo + u.getCodGrupo().toString()+");","IN", false);
+            ResultSet queryGrupo = (ResultSet) conectaBD(sqlSelectGrupo,"SE", false);
+
+            while (queryGrupo.next()){
+                if(query.getString("NOME_US").equals(nome)){
+                    u.setCodGrupo(queryGrupo.getInt("COD_GRUPO"));
+                }
+            }
+
+            return u;
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    public boolean deletaUsuario(Integer codUs) {
+        String sqlDelete = "DELETE INTO USUARIO WHERE COD_US="+codUs+";";
+
+            try {
+            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+            return true;
         }finally {
             try {
                 con.close();
@@ -177,8 +192,6 @@ public class UsuarioDAO {
                 e.printStackTrace();
             }
         }
-
-        return false;
-    }*/
+    }
 
 }
