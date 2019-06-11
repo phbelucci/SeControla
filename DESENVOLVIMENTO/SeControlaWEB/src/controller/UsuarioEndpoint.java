@@ -4,7 +4,6 @@ package controller;
 import com.google.gson.Gson;
 import dao.UsuarioDAO;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,12 +13,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 
-@Path("usuario/")
+@Path("/usuario")
 public class UsuarioEndpoint {
 
 
     @GET
-    @Path("get/all")
+    @Path("/get/all")
     @Produces("applicattion/json")
     //public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
     public String getAllUsuario() {
@@ -31,7 +30,7 @@ public class UsuarioEndpoint {
     }
 
     @GET
-    @Path("get/{nome}/{senha}")
+    @Path("/get/{nome}/{senha}")
     @Produces("applicattion/json")
     public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
         UsuarioDAO dao = new UsuarioDAO();
@@ -43,7 +42,7 @@ public class UsuarioEndpoint {
     }
 
     @PUT
-    @Path("put/{nome}/{senha}")
+    @Path("/put/{nome}/{senha}")
     @Produces("application/text")
     public String putUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
         UsuarioDAO dao = new UsuarioDAO();
@@ -54,13 +53,13 @@ public class UsuarioEndpoint {
     }
 
     @DELETE
-    @Path("delete/{codUs}")
+    @Path("/delete/{codUs}")
     @Produces("applicattion/json")
     public String deletaUsuario(@PathParam("codUs") Integer codUs) {
         UsuarioDAO dao = new UsuarioDAO();
         Gson g = new Gson();
 
-        if(dao.deletaUsuario(codUs)){
+        if (dao.deletaUsuario(codUs)) {
             return g.toJson("ok");
         }
 
@@ -68,9 +67,8 @@ public class UsuarioEndpoint {
     }
 
 
-
     @POST
-    @Path("update/{codUs}/{nomeUs}/{senhaUs}/{codNivelAcesso}/{codGrupo}/")
+    @Path("/update/{codUs}/{nomeUs}/{senhaUs}/{codNivelAcesso}/{codGrupo}/")
     @Produces("applicattion/json")
     public String atualizaContaBancaria(@PathParam("codUs") Integer codUs,
                                         @PathParam("nomeUs") Integer nomeUs,
@@ -83,7 +81,7 @@ public class UsuarioEndpoint {
 
         Gson g = new Gson();
 
-        return g.toJson(dao.atualizarUsuario(codUs,nomeUs,senhaUs, codNivelAcesso, codGrupo));
+        return g.toJson(dao.atualizarUsuario(codUs, nomeUs, senhaUs, codNivelAcesso, codGrupo));
     }
 
 }

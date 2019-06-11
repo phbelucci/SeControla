@@ -2,17 +2,13 @@ package controller;
 
 import com.google.gson.Gson;
 import dao.LancamentoDAO;
-import dao.UsuarioDAO;
-import entity.Lancamento;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import java.util.List;
 
 @Path("/lacamento")
 public class LancamentoEndPoint {
@@ -50,7 +46,7 @@ public class LancamentoEndPoint {
                                    @PathParam("tipoLanc") String tipoLanc) {//precisa arrumar para conter todos os dados do lancamento
         LancamentoDAO dao = new LancamentoDAO();
         Gson g = new Gson();
-        return g.toJson(dao.inserirLancamento(codUs,data,codCat,codSubCat,valor,codConta,codPagamento,codGrupo,tipoLanc)); //precisa arrumar para conter todos os dados do lancamento
+        return g.toJson(dao.inserirLancamento(codUs, data, codCat, codSubCat, valor, codConta, codPagamento, codGrupo, tipoLanc)); //precisa arrumar para conter todos os dados do lancamento
     }
 
     @DELETE
@@ -60,7 +56,7 @@ public class LancamentoEndPoint {
         LancamentoDAO dao = new LancamentoDAO();
         Gson g = new Gson();
 
-        if(dao.deletaLancamento(codLancamento)){
+        if (dao.deletaLancamento(codLancamento)) {
             return g.toJson("ok");
         }
 

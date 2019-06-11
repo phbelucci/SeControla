@@ -8,7 +8,7 @@ import javax.ws.rs.Produces;
 public class ConectadoEndPoint {
 
     @GET
-    @Produces("text/plain")
+    @Produces("/text/plain")
     public String getInicio() {
         return "Conectado!";
     }

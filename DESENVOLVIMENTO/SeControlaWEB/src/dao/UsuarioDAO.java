@@ -1,5 +1,8 @@
 package dao;
 
+import connection.BDFabricaConexao;
+import entity.Usuario;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,11 +12,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import connection.BDFabricaConexao;
-import entity.ContaBancaria;
-import entity.NivelAcessoEnum;
-import entity.Usuario;
-
 public class UsuarioDAO {
 
     Connection con;
@@ -21,17 +19,17 @@ public class UsuarioDAO {
     int rset;
     ResultSet rsetGet;
 
-    private Object conectaBD(String sql, String tipo, boolean connection){
+    private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
-            if(connection) {
+            if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
             this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")){
+            if (tipo.equals("UP")) {
                 this.rset = stm.executeUpdate(sql);
                 return rset;
 
-            }else if(tipo.equals("SE")){
+            } else if (tipo.equals("SE")) {
                 this.rsetGet = stm.executeQuery(sql);
                 return rsetGet;
             }
@@ -41,7 +39,7 @@ public class UsuarioDAO {
         return null;
     }
 
-    public Usuario buscarUsuario(String nome, String senha){
+    public Usuario buscarUsuario(String nome, String senha) {
 
 
         String sql = "SELECT * FROM USUARIO";
@@ -56,10 +54,10 @@ public class UsuarioDAO {
             this.stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);*/
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
 
             while (query.next()) {
-                if (query.getString("NOME_US").equals(nome)||
+                if (query.getString("NOME_US").equals(nome) ||
                         query.getString("NOME_US").toLowerCase().equals(nome)) {
 
                     u = new Usuario();
@@ -69,15 +67,15 @@ public class UsuarioDAO {
                     u.setCodNivelAcesso(query.getInt("COD_NIVEL_ACESSO"));
                     u.setCodGrupo(query.getInt("COD_GRUPO"));
 
-                    if(u.verificaSenha(senha)){
+                    if (u.verificaSenha(senha)) {
                         return u;
                     }
                 }
             }
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -85,7 +83,6 @@ public class UsuarioDAO {
                 e.printStackTrace();
             }
         }
-
 
 
         return null;
@@ -107,7 +104,7 @@ public class UsuarioDAO {
             this.stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);*/
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
 
             while (query.next()) {
                 u = new Usuario();
@@ -119,9 +116,9 @@ public class UsuarioDAO {
 
                 listAll.add(u);
             }
-        }catch (SQLException e) {
-        Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -134,7 +131,7 @@ public class UsuarioDAO {
     }
 
 
-    public Usuario inserirUsuarioNovo(String nome, String senha){
+    public Usuario inserirUsuarioNovo(String nome, String senha) {
 
         Usuario u;
 
@@ -147,24 +144,23 @@ public class UsuarioDAO {
 
         String sqlInsertGrupo = "INSERT INTO GRUPO_FAMILIAR(COD_US) VALUES(";
 
-        try{
-            conectaBD(sqlInsertUsuarioVazio,"UP", true);
-            ResultSet query = (ResultSet) conectaBD(sqlUsuario,"SE", false);
+        try {
+            conectaBD(sqlInsertUsuarioVazio, "UP", true);
+            ResultSet query = (ResultSet) conectaBD(sqlUsuario, "SE", false);
 
-            u=new Usuario();
+            u = new Usuario();
 
-            while(query.next()){
-                if(query.getString("NOME_US").equals(nome))
-                {
+            while (query.next()) {
+                if (query.getString("NOME_US").equals(nome)) {
                     u.setCodUs(query.getInt("COD_US"));
                 }
             }
 
-            conectaBD(sqlInsertGrupo + u.getCodGrupo().toString()+");","UP", false);
-            ResultSet queryGrupo = (ResultSet) conectaBD(sqlSelectGrupo,"SE", false);
+            conectaBD(sqlInsertGrupo + u.getCodGrupo().toString() + ");", "UP", false);
+            ResultSet queryGrupo = (ResultSet) conectaBD(sqlSelectGrupo, "SE", false);
 
-            while (queryGrupo.next()){
-                if(query.getString("NOME_US").equals(nome)){
+            while (queryGrupo.next()) {
+                if (query.getString("NOME_US").equals(nome)) {
                     u.setCodGrupo(queryGrupo.getInt("COD_GRUPO"));
                 }
             }
@@ -178,12 +174,12 @@ public class UsuarioDAO {
     }
 
     public boolean deletaUsuario(Integer codUs) {
-        String sqlDelete = "DELETE INTO USUARIO WHERE COD_US="+codUs+";";
+        String sqlDelete = "DELETE INTO USUARIO WHERE COD_US=" + codUs + ";";
 
-            try {
-            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+        try {
+            conectaBD(sqlDelete, "SE", true);//false para não realizar a conexão novamente
             return true;
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -195,16 +191,16 @@ public class UsuarioDAO {
 
     public boolean atualizarUsuario(Integer codUs, Integer nomeUs, Integer senhaUs, Integer codNivelAcesso, Integer codGrupo) {
 
-        String sqlUpdate= "UPDATE USUARIO SET" +
-                        " NOME_US="+nomeUs+
-                        " AND SENHA_US=" + senhaUs +
-                        " AND COD_NIVEL_ACESSO=" + codNivelAcesso.toString() +
-                        " AND COD_GRUPO = " + codGrupo.toString() +
-                        " WHERE COD_US =" + codUs.toString()+";";
+        String sqlUpdate = "UPDATE USUARIO SET" +
+                " NOME_US=" + nomeUs +
+                " AND SENHA_US=" + senhaUs +
+                " AND COD_NIVEL_ACESSO=" + codNivelAcesso.toString() +
+                " AND COD_GRUPO = " + codGrupo.toString() +
+                " WHERE COD_US =" + codUs.toString() + ";";
 
-        Integer aux = (Integer) conectaBD(sqlUpdate,"UP", true);
-            
-        if(aux>0){
+        Integer aux = (Integer) conectaBD(sqlUpdate, "UP", true);
+
+        if (aux > 0) {
             try {
                 con.close();
                 stm.close();

@@ -18,17 +18,17 @@ public class ContaBancariaDAO {
     int rset;
     ResultSet rsetGet;
 
-    private Object conectaBD(String sql, String tipo, boolean connection){
+    private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
-            if(connection) {
+            if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
             this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")){
+            if (tipo.equals("UP")) {
                 this.rset = stm.executeUpdate(sql);
                 return rset;
 
-            }else if(tipo.equals("SE")){
+            } else if (tipo.equals("SE")) {
                 this.rsetGet = stm.executeQuery(sql);
                 return rsetGet;
             }
@@ -53,7 +53,7 @@ public class ContaBancariaDAO {
             this.stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);*/
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
 
             while (query.next()) {
                 u = new ContaBancaria();
@@ -64,9 +64,9 @@ public class ContaBancariaDAO {
 
                 listAll.add(u);
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(ContaBancariaDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -80,22 +80,22 @@ public class ContaBancariaDAO {
 
     public ContaBancaria inserirContaBancaria(Integer codGrupo, Integer numConta, Integer numAgencia, Double saldo) {
         String sqlInsert = "INSERT INTO CONTA_BANCO(COD_GRUPO, NUM_CONTA, NUM_AGENCIA, SALDO) VALUES ("
-                +codGrupo+","
-                +numConta+","
-                +numAgencia+","
-                +saldo+");";
+                + codGrupo + ","
+                + numConta + ","
+                + numAgencia + ","
+                + saldo + ");";
         String sqlSelect = "SELECT * FROM CONTA_BANCO;";
 
         ContaBancaria u;
 
         try {
-            Integer connection = (Integer) conectaBD(sqlInsert,"UP", true);
-            ResultSet query = (ResultSet) conectaBD(sqlSelect,"SE", false);//false para não realizar a conexão novamente
+            Integer connection = (Integer) conectaBD(sqlInsert, "UP", true);
+            ResultSet query = (ResultSet) conectaBD(sqlSelect, "SE", false);//false para não realizar a conexão novamente
 
             u = new ContaBancaria();
 
             while (query.next()) {
-                if (query.getInt("NUM_CONTA")==numConta && query.getInt("NUM_AGENCIA") == numAgencia ) {
+                if (query.getInt("NUM_CONTA") == numConta && query.getInt("NUM_AGENCIA") == numAgencia) {
                     u.setCodConta(query.getInt("COD_CONTA"));
                     u.setNumConta(query.getInt("NUM_CONTA"));
                     u.setNumAgencia(query.getInt("NUM_AGENCIA"));
@@ -121,12 +121,12 @@ public class ContaBancariaDAO {
 
     public boolean deletaContaBancaria(Integer codContaBancaria) {
 
-        String sqlDelete = "DELETE INTO CONTA_BANCO WHERE COD_CONTA="+codContaBancaria+";";
+        String sqlDelete = "DELETE INTO CONTA_BANCO WHERE COD_CONTA=" + codContaBancaria + ";";
 
         try {
-            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+            conectaBD(sqlDelete, "SE", true);//false para não realizar a conexão novamente
             return true;
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();

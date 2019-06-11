@@ -1,10 +1,7 @@
 package dao;
 
 import connection.BDFabricaConexao;
-import entity.FormaPagamentoEnum;
 import entity.Lancamento;
-import entity.TipoLancamentoEnum;
-import entity.Usuario;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,17 +18,17 @@ public class LancamentoDAO {
     int rset;
     ResultSet rsetGet;
 
-    private Object conectaBD(String sql, String tipo, boolean connection){
+    private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
-            if(connection) {
+            if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
             this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")){
+            if (tipo.equals("UP")) {
                 this.rset = stm.executeUpdate(sql);
                 return rset;
 
-            }else if(tipo.equals("SE")){
+            } else if (tipo.equals("SE")) {
                 this.rsetGet = stm.executeQuery(sql);
                 return rsetGet;
             }
@@ -52,7 +49,7 @@ public class LancamentoDAO {
 
             allLancamentos = new ArrayList<Lancamento>();
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
 
             while (query.next()) {
                 if (query.getInt("COD_GRUPO") == codGrupo) {
@@ -71,9 +68,9 @@ public class LancamentoDAO {
                 }
             }
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -96,7 +93,7 @@ public class LancamentoDAO {
 
             allLancamentos = new ArrayList<Lancamento>();
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
 
             while (query.next()) {
                 if (query.getInt("COD_US") == codUs) {
@@ -115,9 +112,9 @@ public class LancamentoDAO {
                 }
             }
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -134,12 +131,12 @@ public class LancamentoDAO {
 
     public boolean deletaLancamento(Integer codLancamento) {
 
-        String sqlDelete = "DELETE FROM LANCAMENTO WHERE COD_LANC = "+codLancamento+";";
+        String sqlDelete = "DELETE FROM LANCAMENTO WHERE COD_LANC = " + codLancamento + ";";
 
         try {
-            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+            conectaBD(sqlDelete, "SE", true);//false para não realizar a conexão novamente
             return true;
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -150,41 +147,41 @@ public class LancamentoDAO {
     }
 
     public Lancamento inserirLancamento(Integer codUs,
-                                    String data,
-                                    Integer codCat,
-                                    Integer codSubCat,
-                                    Double valor,
-                                    Integer codConta,
-                                    Integer codPagamento,
-                                    Integer codGrupo,
-                                    String tipoLanc) {
+                                        String data,
+                                        Integer codCat,
+                                        Integer codSubCat,
+                                        Double valor,
+                                        Integer codConta,
+                                        Integer codPagamento,
+                                        Integer codGrupo,
+                                        String tipoLanc) {
 
         String sqlInsert = "INSERT INTO LANCAMENTO(COD_US, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM) "
-                +"VALUES ("+codUs.toString()+", "+data+", "+codCat.toString()+", "+codSubCat.toString()+", "+valor.toString()+", "+codConta.toString()
-                +", "+codPagamento.toString()+", "+codGrupo.toString()+", "+tipoLanc+");";
+                + "VALUES (" + codUs.toString() + ", " + data + ", " + codCat.toString() + ", " + codSubCat.toString() + ", " + valor.toString() + ", " + codConta.toString()
+                + ", " + codPagamento.toString() + ", " + codGrupo.toString() + ", " + tipoLanc + ");";
 
         String sql = "SELECT * FROM LANCAMENTO";
 
         Lancamento l;
 
         try {
-            conectaBD(sqlInsert,"SE", true);//false para não realizar a conexão novamente
+            conectaBD(sqlInsert, "SE", true);//false para não realizar a conexão novamente
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", false);
+            ResultSet query = (ResultSet) conectaBD(sql, "SE", false);
 
             while (query.next()) {
-                    l = new Lancamento();
-                    l.setCodGrupo(query.getInt("COD_GRUPO"));
-                    l.setCodUs(query.getInt("COD_US"));
-                    l.setCat(query.getInt("COD_CAT"));
-                    l.setSubCat(query.getInt("COD_SUBCAT"));
-                    l.setValor(query.getDouble("VALOR"));
-                    l.setCodConta(query.getInt("COD_CONTA"));
-                    l.setFormaPagamento(query.getInt("COD_FORMA_PGTO"));
-                    l.setCodGrupo(query.getInt("COD_GRUPO"));
-                    l.setTipoLancamentoEnum(query.getString("TIPO_LANC_ENUM"));
+                l = new Lancamento();
+                l.setCodGrupo(query.getInt("COD_GRUPO"));
+                l.setCodUs(query.getInt("COD_US"));
+                l.setCat(query.getInt("COD_CAT"));
+                l.setSubCat(query.getInt("COD_SUBCAT"));
+                l.setValor(query.getDouble("VALOR"));
+                l.setCodConta(query.getInt("COD_CONTA"));
+                l.setFormaPagamento(query.getInt("COD_FORMA_PGTO"));
+                l.setCodGrupo(query.getInt("COD_GRUPO"));
+                l.setTipoLancamentoEnum(query.getString("TIPO_LANC_ENUM"));
 
-                    return l;
+                return l;
             }
 
         } catch (SQLException e) {
