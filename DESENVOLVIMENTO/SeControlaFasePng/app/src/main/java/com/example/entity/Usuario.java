@@ -2,16 +2,22 @@ package com.example.entity;
 
 import android.media.Image;
 
-public class Usuario{
+import java.io.Serializable;
+
+/*
+ *      Classe atualizada de acordo com o Servidor
+ *  */
+public class Usuario implements Serializable {
 
     private Integer codUs;
     private String nomeUs;
-    private Image avatarUs;
-    //private Login login;
-    private Integer codGrupo;
     private String senhaUs;
+    //private Image avatarUs;
+    private Integer codNivelAcesso;
+    private Integer codGrupo;
+    //private Login login;
 
-    //com avatar
+    /*com avatar
     public Usuario(Integer codUs, String nomeUs, Integer codGrupo, String usuario, Image avatarUs,String senha) {
         //login = new Login(codUs, usuario, senha);
 
@@ -20,11 +26,14 @@ public class Usuario{
         this.avatarUs = avatarUs;
         this.codGrupo = codGrupo;
     }
+    */
 
     public Usuario(String nomeUs, String senha) {
-        //login = new Login(codUs, usuario, senha);
+        this.codUs = 1;
         this.nomeUs = nomeUs;
-        //login.setSenha(senha);
+        this.senhaUs=senha;
+        this.codGrupo = 1;
+        this.codNivelAcesso = 2;
     }
 
     //sem avatar
@@ -36,6 +45,7 @@ public class Usuario{
         this.codGrupo = codGrupo;
     }
 
+
     public Integer getCodUs() {
         return codUs;
     }
@@ -43,11 +53,11 @@ public class Usuario{
     public String getNomeUs() {
         return nomeUs;
     }
-
+    /*
     public Image getAvatarUs() {
         return avatarUs;
     }
-
+    */
     /*public String getUsuario(){
         return login.getUsuario();
     }*/
@@ -71,11 +81,11 @@ public class Usuario{
     public void setNomeUs(String nomeUs) {
         this.nomeUs = nomeUs;
     }
-
+    /*
     public void setAvatarUs(Image avatarUs) {
         this.avatarUs = avatarUs;
     }
-
+    */
     public boolean verificaSenha(String senha){
         if (this.senhaUs.equals(senha)){
             return true;

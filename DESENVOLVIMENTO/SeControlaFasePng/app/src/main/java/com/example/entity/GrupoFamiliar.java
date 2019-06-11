@@ -1,9 +1,10 @@
 package com.example.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GrupoFamiliar{
+public class GrupoFamiliar implements Serializable {
 
     private final Integer codGrupo;
     private Integer codAdmGrupo;
