@@ -5,10 +5,16 @@ import dao.LancamentoDAO;
 import dao.UsuarioDAO;
 import entity.Lancamento;
 
-import javax.ws.rs.*;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import java.util.List;
 
-@Path("lacamento/")
+@Path("/lacamento")
 public class LancamentoEndPoint {
 
 

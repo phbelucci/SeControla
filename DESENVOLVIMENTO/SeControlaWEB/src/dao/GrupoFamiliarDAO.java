@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,6 +40,104 @@ public class GrupoFamiliarDAO {
         return null;
     }
 
+
+    public List<GrupoFamiliar> getTodosGrupos() {
+
+        List<GrupoFamiliar> listAll = new ArrayList<GrupoFamiliar>();
+
+        String sqlAll = "select * from GRUPO_FAMILIAR;";
+
+        try{
+            ResultSet query = (ResultSet) conectaBD(sqlAll,"SE",true);
+
+            while (query.next()){
+                GrupoFamiliar g = new GrupoFamiliar();
+
+                g.setCodGrupo(rsetGet.getInt("COD_GRUPO"));
+                g.setCodAdmGrupo(rsetGet.getInt("COD_ADM_GRUPO"));
+
+                listAll.add(g);
+            }
+
+            return listAll;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+        try {
+            con.close();
+            stm.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+        return null;
+
+    }
+
+    public GrupoFamiliar getGrupo(Integer codGrupo) {
+
+        GrupoFamiliar g;
+        String sqlAll = "select * from GRUPO_FAMILIAR;";
+
+        try{
+            ResultSet query = (ResultSet) conectaBD(sqlAll,"SE",true);
+
+            g = new GrupoFamiliar();
+
+            while (query.next()){
+                if (query.getInt("COD_GRUPO") == codGrupo){
+                    g.setCodGrupo(query.getInt("COD_GRUPO"));
+                    g.setCodAdmGrupo(query.getInt("COD_ADM_GRUPO"));
+                }
+            }
+            return g;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return null;
+
+    }
+
+    public GrupoFamiliar getGrupoUsuario(Integer codUs) {
+
+        GrupoFamiliar g;
+        String sqlAll = "select * from GRUPO_FAMILIAR;";
+
+        try{
+            ResultSet query = (ResultSet) conectaBD(sqlAll,"SE",true);
+
+            g = new GrupoFamiliar();
+
+            while (query.next()){
+                if (query.getInt("COD_ADM_GRUPO") == codUs){
+                    g.setCodGrupo(query.getInt("COD_GRUPO"));
+                    g.setCodAdmGrupo(query.getInt("COD_ADM_GRUPO"));
+                }
+            }
+            return g;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+        try {
+            con.close();
+            stm.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+        return null;
+
+    }
 
     public GrupoFamiliar inserirNovoGrupo(Integer codUs){
 
@@ -77,5 +177,31 @@ public class GrupoFamiliarDAO {
 
         return null;
 
+    }
+
+    public boolean deletaGrupo(Integer codGrupo) {
+
+        String sqlDelete = "DELETE INTO GRUPO_FAMILIAR WHERE COD_GRUPO="+codGrupo+";";
+
+        try {
+            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+            return true;
+        }finally {
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public boolean atualizarGrupo(Integer codGrupo, Integer codUs) {
+        String sqlUpdate = "UPDATE GRUPO_FAMILIAR SET COD_ADM_GRUPO="
+                + codUs.toString() + ", WHERE COD_GRUPO ="
+                + codGrupo.toString()+";";
+
+        return false;
     }
 }

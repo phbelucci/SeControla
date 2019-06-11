@@ -2,16 +2,16 @@ package controller;
 
 
 import com.google.gson.Gson;
-import connection.BDFabricaConexao;
-import dao.ContaBancariaDAO;
 import dao.UsuarioDAO;
-import entity.Usuario;
-import javax.ws.rs.*;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
 
 @Path("usuario/")
@@ -44,7 +44,7 @@ public class UsuarioEndpoint {
 
     @PUT
     @Path("put/{nome}/{senha}")
-    @Consumes("application/text")
+    @Produces("application/text")
     public String putUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
         UsuarioDAO dao = new UsuarioDAO();
 
