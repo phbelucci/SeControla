@@ -2,15 +2,16 @@ package controller;
 
 
 import com.google.gson.Gson;
-import connection.BDFabricaConexao;
 import dao.UsuarioDAO;
-import entity.Usuario;
-import javax.ws.rs.*;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
 
 @Path("usuario/")
@@ -22,107 +23,67 @@ public class UsuarioEndpoint {
     @Produces("applicattion/json")
     //public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
     public String getAllUsuario() {
-        String sql = "SELECT * FROM USUARIO";
-        List<Usuario> retorno = new ArrayList<>();
-
-        try {
-            Connection con = (Connection) BDFabricaConexao.getConnection();
-            //String sql = "select * from USUARIO WHERE NOME_US="
-                    //+nome+";";
-
-            Statement stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
-
-            while (rset.next()){
-                Usuario u = new Usuario();
-
-                u.setCodUs(rset.getInt("COD_US"));
-                u.setNomeUs(rset.getString("NOME_US"));
-                u.setSenhaUs(rset.getString("SENHA_US"));
-                u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                u.setCodGrupo(rset.getInt("COD_GRUPO"));
-
-                retorno.add(u);
-            }
-        }catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }
+        UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
 
-        String r = g.toJson(retorno);
-
-        return r;
+        return g.toJson(dao.buscarTodosUsuarios());
     }
 
     @GET
     @Path("get/{nome}/{senha}")
     @Produces("applicattion/json")
     public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
-    //public String getUsuario() {
-        String sql = "SELECT * FROM USUARIO";
-
-        Usuario u = new Usuario();
-
-        try {
-            Connection con = (Connection) BDFabricaConexao.getConnection();
-
-            Statement stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
-
-            while (rset.next()) {
-                if (rset.getString("NOME_US").equals(nome)||
-                                rset.getString("NOME_US").toLowerCase().equals(nome)) {
-
-                    u.setCodUs(rset.getInt("COD_US"));
-                    u.setNomeUs(rset.getString("NOME_US"));
-                    u.setSenhaUs(rset.getString("SENHA_US"));
-                    u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                    u.setCodGrupo(rset.getInt("COD_GRUPO"));
-                }
-            }
-
-        }catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }
+        UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
 
-        if(u.verificaSenha(senha)){
-
-            return g.toJson(u);
-        }
-
-        return g.toJson("null");
+        return g.toJson(dao.buscarUsuario(nome, senha));
 
     }
 
     @PUT
     @Path("put/{nome}/{senha}")
-    @Consumes("application/text")
-    public boolean puUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
+    @Produces("application/text")
+    public String putUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
+        UsuarioDAO dao = new UsuarioDAO();
 
-        Usuario u = new Usuario(nome, senha);
-        Boolean retorno = false;
+        Gson g = new Gson();
 
-        try{
-        Connection con = (Connection) BDFabricaConexao.getConnection();
-        String sql = "INSERT INTO USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO) VALUES ("
-                +u.getNomeUs()+", "
-                +u.getSenhaUs()+", "
-                +u.getCodNivelAcesso()+", "
-                +u.getCodGrupo()+";";
+        return g.toJson(dao.inserirUsuarioNovo(nome, senha));
+    }
 
-        Statement stm = (Statement) con.createStatement();
-        ResultSet rset = stm.executeQuery(sql);
+    @DELETE
+    @Path("delete/{codUs}")
+    @Produces("applicattion/json")
+    public String deletaUsuario(@PathParam("codUs") Integer codUs) {
+        UsuarioDAO dao = new UsuarioDAO();
+        Gson g = new Gson();
 
-
-        } catch (SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+        if(dao.deletaUsuario(codUs)){
+            return g.toJson("ok");
         }
 
-        return true;
+        return g.toJson("null");
+    }
+
+
+
+    @POST
+    @Path("update/{codUs}/{nomeUs}/{senhaUs}/{codNivelAcesso}/{codGrupo}/")
+    @Produces("applicattion/json")
+    public String atualizaContaBancaria(@PathParam("codUs") Integer codUs,
+                                        @PathParam("nomeUs") Integer nomeUs,
+                                        @PathParam("senhaUs") Integer senhaUs,
+                                        @PathParam("codNivelAcesso") Integer codNivelAcesso,
+                                        @PathParam("codGrupo") Integer codGrupo) {
+
+        // USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO)
+        UsuarioDAO dao = new UsuarioDAO();
+
+        Gson g = new Gson();
+
+        return g.toJson(dao.atualizarUsuario(codUs,nomeUs,senhaUs, codNivelAcesso, codGrupo));
     }
 
 }
