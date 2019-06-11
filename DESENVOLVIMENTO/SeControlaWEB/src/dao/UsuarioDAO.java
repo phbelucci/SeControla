@@ -16,6 +16,28 @@ public class UsuarioDAO {
 
     Connection con;
     Statement stm;
+    int rset;
+    ResultSet rsetGet;
+
+    private Object conectaBD(String sql, String tipo, boolean connection){
+        try {
+            if(connection) {
+                this.con = (Connection) BDFabricaConexao.getConnection();
+            }
+            this.stm = (Statement) con.createStatement();
+            if (tipo.equals("UP")){
+                this.rset = stm.executeUpdate(sql);
+                return rset;
+
+            }else if(tipo.equals("SE")){
+                this.rsetGet = stm.executeQuery(sql);
+                return rsetGet;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public Usuario buscarUsuario(String nome, String senha){
 
@@ -25,21 +47,25 @@ public class UsuarioDAO {
         Usuario u;
 
         try {
+
+            /*
             this.con = (Connection) BDFabricaConexao.getConnection();
 
             this.stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
+            ResultSet rset = stm.executeQuery(sql);*/
 
-            while (rset.next()) {
-                if (rset.getString("NOME_US").equals(nome)||
-                        rset.getString("NOME_US").toLowerCase().equals(nome)) {
+            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+
+            while (query.next()) {
+                if (query.getString("NOME_US").equals(nome)||
+                        query.getString("NOME_US").toLowerCase().equals(nome)) {
 
                     u = new Usuario();
-                    u.setCodUs(rset.getInt("COD_US"));
-                    u.setNomeUs(rset.getString("NOME_US"));
-                    u.setSenhaUs(rset.getString("SENHA_US"));
-                    u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                    u.setCodGrupo(rset.getInt("COD_GRUPO"));
+                    u.setCodUs(query.getInt("COD_US"));
+                    u.setNomeUs(query.getString("NOME_US"));
+                    u.setSenhaUs(query.getString("SENHA_US"));
+                    u.setCodNivelAcesso(query.getInt("COD_NIVEL_ACESSO"));
+                    u.setCodGrupo(query.getInt("COD_GRUPO"));
 
                     if(u.verificaSenha(senha)){
                         con.close();
@@ -73,21 +99,25 @@ public class UsuarioDAO {
         Usuario u;
 
         try {
+
+            /*
             this.con = (Connection) BDFabricaConexao.getConnection();
 
             this.stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
+            ResultSet rset = stm.executeQuery(sql);*/
 
-            while (rset.next()) {
-                    u = new Usuario();
-                    u.setCodUs(rset.getInt("COD_US"));
-                    u.setNomeUs(rset.getString("NOME_US"));
-                    u.setSenhaUs(rset.getString("SENHA_US"));
-                    u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                    u.setCodGrupo(rset.getInt("COD_GRUPO"));
+            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
 
-                    listAll.add(u);
-                }
+            while (query.next()) {
+                u = new Usuario();
+                u.setCodUs(query.getInt("COD_US"));
+                u.setNomeUs(query.getString("NOME_US"));
+                u.setSenhaUs(query.getString("SENHA_US"));
+                u.setCodNivelAcesso(query.getInt("COD_NIVEL_ACESSO"));
+                u.setCodGrupo(query.getInt("COD_GRUPO"));
+
+                listAll.add(u);
+            }
         }catch (SQLException e) {
         Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
         }finally {

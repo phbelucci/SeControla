@@ -15,6 +15,28 @@ public class GrupoFamiliarDAO {
 
     Connection con;
     Statement stm;
+    int rset;
+    ResultSet rsetGet;
+
+    private Object conectaBD(String sql, String tipo, boolean connection){
+        try {
+            if(connection) {
+                this.con = (Connection) BDFabricaConexao.getConnection();
+            }
+            this.stm = (Statement) con.createStatement();
+            if (tipo.equals("UP")){
+                this.rset = stm.executeUpdate(sql);
+                return rset;
+
+            }else if(tipo.equals("SE")){
+                this.rsetGet = stm.executeQuery(sql);
+                return rsetGet;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
     public GrupoFamiliar inserirNovoGrupo(Integer codUs){

@@ -16,6 +16,7 @@ public class ContaBancariaEndPoint {
         return g.toJson(dao.buscarTodasContasBancarias(codGrupo));
     }
 
+    /* Não temos registro de codUs na conta, somente grupo
     @GET
     @Path("get/us/{codUs}")
     @Produces("applicattion/json")
@@ -23,7 +24,7 @@ public class ContaBancariaEndPoint {
         ContaBancariaDAO dao = new ContaBancariaDAO();
         Gson g = new Gson();
         return g.toJson(dao.buscarTodasContasBancariasUsuario(codUs));
-    }
+    }*/
 
     @PUT
     @Path("put/{INSERIR_TODOS_DADOS}")

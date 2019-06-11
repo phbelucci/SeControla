@@ -15,19 +15,24 @@ public class LancamentoDAO {
     int rset;
     ResultSet rsetGet;
 
-    private void conectaBD(String sql, String tipo){
+    private Object conectaBD(String sql, String tipo, boolean connection){
         try {
-            this.con = (Connection) BDFabricaConexao.getConnection();
+            if(connection) {
+                this.con = (Connection) BDFabricaConexao.getConnection();
+            }
             this.stm = (Statement) con.createStatement();
             if (tipo.equals("UP")){
                 this.rset = stm.executeUpdate(sql);
+                return rset;
 
-            }else if(tipo.equals("IN")){
+            }else if(tipo.equals("SE")){
                 this.rsetGet = stm.executeQuery(sql);
+                return rsetGet;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public List<Lancamento> buscarTodosLancamentos(Integer codGrupo) {
