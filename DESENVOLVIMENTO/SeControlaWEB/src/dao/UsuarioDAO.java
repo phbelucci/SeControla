@@ -206,6 +206,12 @@ public class UsuarioDAO {
         Integer aux = (Integer) conectaBD(sqlUpdate,"UP", true);
             
         if(aux>0){
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             return true;
         }
 

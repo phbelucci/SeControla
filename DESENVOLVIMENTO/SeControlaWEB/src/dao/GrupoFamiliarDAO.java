@@ -202,6 +202,19 @@ public class GrupoFamiliarDAO {
                 + codUs.toString() + ", WHERE COD_GRUPO ="
                 + codGrupo.toString()+";";
 
+        Integer aux = (Integer) conectaBD(sqlUpdate,"UP", true);
+
+        if(aux>1){
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return true;
+        }
+
         return false;
     }
 }
