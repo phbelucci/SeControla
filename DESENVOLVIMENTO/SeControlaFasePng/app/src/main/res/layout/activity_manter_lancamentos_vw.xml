@@ -55,7 +55,7 @@
         android:background="@color/cardview_shadow_start_color"
 
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnGastoReceitaVwManterLancmentos"
+        app:layout_constraintBottom_toTopOf="@+id/btnGastoVwManterLancmentos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnListarDespesas"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:background="#E2FF001A"
@@ -88,18 +88,18 @@
             android:textStyle="" />
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/btnListarReceitas"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:background="#2F04FF01"
+            android:background="#DF04F800"
             android:text="RECEITAS"
             android:textColor="#FFFFFF" />
 
     </FrameLayout>
 
     <Button
-        android:id="@+id/btnGastoReceitaVwManterLancmentos"
+        android:id="@+id/btnGastoVwManterLancmentos"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -114,13 +114,13 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGastoReceitaVwManterLancmentos2"
+        app:layout_constraintBottom_toTopOf="@+id/btnReceitaVwManterLancmentos2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listaLancamentos" />
 
     <Button
-        android:id="@+id/btnGastoReceitaVwManterLancmentos2"
+        android:id="@+id/btnReceitaVwManterLancmentos2"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -139,6 +139,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGastoReceitaVwManterLancmentos" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGastoVwManterLancmentos" />
 
 </android.support.constraint.ConstraintLayout>

@@ -10,8 +10,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.model.Lancamento;
+
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class novoLancamento_vw extends AppCompatActivity {
@@ -25,6 +29,7 @@ public class novoLancamento_vw extends AppCompatActivity {
     private String formaPagtoFinalVw;
     private int formaPagtoEscolhida=0;
     private int formaPagtoSelecionada;
+    public int tipo;
     String digito1 = null;
     String digito2 = null;
     String digito3 = null;
@@ -32,6 +37,8 @@ public class novoLancamento_vw extends AppCompatActivity {
     String digito5 = null;
     String digito6 = null;
     String digito7 = null;
+    ArrayList<Lancamento> ArrayLancGasto = new ArrayList<>();
+    ArrayList<Lancamento> ArrayLancReceita = new ArrayList<>();
 
 
     @Override
@@ -39,28 +46,40 @@ public class novoLancamento_vw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_lancamento_vw);
 
-        Bundle pegaCategoria = getIntent().getExtras();
-        categoriaFinalVw = pegaCategoria.getString("categoriaEscolhida");
+        Bundle pegaDados = getIntent().getExtras();
+        categoriaFinalVw = pegaDados.getString("categoriaEscolhida");
+        tipo = pegaDados.getInt("tipoEscolhido");
         System.out.println(categoriaFinalVw);
-
     }
 
     public void chamarTelaInicio(View view){
         startActivity(new Intent(this, inicio_vw.class));
-
     }
 
     public void chamarTelaManterLancamentos(View view){
+        //Novo Objeto
+        if(tipo == 1){
+            ArrayLancGasto.add(new Lancamento(R.drawable.avatar1,valorFinalVw,categoriaFinalVw,formaPagtoFinalVw,tipo));
+        }else if(tipo == 2){
+            ArrayLancReceita.add(new Lancamento(R.drawable.avatar1,valorFinalVw,categoriaFinalVw,formaPagtoFinalVw,tipo));
+        }
 
         //envia os dados para popular a lista dinamicamente
-        System.out.println(valorFinalVw);
+        //inicia Bundle
         Bundle novoLancamento = new Bundle();
-        novoLancamento.putString("valorfinal",valorFinalVw);
-        novoLancamento.putString("categoria",categoriaFinalVw);
-        novoLancamento.putString("formapagto",formaPagtoFinalVw);
-
+        //informa o que vc deseja mandar para a proxima tela
+        //pode ser putString, put Int... etc.. nessa caso o objeto é putSerializable.
+        //define uma chave para poder localizar o que vc esta passando, pois podem ser enviadas
+        //quantas informacoes quiser no Bundle, porem tem q ter uma chave para cada um
+        //e o parametro
+        novoLancamento.putSerializable("ArrayG",ArrayLancGasto);
+        novoLancamento.putSerializable("ArrayR",ArrayLancReceita);
+        novoLancamento.putInt("tipo",tipo);
+        //Intent padrao para chamar a nova tela
         Intent intent = new Intent(this, manter_lancamentos_vw.class);
+        //carregar o Bundle "novoLancamento" na Intent criada
         intent.putExtras(novoLancamento);
+        //Chama nova tela
         startActivity(intent);
     }
 
@@ -299,7 +318,6 @@ public class novoLancamento_vw extends AppCompatActivity {
     public void setFormaPagtoDinheiro(View v){
         Button b = findViewById(R.id.btnDinheiroVwLancamento);
         String s = b.getContentDescription().toString();
-
         formaPagtoFinalVw = "Dinheiro";
         System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
@@ -313,8 +331,5 @@ public class novoLancamento_vw extends AppCompatActivity {
         armazenarFormaPagto(s);
 
     }
-
-
-
 
 }

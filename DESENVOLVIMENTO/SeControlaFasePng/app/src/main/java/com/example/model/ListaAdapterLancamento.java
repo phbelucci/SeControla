@@ -28,9 +28,10 @@ public class ListaAdapterLancamento extends ArrayAdapter<Lancamento> {
     public View getView(int position, View convertView, ViewGroup parent) {
         Lancamento lancPosicao = this.lista.get(position);
         convertView = LayoutInflater.from(this.context).inflate(R.layout.lancamentolinha,null);
-        /*ImageView imageView = (ImageView) convertView.findViewById(R.id.avatar);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.avatar);
         imageView.setImageResource(lancPosicao.getImagem());
-       */TextView textView = (TextView) convertView.findViewById(R.id.categoria);
+        TextView textView = (TextView) convertView.findViewById(R.id.categoria);
+
         textView.setText(lancPosicao.getCategoria());
         TextView textView1 = (TextView) convertView.findViewById(R.id.valor);
         textView1.setText(lancPosicao.getValor());

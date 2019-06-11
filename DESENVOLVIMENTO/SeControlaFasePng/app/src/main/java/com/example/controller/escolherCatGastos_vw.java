@@ -14,6 +14,7 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     private int idCat;
     private String nomeCat;
     private String categoriaFinalVw;
+    private final int tipo = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +29,16 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     public void chamarVwNovoLancamento(View view){
 
         //Inicia a criação do pacote
-        Bundle mandarCategoria = new Bundle();
+        Bundle mandarDados = new Bundle();
         //indica a chave para o que deseja empacotar e o atributo do objeto que deseja empacotar (bundle)
         //1º atributo dos parenteses chave
         //2º atributo dos parenteses atributo empacotado
-        mandarCategoria.putString("categoriaEscolhida",categoriaFinalVw);
+        mandarDados.putString("categoriaEscolhida",categoriaFinalVw);
+        mandarDados.putInt("tipoEscolhido",tipo);
         //cria uma Intent para chamar a nova Activity(tela)
         Intent intent = new Intent(this, novoLancamento_vw.class);
         //carrega o bunble na Intent
-        intent.putExtras(mandarCategoria);
+        intent.putExtras(mandarDados);
         //Starta a nova tela
         startActivity(intent);
         //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
@@ -47,6 +49,8 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
     /*Metodos para destaque dos botões VW escolher_cat_gastos
     taxas   - 1
     casa    - 2
@@ -137,7 +141,6 @@ public class escolherCatGastos_vw extends AppCompatActivity {
                 categoriaFinalVw = n;
                 
                 break;
-
         }
         idCat = 0;
 
