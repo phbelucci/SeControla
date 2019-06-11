@@ -37,12 +37,20 @@ public class LancamentoEndPoint {
     }
 
     @PUT //(COD_US, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM)
-    @Path("/put/{INSERIR_TODOS_DADOS}")
+    @Path("/put/{codUs}/{data}/{codCat}/{codSubCat}/{valor}/{codConta}/{codPagamento}/{codGrupo}/{tipoLanc}")
     @Produces("applicattion/json")
-    public String insereLancamento(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {//precisa arrumar para conter todos os dados do lancamento
+    public String insereLancamento(@PathParam("codUs") Integer codUs,
+                                   @PathParam("data") String data,
+                                   @PathParam("codCat") Integer codCat,
+                                   @PathParam("codSubCat") Integer codSubCat,
+                                   @PathParam("valor") Double valor,
+                                   @PathParam("codConta") Integer codConta,
+                                   @PathParam("codPagamento") Integer codPagamento,
+                                   @PathParam("codGrupo") Integer codGrupo,
+                                   @PathParam("tipoLanc") String tipoLanc) {//precisa arrumar para conter todos os dados do lancamento
         LancamentoDAO dao = new LancamentoDAO();
         Gson g = new Gson();
-        return g.toJson(dao.inserirLancamento(codUs)); //precisa arrumar para conter todos os dados do lancamento
+        return g.toJson(dao.inserirLancamento(codUs,data,codCat,codSubCat,valor,codConta,codPagamento,codGrupo,tipoLanc)); //precisa arrumar para conter todos os dados do lancamento
     }
 
     @DELETE
