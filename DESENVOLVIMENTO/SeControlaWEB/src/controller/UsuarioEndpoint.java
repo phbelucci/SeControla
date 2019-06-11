@@ -70,13 +70,20 @@ public class UsuarioEndpoint {
 
 
     @POST
-    @Path("update/{INSERIR_TODOS_DADOS}")
+    @Path("update/{codUs}/{nomeUs}/{senhaUs}/{codNivelAcesso}/{codGrupo}/")
     @Produces("applicattion/json")
-    public String atualizaContaBancaria(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {
+    public String atualizaContaBancaria(@PathParam("codUs") Integer codUs,
+                                        @PathParam("nomeUs") Integer nomeUs,
+                                        @PathParam("senhaUs") Integer senhaUs,
+                                        @PathParam("codNivelAcesso") Integer codNivelAcesso,
+                                        @PathParam("codGrupo") Integer codGrupo) {
 
-        //implementação futura
-        //return "ok";
-        return null;
+        // USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO)
+        UsuarioDAO dao = new UsuarioDAO();
+
+        Gson g = new Gson();
+
+        return g.toJson(dao.atualizarUsuario(codUs,nomeUs,senhaUs, codNivelAcesso, codGrupo));
     }
 
 }

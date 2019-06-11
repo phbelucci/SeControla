@@ -149,7 +149,7 @@ public class UsuarioDAO {
         String sqlInsertGrupo = "INSERT INTO GRUPO_FAMILIAR(COD_US) VALUES(";
 
         try{
-            conectaBD(sqlInsertUsuarioVazio,"IN", true);
+            conectaBD(sqlInsertUsuarioVazio,"UP", true);
             ResultSet query = (ResultSet) conectaBD(sqlUsuario,"SE", false);
 
             u=new Usuario();
@@ -161,7 +161,7 @@ public class UsuarioDAO {
                 }
             }
 
-            conectaBD(sqlInsertGrupo + u.getCodGrupo().toString()+");","IN", false);
+            conectaBD(sqlInsertGrupo + u.getCodGrupo().toString()+");","UP", false);
             ResultSet queryGrupo = (ResultSet) conectaBD(sqlSelectGrupo,"SE", false);
 
             while (queryGrupo.next()){
@@ -194,4 +194,21 @@ public class UsuarioDAO {
         }
     }
 
+    public boolean atualizarUsuario(Integer codUs, Integer nomeUs, Integer senhaUs, Integer codNivelAcesso, Integer codGrupo) {
+
+        String sqlUpdate= "UPDATE USUARIO SET" +
+                        " NOME_US="+nomeUs+
+                        " AND SENHA_US=" + senhaUs +
+                        " AND COD_NIVEL_ACESSO=" + codNivelAcesso.toString() +
+                        " AND COD_GRUPO = " + codGrupo.toString() +
+                        " WHERE COD_US =" + codUs.toString()+";";
+
+        Integer aux = (Integer) conectaBD(sqlUpdate,"UP", true);
+            
+        if(aux>0){
+            return true;
+        }
+
+        return false;
+    }
 }
