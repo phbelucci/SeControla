@@ -7,18 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a2a1ec-928b-44a7-b683-8c0cd0729f77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/LancamentoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/controller/UsuarioEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/controller/UsuarioEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/dao/UsuarioDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/controller/UsuarioEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/controller/UsuarioEndpoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/se_controla/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/endpoint/ConectadoEndPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/endpoint/HelloWorldEndPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/endpoint/UsuarioEndpoint.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endpoint/ConectadoEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ConectadoEndPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endpoint/HelloWorldEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/HelloWorldEndPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endpoint/UsuarioEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/ContaBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/ContaBancaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/GrupoFamiliar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/GrupoFamiliar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Lancamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Lancamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gson" beforeDir="false" afterPath="$PROJECT_DIR$/../../gson" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,34 +35,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="190">
+              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entity/Usuario.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-              <folding>
-                <element signature="e#1580#1581#0" expanded="true" />
-                <element signature="e#1614#1615#0" expanded="true" />
-                <element signature="e#1658#1659#0" expanded="true" />
-                <element signature="e#1694#1695#0" expanded="true" />
-                <element signature="e#1740#1741#0" expanded="true" />
-                <element signature="e#1778#1779#0" expanded="true" />
-                <element signature="e#1839#1840#0" expanded="true" />
-                <element signature="e#1891#1892#0" expanded="true" />
-                <element signature="e#1940#1941#0" expanded="true" />
-                <element signature="e#1980#1981#0" expanded="true" />
+                <element signature="method#getUsuario#0;class#UsuarioEndpoint#0" />
               </folding>
             </state>
           </provider>
@@ -69,17 +51,70 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="323">
+              <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+              <folding>
+                <element signature="method#buscarTodosUsuarios#0;class#UsuarioDAO#0" />
+                <element signature="e#1633#1642#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/connection/BDConexao.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="425">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/jersey-server.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entity/GrupoFamiliar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#778#779#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/connection/Conexao.java" />
         <option value="$PROJECT_DIR$/src/endpoint/HelloWorld.java" />
         <option value="$PROJECT_DIR$/src/endpoint/ConectadoEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/App.java" />
         <option value="$PROJECT_DIR$/src/endpoint/HelloWorldEndPoint.java" />
         <option value="$PROJECT_DIR$/src/endpoint/ConectadoEndPoint.java" />
         <option value="$PROJECT_DIR$/src/connection/BDConexao.java" />
@@ -120,9 +154,15 @@
         <option value="$PROJECT_DIR$/src/dao/usuarioDAO.java" />
         <option value="$PROJECT_DIR$/src/endpoint/UsuarioEndpoint.java" />
         <option value="$PROJECT_DIR$/src/connection/BDConexaoMySQL.java" />
-        <option value="$PROJECT_DIR$/src/dao/UsuarioDAO.java" />
         <option value="$PROJECT_DIR$/src/entity/Usuario.java" />
         <option value="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/entity/Lancamento.java" />
+        <option value="$PROJECT_DIR$/src/entity/ContaBancaria.java" />
+        <option value="$PROJECT_DIR$/src/entity/GrupoFamiliar.java" />
+        <option value="$PROJECT_DIR$/src/dao/UsuarioDAO.java" />
+        <option value="$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
+        <option value="$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java" />
       </list>
     </option>
   </component>
@@ -141,9 +181,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="575" />
+    <option name="x" value="929" />
     <option name="y" value="25" />
-    <option name="width" value="1345" />
+    <option name="width" value="991" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -176,6 +216,12 @@
               <item name="SeControlaWEB" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeControlaWEB" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeControlaWEB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeControlaWEB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -201,6 +247,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4214689" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
     <property name="settings.editor.splitter.proportion" value="0.27569646" />
   </component>
@@ -311,7 +358,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31911000" />
+    <option name="totallyTimeSpent" value="38410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,9 +370,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="575" y="25" width="1345" height="1055" extended-state="4" />
+    <frame x="929" y="25" width="991" height="1055" extended-state="4" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13977695" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2260223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -338,8 +386,8 @@
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.3497032" weight="0.487882" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.43791822" visible="true" weight="0.37934667" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5315985" weight="0.31612223" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8355197" visible="true" weight="0.37934667" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
@@ -347,7 +395,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32937366" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5620818" side_tool="true" visible="true" weight="0.37934667" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.16448033" side_tool="true" visible="true" weight="0.37934667" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32937366" />
@@ -371,34 +419,28 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java</url>
+          <url>file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java</url>
           <line>29</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java</url>
-          <line>102</line>
+          <url>file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java</url>
+          <line>34</line>
           <properties />
-          <option name="timeStamp" value="23" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java</url>
-          <line>54</line>
+          <url>file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="28" />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -406,17 +448,22 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>rsetGet</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rset</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>stm</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
         <expression-string>stm.executeQuery(sql)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>rset</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -443,20 +490,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Lancamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/ContaBancaria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jersey-server.jar!/org/glassfish/jersey/server/model/ResourceMethodInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -508,16 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,17 +640,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/LancamentoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Lancamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="e#2883#2884#0" expanded="true" />
+            <element signature="e#2935#2936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/ContaBancaria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          <folding>
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1154#1155#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
           <folding>
             <element signature="e#1580#1581#0" expanded="true" />
             <element signature="e#1614#1615#0" expanded="true" />
@@ -643,20 +702,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jersey-server.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+    <entry file="file://$PROJECT_DIR$/src/entity/GrupoFamiliar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+        <state relative-caret-position="221">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
           <folding>
-            <element signature="e#0#2278#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+          <folding>
+            <element signature="method#buscarTodosUsuarios#0;class#UsuarioDAO#0" />
+            <element signature="e#1633#1642#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="190">
+          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getUsuario#0;class#UsuarioEndpoint#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/ConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+          <folding>
+            <element signature="e#6589#6590#0" expanded="true" />
+            <element signature="e#6668#6669#0" expanded="true" />
+            <element signature="e#6964#6965#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.16.jar!/com/mysql/cj/AbstractQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
           <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.16.jar!/com/mysql/cj/util/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="607" column="26" selection-start-line="607" selection-start-column="26" selection-end-line="607" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/StatementImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="1792" selection-start-line="1792" selection-end-line="1792" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jersey-server.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

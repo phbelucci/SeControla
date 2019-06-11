@@ -22,37 +22,11 @@ public class UsuarioEndpoint {
     @Produces("applicattion/json")
     //public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
     public String getAllUsuario() {
-        String sql = "SELECT * FROM USUARIO";
-        List<Usuario> retorno = new ArrayList<>();
-
-        try {
-            Connection con = (Connection) BDFabricaConexao.getConnection();
-            //String sql = "select * from USUARIO WHERE NOME_US="
-                    //+nome+";";
-
-            Statement stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
-
-            while (rset.next()){
-                Usuario u = new Usuario();
-
-                u.setCodUs(rset.getInt("COD_US"));
-                u.setNomeUs(rset.getString("NOME_US"));
-                u.setSenhaUs(rset.getString("SENHA_US"));
-                u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                u.setCodGrupo(rset.getInt("COD_GRUPO"));
-
-                retorno.add(u);
-            }
-        }catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }
+        UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
 
-        String r = g.toJson(retorno);
-
-        return r;
+        return g.toJson(dao.buscarTodosUsuarios());
     }
 
     @GET
@@ -60,40 +34,11 @@ public class UsuarioEndpoint {
     @Produces("applicattion/json")
     public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
     //public String getUsuario() {
-        String sql = "SELECT * FROM USUARIO";
-
-        Usuario u = new Usuario();
-
-        try {
-            Connection con = (Connection) BDFabricaConexao.getConnection();
-
-            Statement stm = (Statement) con.createStatement();
-            ResultSet rset = stm.executeQuery(sql);
-
-            while (rset.next()) {
-                if (rset.getString("NOME_US").equals(nome)||
-                                rset.getString("NOME_US").toLowerCase().equals(nome)) {
-
-                    u.setCodUs(rset.getInt("COD_US"));
-                    u.setNomeUs(rset.getString("NOME_US"));
-                    u.setSenhaUs(rset.getString("SENHA_US"));
-                    u.setCodNivelAcesso(rset.getInt("COD_NIVEL_ACESSO"));
-                    u.setCodGrupo(rset.getInt("COD_GRUPO"));
-                }
-            }
-
-        }catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }
+        UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
 
-        if(u.verificaSenha(senha)){
-
-            return g.toJson(u);
-        }
-
-        return g.toJson("null");
+        return g.toJson(dao.buscarUsuario(nome, senha));
 
     }
 

@@ -1,4 +1,5 @@
 import controller.ConectadoEndPoint;
+import controller.GrupoFamiliarEndPoint;
 import controller.HelloWorldEndPoint;
 import controller.UsuarioEndpoint;
 
@@ -18,6 +19,7 @@ public class App extends Application{
         h.add(ConectadoEndPoint.class);
         h.add(HelloWorldEndPoint.class );
         h.add(UsuarioEndpoint.class);
+        h.add(GrupoFamiliarEndPoint.class);
         return h;
     }
 
