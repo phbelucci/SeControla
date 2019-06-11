@@ -7,7 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a2a1ec-928b-44a7-b683-8c0cd0729f77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/controller/ContaBancariaEndPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/controller/GrupoFamiliarEndPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/controller/LancamentoEndPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/controller/UsuarioEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/dao/GrupoFamiliarDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/dao/LancamentoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/dao/UsuarioDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/entity/GrupoFamiliar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/se_controla/entity/Lancamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/entity/Lancamento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LancamentoEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LancamentoEndPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/LancamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/LancamentoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/FormaPagamentoEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/FormaPagamentoEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Lancamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Lancamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gson" beforeDir="false" afterPath="$PROJECT_DIR$/../../gson" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,73 +37,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getUsuario#0;class#GrupoFamiliarEndPoint#0" />
-                <element signature="method#getGrupo#1;class#GrupoFamiliarEndPoint#0" />
-                <element signature="method#getGrupo#1;class#GrupoFamiliarEndPoint#0" />
-                <element signature="method#getUsuario#1;class#GrupoFamiliarEndPoint#0" />
-                <element signature="method#deletaUsuario#0;class#GrupoFamiliarEndPoint#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/ContaBancariaEndPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#conectaBD#0;class#GrupoFamiliarDAO#0" />
-                <element signature="method#getTodosGrupos#0;class#GrupoFamiliarDAO#0" />
-                <element signature="e#1184#1199#0" expanded="true" />
-                <element signature="method#getTodosGrupos#1;class#GrupoFamiliarDAO#0" />
-                <element signature="method#getGrupoUsuario#0;class#GrupoFamiliarDAO#0" />
-                <element signature="method#inserirNovoGrupo#0;class#GrupoFamiliarDAO#0" />
-                <element signature="method#deletaGrupo#0;class#GrupoFamiliarDAO#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/LancamentoEndPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="493">
+              <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/LancamentoDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#buscarTodosLancamentos#0;class#LancamentoDAO#0" />
+                <element signature="method#buscarTodosLancamentosUsuario#0;class#LancamentoDAO#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entity/Lancamento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1296#1297#0" expanded="true" />
+                <element signature="e#1343#1344#0" expanded="true" />
+                <element signature="e#1381#1382#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1442#1443#0" expanded="true" />
+                <element signature="e#1485#1486#0" expanded="true" />
+                <element signature="e#1519#1520#0" expanded="true" />
+                <element signature="e#1555#1556#0" expanded="true" />
+                <element signature="e#1586#1587#0" expanded="true" />
+                <element signature="e#1635#1636#0" expanded="true" />
+                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#1711#1712#0" expanded="true" />
+                <element signature="e#1742#1743#0" expanded="true" />
+                <element signature="e#1791#1792#0" expanded="true" />
+                <element signature="e#1831#1832#0" expanded="true" />
+                <element signature="e#1867#1868#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1947#1948#0" expanded="true" />
+                <element signature="e#1987#1988#0" expanded="true" />
+                <element signature="e#2024#2025#0" expanded="true" />
+                <element signature="e#2057#2058#0" expanded="true" />
+                <element signature="e#2109#2110#0" expanded="true" />
+                <element signature="e#2153#2154#0" expanded="true" />
+                <element signature="e#2185#2186#0" expanded="true" />
+                <element signature="e#2213#2214#0" expanded="true" />
+                <element signature="e#2255#2256#0" expanded="true" />
+                <element signature="e#2289#2290#0" expanded="true" />
+                <element signature="e#2320#2321#0" expanded="true" />
+                <element signature="e#2346#2347#0" expanded="true" />
+                <element signature="e#2385#2386#0" expanded="true" />
+                <element signature="e#2415#2416#0" expanded="true" />
+                <element signature="e#2449#2450#0" expanded="true" />
+                <element signature="e#2478#2479#0" expanded="true" />
+                <element signature="e#2523#2524#0" expanded="true" />
+                <element signature="e#2559#2560#0" expanded="true" />
+                <element signature="e#2604#2605#0" expanded="true" />
+                <element signature="e#2645#2646#0" expanded="true" />
+                <element signature="e#2713#2714#0" expanded="true" />
+                <element signature="e#2773#2774#0" expanded="true" />
+                <element signature="e#2815#2816#0" expanded="true" />
+                <element signature="e#2852#2853#0" expanded="true" />
+                <element signature="e#2913#2914#0" expanded="true" />
+                <element signature="e#2965#2966#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,6 +138,7 @@
       <find>codContaBancaria</find>
       <find>USUARIO</find>
       <find>&quot;IN&quot;</find>
+      <find>dataString</find>
     </findStrings>
     <replaceStrings>
       <replace>ContaBancaria</replace>
@@ -146,21 +171,22 @@
         <option value="$PROJECT_DIR$/src/dao/usuarioDAO.java" />
         <option value="$PROJECT_DIR$/src/endpoint/UsuarioEndpoint.java" />
         <option value="$PROJECT_DIR$/src/connection/BDConexaoMySQL.java" />
-        <option value="$PROJECT_DIR$/src/entity/Lancamento.java" />
         <option value="$PROJECT_DIR$/src/entity/GrupoFamiliar.java" />
         <option value="$PROJECT_DIR$/src/App.java" />
-        <option value="$PROJECT_DIR$/src/dao/LancamentoDAO.java" />
-        <option value="$PROJECT_DIR$/src/entity/Usuario.java" />
         <option value="$PROJECT_DIR$/src/entity/ContaBancaria.java" />
         <option value="$PROJECT_DIR$/src/entity/NIvelAcessoEnum.java" />
         <option value="$PROJECT_DIR$/src/entity/NivelAcessoEnum.java" />
         <option value="$PROJECT_DIR$/src/dao/ContaBancariaDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/UsuarioDAO.java" />
         <option value="$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java" />
         <option value="$PROJECT_DIR$/src/controller/ContaBancariaEndPoint.java" />
-        <option value="$PROJECT_DIR$/src/controller/LancamentoEndPoint.java" />
         <option value="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" />
         <option value="$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/UsuarioDAO.java" />
+        <option value="$PROJECT_DIR$/src/entity/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/entity/FormaPagamentoEnum.java" />
+        <option value="$PROJECT_DIR$/src/entity/Lancamento.java" />
+        <option value="$PROJECT_DIR$/src/dao/LancamentoDAO.java" />
+        <option value="$PROJECT_DIR$/src/controller/LancamentoEndPoint.java" />
       </list>
     </option>
   </component>
@@ -179,10 +205,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1649" />
-    <option name="y" value="206" />
-    <option name="width" value="1228" />
-    <option name="height" value="767" />
+    <option name="x" value="993" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -236,7 +262,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/iFood/ifood-next-web-bff" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -356,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55838000" />
+    <option name="totallyTimeSpent" value="63975000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,10 +394,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-2" width="1680" height="1052" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17321429" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1559633" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -385,7 +411,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5315985" weight="0.31612223" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6625" visible="true" weight="0.2832981" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6627091" weight="0.27818757" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
@@ -393,11 +419,11 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32937366" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.3375" side_tool="true" visible="true" weight="0.2832981" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50026983" side_tool="true" visible="true" weight="0.32982087" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32937366" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32982087" />
+      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.49973017" visible="true" weight="0.32982087" />
       <window_info anchor="bottom" id="Console" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -608,17 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Lancamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-          <folding>
-            <element signature="e#2883#2884#0" expanded="true" />
-            <element signature="e#2935#2936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/GrupoFamiliar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -677,29 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="19" />
-          <folding>
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1500#1501#0" expanded="true" />
-            <element signature="e#1536#1537#0" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
-            <element signature="e#1610#1611#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1724#1725#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/ContaBancaria.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -743,39 +735,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/LancamentoDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="487">
+          <caret line="199" column="67" selection-start-line="199" selection-start-column="67" selection-end-line="199" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="193" column="9" lean-forward="true" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ContaBancariaEndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/LancamentoEndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#conectaBD#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#getTodosGrupos#0;class#GrupoFamiliarDAO#0" />
+            <element signature="e#1184#1199#0" expanded="true" />
+            <element signature="method#getTodosGrupos#1;class#GrupoFamiliarDAO#0" />
+            <element signature="method#getGrupoUsuario#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#inserirNovoGrupo#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#deletaGrupo#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#atualizarGrupo#0;class#GrupoFamiliarDAO#0" />
           </folding>
         </state>
       </provider>
@@ -805,19 +778,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/ContaBancariaEndPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#conectaBD#0;class#GrupoFamiliarDAO#0" />
-            <element signature="method#getTodosGrupos#0;class#GrupoFamiliarDAO#0" />
-            <element signature="e#1184#1199#0" expanded="true" />
-            <element signature="method#getTodosGrupos#1;class#GrupoFamiliarDAO#0" />
-            <element signature="method#getGrupoUsuario#0;class#GrupoFamiliarDAO#0" />
-            <element signature="method#inserirNovoGrupo#0;class#GrupoFamiliarDAO#0" />
-            <element signature="method#deletaGrupo#0;class#GrupoFamiliarDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding>
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1567#1568#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/FormaPagamentoEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="71" column="47" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <folding>
+            <element signature="method#inserirUsuarioNovo#0;class#UsuarioDAO#0" />
+            <element signature="method#deletaUsuario#0;class#UsuarioDAO#0" />
+            <element signature="method#atualizarUsuario#0;class#UsuarioDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Lancamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+            <element signature="e#1519#1520#0" expanded="true" />
+            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#1586#1587#0" expanded="true" />
+            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1711#1712#0" expanded="true" />
+            <element signature="e#1742#1743#0" expanded="true" />
+            <element signature="e#1791#1792#0" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1867#1868#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#2057#2058#0" expanded="true" />
+            <element signature="e#2109#2110#0" expanded="true" />
+            <element signature="e#2153#2154#0" expanded="true" />
+            <element signature="e#2185#2186#0" expanded="true" />
+            <element signature="e#2213#2214#0" expanded="true" />
+            <element signature="e#2255#2256#0" expanded="true" />
+            <element signature="e#2289#2290#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+            <element signature="e#2346#2347#0" expanded="true" />
+            <element signature="e#2385#2386#0" expanded="true" />
+            <element signature="e#2415#2416#0" expanded="true" />
+            <element signature="e#2449#2450#0" expanded="true" />
+            <element signature="e#2478#2479#0" expanded="true" />
+            <element signature="e#2523#2524#0" expanded="true" />
+            <element signature="e#2559#2560#0" expanded="true" />
+            <element signature="e#2604#2605#0" expanded="true" />
+            <element signature="e#2645#2646#0" expanded="true" />
+            <element signature="e#2713#2714#0" expanded="true" />
+            <element signature="e#2773#2774#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2852#2853#0" expanded="true" />
+            <element signature="e#2913#2914#0" expanded="true" />
+            <element signature="e#2965#2966#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/LancamentoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#buscarTodosLancamentos#0;class#LancamentoDAO#0" />
+            <element signature="method#buscarTodosLancamentosUsuario#0;class#LancamentoDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/LancamentoEndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

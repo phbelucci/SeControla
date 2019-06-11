@@ -19,7 +19,7 @@ public class LancamentoEndPoint {
 
 
     @GET
-    @Path("get/all/{codGrupo}")
+    @Path("/get/all/{codGrupo}")
     @Produces("applicattion/json")
     public String getTodosLacamentos(@PathParam("codGrupo") Integer codGrupo) {
         LancamentoDAO dao = new LancamentoDAO();
@@ -28,7 +28,7 @@ public class LancamentoEndPoint {
     }
 
     @GET
-    @Path("get/us/{codUs}")
+    @Path("/get/us/{codUs}")
     @Produces("applicattion/json")
     public String getTodosLancamentosUsuario(@PathParam("codUs") Integer codUs) {
         LancamentoDAO dao = new LancamentoDAO();
@@ -36,8 +36,8 @@ public class LancamentoEndPoint {
         return g.toJson(dao.buscarTodosLancamentosUsuario(codUs));
     }
 
-    @PUT
-    @Path("put/{INSERIR_TODOS_DADOS}")
+    @PUT //(COD_US, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM)
+    @Path("/put/{INSERIR_TODOS_DADOS}")
     @Produces("applicattion/json")
     public String insereLancamento(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {//precisa arrumar para conter todos os dados do lancamento
         LancamentoDAO dao = new LancamentoDAO();
@@ -46,7 +46,7 @@ public class LancamentoEndPoint {
     }
 
     @DELETE
-    @Path("delete/{codLancamento}")
+    @Path("/delete/{codLancamento}")
     @Produces("applicattion/json")
     public String deletaLancamento(@PathParam("codLancamento") Integer codLancamento) {
         LancamentoDAO dao = new LancamentoDAO();

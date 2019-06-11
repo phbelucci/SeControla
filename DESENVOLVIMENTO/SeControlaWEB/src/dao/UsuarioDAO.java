@@ -70,7 +70,6 @@ public class UsuarioDAO {
                     u.setCodGrupo(query.getInt("COD_GRUPO"));
 
                     if(u.verificaSenha(senha)){
-                        con.close();
                         return u;
                     }
                 }
