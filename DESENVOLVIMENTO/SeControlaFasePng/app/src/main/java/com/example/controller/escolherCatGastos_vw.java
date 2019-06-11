@@ -13,6 +13,7 @@ public class escolherCatGastos_vw extends AppCompatActivity {
 
     private int idCat;
     private String nomeCat;
+    private String categoriaFinalVw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +29,10 @@ public class escolherCatGastos_vw extends AppCompatActivity {
 
         //Inicia a criação do pacote
         Bundle mandarCategoria = new Bundle();
-
-        //indica qual o tipo de objeto
-        ImageView activitySelecionada = findViewById(R.id.btnAplica);
         //indica a chave para o que deseja empacotar e o atributo do objeto que deseja empacotar (bundle)
         //1º atributo dos parenteses chave
         //2º atributo dos parenteses atributo empacotado
-        mandarCategoria.putCharSequence("categoriaEscolhida",activitySelecionada.getContentDescription());
+        mandarCategoria.putString("categoriaEscolhida",categoriaFinalVw);
         //cria uma Intent para chamar a nova Activity(tela)
         Intent intent = new Intent(this, novoLancamento_vw.class);
         //carrega o bunble na Intent
@@ -64,19 +62,19 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         idCat = i;
         nomeCat = n;
         ImageView activitySelecionada;
-        ImageView taxas = findViewById(R.id.btnSalario);
+        ImageView taxas = findViewById(R.id.btnCatTaxas);
         taxas.setImageResource(R.drawable.taxas);
         ImageView casa = findViewById(R.id.btnCatCasa);
         casa.setImageResource(R.drawable.casa);
-        ImageView comida = findViewById(R.id.btnExtra);
+        ImageView comida = findViewById(R.id.btnCatComida);
         comida.setImageResource(R.drawable.comida);
-        ImageView carro = findViewById(R.id.btnAplica);
+        ImageView carro = findViewById(R.id.btnCatCarro);
         carro.setImageResource(R.drawable.carro);
         ImageView livros = findViewById(R.id.btnCatLivros);
         livros.setImageResource(R.drawable.livros);
         ImageView saude = findViewById(R.id.btnCatSaude);
         saude.setImageResource(R.drawable.saude);
-        ImageView diversao = findViewById(R.id.btnBeneficio);
+        ImageView diversao = findViewById(R.id.btnCatDiversao);
         diversao.setImageResource(R.drawable.diversao);
         ImageView higiene = findViewById(R.id.btnCatHigi);
         higiene.setImageResource(R.drawable.higiene);
@@ -85,48 +83,58 @@ public class escolherCatGastos_vw extends AppCompatActivity {
 
         switch (idCat){
             case 1:
-                activitySelecionada = findViewById(R.id.btnSalario);
+                activitySelecionada = findViewById(R.id.btnCatTaxas);
                 activitySelecionada.setImageResource(R.drawable.taxasdestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 2:
                 activitySelecionada = findViewById(R.id.btnCatCasa);
                 activitySelecionada.setImageResource(R.drawable.casadestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 3:
-                activitySelecionada = findViewById(R.id.btnExtra);
+                activitySelecionada = findViewById(R.id.btnCatComida);
                 activitySelecionada.setImageResource(R.drawable.comidadestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 4:
-                activitySelecionada = findViewById(R.id.btnAplica);
+                activitySelecionada = findViewById(R.id.btnCatCarro);
                 activitySelecionada.setImageResource(carrodestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 5:
                 activitySelecionada = findViewById(R.id.btnCatLivros);
                 activitySelecionada.setImageResource(R.drawable.livrosdestaque);
+                categoriaFinalVw = n;
+
                 
                 break;
             case 6:
                 activitySelecionada = findViewById(R.id.btnCatSaude);
                 activitySelecionada.setImageResource(R.drawable.saudedestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 7:
-                activitySelecionada = findViewById(R.id.btnBeneficio);
+                activitySelecionada = findViewById(R.id.btnCatDiversao);
                 activitySelecionada.setImageResource(R.drawable.diversaodestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 8:
                 activitySelecionada = findViewById(R.id.btnCatHigi);
                 activitySelecionada.setImageResource(R.drawable.higienedestaque);
+                categoriaFinalVw = n;
                 
                 break;
             case 9:
                 activitySelecionada = findViewById(R.id.btnCatOutros);
                 activitySelecionada.setImageResource(R.drawable.outrosdestaque);
+                categoriaFinalVw = n;
                 
                 break;
 

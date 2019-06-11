@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import static com.example.controller.R.drawable.carrodestaque;
-
 public class escolherCatReceitas_vw extends AppCompatActivity {
 
     private int idCat;
@@ -44,33 +42,33 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
         idCat = i;
         nomeCat = n;
         ImageView activitySelecionada;
-        ImageView salario = findViewById(R.id.btnSalario);
+        ImageView salario = findViewById(R.id.btnCatTaxas);
         salario.setImageResource(R.drawable.salario);
-        ImageView beneficio = findViewById(R.id.btnBeneficio);
+        ImageView beneficio = findViewById(R.id.btnCatDiversao);
         beneficio.setImageResource(R.drawable.beneficio);
-        ImageView aplicacao = findViewById(R.id.btnAplica);
+        ImageView aplicacao = findViewById(R.id.btnCatCarro);
         aplicacao.setImageResource(R.drawable.aplicacao);
-        ImageView extra = findViewById(R.id.btnExtra);
+        ImageView extra = findViewById(R.id.btnCatComida);
         extra.setImageResource(R.drawable.extra);
 
         switch (idCat){
             case 1:
-                activitySelecionada = findViewById(R.id.btnSalario);
+                activitySelecionada = findViewById(R.id.btnCatTaxas);
                 activitySelecionada.setImageResource(R.drawable.salariodestaque);
 
                 break;
             case 2:
-                activitySelecionada = findViewById(R.id.btnBeneficio);
+                activitySelecionada = findViewById(R.id.btnCatDiversao);
                 activitySelecionada.setImageResource(R.drawable.beneficiodestaque);
 
                 break;
             case 3:
-                activitySelecionada = findViewById(R.id.btnAplica);
+                activitySelecionada = findViewById(R.id.btnCatCarro);
                 activitySelecionada.setImageResource(R.drawable.aplicacaodestaque);
 
                 break;
             case 4:
-                activitySelecionada = findViewById(R.id.btnExtra);
+                activitySelecionada = findViewById(R.id.btnCatComida);
                 activitySelecionada.setImageResource(R.drawable.extradestaque);
 
                 break;
