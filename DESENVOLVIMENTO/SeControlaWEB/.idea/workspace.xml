@@ -7,20 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a2a1ec-928b-44a7-b683-8c0cd0729f77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/LancamentoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/controller/UsuarioEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/controller/UsuarioEndpoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/controller/UsuarioEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/controller/UsuarioEndpoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UsuarioEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/ContaBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/ContaBancaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/GrupoFamiliar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/GrupoFamiliar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Lancamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Lancamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gson" beforeDir="false" afterPath="$PROJECT_DIR$/../../gson" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,11 +24,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="17" />
+            <state relative-caret-position="460">
+              <caret line="28" column="50" selection-start-line="24" selection-start-column="8" selection-end-line="28" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getUsuario#0;class#UsuarioEndpoint#0" />
               </folding>
             </state>
           </provider>
@@ -51,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+            <state relative-caret-position="136">
+              <caret line="30" column="21" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="21" />
               <folding>
                 <element signature="method#buscarTodosUsuarios#0;class#UsuarioDAO#0" />
                 <element signature="e#1633#1642#0" expanded="true" />
@@ -61,14 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="8">
+              <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/LancamentoEndPoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -180,7 +171,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="929" />
     <option name="y" value="25" />
     <option name="width" value="991" />
@@ -244,7 +235,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4214689" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -358,7 +349,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38410000" />
+    <option name="totallyTimeSpent" value="40053000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -370,10 +361,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="929" y="25" width="991" height="1055" extended-state="4" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2260223" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22558014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -387,7 +378,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5315985" weight="0.31612223" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8355197" visible="true" weight="0.37934667" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.83594173" visible="true" weight="0.37934667" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
@@ -395,7 +386,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32937366" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.16448033" side_tool="true" visible="true" weight="0.37934667" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.16405828" side_tool="true" visible="true" weight="0.37934667" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32937366" />
@@ -426,21 +417,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java</url>
           <line>34</line>
           <properties />
           <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -713,28 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
-          <folding>
-            <element signature="method#buscarTodosUsuarios#0;class#UsuarioDAO#0" />
-            <element signature="e#1633#1642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getUsuario#0;class#UsuarioEndpoint#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -795,13 +752,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="460">
+          <caret line="28" column="50" selection-start-line="24" selection-start-column="8" selection-end-line="28" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <element signature="method#buscarTodosUsuarios#0;class#UsuarioDAO#0" />
+            <element signature="e#1633#1642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/LancamentoEndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>

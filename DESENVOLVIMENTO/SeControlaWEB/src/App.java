@@ -1,7 +1,4 @@
-import controller.ConectadoEndPoint;
-import controller.GrupoFamiliarEndPoint;
-import controller.HelloWorldEndPoint;
-import controller.UsuarioEndpoint;
+import controller.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
@@ -20,6 +17,9 @@ public class App extends Application{
         h.add(HelloWorldEndPoint.class );
         h.add(UsuarioEndpoint.class);
         h.add(GrupoFamiliarEndPoint.class);
+        h.add(ContaBancariaEndPoint.class);
+        h.add(LancamentoEndPoint.class);
+
         return h;
     }
 
