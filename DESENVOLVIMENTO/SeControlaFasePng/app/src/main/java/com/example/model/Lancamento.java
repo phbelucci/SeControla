@@ -1,17 +1,25 @@
 package com.example.model;
 
-public class Lancamento {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Lancamento implements Serializable {
 
     private String categoria;
     private String valor;
     private String formaPagto;
-    //private int imagem;
+    private int imagem;
+    private int tipo;
+    //1 - GASTO OU 2 - RECEITA
 
-    public Lancamento(/*int imagem,*/String categoria,String valor,String formaPagto){
-        //this.imagem = imagem;
+    public Lancamento(int imagem,String categoria,String valor,String formaPagto,int tipo){
+        this.tipo = tipo;
+        this.imagem = imagem;
         this.categoria = categoria;
         this.valor = valor;
         this.formaPagto = formaPagto;
+    }
+    public Lancamento(){
 
     }
 
@@ -39,11 +47,11 @@ public class Lancamento {
         this.formaPagto = formaPagto;
     }
 
-    /*public int getImagem() {
+    public int getImagem() {
         return imagem;
     }
 
     public void setImagem(int imagem) {
         this.imagem = imagem;
-    }*/
+    }
 }

@@ -2,6 +2,9 @@
 <resources>
     <color name="colorPrimary">#81F27F</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#EF0A21</color>
-    <color name="vermelhotransp">#BFDEF702</color>
+    <color name="vermelhovivo">#FA001A</color>
+    <color name="vermelhotransp">#43F9001A</color>
+    <color name="verdetransp">#432CF800</color>
+    <color name="verdevivo">#2DFF00</color>
+
 </resources>

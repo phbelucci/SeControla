@@ -10,6 +10,8 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
 
     private int idCat;
     private String nomeCat;
+    private String categoriaFinalVw;
+    private final int tipo = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,19 +26,27 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
     }
 
     public void chamarVwNovoLancamento(View v){
-        startActivity(new Intent(this,novoLancamento_vw.class));
-        //Seta Variavel ehGasto para exibir o texto na tela de manterLancamentos
 
-
+        //Inicia a criação do pacote
+        Bundle mandarDados = new Bundle();
+        //indica a chave para o que deseja empacotar e o atributo do objeto que deseja empacotar (bundle)
+        //1º atributo dos parenteses chave
+        //2º atributo dos parenteses atributo empacotado
+        mandarDados.putString("categoriaEscolhida",categoriaFinalVw);
+        mandarDados.putInt("tipoEscolhido",tipo);
+        //cria uma Intent para chamar a nova Activity(tela)
+        Intent intent = new Intent(this, novoLancamento_vw.class);
+        //carrega o bunble na Intent
+        intent.putExtras(mandarDados);
+        //Starta a nova tela
+        startActivity(intent);
     }
 
     public void chamarTelaManterPerfil(View view){
 
         Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
         startActivity(intent);
-
     }
-
 
     public void aplicarDestaque(int i, String n){
         idCat = i;
@@ -55,21 +65,25 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
             case 1:
                 activitySelecionada = findViewById(R.id.btnCatTaxas);
                 activitySelecionada.setImageResource(R.drawable.salariodestaque);
+                categoriaFinalVw = n;
 
                 break;
             case 2:
                 activitySelecionada = findViewById(R.id.btnCatDiversao);
                 activitySelecionada.setImageResource(R.drawable.beneficiodestaque);
+                categoriaFinalVw = n;
 
                 break;
             case 3:
                 activitySelecionada = findViewById(R.id.btnCatCarro);
                 activitySelecionada.setImageResource(R.drawable.aplicacaodestaque);
+                categoriaFinalVw = n;
 
                 break;
             case 4:
                 activitySelecionada = findViewById(R.id.btnCatComida);
                 activitySelecionada.setImageResource(R.drawable.extradestaque);
+                categoriaFinalVw = n;
 
                 break;
             }
@@ -79,12 +93,12 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
 
     public void destacarActivitySalario(View v){
         idCat = 1;
-        nomeCat = "Salario";
+        nomeCat = "Salário";
         aplicarDestaque(idCat,nomeCat);
     }
     public void destacarActivityBeneficio(View v){
         idCat = 2;
-        nomeCat = "Beneficio";
+        nomeCat = "Benefício";
         aplicarDestaque(idCat,nomeCat);
     }
 
