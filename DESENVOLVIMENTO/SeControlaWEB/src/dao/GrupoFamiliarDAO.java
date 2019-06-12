@@ -1,5 +1,6 @@
 package dao;
 
+import com.mysql.cj.jdbc.CallableStatement;
 import connection.BDFabricaConexao;
 import entity.GrupoFamiliar;
 
@@ -14,31 +15,39 @@ import java.util.logging.Logger;
 
 public class GrupoFamiliarDAO {
 
+
     Connection con;
     Statement stm;
-    int rset;
+    CallableStatement stmt;
     ResultSet rsetGet;
+
+    int rset;
+    ResultSet rsetAux;
 
     private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
             if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
-            this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")) {
-                this.rset = stm.executeUpdate(sql);
-                return rset;
 
-            } else if (tipo.equals("SE")) {
-                this.rsetGet = stm.executeQuery(sql);
-                return rsetGet;
+            switch (tipo) {
+                case "UP":
+                    this.stm = (Statement) con.createStatement();
+                    this.rset = stm.executeUpdate(sql);
+                    return rset;
+                case "SE":
+                    this.stm = (Statement) con.createStatement();
+                    this.rsetAux = stm.executeQuery(sql);
+                    return rsetAux;
+                case "FU":
+                    stmt = (CallableStatement) con.prepareCall(sql);
+                    return stmt.executeQuery(sql);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-
 
     public List<GrupoFamiliar> getTodosGrupos() {
 
@@ -59,6 +68,7 @@ public class GrupoFamiliarDAO {
             }
 
             return listAll;
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -90,6 +100,7 @@ public class GrupoFamiliarDAO {
                     g.setCodAdmGrupo(query.getInt("COD_ADM_GRUPO"));
                 }
             }
+
             return g;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -140,8 +151,6 @@ public class GrupoFamiliarDAO {
 
     public GrupoFamiliar inserirNovoGrupo(Integer codUs) {
 
-        GrupoFamiliar g = new GrupoFamiliar();
-
         String sqlInsert = "INSERT INTO GRUPO_FAMILIAR(COD_ADM_GRUPO)" +
                 "VALUES (" + codUs.toString() + ");";
 
@@ -150,19 +159,16 @@ public class GrupoFamiliarDAO {
             this.stm = (Statement) con.createStatement();
             int rset = stm.executeUpdate(sqlInsert);
 
-            String sqlGet = "SELECT * FROM GRUPO_FAMILIAR WHERE COD_ADM_GRUPO =" + codUs.toString() + ";";
+            if (rset >= 1) {
+                try {
+                    con.close();
+                    stm.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
-            this.stm = (Statement) con.createStatement();
-            ResultSet rsetGet = stm.executeQuery(sqlGet);
-
-
-            if (rsetGet.next()) {
-                g.setCodGrupo(rsetGet.getInt("COD_GRUPO"));
-                g.setCodAdmGrupo(rsetGet.getInt("COD_ADM_GRUPO"));
+                return getGrupoUsuario(codUs);
             }
-
-            return g;
-
         } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
         } finally {
@@ -175,7 +181,6 @@ public class GrupoFamiliarDAO {
         }
 
         return null;
-
     }
 
     public boolean deletaGrupo(Integer codGrupo) {

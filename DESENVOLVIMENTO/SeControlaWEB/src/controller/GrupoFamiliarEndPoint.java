@@ -17,7 +17,7 @@ public class GrupoFamiliarEndPoint {
 
     @GET
     @Path("/get/all")
-    @Produces("applicattion/json")
+    @Produces("application/json")
     public String getTodosGrupos() {
         //public String getUsuario() {
 

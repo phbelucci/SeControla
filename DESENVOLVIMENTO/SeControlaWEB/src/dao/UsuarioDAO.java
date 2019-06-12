@@ -30,7 +30,7 @@ public class UsuarioDAO {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
 
-            switch (tipo){
+            switch (tipo) {
                 case "UP":
                     this.stm = (Statement) con.createStatement();
                     this.rset = stm.executeUpdate(sql);
@@ -43,12 +43,6 @@ public class UsuarioDAO {
                     stmt = (CallableStatement) con.prepareCall(sql);
                     this.rsetAux = stmt.executeQuery(sql);
                     return rsetAux;
-            }
-            if (tipo.equals("UP")) {
-
-
-            } else if (tipo.equals("SE")) {
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -147,10 +141,10 @@ public class UsuarioDAO {
         String sqlFunction = String.format("{CALL Add_Novo_Usuario('%s','%s', @codigo, @nome, @senha, @niveAcesso, @grupo)};", nome, senha);
 
 
-            ResultSet query = (ResultSet) conectaBD(sqlFunction, "FU", true);
+        ResultSet query = (ResultSet) conectaBD(sqlFunction, "FU", true);
 
-            if(query!=null)
-                return buscarUsuario(nome, senha);
+        if (query != null)
+            return buscarUsuario(nome, senha);
 
         return null;
     }
@@ -173,14 +167,14 @@ public class UsuarioDAO {
 
     public Usuario atualizarUsuario(Integer codUs, String nomeUs, String senhaUs, Integer codNivelAcesso, Integer codGrupo) {
 
-        String sqlUpadate = String.format("CALL Update_Usuario(%d,'%s','%s',%d,%d)", codUs,nomeUs,senhaUs,codNivelAcesso,codGrupo);
+        String sqlUpadate = String.format("CALL Update_Usuario(%d,'%s','%s',%d,%d)", codUs, nomeUs, senhaUs, codNivelAcesso, codGrupo);
 
         ResultSet query = (ResultSet) conectaBD(sqlUpadate, "FU", true);
 
 
         Usuario u = buscarUsuario(nomeUs, senhaUs);
 
-        if(query!=null)
+        if (query != null)
             return u;
 
         return null;
