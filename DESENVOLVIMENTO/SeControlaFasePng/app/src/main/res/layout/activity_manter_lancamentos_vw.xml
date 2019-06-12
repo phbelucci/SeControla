@@ -32,7 +32,7 @@
             android:layout_height="50dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4" />
+            app:srcCompat="@drawable/avatarum" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -45,8 +45,8 @@
 
     <ListView
         android:id="@+id/listaLancamentos"
-        android:layout_width="332dp"
-        android:layout_height="230dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
@@ -57,7 +57,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/btnGastoVwManterLancmentos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout9">
 

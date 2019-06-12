@@ -37,7 +37,7 @@
             android:layout_height="50dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4" />
+            app:srcCompat="@drawable/avatarum" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -281,7 +281,9 @@
             android:layout_height="50dp"
             android:layout_gravity="right|top"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/avatar1" />
+            android:onClick="setAvatar1"
+            android:background="@drawable/avatarum"
+           />
 
         <ImageView
             android:id="@+id/avatar2"
@@ -289,7 +291,9 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|center|top"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/avatar2" />
+            android:onClick="setAvatar2"
+            android:background="@drawable/avatardois"
+             />
 
         <ImageView
             android:id="@+id/avatar3"
@@ -297,14 +301,18 @@
             android:layout_height="50dp"
             android:layout_gravity="center|top"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/avatar3" />
+            android:background="@drawable/avatartres"
+            android:onClick="setAvatar3"
+         />
 
         <ImageView
-            android:id="@+id/avatar4"
+            android:id="@+id/avatarum"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/avatar4" />
+            android:onClick="setavatarum"
+            android:background="@drawable/avatarquatro"
+          />
     </TableRow>
 
     <LinearLayout
@@ -329,7 +337,8 @@
             android:layout_height="90dp"
             android:background="@drawable/cartao"
             android:contentDescription="1"
-            android:onClick="setFormaPagtoCartao"/>
+            android:onClick="setFormaPagtoCartao"
+            />
 
         <Button
             android:id="@+id/btnDinheiroVwLancamento"

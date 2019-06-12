@@ -31,7 +31,6 @@ public class ListaAdapterLancamento extends ArrayAdapter<Lancamento> {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.avatar);
         imageView.setImageResource(lancPosicao.getImagem());
         TextView textView = (TextView) convertView.findViewById(R.id.categoria);
-
         textView.setText(lancPosicao.getCategoria());
         TextView textView1 = (TextView) convertView.findViewById(R.id.valor);
         textView1.setText(lancPosicao.getValor());

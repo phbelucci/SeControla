@@ -6,18 +6,6 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/formaPagto"
-        android:layout_width="100dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="13dp"
-        app:layout_constraintEnd_toStartOf="@+id/avatar"
-        app:layout_constraintStart_toEndOf="@+id/valor"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/categoria"
         android:layout_width="80dp"
         android:layout_height="22dp"
@@ -42,6 +30,18 @@
         android:textSize="13dp"
         app:layout_constraintEnd_toStartOf="@+id/formaPagto"
         app:layout_constraintStart_toEndOf="@+id/categoria"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/formaPagto"
+        android:layout_width="100dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toStartOf="@+id/avatar"
+        app:layout_constraintStart_toEndOf="@+id/valor"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView

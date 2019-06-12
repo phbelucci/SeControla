@@ -33,7 +33,7 @@
             android:layout_gravity="right|center_vertical"
             android:layout_marginLeft="100dp"
             android:onClick="chamarTelaManterPerfil"
-            app:srcCompat="@drawable/avatar4" />
+            app:srcCompat="@drawable/avatarum" />
 
         <ImageView
             android:id="@+id/imageView4"

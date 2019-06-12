@@ -33,7 +33,7 @@
             android:layout_height="50dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginLeft="100dp"
-            app:srcCompat="@drawable/avatar4" />
+            app:srcCompat="@drawable/avatarum" />
 
         <ImageView
             android:id="@+id/imageView4"

@@ -100,7 +100,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            app:srcCompat="@drawable/avatar1" />
+            app:srcCompat="@drawable/avatarum" />
 
         <Button
             android:id="@+id/linearLayout2"
