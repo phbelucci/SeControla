@@ -30,21 +30,18 @@ public class UsuarioEndpoint {
     @Path("/get/{nome}/{senha}")
     @Produces("application/json")
     public String getUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
-
-        return "entrou GET usuario";
-
-        /*UsuarioDAO dao = new UsuarioDAO();
+        UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
 
-        return g.toJson(dao.buscarUsuario(nome, senha));*/
+        return g.toJson(dao.buscarUsuario(nome, senha));
 
     }
 
     @POST
     @Path("/post/{nome}/{senha}")
     @Produces("application/json")
-    public String putUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
+    public String postUsuario(@PathParam("nome") String nome, @PathParam("senha") String senha) {
 
         UsuarioDAO dao = new UsuarioDAO();
 

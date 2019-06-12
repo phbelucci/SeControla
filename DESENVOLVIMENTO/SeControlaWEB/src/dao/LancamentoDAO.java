@@ -1,5 +1,6 @@
 package dao;
 
+import com.mysql.cj.jdbc.CallableStatement;
 import connection.BDFabricaConexao;
 import entity.Lancamento;
 
@@ -15,22 +16,32 @@ import java.util.logging.Logger;
 public class LancamentoDAO {
     Connection con;
     Statement stm;
+    CallableStatement stmt;
+
     int rset;
-    ResultSet rsetGet;
+    ResultSet rsetAux;
+
+    String sql = "SELECT * FROM LANCAMENTO;";
 
     private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
             if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
-            this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")) {
-                this.rset = stm.executeUpdate(sql);
-                return rset;
 
-            } else if (tipo.equals("SE")) {
-                this.rsetGet = stm.executeQuery(sql);
-                return rsetGet;
+            switch (tipo) {
+                case "UP":
+                    this.stm = (Statement) con.createStatement();
+                    this.rset = stm.executeUpdate(sql);
+                    return rset;
+                case "SE":
+                    this.stm = (Statement) con.createStatement();
+                    this.rsetAux = stm.executeQuery(sql);
+                    return rsetAux;
+                case "FU":
+                    stmt = (CallableStatement) con.prepareCall(sql);
+                    this.rsetAux = stmt.executeQuery(sql);
+                    return rsetAux;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,15 +49,13 @@ public class LancamentoDAO {
         return null;
     }
 
-    public List<Lancamento> buscarTodosLancamentos(Integer codGrupo) {
 
-        String sql = "SELECT * FROM LANCAMENTO";
+    public List<Lancamento> buscarTodosLancamentos(Integer codGrupo) {
 
         List<Lancamento> allLancamentos;
         Lancamento l;
 
-        try {//(, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM)
-
+        try {
             allLancamentos = new ArrayList<Lancamento>();
 
             ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
@@ -67,6 +76,9 @@ public class LancamentoDAO {
                     allLancamentos.add(l);
                 }
             }
+            if(!allLancamentos.isEmpty()){
+                return allLancamentos;
+            }
 
         } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -78,7 +90,6 @@ public class LancamentoDAO {
                 e.printStackTrace();
             }
         }
-
 
         return null;
     }
@@ -111,7 +122,9 @@ public class LancamentoDAO {
                     allLancamentos.add(l);
                 }
             }
-
+            if(!allLancamentos.isEmpty()){
+                return allLancamentos;
+            }
         } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
         } finally {
@@ -156,10 +169,17 @@ public class LancamentoDAO {
                                         Integer codGrupo,
                                         String tipoLanc) {
 
-        String sqlInsert = "INSERT INTO LANCAMENTO(COD_US, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM) "
-                + "VALUES (" + codUs.toString() + ", " + data + ", " + codCat.toString() + ", " + codSubCat.toString() + ", " + valor.toString() + ", " + codConta.toString()
-                + ", " + codPagamento.toString() + ", " + codGrupo.toString() + ", " + tipoLanc + ");";
+        String sqlInsert;
 
+        if(codSubCat!=null) {
+            sqlInsert = "INSERT INTO LANCAMENTO(COD_US, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM) "
+                    + "VALUES (" + codUs.toString() + ", " + data + ", " + codCat.toString() + ", " + codSubCat.toString() + ", " + valor.toString() + ", " + codConta.toString()
+                    + ", " + codPagamento.toString() + ", " + codGrupo.toString() + ", '" + tipoLanc + "');";
+        }else{
+            sqlInsert = "INSERT INTO LANCAMENTO(COD_US, DATA_LANC, COD_CAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM) "
+                    + "VALUES (" + codUs.toString() + ", " + data + ", " + codCat.toString() + ", " + ", " + valor.toString() + ", " + codConta.toString()
+                    + ", " + codPagamento.toString() + ", " + codGrupo.toString() + ", '" + tipoLanc + "');";
+        }
         String sql = "SELECT * FROM LANCAMENTO";
 
         Lancamento l;
