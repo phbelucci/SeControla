@@ -1,13 +1,13 @@
 package com.example.entity;
 
-import com.example.DAO.LoginDAO;
+//import com.example.DAO.LoginDAO;
 
 public class Login{
     
     private Integer codUs;
     private String usuario;
     private String senha;
-    private LoginDAO dao = new LoginDAO();
+    //private LoginDAO dao = new LoginDAO();
 
     public Login(Integer codUs, String usuario, String senha) {
         this.codUs = codUs;

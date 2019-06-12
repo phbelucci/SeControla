@@ -9,20 +9,31 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.entity.GrupoFamiliar;
+import com.example.entity.Usuario;
 import com.example.model.CadastroModel;
 
 import org.w3c.dom.Text;
 
-public class cadastro_vw extends AppCompatActivity {
+import java.io.Serializable;
 
+public class cadastro_vw extends AppCompatActivity {
 
     private String nomeUser;
     private String senha;
     private String senhaRepete;
+    private Usuario u;
+    private GrupoFamiliar g;
+
     CadastroModel cadastro = new CadastroModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle parametros = getIntent().getExtras();
+        u = (Usuario) parametros.getSerializable("Usuario");
+        g = (GrupoFamiliar) parametros.getSerializable("Grupo");
+        System.out.println("TESTE: " + u.getNomeUs());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_vw);
 
@@ -35,13 +46,19 @@ public class cadastro_vw extends AppCompatActivity {
     }
 
     public void chamarTelaInicio(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
 
         Intent intent = new Intent(this, inicio_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
 
     }
 
     //Função será responsável por cadastrar um novo usuário no banco
+    //Levar em consideração que pode ser primeiro cadastro (Usuario sem grupo)
+    // ou usuario dependente (Grupo já existe)
     public void cadastrarNovoUsuario(View v){
 
         EditText pegaNome = findViewById(R.id.inputNomeVwCadastro);

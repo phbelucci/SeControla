@@ -8,12 +8,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.entity.GrupoFamiliar;
+import com.example.entity.Usuario;
 import com.example.model.Lancamento;
 
 import java.util.ArrayList;
 
 public class novoLancamento_vw extends AppCompatActivity {
-
 
     private String botaoclicado = null;
     private int contQtdCliquesTeclado = 0;
@@ -25,6 +26,8 @@ public class novoLancamento_vw extends AppCompatActivity {
     private int formaPagtoSelecionada;
     private int avatarSelecionado;
     private int avatarFinal;
+    private Usuario u;
+    private GrupoFamiliar g;
     public int tipo;
     String digito1 = null;
     String digito2 = null;
@@ -47,10 +50,20 @@ public class novoLancamento_vw extends AppCompatActivity {
         categoriaFinalVw = pegaDados.getString("categoriaEscolhida");
         tipo = pegaDados.getInt("tipoEscolhido");
         System.out.println(categoriaFinalVw);
+        u = (Usuario) pegaDados.getSerializable("Usuario");
+        g = (GrupoFamiliar) pegaDados.getSerializable("Grupo");
+        System.out.println("TESTE: " + u.getNomeUs());
     }
 
-    public void chamarTelaInicio(View view) {
-        startActivity(new Intent(this, inicio_vw.class));
+
+    public void chamarTelaInicio(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
+
+        Intent intent = new Intent(this, inicio_vw.class);
+        intent.putExtras(parametros);
+        startActivity(intent);
     }
 
     public void chamarTelaManterLancamentos(View view) {
@@ -70,9 +83,13 @@ public class novoLancamento_vw extends AppCompatActivity {
         //define uma chave para poder localizar o que vc esta passando, pois podem ser enviadas
         //quantas informacoes quiser no Bundle, porem tem q ter uma chave para cada um
         //e o parametro
-        novoLancamento.putSerializable("ArrayG", ArrayLancGasto);
-        novoLancamento.putSerializable("ArrayR", ArrayLancReceita);
-        novoLancamento.putInt("tipo", tipo);
+
+        novoLancamento.putSerializable("ArrayG",ArrayLancGasto);
+        novoLancamento.putSerializable("ArrayR",ArrayLancReceita);
+        novoLancamento.putInt("tipo",tipo);
+        novoLancamento.putSerializable("Usuario", u);
+        novoLancamento.putSerializable("Grupo", g);
+
         //Intent padrao para chamar a nova tela
         Intent intent = new Intent(this, manter_lancamentos_vw.class);
         //carregar o Bundle "novoLancamento" na Intent criada

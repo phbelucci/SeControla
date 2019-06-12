@@ -7,17 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a2a1ec-928b-44a7-b683-8c0cd0729f77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/service/LoginHTTPService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/controller/inicio_vw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/controller/inicio_vw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/controller/login_vw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/controller/login_vw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/entity/GrupoFamiliar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/entity/GrupoFamiliar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/entity/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/model/loginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SeControlaFasePng/app/src/main/java/com/example/model/LoginModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/connection/BDConexaoMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/se_controla/WEB-INF/classes/connection/BDConexaoMySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/se_controla/connection/BDConexaoMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/se_controla/connection/BDConexaoMySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/connection/BDConexaoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/BDConexaoMySQL.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,13 +21,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+            <state relative-caret-position="1156">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#conectaBD#0;class#GrupoFamiliarDAO#0" />
+                <element signature="method#getGrupoUsuario#0;class#GrupoFamiliarDAO#0" />
+                <element signature="method#inserirNovoGrupo#0;class#GrupoFamiliarDAO#0" />
+                <element signature="method#deletaGrupo#0;class#GrupoFamiliarDAO#0" />
               </folding>
             </state>
           </provider>
@@ -116,8 +134,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
@@ -140,6 +158,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,7 +175,7 @@
               <item name="SeControlaWEB" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeControlaWEB" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SeControlaWEB" type="b2602c69:ProjectViewProjectNode" />
@@ -166,7 +185,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,11 +308,12 @@
       <workItem from="1560182897566" duration="485000" />
       <workItem from="1560183820241" duration="6526000" />
       <workItem from="1560276006840" duration="2171000" />
+      <workItem from="1560310362575" duration="1472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57939000" />
+    <option name="totallyTimeSpent" value="59506000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,9 +326,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -322,16 +340,16 @@
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9054463" visible="true" weight="0.45662847" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7110439" visible="true" weight="0.45662847" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6625" weight="0.2832981" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
-      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32937366" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Application Servers" order="8" sideWeight="0.49848714" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.09455371" side_tool="true" visible="true" weight="0.45662847" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.28895614" side_tool="true" visible="true" weight="0.45662847" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32937366" />
@@ -665,43 +683,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="method#getUsuario#0;class#GrupoFamiliarEndPoint#0" />
-            <element signature="method#getGrupo#1;class#GrupoFamiliarEndPoint#0" />
-            <element signature="method#getGrupo#1;class#GrupoFamiliarEndPoint#0" />
-            <element signature="method#getUsuario#1;class#GrupoFamiliarEndPoint#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/LancamentoEndPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
           <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="200" column="27" selection-start-line="200" selection-start-column="27" selection-end-line="200" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#conectaBD#0;class#GrupoFamiliarDAO#0" />
-            <element signature="method#getTodosGrupos#0;class#GrupoFamiliarDAO#0" />
-            <element signature="e#1184#1199#0" expanded="true" />
-            <element signature="method#getTodosGrupos#1;class#GrupoFamiliarDAO#0" />
-            <element signature="method#getGrupoUsuario#0;class#GrupoFamiliarDAO#0" />
-            <element signature="method#inserirNovoGrupo#0;class#GrupoFamiliarDAO#0" />
-            <element signature="method#deletaGrupo#0;class#GrupoFamiliarDAO#0" />
-            <element signature="e#5269#5270#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -751,10 +738,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/UsuarioEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+        <state relative-caret-position="1156">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/GrupoFamiliarEndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/GrupoFamiliarDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#conectaBD#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#getGrupoUsuario#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#inserirNovoGrupo#0;class#GrupoFamiliarDAO#0" />
+            <element signature="method#deletaGrupo#0;class#GrupoFamiliarDAO#0" />
           </folding>
         </state>
       </provider>
