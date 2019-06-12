@@ -84,13 +84,13 @@ public class GrupoFamiliarEndPoint {
         return g.toJson("null");
     }
 
-    @POST
+    @PUT
     @Path("/update/{codGrupo}/{codUs}")
-    @Produces("applicattion/json") //(COD_GRUPO; COD_ADM_GRUPO)
+    @Produces("applicattion/json")
     public String atualizaContaBancaria(@PathParam("codGrupo") Integer codGrupo,
                                         @PathParam("codUs") Integer codUs) {
 
-        // USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO)
+
         GrupoFamiliarDAO dao = new GrupoFamiliarDAO();
 
         Gson g = new Gson();

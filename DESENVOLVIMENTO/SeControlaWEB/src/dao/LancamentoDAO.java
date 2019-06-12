@@ -134,7 +134,7 @@ public class LancamentoDAO {
         String sqlDelete = "DELETE FROM LANCAMENTO WHERE COD_LANC = " + codLancamento + ";";
 
         try {
-            conectaBD(sqlDelete, "SE", true);//false para não realizar a conexão novamente
+            conectaBD(sqlDelete, "UP", true);//false para não realizar a conexão novamente
             return true;
         } finally {
             try {

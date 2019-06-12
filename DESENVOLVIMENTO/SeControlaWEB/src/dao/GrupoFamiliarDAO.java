@@ -180,10 +180,10 @@ public class GrupoFamiliarDAO {
 
     public boolean deletaGrupo(Integer codGrupo) {
 
-        String sqlDelete = "DELETE INTO GRUPO_FAMILIAR WHERE COD_GRUPO=" + codGrupo + ";";
+        String sqlDelete = "DELETE FROM GRUPO_FAMILIAR WHERE COD_GRUPO=" + codGrupo + ";";
 
         try {
-            conectaBD(sqlDelete, "SE", true);//false para não realizar a conexão novamente
+            conectaBD(sqlDelete, "UP", true);//false para não realizar a conexão novamente
             return true;
         } finally {
             try {
@@ -198,12 +198,12 @@ public class GrupoFamiliarDAO {
 
     public boolean atualizarGrupo(Integer codGrupo, Integer codUs) {
         String sqlUpdate = "UPDATE GRUPO_FAMILIAR SET COD_ADM_GRUPO="
-                + codUs.toString() + ", WHERE COD_GRUPO ="
+                + codUs.toString() + " WHERE COD_GRUPO ="
                 + codGrupo.toString() + ";";
 
         Integer aux = (Integer) conectaBD(sqlUpdate, "UP", true);
 
-        if (aux > 1) {
+        if (aux >= 1) {
             try {
                 con.close();
                 stm.close();

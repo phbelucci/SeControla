@@ -121,10 +121,10 @@ public class ContaBancariaDAO {
 
     public boolean deletaContaBancaria(Integer codContaBancaria) {
 
-        String sqlDelete = "DELETE INTO CONTA_BANCO WHERE COD_CONTA=" + codContaBancaria + ";";
+        String sqlDelete = "DELETE FROM CONTA_BANCO WHERE COD_CONTA=" + codContaBancaria + ";";
 
         try {
-            conectaBD(sqlDelete, "SE", true);//false para não realizar a conexão novamente
+            conectaBD(sqlDelete, "UP", true);//false para não realizar a conexão novamente
             return true;
         } finally {
             try {
