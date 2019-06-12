@@ -32,7 +32,6 @@ public class cadastro_vw extends AppCompatActivity {
         Bundle parametros = getIntent().getExtras();
         u = (Usuario) parametros.getSerializable("Usuario");
         g = (GrupoFamiliar) parametros.getSerializable("Grupo");
-        System.out.println("TESTE: " + u.getNomeUs());
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_vw);
