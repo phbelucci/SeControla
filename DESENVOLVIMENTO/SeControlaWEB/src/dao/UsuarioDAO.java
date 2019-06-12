@@ -1,5 +1,9 @@
 package dao;
 
+import com.mysql.cj.jdbc.CallableStatement;
+import connection.BDFabricaConexao;
+import entity.Usuario;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,31 +13,36 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import connection.BDFabricaConexao;
-import entity.ContaBancaria;
-import entity.NivelAcessoEnum;
-import entity.Usuario;
-
 public class UsuarioDAO {
 
     Connection con;
     Statement stm;
-    int rset;
-    ResultSet rsetGet;
+    CallableStatement stmt;
 
-    private Object conectaBD(String sql, String tipo, boolean connection){
+    int rset;
+    ResultSet rsetAux;
+
+    String sqlAllUsuario = "SELECT * FROM USUARIO;";
+
+    private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
-            if(connection) {
+            if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
-            this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")){
-                this.rset = stm.executeUpdate(sql);
-                return rset;
 
-            }else if(tipo.equals("SE")){
-                this.rsetGet = stm.executeQuery(sql);
-                return rsetGet;
+            switch (tipo) {
+                case "UP":
+                    this.stm = (Statement) con.createStatement();
+                    this.rset = stm.executeUpdate(sql);
+                    return rset;
+                case "SE":
+                    this.stm = (Statement) con.createStatement();
+                    this.rsetAux = stm.executeQuery(sql);
+                    return rsetAux;
+                case "FU":
+                    stmt = (CallableStatement) con.prepareCall(sql);
+                    this.rsetAux = stmt.executeQuery(sql);
+                    return rsetAux;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -41,10 +50,7 @@ public class UsuarioDAO {
         return null;
     }
 
-    public Usuario buscarUsuario(String nome, String senha){
-
-
-        String sql = "SELECT * FROM USUARIO";
+    public Usuario buscarUsuario(String nome, String senha) {
 
         Usuario u;
 
@@ -56,10 +62,10 @@ public class UsuarioDAO {
             this.stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);*/
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sqlAllUsuario, "SE", true);
 
             while (query.next()) {
-                if (query.getString("NOME_US").equals(nome)||
+                if (query.getString("NOME_US").equals(nome) ||
                         query.getString("NOME_US").toLowerCase().equals(nome)) {
 
                     u = new Usuario();
@@ -69,16 +75,15 @@ public class UsuarioDAO {
                     u.setCodNivelAcesso(query.getInt("COD_NIVEL_ACESSO"));
                     u.setCodGrupo(query.getInt("COD_GRUPO"));
 
-                    if(u.verificaSenha(senha)){
-                        con.close();
+                    if (u.verificaSenha(senha)) {
                         return u;
                     }
                 }
             }
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -88,15 +93,12 @@ public class UsuarioDAO {
         }
 
 
-
         return null;
     }
 
     public List<Usuario> buscarTodosUsuarios() {
 
         List<Usuario> listAll = new ArrayList<Usuario>();
-
-        String sql = "SELECT * FROM USUARIO";
 
         Usuario u;
 
@@ -108,7 +110,7 @@ public class UsuarioDAO {
             this.stm = (Statement) con.createStatement();
             ResultSet rset = stm.executeQuery(sql);*/
 
-            ResultSet query = (ResultSet) conectaBD(sql,"SE", true);
+            ResultSet query = (ResultSet) conectaBD(sqlAllUsuario, "SE", true);
 
             while (query.next()) {
                 u = new Usuario();
@@ -120,9 +122,9 @@ public class UsuarioDAO {
 
                 listAll.add(u);
             }
-        }catch (SQLException e) {
-        Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -134,57 +136,26 @@ public class UsuarioDAO {
         return listAll;
     }
 
+    public Usuario inserirUsuarioNovo(String nome, String senha) {
 
-    public Usuario inserirUsuarioNovo(String nome, String senha){
-
-        Usuario u;
-
-        String sqlInsertUsuarioVazio = String.format("INSERT INTO USUARIO(NOME_US, SENHA_US, COD_NIVEL_ACESSO, COD_GRUPO) " +
-                "VALUES (%s, %s, 2, null;", nome, senha);
-        String sqlUsuario = "SELECT * FROM USUARIO;";
+        String sqlFunction = String.format("{CALL Add_Novo_Usuario('%s','%s', @codigo, @nome, @senha, @niveAcesso, @grupo)};", nome, senha);
 
 
-        String sqlSelectGrupo = "SELECT * FROM GRUPO_FAMILIAR;";
+        ResultSet query = (ResultSet) conectaBD(sqlFunction, "FU", true);
 
-        String sqlInsertGrupo = "INSERT INTO GRUPO_FAMILIAR(COD_US) VALUES(";
-
-        try{
-            conectaBD(sqlInsertUsuarioVazio,"UP", true);
-            ResultSet query = (ResultSet) conectaBD(sqlUsuario,"SE", false);
-
-            u=new Usuario();
-
-            while(query.next()){
-                if(query.getString("NOME_US").equals(nome))
-                {
-                    u.setCodUs(query.getInt("COD_US"));
-                }
-            }
-
-            conectaBD(sqlInsertGrupo + u.getCodGrupo().toString()+");","UP", false);
-            ResultSet queryGrupo = (ResultSet) conectaBD(sqlSelectGrupo,"SE", false);
-
-            while (queryGrupo.next()){
-                if(query.getString("NOME_US").equals(nome)){
-                    u.setCodGrupo(queryGrupo.getInt("COD_GRUPO"));
-                }
-            }
-
-            return u;
-        } catch (SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        if (query != null)
+            return buscarUsuario(nome, senha);
 
         return null;
     }
 
     public boolean deletaUsuario(Integer codUs) {
-        String sqlDelete = "DELETE INTO USUARIO WHERE COD_US="+codUs+";";
+        String sqlDelete = "DELETE FROM USUARIO WHERE COD_US=" + codUs + ";";
 
-            try {
-            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+        try {
+            conectaBD(sqlDelete, "UP", true);//false para não realizar a conexão novamente
             return true;
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -194,21 +165,18 @@ public class UsuarioDAO {
         }
     }
 
-    public boolean atualizarUsuario(Integer codUs, Integer nomeUs, Integer senhaUs, Integer codNivelAcesso, Integer codGrupo) {
+    public Usuario atualizarUsuario(Integer codUs, String nomeUs, String senhaUs, Integer codNivelAcesso, Integer codGrupo) {
 
-        String sqlUpdate= "UPDATE USUARIO SET" +
-                        " NOME_US="+nomeUs+
-                        " AND SENHA_US=" + senhaUs +
-                        " AND COD_NIVEL_ACESSO=" + codNivelAcesso.toString() +
-                        " AND COD_GRUPO = " + codGrupo.toString() +
-                        " WHERE COD_US =" + codUs.toString()+";";
+        String sqlUpadate = String.format("CALL Update_Usuario(%d,'%s','%s',%d,%d)", codUs, nomeUs, senhaUs, codNivelAcesso, codGrupo);
 
-        Integer aux = (Integer) conectaBD(sqlUpdate,"UP", true);
-            
-        if(aux>0){
-            return true;
-        }
+        ResultSet query = (ResultSet) conectaBD(sqlUpadate, "FU", true);
 
-        return false;
+
+        Usuario u = buscarUsuario(nomeUs, senhaUs);
+
+        if (query != null)
+            return u;
+
+        return null;
     }
 }

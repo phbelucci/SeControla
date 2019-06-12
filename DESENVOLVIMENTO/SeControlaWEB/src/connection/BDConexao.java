@@ -3,7 +3,6 @@ package connection;
 import java.sql.Connection;
 
 /**
- *
  * @author Lucas Tardioli
  */
 public abstract class BDConexao {
@@ -18,6 +17,6 @@ public abstract class BDConexao {
 
     public abstract Connection getConnection();
 
-    public abstract  String getURL();
+    public abstract String getURL();
 
 }

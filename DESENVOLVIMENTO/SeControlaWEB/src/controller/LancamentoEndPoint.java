@@ -14,12 +14,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import java.util.List;
 
-@Path("/lacamento")
+@Path("/lancamento")
 public class LancamentoEndPoint {
 
 
     @GET
-    @Path("get/all/{codGrupo}")
+    @Path("/get/all/{codGrupo}")
     @Produces("applicattion/json")
     public String getTodosLacamentos(@PathParam("codGrupo") Integer codGrupo) {
         LancamentoDAO dao = new LancamentoDAO();
@@ -28,7 +28,7 @@ public class LancamentoEndPoint {
     }
 
     @GET
-    @Path("get/us/{codUs}")
+    @Path("/get/us/{codUs}")
     @Produces("applicattion/json")
     public String getTodosLancamentosUsuario(@PathParam("codUs") Integer codUs) {
         LancamentoDAO dao = new LancamentoDAO();
@@ -36,17 +36,26 @@ public class LancamentoEndPoint {
         return g.toJson(dao.buscarTodosLancamentosUsuario(codUs));
     }
 
-    @PUT
-    @Path("put/{INSERIR_TODOS_DADOS}")
+    @POST
+    //@Path("/post/{codUs}/{data}/{codCat}/{codSubCat}/{valor}/{codConta}/{codPagamento}/{codGrupo}/{tipoLanc}")
+    @Path("/post/{codUs}/{data}/{codCat}/{codSubCat:(/codSubCat/[^/]+?)?}/{valor}/{codConta}/{codPagamento}/{codGrupo}/{tipoLanc}")
     @Produces("applicattion/json")
-    public String insereLancamento(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {//precisa arrumar para conter todos os dados do lancamento
+    public String insereLancamento(@PathParam("codUs") Integer codUs,
+                                   @PathParam("data") String data,
+                                   @PathParam("codCat") Integer codCat,
+                                   @PathParam("codSubCat") Integer codSubCat,
+                                   @PathParam("valor") Double valor,
+                                   @PathParam("codConta") Integer codConta,
+                                   @PathParam("codPagamento") Integer codPagamento,
+                                   @PathParam("codGrupo") Integer codGrupo,
+                                   @PathParam("tipoLanc") String tipoLanc) {
         LancamentoDAO dao = new LancamentoDAO();
         Gson g = new Gson();
-        return g.toJson(dao.inserirLancamento(codUs)); //precisa arrumar para conter todos os dados do lancamento
+        return g.toJson(dao.inserirLancamento(codUs,data,codCat,codSubCat,valor,codConta,codPagamento,codGrupo,tipoLanc)); //precisa arrumar para conter todos os dados do lancamento
     }
 
     @DELETE
-    @Path("delete/{codLancamento}")
+    @Path("/delete/{codLancamento}")
     @Produces("applicattion/json")
     public String deletaLancamento(@PathParam("codLancamento") Integer codLancamento) {
         LancamentoDAO dao = new LancamentoDAO();
@@ -61,8 +70,8 @@ public class LancamentoEndPoint {
 
 
     /*
-    @POST
-    @Path("update/{INSERIR_TODOS_DADOS}")
+    @PUT
+    @Path("put/{INSERIR_TODOS_DADOS}")
     @Produces("applicattion/json")
     public Lancamento atualizaLancamento(@PathParam("INSERIR_TODOS_DADOS") Integer codUs) {
 

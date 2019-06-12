@@ -1,8 +1,8 @@
 package dao;
 
+import com.mysql.cj.jdbc.CallableStatement;
 import connection.BDFabricaConexao;
 import entity.GrupoFamiliar;
-import entity.Usuario;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,24 +15,33 @@ import java.util.logging.Logger;
 
 public class GrupoFamiliarDAO {
 
+
     Connection con;
     Statement stm;
-    int rset;
+    CallableStatement stmt;
     ResultSet rsetGet;
 
-    private Object conectaBD(String sql, String tipo, boolean connection){
+    int rset;
+    ResultSet rsetAux;
+
+    private Object conectaBD(String sql, String tipo, boolean connection) {
         try {
-            if(connection) {
+            if (connection) {
                 this.con = (Connection) BDFabricaConexao.getConnection();
             }
-            this.stm = (Statement) con.createStatement();
-            if (tipo.equals("UP")){
-                this.rset = stm.executeUpdate(sql);
-                return rset;
 
-            }else if(tipo.equals("SE")){
-                this.rsetGet = stm.executeQuery(sql);
-                return rsetGet;
+            switch (tipo) {
+                case "UP":
+                    this.stm = (Statement) con.createStatement();
+                    this.rset = stm.executeUpdate(sql);
+                    return rset;
+                case "SE":
+                    this.stm = (Statement) con.createStatement();
+                    this.rsetAux = stm.executeQuery(sql);
+                    return rsetAux;
+                case "FU":
+                    stmt = (CallableStatement) con.prepareCall(sql);
+                    return stmt.executeQuery(sql);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -40,17 +49,16 @@ public class GrupoFamiliarDAO {
         return null;
     }
 
-
     public List<GrupoFamiliar> getTodosGrupos() {
 
         List<GrupoFamiliar> listAll = new ArrayList<GrupoFamiliar>();
 
         String sqlAll = "select * from GRUPO_FAMILIAR;";
 
-        try{
-            ResultSet query = (ResultSet) conectaBD(sqlAll,"SE",true);
+        try {
+            ResultSet query = (ResultSet) conectaBD(sqlAll, "SE", true);
 
-            while (query.next()){
+            while (query.next()) {
                 GrupoFamiliar g = new GrupoFamiliar();
 
                 g.setCodGrupo(rsetGet.getInt("COD_GRUPO"));
@@ -60,16 +68,17 @@ public class GrupoFamiliarDAO {
             }
 
             return listAll;
+
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-        try {
-            con.close();
-            stm.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-    }
 
         return null;
 
@@ -80,21 +89,22 @@ public class GrupoFamiliarDAO {
         GrupoFamiliar g;
         String sqlAll = "select * from GRUPO_FAMILIAR;";
 
-        try{
-            ResultSet query = (ResultSet) conectaBD(sqlAll,"SE",true);
+        try {
+            ResultSet query = (ResultSet) conectaBD(sqlAll, "SE", true);
 
             g = new GrupoFamiliar();
 
-            while (query.next()){
-                if (query.getInt("COD_GRUPO") == codGrupo){
+            while (query.next()) {
+                if (query.getInt("COD_GRUPO") == codGrupo) {
                     g.setCodGrupo(query.getInt("COD_GRUPO"));
                     g.setCodAdmGrupo(query.getInt("COD_ADM_GRUPO"));
                 }
             }
+
             return g;
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -112,13 +122,13 @@ public class GrupoFamiliarDAO {
         GrupoFamiliar g;
         String sqlAll = "select * from GRUPO_FAMILIAR;";
 
-        try{
-            ResultSet query = (ResultSet) conectaBD(sqlAll,"SE",true);
+        try {
+            ResultSet query = (ResultSet) conectaBD(sqlAll, "SE", true);
 
             g = new GrupoFamiliar();
 
-            while (query.next()){
-                if (query.getInt("COD_ADM_GRUPO") == codUs){
+            while (query.next()) {
+                if (query.getInt("COD_ADM_GRUPO") == codUs) {
                     g.setCodGrupo(query.getInt("COD_GRUPO"));
                     g.setCodAdmGrupo(query.getInt("COD_ADM_GRUPO"));
                 }
@@ -126,47 +136,7 @@ public class GrupoFamiliarDAO {
             return g;
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-        try {
-            con.close();
-            stm.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-        return null;
-
-    }
-
-    public GrupoFamiliar inserirNovoGrupo(Integer codUs){
-
-        GrupoFamiliar g = new GrupoFamiliar();
-
-        String sqlInsert = "INSERT INTO GRUPO_FAMILIAR(COD_ADM_GRUPO)" +
-                "VALUES ("+codUs.toString()+");";
-
-        try {
-            this.con = (Connection) BDFabricaConexao.getConnection();
-            this.stm = (Statement) con.createStatement();
-            int rset = stm.executeUpdate(sqlInsert);
-
-            String sqlGet = "SELECT * FROM GRUPO_FAMILIAR WHERE COD_ADM_GRUPO =" +codUs.toString()+";";
-
-            this.stm = (Statement) con.createStatement();
-            ResultSet rsetGet = stm.executeQuery(sqlGet);
-
-
-            if(rsetGet.next()) {
-                g.setCodGrupo(rsetGet.getInt("COD_GRUPO"));
-                g.setCodAdmGrupo(rsetGet.getInt("COD_ADM_GRUPO"));
-            }
-
-            return g;
-
-        }catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -179,14 +149,48 @@ public class GrupoFamiliarDAO {
 
     }
 
-    public boolean deletaGrupo(Integer codGrupo) {
+    public GrupoFamiliar inserirNovoGrupo(Integer codUs) {
 
-        String sqlDelete = "DELETE INTO GRUPO_FAMILIAR WHERE COD_GRUPO="+codGrupo+";";
+        String sqlInsert = "INSERT INTO GRUPO_FAMILIAR(COD_ADM_GRUPO)" +
+                "VALUES (" + codUs.toString() + ");";
 
         try {
-            conectaBD(sqlDelete,"SE", true);//false para não realizar a conexão novamente
+            this.con = (Connection) BDFabricaConexao.getConnection();
+            this.stm = (Statement) con.createStatement();
+            int rset = stm.executeUpdate(sqlInsert);
+
+            if (rset >= 1) {
+                try {
+                    con.close();
+                    stm.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                return getGrupoUsuario(codUs);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return null;
+    }
+
+    public boolean deletaGrupo(Integer codGrupo) {
+
+        String sqlDelete = "DELETE FROM GRUPO_FAMILIAR WHERE COD_GRUPO=" + codGrupo + ";";
+
+        try {
+            conectaBD(sqlDelete, "UP", true);//false para não realizar a conexão novamente
             return true;
-        }finally {
+        } finally {
             try {
                 con.close();
                 stm.close();
@@ -199,8 +203,21 @@ public class GrupoFamiliarDAO {
 
     public boolean atualizarGrupo(Integer codGrupo, Integer codUs) {
         String sqlUpdate = "UPDATE GRUPO_FAMILIAR SET COD_ADM_GRUPO="
-                + codUs.toString() + ", WHERE COD_GRUPO ="
-                + codGrupo.toString()+";";
+                + codUs.toString() + " WHERE COD_GRUPO ="
+                + codGrupo.toString() + ";";
+
+        Integer aux = (Integer) conectaBD(sqlUpdate, "UP", true);
+
+        if (aux >= 1) {
+            try {
+                con.close();
+                stm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return true;
+        }
 
         return false;
     }

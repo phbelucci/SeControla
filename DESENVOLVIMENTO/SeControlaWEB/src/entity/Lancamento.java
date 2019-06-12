@@ -1,23 +1,27 @@
 package entity;
 
-import java.util.Date;
+import java.time.Instant;
 
 public class Lancamento {
-    private final Integer codLanc;
+    private Integer codLanc;
     private Integer codUs;
     private Integer codMoeda;
     private Integer codConta;
     private Integer codGrupo;
 
-    private final Date data;
+    private String dataString;
     //private Image comprovante;
     private Double valor;
 
-    private Categoria cat;
-    private SubCategoria subCat;
-    private TipoLancamentoEnum tipoLancamentoEnum;
-    private FormaPagamentoEnum formaPagamento;
+    private Integer cat;
+    private Integer subCat;
+    private String tipoLancamentoEnum;
+    private Integer formaPagamento;
 
+    public Lancamento() {
+        this.dataString = Instant.now().toString();
+    }
+    /*
     //com comprovante
     public Lancamento(Integer codLanc, Integer codUs, Integer codGrupo, Integer codMoeda, Integer codConta, Date data, Double valor, Categoria cat, SubCategoria subCat, TipoLancamentoEnum tipoLancamentoEnum, FormaPagamentoEnum formaPagamento) {
         this.codLanc = codLanc;
@@ -25,17 +29,45 @@ public class Lancamento {
         this.codGrupo = codGrupo;
         this.codMoeda = codMoeda;
         this.codConta = codConta;
-        this.data = data;
+        this.data = Calendar.getInstance();
         //this.comprovante = comprovante;
         this.valor = valor;
         this.cat = cat;
         this.subCat = subCat;
         this.tipoLancamentoEnum = tipoLancamentoEnum;
         this.formaPagamento = formaPagamento;
-    }
+    }*/
 
     public Integer getCodLanc() {
         return codLanc;
+    }
+
+    public void setCodLanc(Integer codLanc) {
+        this.codLanc = codLanc;
+    }
+
+    public Integer getCodUs() {
+        return codUs;
+    }
+
+    public void setCodUs(Integer codUs) {
+        this.codUs = codUs;
+    }
+
+    public Integer getCodMoeda() {
+        return codMoeda;
+    }
+
+    public void setCodMoeda(Integer codMoeda) {
+        this.codMoeda = codMoeda;
+    }
+
+    public Integer getCodConta() {
+        return codConta;
+    }
+
+    public void setCodConta(Integer codConta) {
+        this.codConta = codConta;
     }
 
     public Integer getCodGrupo() {
@@ -46,79 +78,51 @@ public class Lancamento {
         this.codGrupo = codGrupo;
     }
 
-    public Integer getCodUs() {
-        return codUs;
+    public String getDataString() {
+        return dataString;
     }
 
-    public Integer getCodMoeda() {
-        return codMoeda;
+    public void setDataString(String dataString) {
+        this.dataString = dataString;
     }
-
-    public Integer getCodConta() {
-        return codConta;
-    }
-
-    public void setCodUs(Integer codUs) {
-        this.codUs = codUs;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    //public Image getComprovante() {
-     //   return comprovante;
-    //}
 
     public Double getValor() {
         return valor;
     }
 
-    public Categoria getCat() {
-        return cat;
-    }
-
-    public SubCategoria getSubCat() {
-        return subCat;
-    }
-
-    public TipoLancamentoEnum getTipoLancamentoEnum() {
-        return tipoLancamentoEnum;
-    }
-
-    public FormaPagamentoEnum getFormaPagamento() {
-        return formaPagamento;
-    }
-
-    public void setCodMoeda(Integer codMoeda) {
-        this.codMoeda = codMoeda;
-    }
-
-    public void setCodConta(Integer codConta) {
-        this.codConta = codConta;
-    }
-
-    //public void setComprovante(Image comprovante) {
-    //    this.comprovante = comprovante;
-    //}
-
     public void setValor(Double valor) {
         this.valor = valor;
     }
 
-    public void setCat(Categoria cat) {
+    public Integer getCat() {
+        return cat;
+    }
+
+    public void setCat(Integer cat) {
         this.cat = cat;
     }
 
-    public void setSubCat(SubCategoria subCat) {
+    public Integer getSubCat() {
+        return subCat;
+    }
+
+    public void setSubCat(Integer subCat) {
         this.subCat = subCat;
     }
 
-    public void setTipoLancamentoEnum(TipoLancamentoEnum tipoLancamentoEnum) {
+    public String getTipoLancamentoEnum() {
+        return tipoLancamentoEnum;
+    }
+
+    public void setTipoLancamentoEnum(String tipoLancamentoEnum) {
         this.tipoLancamentoEnum = tipoLancamentoEnum;
     }
 
-    public void setFormaPagamento(FormaPagamentoEnum formaPagamento) {
+    public Integer getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(Integer formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 }

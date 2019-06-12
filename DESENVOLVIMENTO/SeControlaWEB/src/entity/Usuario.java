@@ -28,7 +28,7 @@ public class Usuario {
     public Usuario(String nomeUs, String senha) {
         this.codUs = 1;
         this.nomeUs = nomeUs;
-        this.senhaUs=senha;
+        this.senhaUs = senha;
         this.codGrupo = 1;
         this.codNivelAcesso = 2;
     }
@@ -43,8 +43,8 @@ public class Usuario {
     }
 
 
-    public boolean verificaSenha(String senha){
-        if (this.senhaUs.equals(senha)){
+    public boolean verificaSenha(String senha) {
+        if (this.senhaUs.equals(senha)) {
             return true;
         }
         return false;
