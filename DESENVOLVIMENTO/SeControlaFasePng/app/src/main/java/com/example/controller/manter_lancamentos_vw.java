@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.entity.GrupoFamiliar;
+import com.example.entity.Usuario;
 import com.example.model.Lancamento;
 import com.example.model.ListaAdapterLancamento;
 import java.util.ArrayList;
@@ -17,6 +20,8 @@ public class manter_lancamentos_vw extends AppCompatActivity {
     ListView lista;
     ArrayList<Lancamento> a = new ArrayList<Lancamento>();
     private int tipo;
+    private Usuario u;
+    private GrupoFamiliar g;
 
 
     @Override
@@ -29,6 +34,26 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         //getExtras pega o Bundle carreagado
         Bundle pegaDados = getIntent().getExtras();
         tipo = pegaDados.getInt("tipo");
+        u = (Usuario) pegaDados.getSerializable("Usuario");
+        g = (GrupoFamiliar) pegaDados.getSerializable("Grupo");
+        System.out.println("TESTE: " + u.getNomeUs());
+
+
+
+        /********************
+         *
+         *
+         *       Função que retorna Lista de lançamentos do grupo
+         *       g.getLancamentosGrupo();
+         *
+         *       Função para adicionar lancamento à lista de lacamentos
+         *       g.addLancamentosGrupo(lancamento);
+         *
+         *
+         * *******************/
+
+
+
 
         //getSerializable pega o valor do parametro, atraves da chave informada na outra tela
         //neste caso getSerializable, mas poderia ser getInt, getString, etc.
@@ -63,25 +88,44 @@ public class manter_lancamentos_vw extends AppCompatActivity {
     }
 
     public void chamarTelaManterPerfil(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
 
         Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
-
     }
+
     public void chamarTelaInicio(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
 
         Intent intent = new Intent(this, inicio_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
 
     }
 
     public void chamarTelaCategoriaGastos(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
+
         Intent intent = new Intent(this, escolherCatGastos_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
 
     }
     public void chamarTelaCategoriaReceitas(View view){
-        startActivity(new Intent(this, escolherCatReceitas_vw.class));
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
+
+        Intent intent = new Intent(this, escolherCatReceitas_vw.class);
+        intent.putExtras(parametros);
+        startActivity(intent);
 
     }
 

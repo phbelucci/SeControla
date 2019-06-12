@@ -76,9 +76,15 @@ public class login_vw extends AppCompatActivity {
         startActivity(intent);
     }
     public void chamarTelaCadastro(View view){
+        Usuario u = null;
+        GrupoFamiliar g = null;
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
 
-        startActivity(new Intent( this, cadastro_vw.class));
-
+        Intent intent = new Intent(this, cadastro_vw.class);
+        intent.putExtras(parametros);
+        startActivity(new Intent(intent));
     }
 
 

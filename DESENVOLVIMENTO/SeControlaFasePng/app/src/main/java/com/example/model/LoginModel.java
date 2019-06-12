@@ -1,12 +1,7 @@
 package com.example.model;
 
-import android.graphics.Region;
-
-import com.example.DAO.UsuarioDAO;
 import com.example.entity.Usuario;
-import com.example.service.LoginHTTPService;
-
-import java.util.Optional;
+import com.example.DAO.LoginDAO;
 
 public class LoginModel {
 
@@ -17,8 +12,8 @@ public class LoginModel {
 
     public Boolean logar(String nome, String senha){
         try {
-            LoginHTTPService login = new LoginHTTPService(nome, senha);
-            u = login.execute().get();
+            LoginDAO dao = new LoginDAO(nome, senha);
+            u = dao.logar();
         }catch (Exception e){
 
             //fazer tratamento da mensagem

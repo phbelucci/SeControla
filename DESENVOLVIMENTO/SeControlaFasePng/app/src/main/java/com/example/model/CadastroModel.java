@@ -1,6 +1,6 @@
 package com.example.model;
 
-import com.example.DAO.LoginDAO;
+//import com.example.DAO.LoginDAO;
 import com.example.DAO.UsuarioDAO;
 import com.example.entity.Login;
 import com.example.entity.Usuario;
@@ -19,9 +19,10 @@ public class CadastroModel {
     public String cadastrar(String nome, String senha){
 
 
-
-        HTTPService service = new HTTPService(nome+"/"+senha);
         String retorno="";
+        /*
+        HTTPService service = new HTTPService(nome+"/"+senha);
+
 
         try {
             retorno = service.execute().get();
@@ -33,7 +34,7 @@ public class CadastroModel {
             e.printStackTrace();
         }
 
-        /*
+
             usuario = new Usuario(nome,senha);
             UsuarioDAO dao = new UsuarioDAO();
             dao.salvar(usuario);
@@ -50,6 +51,7 @@ public class CadastroModel {
         }*/
         return retorno;
     }
+
 
     public String getMensagem(){
         return mensagem;

@@ -27,6 +27,7 @@ public class UsuarioDAO {
 
     public String buscarPorNome(String nome){
 
+        /*
         HTTPService service = new HTTPService(nome);
 
         try {
@@ -39,7 +40,7 @@ public class UsuarioDAO {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+    */
         return null;
     }
 

@@ -1,18 +1,42 @@
 package com.example.DAO;
+//Tarefa em segundo plano para conexão
+import android.os.AsyncTask;
+//Trabalhar com Json
+import com.example.entity.Usuario;
+import com.example.service.HTTPService;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+//Requisição HTTP
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+//Utilidades
+import java.io.IOException;
+import java.util.Scanner;
 
-import com.example.entity.Login;
+public class LoginDAO{
 
-public class LoginDAO {
-    //  COD_US int auto_increment primary key,
-    //	NOME_US varchar(200) not null,
-    //	SENHA_US varchar(20) not null
+    private String nome;
+    private String senha;
 
+    public LoginDAO(String nome, String senha) {
+        this.nome = nome;
+        this.senha = senha;
+    }
 
-    public void salvar(Login login){
-        //INSERT NO BANCO
+    public Usuario logar() {
+        String resposta = "";
+        HTTPService requisicao = new HTTPService("GET", "usuario/get/"+nome+"/"+senha, "JSON");
 
-        //CONCATENA STRING DO
+        try {
+            resposta = requisicao.execute().get();
+            System.out.println(resposta);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
-        //tratar erro e dar re
+        //Converte Json em Usuario e retorna
+        return new Gson().fromJson(resposta, Usuario.class);
     }
 }

@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.entity.GrupoFamiliar;
+import com.example.entity.Usuario;
+
 import static com.example.controller.R.drawable.carrodestaque;
 
 public class escolherCatGastos_vw extends AppCompatActivity {
@@ -15,14 +18,27 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     private String nomeCat;
     private String categoriaFinalVw;
     private final int tipo = 1;
+    private Usuario u;
+    private GrupoFamiliar g;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle parametros = getIntent().getExtras();
+        u = (Usuario) parametros.getSerializable("Usuario");
+        g = (GrupoFamiliar) parametros.getSerializable("Grupo");
+        System.out.println("TESTE: " + u.getNomeUs());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_cat_gastos_vw);
     }
 
     public void chamarTelaInicio(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
+
         Intent intent = new Intent(this, inicio_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
 
     }
@@ -35,6 +51,8 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         //2º atributo dos parenteses atributo empacotado
         mandarDados.putString("categoriaEscolhida",categoriaFinalVw);
         mandarDados.putInt("tipoEscolhido",tipo);
+        mandarDados.putSerializable("Usuario", u);
+        mandarDados.putSerializable("Grupo", g);
         //cria uma Intent para chamar a nova Activity(tela)
         Intent intent = new Intent(this, novoLancamento_vw.class);
         //carrega o bunble na Intent
@@ -45,7 +63,12 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     }
 
     public void chamarTelaManterPerfil(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
+
         Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        intent.putExtras(parametros);
         startActivity(intent);
 
     }
