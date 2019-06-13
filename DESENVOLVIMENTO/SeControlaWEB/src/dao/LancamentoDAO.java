@@ -39,7 +39,7 @@ public class LancamentoDAO {
                     this.rsetAux = stm.executeQuery(sql);
                     return rsetAux;
                 case "FU":
-                    stmt = (CallableStatement) con.prepareCall(sql);
+                    this.stmt = (CallableStatement) con.prepareCall(sql);
                     this.rsetAux = stmt.executeQuery(sql);
                     return rsetAux;
             }
@@ -205,4 +205,42 @@ public class LancamentoDAO {
         return null;
 
     }
+
+    public Double buscarSomaLancamentosUsuario(Integer codUs) {
+
+        try {
+            String sqlUpadate = String.format("SELECT func_soma_lancamentos_usuario(%d) FROM DUAL;", codUs);
+
+            ResultSet rs = (ResultSet) conectaBD(sqlUpadate, "FU", true);
+
+            while (rs.next()) {
+                return rs.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
+
+    public Double buscarSomaLancamentosGrupo(Integer codGrupo) {
+
+        try {
+            String sqlUpadate = String.format("SELECT func_soma_lancamentos_grupo(%d) FROM DUAL;", codGrupo);
+
+            ResultSet rs = (ResultSet) conectaBD(sqlUpadate, "FU", true);
+
+            while (rs.next()) {
+                return rs.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
 }

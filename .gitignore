@@ -11,4 +11,5 @@
 /DESENVOLVIMENTO/SeControlaWEB/.idea/*.xml
 /DESENVOLVIMENTO/SeControlaWEB/.idea/codeStyles/Project.xml
 /gson
-*.class
+**/out/
+DESENVOLVIMENTO/SeControlaWEB/.idea/codeStyles/Project.xml
