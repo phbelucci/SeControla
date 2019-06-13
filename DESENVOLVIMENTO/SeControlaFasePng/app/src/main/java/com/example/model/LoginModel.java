@@ -57,12 +57,6 @@ public class LoginModel {
         UsuarioDAO USdao = new UsuarioDAO();
         grupo.setUsuariosGrupo(USdao.getUsuariosGrupo(grupo.getCodGrupo()));
 
-        //Debug
-        List<Usuario> contas = grupo.getUsuariosGrupo();
-        for (Usuario c:contas) {
-            System.out.println("USER: " + c.getNomeUs());
-        }
-
 
         mensagem = "Login efetuado!";
         return true;

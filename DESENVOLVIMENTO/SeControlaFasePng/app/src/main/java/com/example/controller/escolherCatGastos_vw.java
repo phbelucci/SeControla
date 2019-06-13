@@ -17,7 +17,8 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     private int idCat;
     private String nomeCat;
     private String categoriaFinalVw;
-    private final int tipo = 1;
+    private Integer categoriaFinalInt;
+    private final String tipo = "DESPESA";
     private Usuario u;
     private GrupoFamiliar g;
 
@@ -50,7 +51,8 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         //1º atributo dos parenteses chave
         //2º atributo dos parenteses atributo empacotado
         mandarDados.putString("categoriaEscolhida",categoriaFinalVw);
-        mandarDados.putInt("tipoEscolhido",tipo);
+        mandarDados.putInt("categoriaEscolhidaInt", categoriaFinalInt);
+        mandarDados.putString("tipoEscolhido",tipo);
         mandarDados.putSerializable("Usuario", u);
         mandarDados.putSerializable("Grupo", g);
         //cria uma Intent para chamar a nova Activity(tela)
@@ -113,55 +115,63 @@ public class escolherCatGastos_vw extends AppCompatActivity {
                 activitySelecionada = findViewById(R.id.btnCatTaxas);
                 activitySelecionada.setImageResource(R.drawable.taxasdestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 2:
                 activitySelecionada = findViewById(R.id.btnCatCasa);
                 activitySelecionada.setImageResource(R.drawable.casadestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 3:
                 activitySelecionada = findViewById(R.id.btnCatComida);
                 activitySelecionada.setImageResource(R.drawable.comidadestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 4:
                 activitySelecionada = findViewById(R.id.btnCatCarro);
                 activitySelecionada.setImageResource(carrodestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 5:
                 activitySelecionada = findViewById(R.id.btnCatLivros);
                 activitySelecionada.setImageResource(R.drawable.livrosdestaque);
                 categoriaFinalVw = n;
-
+                categoriaFinalInt = idCat;
                 
                 break;
             case 6:
                 activitySelecionada = findViewById(R.id.btnCatSaude);
                 activitySelecionada.setImageResource(R.drawable.saudedestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 7:
                 activitySelecionada = findViewById(R.id.btnCatDiversao);
                 activitySelecionada.setImageResource(R.drawable.diversaodestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 8:
                 activitySelecionada = findViewById(R.id.btnCatHigi);
                 activitySelecionada.setImageResource(R.drawable.higienedestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
             case 9:
                 activitySelecionada = findViewById(R.id.btnCatOutros);
                 activitySelecionada.setImageResource(R.drawable.outrosdestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
                 
                 break;
         }

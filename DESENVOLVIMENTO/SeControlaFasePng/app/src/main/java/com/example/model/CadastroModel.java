@@ -2,9 +2,15 @@ package com.example.model;
 
 //import com.example.DAO.LoginDAO;
 import com.example.DAO.CadastroDAO;
+import com.example.DAO.ContaBancariaDAO;
 import com.example.DAO.GrupoFamiliarDAO;
+import com.example.DAO.LancamentoDAO;
+import com.example.DAO.UsuarioDAO;
+import com.example.entity.ContaBancaria;
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
+
+import java.util.List;
 
 public class CadastroModel {
 

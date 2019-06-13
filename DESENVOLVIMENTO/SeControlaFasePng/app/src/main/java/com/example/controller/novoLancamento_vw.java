@@ -20,15 +20,19 @@ public class novoLancamento_vw extends AppCompatActivity {
     private int contQtdCliquesTeclado = 0;
     private TextView mostraValorFinal;
     private String valorFinalVw;
+    private Double valorFinalDouble;
+
     private String categoriaFinalVw;
+    private Integer categoriaFinalInt;
     private String formaPagtoFinalVw;
+    private Integer formaPagtoFinalInt;
     private int formaPagtoEscolhida = 0;
     private int formaPagtoSelecionada;
     private int avatarSelecionado;
     private int avatarFinal;
     private Usuario u;
     private GrupoFamiliar g;
-    public int tipo;
+    public String tipo;
     String digito1 = null;
     String digito2 = null;
     String digito3 = null;
@@ -48,7 +52,8 @@ public class novoLancamento_vw extends AppCompatActivity {
 
         Bundle pegaDados = getIntent().getExtras();
         categoriaFinalVw = pegaDados.getString("categoriaEscolhida");
-        tipo = pegaDados.getInt("tipoEscolhido");
+        categoriaFinalInt = pegaDados.getInt("categoriaEscolhidaInt");
+        tipo = pegaDados.getString("tipoEscolhido");
         System.out.println(categoriaFinalVw);
         u = (Usuario) pegaDados.getSerializable("Usuario");
         g = (GrupoFamiliar) pegaDados.getSerializable("Grupo");
@@ -68,12 +73,24 @@ public class novoLancamento_vw extends AppCompatActivity {
 
     public void chamarTelaManterLancamentos(View view) {
 
+        LancamentoModel lancamento = new LancamentoModel();
+        //(codUs, cat, subCat,   valor,  codConta, formaPagamento,  codGrupo,  tipoLanc, listaLancamentos)
+        valorFinalDouble = 10.0;
+        if(!lancamento.salvar(u.getCodUs(), categoriaFinalInt, 1, valorFinalDouble,
+                1, formaPagtoFinalInt, g.getCodGrupo(), tipo, g.getLancamentosGrupo())){
+            System.out.println(lancamento.getMensagem());
+            return;
+        }
+
+        /*
         //Novo Objeto
         if (tipo == 1) {
+
             ArrayLancGasto.add(new LancamentoModel(drawable, valorFinalVw, categoriaFinalVw, formaPagtoFinalVw, tipo));
         } else if (tipo == 2) {
             ArrayLancReceita.add(new LancamentoModel(drawable, valorFinalVw, categoriaFinalVw, formaPagtoFinalVw, tipo));
         }
+        */
 
         //envia os dados para popular a lista dinamicamente
         //inicia Bundle
@@ -83,10 +100,6 @@ public class novoLancamento_vw extends AppCompatActivity {
         //define uma chave para poder localizar o que vc esta passando, pois podem ser enviadas
         //quantas informacoes quiser no Bundle, porem tem q ter uma chave para cada um
         //e o parametro
-
-        novoLancamento.putSerializable("ArrayG",ArrayLancGasto);
-        novoLancamento.putSerializable("ArrayR",ArrayLancReceita);
-        novoLancamento.putInt("tipo",tipo);
         novoLancamento.putSerializable("Usuario", u);
         novoLancamento.putSerializable("Grupo", g);
 
@@ -335,6 +348,7 @@ public class novoLancamento_vw extends AppCompatActivity {
         Button b = findViewById(R.id.btnCartaoVwLancamento);
         String s = b.getContentDescription().toString();
         formaPagtoFinalVw = "Cartão";
+        formaPagtoFinalInt = 2;
         System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
 
@@ -345,6 +359,7 @@ public class novoLancamento_vw extends AppCompatActivity {
         Button b = findViewById(R.id.btnDinheiroVwLancamento);
         String s = b.getContentDescription().toString();
         formaPagtoFinalVw = "Dinheiro";
+        formaPagtoFinalInt = 1;
         System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
 
@@ -354,6 +369,7 @@ public class novoLancamento_vw extends AppCompatActivity {
         Button b = findViewById(R.id.btnTransVwLancamento);
         String s = b.getContentDescription().toString();
         formaPagtoFinalVw = "Transferência";
+        formaPagtoFinalInt = 3;
         System.out.println(formaPagtoFinalVw);
         armazenarFormaPagto(s);
 

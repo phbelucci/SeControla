@@ -86,12 +86,18 @@ public class cadastro_vw extends AppCompatActivity {
 
         if(senha.equals(senhaRepete)){
             TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
+
             if(!cadastro.cadastrar(nomeUser, senhaRepete)) {
                 mensagemErro.setText(cadastro.getMensagem());
                 return;
             }
-            u = cadastro.getUsuario();
-            g = cadastro.getGrupo();
+
+            //Se for primeiro cadastro
+            if(u == null){
+                u = cadastro.getUsuario();
+                g = cadastro.getGrupo();
+            }
+
             chamarTelaInicio(v);
 
             /*

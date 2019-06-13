@@ -4,6 +4,7 @@ package com.example.entity;
 import android.media.Image;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 
@@ -22,9 +23,18 @@ public class Lancamento implements Serializable {
     private Integer subCat;
     private String tipoLancamentoEnum;
     private Integer formaPagamento;
-
-    public Lancamento() {
-
+    //"/post/{codUs}/{data}/{codCat}/{codSubCat:(/codSubCat/[^/]+?)?}/{valor}/{codConta}/{codPagamento}/{codGrupo}/{tipoLanc}"
+    public Lancamento(Integer codUs, String dataString, Integer cat, Integer subCat,  Double valor,
+                      Integer codConta, Integer formaPagamento, Integer codGrupo, Integer tipoLanc) {
+        this.codUs = codUs;
+        this.dataString = dataString;
+        this.cat = cat;
+        this.subCat = subCat;
+        this.valor = valor;
+        this.codConta = codConta;
+        this.formaPagamento = formaPagamento;
+        this.codGrupo = codGrupo;
+        this.tipoLancamentoEnum = tipoLancamentoEnum;
     }
     /*
     //com comprovante

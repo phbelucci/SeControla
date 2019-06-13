@@ -14,7 +14,8 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
     private int idCat;
     private String nomeCat;
     private String categoriaFinalVw;
-    private final int tipo = 2;
+    private Integer categoriaFinalInt;
+    private final String tipo = "RECEITA";
     private Usuario u;
     private GrupoFamiliar g;
     @Override
@@ -46,7 +47,8 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
         //1º atributo dos parenteses chave
         //2º atributo dos parenteses atributo empacotado
         mandarDados.putString("categoriaEscolhida",categoriaFinalVw);
-        mandarDados.putInt("tipoEscolhido",tipo);
+        mandarDados.putInt("categoriaEscolhidaInt", categoriaFinalInt);
+        mandarDados.putString("tipoEscolhido",tipo);
         mandarDados.putSerializable("Usuario", u);
         mandarDados.putSerializable("Grupo", g);
         //cria uma Intent para chamar a nova Activity(tela)
@@ -85,24 +87,28 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
                 activitySelecionada = findViewById(R.id.btnCatTaxas);
                 activitySelecionada.setImageResource(R.drawable.salariodestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
 
                 break;
             case 2:
                 activitySelecionada = findViewById(R.id.btnCatDiversao);
                 activitySelecionada.setImageResource(R.drawable.beneficiodestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
 
                 break;
             case 3:
                 activitySelecionada = findViewById(R.id.btnCatCarro);
                 activitySelecionada.setImageResource(R.drawable.aplicacaodestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
 
                 break;
             case 4:
                 activitySelecionada = findViewById(R.id.btnCatComida);
                 activitySelecionada.setImageResource(R.drawable.extradestaque);
                 categoriaFinalVw = n;
+                categoriaFinalInt = idCat;
 
                 break;
             }
