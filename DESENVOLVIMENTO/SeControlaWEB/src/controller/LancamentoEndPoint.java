@@ -32,6 +32,24 @@ public class LancamentoEndPoint {
         return g.toJson(dao.buscarTodosLancamentosUsuario(codUs));
     }
 
+    @GET
+    @Path("/get/soma/us/{codUs}")
+    @Produces("applicattion/json")
+    public String getSomaLancamentosUsuario(@PathParam("codUs") Integer codUs) {
+        LancamentoDAO dao = new LancamentoDAO();
+        Gson g = new Gson();
+        return g.toJson(dao.buscarSomaLancamentosUsuario(codUs));
+    }
+
+    @GET
+    @Path("/get/soma/grupo/{codGrupo}")
+    @Produces("applicattion/json")
+    public String getSomaLancamentosGrupo(@PathParam("codGrupo") Integer codGrupo) {
+        LancamentoDAO dao = new LancamentoDAO();
+        Gson g = new Gson();
+        return g.toJson(dao.buscarSomaLancamentosGrupo(codGrupo));
+    }
+
     @POST
     @Path("/post/{codUs}/{data}/{codCat}/{codSubCat:(/codSubCat/[^/]+?)?}/{valor}/{codConta}/{codPagamento}/{codGrupo}/{tipoLanc}")
     @Produces("applicattion/json")

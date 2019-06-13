@@ -3,11 +3,13 @@ package dao;
 import com.mysql.cj.jdbc.CallableStatement;
 import connection.BDFabricaConexao;
 import entity.Lancamento;
+import entity.Usuario;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -39,7 +41,7 @@ public class LancamentoDAO {
                     this.rsetAux = stm.executeQuery(sql);
                     return rsetAux;
                 case "FU":
-                    stmt = (CallableStatement) con.prepareCall(sql);
+                    this.stmt = (CallableStatement) con.prepareCall(sql);
                     this.rsetAux = stmt.executeQuery(sql);
                     return rsetAux;
             }
@@ -200,6 +202,42 @@ public class LancamentoDAO {
             if (c.getDataString().equals(data) && c.getValor().equals(valor)) {
                 return c;
             }
+        }
+
+        return null;
+
+    }
+
+    public Double buscarSomaLancamentosUsuario(Integer codUs) {
+
+        try {
+            String sqlUpadate = String.format("SELECT func_soma_lancamentos_usuario(%d) FROM DUAL;", codUs);
+
+            ResultSet rs = (ResultSet) conectaBD(sqlUpadate, "FU", true);
+
+            while(rs.next()) {
+                return rs.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
+    public Double buscarSomaLancamentosGrupo(Integer codGrupo) {
+
+        try {
+            String sqlUpadate = String.format("SELECT func_soma_lancamentos_grupo(%d) FROM DUAL;", codGrupo);
+
+            ResultSet rs = (ResultSet) conectaBD(sqlUpadate, "FU", true);
+
+            while(rs.next()) {
+                return rs.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return null;
