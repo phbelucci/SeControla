@@ -3,6 +3,7 @@ package com.example.model;
 import com.example.DAO.ContaBancariaDAO;
 import com.example.DAO.GrupoFamiliarDAO;
 import com.example.DAO.LancamentoDAO;
+import com.example.DAO.UsuarioDAO;
 import com.example.entity.ContaBancaria;
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Lancamento;
@@ -52,11 +53,15 @@ public class LoginModel {
         LancamentoDAO Ldao = new LancamentoDAO();
         grupo.setLancamentosGrupo(Ldao.getLancamentosGrupo(grupo.getCodGrupo()));
 
-        /*Debug
-        List<Lancamento> contas = grupo.getLancamentosGrupo();
-        for (Lancamento c:contas) {
-            System.out.println("LANC: " + c.getDataString());
-        }*/
+        //Carrega lista de Usuarios a partir do banco de dados
+        UsuarioDAO USdao = new UsuarioDAO();
+        grupo.setUsuariosGrupo(USdao.getUsuariosGrupo(grupo.getCodGrupo()));
+
+        //Debug
+        List<Usuario> contas = grupo.getUsuariosGrupo();
+        for (Usuario c:contas) {
+            System.out.println("USER: " + c.getNomeUs());
+        }
 
 
         mensagem = "Login efetuado!";

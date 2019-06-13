@@ -10,7 +10,7 @@ import java.util.Date;
 public class Lancamento implements Serializable {
     private Integer codLanc;
     private Integer codUs;
-    private Integer codMoeda;
+    //private Integer codMoeda;
     private Integer codConta;
     private Integer codGrupo;
 
@@ -59,6 +59,7 @@ public class Lancamento implements Serializable {
         this.codUs = codUs;
     }
 
+    /*
     public Integer getCodMoeda() {
         return codMoeda;
     }
@@ -66,6 +67,7 @@ public class Lancamento implements Serializable {
     public void setCodMoeda(Integer codMoeda) {
         this.codMoeda = codMoeda;
     }
+    */
 
     public Integer getCodConta() {
         return codConta;
