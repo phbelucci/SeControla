@@ -63,9 +63,11 @@ public class LancamentoDAO {
             while (query.next()) {
                 if (query.getInt("COD_GRUPO") == codGrupo) {
                     l = new Lancamento();
+                    l.setCodLanc(query.getInt("COD_LANC"));
                     l.setCodGrupo(query.getInt("COD_GRUPO"));
                     l.setCodUs(query.getInt("COD_US"));
                     l.setCat(query.getInt("COD_CAT"));
+                    l.setDataString(query.getString("DATA_LANC"));
                     l.setSubCat(query.getInt("COD_SUBCAT"));
                     l.setValor(query.getDouble("VALOR"));
                     l.setCodConta(query.getInt("COD_CONTA"));
@@ -109,9 +111,11 @@ public class LancamentoDAO {
             while (query.next()) {
                 if (query.getInt("COD_US") == codUs) {
                     l = new Lancamento();
+                    l.setCodLanc(query.getInt("COD_LANC"));
                     l.setCodGrupo(query.getInt("COD_GRUPO"));
                     l.setCodUs(query.getInt("COD_US"));
                     l.setCat(query.getInt("COD_CAT"));
+                    l.setDataString(query.getString("DATA_LANC"));
                     l.setSubCat(query.getInt("COD_SUBCAT"));
                     l.setValor(query.getDouble("VALOR"));
                     l.setCodConta(query.getInt("COD_CONTA"));
@@ -173,47 +177,58 @@ public class LancamentoDAO {
 
         if(codSubCat!=null) {
             sqlInsert = "INSERT INTO LANCAMENTO(COD_US, DATA_LANC, COD_CAT, COD_SUBCAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM) "
-                    + "VALUES (" + codUs.toString() + ", " + data + ", " + codCat.toString() + ", " + codSubCat.toString() + ", " + valor.toString() + ", " + codConta.toString()
+                    + "VALUES (" + codUs.toString() + ", '" + data + "' ," + codCat.toString() + ", " + codSubCat.toString() + ", " + valor.toString() + ", " + codConta.toString()
                     + ", " + codPagamento.toString() + ", " + codGrupo.toString() + ", '" + tipoLanc + "');";
         }else{
             sqlInsert = "INSERT INTO LANCAMENTO(COD_US, DATA_LANC, COD_CAT, VALOR,COD_CONTA, COD_FORMA_PGTO,COD_GRUPO,TIPO_LANC_ENUM) "
-                    + "VALUES (" + codUs.toString() + ", " + data + ", " + codCat.toString() + ", " + ", " + valor.toString() + ", " + codConta.toString()
+                    + "VALUES (" + codUs.toString() + ", '" + data + "' ," + codCat.toString() + ", " + valor.toString() + ", " + codConta.toString()
                     + ", " + codPagamento.toString() + ", " + codGrupo.toString() + ", '" + tipoLanc + "');";
         }
-        String sql = "SELECT * FROM LANCAMENTO";
+        String sql = "SELECT * FROM LANCAMENTO WHERE COD_GRUPO="+codGrupo.toString()+"AND COD_US="+codUs.toString()+";";
 
         Lancamento l;
 
+//        try {
+            conectaBD(sqlInsert, "UP", true);//false para não realizar a conexão novamente
         try {
-            conectaBD(sqlInsert, "SE", true);//false para não realizar a conexão novamente
-
-            ResultSet query = (ResultSet) conectaBD(sql, "SE", false);
-
-            while (query.next()) {
-                l = new Lancamento();
-                l.setCodGrupo(query.getInt("COD_GRUPO"));
-                l.setCodUs(query.getInt("COD_US"));
-                l.setCat(query.getInt("COD_CAT"));
-                l.setSubCat(query.getInt("COD_SUBCAT"));
-                l.setValor(query.getDouble("VALOR"));
-                l.setCodConta(query.getInt("COD_CONTA"));
-                l.setFormaPagamento(query.getInt("COD_FORMA_PGTO"));
-                l.setCodGrupo(query.getInt("COD_GRUPO"));
-                l.setTipoLancamentoEnum(query.getString("TIPO_LANC_ENUM"));
-
-                return l;
-            }
-
+            con.close();
+            stm.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                con.close();
-                stm.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
+
+            List<Lancamento> lancUsuario = buscarTodosLancamentosUsuario(codUs);
+
+//            ResultSet query = (ResultSet) conectaBD(sql, "SE", true);
+
+            for (Lancamento c:lancUsuario) {
+                if (c.getDataString().equals(data) && c.getValor().equals(valor)) {
+                    return c;
+                }
+            }
+//            while (query.next()) {
+//                if (query.getString("DATA_LANC").equals(data) && query.getDouble("VALOR") == valor){
+//                    l = new Lancamento();
+//                    l.setCodLanc(query.getInt("COD_LANC"));
+//                    l.setCodGrupo(query.getInt("COD_GRUPO"));
+//                    l.setCodUs(query.getInt("COD_US"));
+//                    l.setCat(query.getInt("COD_CAT"));
+//                    l.setDataString(query.getString("DATA_LANC"));
+//                    l.setSubCat(query.getInt("COD_SUBCAT"));
+//                    l.setValor(query.getDouble("VALOR"));
+//                    l.setCodConta(query.getInt("COD_CONTA"));
+//                    l.setFormaPagamento(query.getInt("COD_FORMA_PGTO"));
+//                    l.setCodGrupo(query.getInt("COD_GRUPO"));
+//                    l.setTipoLancamentoEnum(query.getString("TIPO_LANC_ENUM"));
+//                    return l;
+//                }
+//            }
+
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+
+//        }
 
         return null;
 
