@@ -1,12 +1,16 @@
 package com.example.controller;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
@@ -22,6 +26,7 @@ public class manter_lancamentos_vw extends AppCompatActivity {
     private int tipo;
     private Usuario u;
     private GrupoFamiliar g;
+    private AlertDialog alerta;
 
 
     @Override
@@ -37,6 +42,9 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         u = (Usuario) pegaDados.getSerializable("Usuario");
         g = (GrupoFamiliar) pegaDados.getSerializable("Grupo");
         System.out.println("TESTE: " + u.getNomeUs());
+
+
+
 
 
 
@@ -128,5 +136,33 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void chamaAlerta(View view){
+
+
+        LayoutInflater li = getLayoutInflater();
+        View v = li.inflate(R.layout.detalharlancamento, null);
+        v.findViewById(R.id.btnSairDetalhes).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //exibe um Toast informativo.
+                Toast.makeText(manter_lancamentos_vw.this, "alerta.dismiss()", Toast.LENGTH_SHORT).show();
+                //desfaz o alerta.
+                alerta.dismiss();
+            }
+        });
+        Lancamento l = new Lancamento();
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //define o titulo
+        builder.setView(v);
+        //define a mensagem
+
+
+        //cria o AlertDialog
+        alerta = builder.create();
+        //Exibe
+        alerta.show();
+
+    }
+
 
 }
