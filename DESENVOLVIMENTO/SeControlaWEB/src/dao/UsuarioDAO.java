@@ -180,7 +180,7 @@ public class UsuarioDAO {
         return null;
     }
 
-    public List<Usuario> buscarUsuariosGrupo(String codGrupo) {
+    public List<Usuario> buscarUsuariosGrupo(Integer codGrupo) {
 
         List<Usuario> listUsuario = buscarTodosUsuarios();
 

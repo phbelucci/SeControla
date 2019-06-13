@@ -41,7 +41,7 @@ public class UsuarioEndpoint {
     @GET
     @Path("/get/us/{codGrupo}")
     @Produces("application/json")
-    public String getUsuario(@PathParam("codGrupo") String codGrupo) {
+    public String getUsuario(@PathParam("codGrupo") Integer codGrupo) {
         UsuarioDAO dao = new UsuarioDAO();
 
         Gson g = new Gson();
