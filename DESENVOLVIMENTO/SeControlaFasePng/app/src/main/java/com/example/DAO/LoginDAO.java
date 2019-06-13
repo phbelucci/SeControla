@@ -1,19 +1,12 @@
 package com.example.DAO;
 //Tarefa em segundo plano para conexão
-import android.os.AsyncTask;
 //Trabalhar com Json
 import com.example.entity.Usuario;
-import com.example.service.HTTPService;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
+import com.example.service.HTTPServiceGET;
+        import com.google.gson.Gson;
 //Requisição HTTP
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 //Utilidades
-import java.io.IOException;
-import java.util.Scanner;
+
 
 public class LoginDAO{
 
@@ -27,7 +20,7 @@ public class LoginDAO{
 
     public Usuario logar() {
         String resposta = "";
-        HTTPService requisicao = new HTTPService("GET", "usuario/get/"+nome+"/"+senha, "JSON");
+        HTTPServiceGET requisicao = new HTTPServiceGET("GET", "usuario/get/"+nome+"/"+senha, "JSON");
 
         try {
             resposta = requisicao.execute().get();

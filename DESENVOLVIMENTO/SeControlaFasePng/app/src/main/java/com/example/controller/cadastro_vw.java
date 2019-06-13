@@ -25,10 +25,11 @@ public class cadastro_vw extends AppCompatActivity {
     private Usuario u;
     private GrupoFamiliar g;
 
-    CadastroModel cadastro = new CadastroModel();
+    CadastroModel cadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        cadastro = new CadastroModel();
         Bundle parametros = getIntent().getExtras();
         u = (Usuario) parametros.getSerializable("Usuario");
         g = (GrupoFamiliar) parametros.getSerializable("Grupo");
@@ -85,8 +86,14 @@ public class cadastro_vw extends AppCompatActivity {
 
         if(senha.equals(senhaRepete)){
             TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
-            mensagemErro.setText(cadastro.cadastrar(nomeUser, senhaRepete));
+            if(!cadastro.cadastrar(nomeUser, senhaRepete)) {
+                mensagemErro.setText(cadastro.getMensagem());
+                return;
+            }
+            u = cadastro.getUsuario();
+            g = cadastro.getGrupo();
             chamarTelaInicio(v);
+
             /*
             if(cadastro.cadastrar(nomeUser, senhaRepete)){
                 //fazer ação da tela depois

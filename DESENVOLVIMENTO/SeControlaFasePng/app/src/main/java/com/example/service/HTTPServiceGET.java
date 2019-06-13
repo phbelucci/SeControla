@@ -10,13 +10,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HTTPService extends AsyncTask<Void, Void, String>{
+public class HTTPServiceGET extends AsyncTask<Void, Void, String>{
 
     private String method;
     private String path;
     private String returnType;
 
-    public HTTPService(String method, String path, String returnType) {
+    public HTTPServiceGET(String method, String path, String returnType) {
         this.path = path;
         this.method = method;
         this.returnType = returnType;

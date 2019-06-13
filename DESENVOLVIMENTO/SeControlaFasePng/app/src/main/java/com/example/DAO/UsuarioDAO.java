@@ -1,9 +1,6 @@
 package com.example.DAO;
 
 import com.example.entity.Usuario;
-import com.example.service.HTTPService;
-
-import java.util.concurrent.ExecutionException;
 
 public class UsuarioDAO {
 
@@ -28,7 +25,7 @@ public class UsuarioDAO {
     public String buscarPorNome(String nome){
 
         /*
-        HTTPService service = new HTTPService(nome);
+        HTTPServiceGET service = new HTTPServiceGET(nome);
 
         try {
 

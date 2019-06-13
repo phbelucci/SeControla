@@ -1,12 +1,10 @@
 package com.example.model;
 
 //import com.example.DAO.LoginDAO;
-import com.example.DAO.UsuarioDAO;
-import com.example.entity.Login;
+import com.example.DAO.CadastroDAO;
+import com.example.DAO.GrupoFamiliarDAO;
+import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
-import com.example.service.HTTPService;
-
-import java.util.concurrent.ExecutionException;
 
 public class CadastroModel {
 
@@ -15,13 +13,37 @@ public class CadastroModel {
     private String nome;
     private String senha;
     private Usuario usuario;
+    private GrupoFamiliar grupo;
 
-    public String cadastrar(String nome, String senha){
+    public Boolean cadastrar(String nome, String senha){
+        try{
+            CadastroDAO dao = new CadastroDAO(nome, senha);
+            usuario = dao.cadastrar();
+        }catch (Exception e){
+            mensagem = e.getMessage();
+            return false;
+        }
+        if (usuario == null) {
+            mensagem = "Ocorreu algum erro no cadastro...\ncontate o administrador.";
+            return false;
+        }
 
 
-        String retorno="";
+
+        GrupoFamiliarDAO dao = new GrupoFamiliarDAO();
+        grupo = dao.getGrupo(usuario.getCodUs());
+
+        if(grupo == null){
+            mensagem = "Erro ao criar grupo, tente novamente.";
+            //Pendente: deletar usuario do banco
+            return false;
+        }
+
+        mensagem = "Cadastro realizado!";
+        return true;
+
         /*
-        HTTPService service = new HTTPService(nome+"/"+senha);
+        HTTPServiceGET service = new HTTPServiceGET(nome+"/"+senha);
 
 
         try {
@@ -49,12 +71,13 @@ public class CadastroModel {
             //mensagem=e.getMessage();
             return false;
         }*/
-        return retorno;
     }
 
 
     public String getMensagem(){
         return mensagem;
     }
+    public Usuario getUsuario(){ return usuario; }
+    public GrupoFamiliar getGrupo() { return grupo; }
 
 }
