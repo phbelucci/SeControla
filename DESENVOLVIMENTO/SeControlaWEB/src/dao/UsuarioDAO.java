@@ -179,4 +179,22 @@ public class UsuarioDAO {
 
         return null;
     }
+
+    public List<Usuario> buscarUsuariosGrupo(Integer codGrupo) {
+
+        List<Usuario> listUsuario = buscarTodosUsuarios();
+
+        List<Usuario> listUsuarioGrupo = new ArrayList<Usuario>();
+
+        for (Usuario u: listUsuario) {
+            if(u.getCodGrupo().equals(codGrupo)){
+                listUsuarioGrupo.add(u);
+            }
+        }
+        if(!listUsuarioGrupo.isEmpty()){
+            return listUsuarioGrupo;
+        }
+
+        return null;
+    }
 }

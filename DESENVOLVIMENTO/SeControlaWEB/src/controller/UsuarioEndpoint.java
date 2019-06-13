@@ -38,6 +38,18 @@ public class UsuarioEndpoint {
 
     }
 
+    @GET
+    @Path("/get/us/{codGrupo}")
+    @Produces("application/json")
+    public String getUsuario(@PathParam("codGrupo") Integer codGrupo) {
+        UsuarioDAO dao = new UsuarioDAO();
+
+        Gson g = new Gson();
+
+        return g.toJson(dao.buscarUsuariosGrupo(codGrupo));
+
+    }
+
     @POST
     @Path("/post/{nome}/{senha}")
     @Produces("application/json")
