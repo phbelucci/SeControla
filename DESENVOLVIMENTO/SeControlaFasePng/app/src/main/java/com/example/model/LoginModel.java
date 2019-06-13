@@ -1,19 +1,22 @@
 package com.example.model;
 
+import com.example.DAO.GrupoFamiliarDAO;
+import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
 import com.example.DAO.LoginDAO;
 
 public class LoginModel {
 
     private String mensagem="";
-    private Usuario u;
+    private Usuario usuario;
+    private GrupoFamiliar grupo;
     // só decide quem vai fazer as coisas
 
 
     public Boolean logar(String nome, String senha){
         try {
             LoginDAO dao = new LoginDAO(nome, senha);
-            u = dao.logar();
+            usuario = dao.logar();
         }catch (Exception e){
 
             //fazer tratamento da mensagem
@@ -22,8 +25,16 @@ public class LoginModel {
             return false;
         }
 
-        if(u == null){
+        if(usuario == null){
             mensagem = "Ops! \nVerifique seus dados e tente novamente";
+            return false;
+        }
+        GrupoFamiliarDAO dao = new GrupoFamiliarDAO();
+        grupo = dao.getGrupo(usuario.getCodUs());
+
+        if(grupo == null){
+            mensagem = "Erro ao criar grupo, tente novamente.";
+            //Pendente: deletar usuario do banco
             return false;
         }
 
@@ -35,6 +46,6 @@ public class LoginModel {
         return mensagem;
     }
     public Usuario getUsuario(){
-        return u;
+        return usuario;
     }
 }

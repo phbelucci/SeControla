@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.DAO.GrupoFamiliarDAO;
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
 import com.example.model.LoginModel;
@@ -64,7 +65,6 @@ public class login_vw extends AppCompatActivity {
         }
 
         Usuario u = login.getUsuario();
-        // **** Pendente:   Buscar o grupo aqui de acordo com o usuario
         GrupoFamiliar g = new GrupoFamiliar(1,u);
 
         Bundle parametros = new Bundle();

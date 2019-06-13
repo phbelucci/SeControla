@@ -22,6 +22,7 @@ public class inicio_vw extends AppCompatActivity {
         u = (Usuario) parametros.getSerializable("Usuario");
         g = (GrupoFamiliar) parametros.getSerializable("Grupo");
         System.out.println("TESTE: " + u.getNomeUs());
+        System.out.println("TESTE: " + g.getCodGrupo());
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_vw);
