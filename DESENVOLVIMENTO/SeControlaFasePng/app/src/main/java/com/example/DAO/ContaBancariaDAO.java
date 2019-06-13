@@ -1,13 +1,28 @@
 package com.example.DAO;
 
+
+import com.example.entity.ContaBancaria;
+import com.example.service.HTTPServiceGET;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ContaBancariaDAO {
-    //  COD_CONTA int auto_increment primary key,
-    //	COD_GRUPO int not null,
-    //	NUM_CONTA int not null,
-    //	NUM_AGENCIA int not null,
-    //	COD_MOEDA int default 1,
-    //	SALDO real default 0.00,
-    //
-    //    constraint foreign key FK_BANC_GRUPO(COD_GRUPO)
-    //    references GRUPO_FAMILIAR(COD_GRUPO) on delete cascade
+
+    public List<ContaBancaria> getContasBancarias(Integer codGrupo) {
+        String resposta = "";
+
+        HTTPServiceGET requisicao = new HTTPServiceGET("GET", "contabancaria/get/grupo/"+codGrupo, "JSON");
+
+        try {
+            resposta = requisicao.execute().get();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //Converte Json em Usuario e retorna
+        return new Gson().fromJson(resposta, new TypeToken<List<ContaBancaria>>(){}.getType());
+    }
 }

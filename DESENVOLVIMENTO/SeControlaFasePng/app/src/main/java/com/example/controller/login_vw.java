@@ -65,11 +65,11 @@ public class login_vw extends AppCompatActivity {
         }
 
         Usuario u = login.getUsuario();
-        GrupoFamiliar g = new GrupoFamiliar(1,u);
+        GrupoFamiliar g = login.getGrupo();
 
         Bundle parametros = new Bundle();
         parametros.putSerializable("Usuario", u);
-        parametros.putSerializable("Grupo", (Serializable)g);
+        parametros.putSerializable("Grupo", g);
 
         Intent intent = new Intent(this, inicio_vw.class);
         intent.putExtras(parametros);

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
-import com.example.model.Lancamento;
+import com.example.model.LancamentoModel;
 
 import java.util.ArrayList;
 
@@ -36,8 +36,8 @@ public class novoLancamento_vw extends AppCompatActivity {
     String digito5 = null;
     String digito6 = null;
     String digito7 = null;
-    ArrayList<Lancamento> ArrayLancGasto = new ArrayList<>();
-    ArrayList<Lancamento> ArrayLancReceita = new ArrayList<>();
+    ArrayList<LancamentoModel> ArrayLancGasto = new ArrayList<>();
+    ArrayList<LancamentoModel> ArrayLancReceita = new ArrayList<>();
     int drawable;
 
 
@@ -70,9 +70,9 @@ public class novoLancamento_vw extends AppCompatActivity {
 
         //Novo Objeto
         if (tipo == 1) {
-            ArrayLancGasto.add(new Lancamento(drawable, valorFinalVw, categoriaFinalVw, formaPagtoFinalVw, tipo));
+            ArrayLancGasto.add(new LancamentoModel(drawable, valorFinalVw, categoriaFinalVw, formaPagtoFinalVw, tipo));
         } else if (tipo == 2) {
-            ArrayLancReceita.add(new Lancamento(drawable, valorFinalVw, categoriaFinalVw, formaPagtoFinalVw, tipo));
+            ArrayLancReceita.add(new LancamentoModel(drawable, valorFinalVw, categoriaFinalVw, formaPagtoFinalVw, tipo));
         }
 
         //envia os dados para popular a lista dinamicamente

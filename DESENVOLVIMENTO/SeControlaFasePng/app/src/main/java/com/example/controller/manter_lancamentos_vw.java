@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
-import com.example.model.Lancamento;
+import com.example.model.LancamentoModel;
 import com.example.model.ListaAdapterLancamento;
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class manter_lancamentos_vw extends AppCompatActivity {
 
     ListView lista;
-    ArrayList<Lancamento> a = new ArrayList<Lancamento>();
+    ArrayList<LancamentoModel> a = new ArrayList<LancamentoModel>();
     private int tipo;
     private Usuario u;
     private GrupoFamiliar g;
@@ -57,10 +57,10 @@ public class manter_lancamentos_vw extends AppCompatActivity {
 
         //getSerializable pega o valor do parametro, atraves da chave informada na outra tela
         //neste caso getSerializable, mas poderia ser getInt, getString, etc.
-        //Lancamento novo = (Lancamento) pegaLancamento.getSerializable("novoGasto");
+        //LancamentoModel novo = (LancamentoModel) pegaLancamento.getSerializable("novoGasto");
 
-        ArrayList<Lancamento> novoArrayG = (ArrayList<Lancamento>) pegaDados.getSerializable("ArrayG");
-        ArrayList<Lancamento> novoArrayR = (ArrayList<Lancamento>) pegaDados.getSerializable("ArrayR");
+        ArrayList<LancamentoModel> novoArrayG = (ArrayList<LancamentoModel>) pegaDados.getSerializable("ArrayG");
+        ArrayList<LancamentoModel> novoArrayR = (ArrayList<LancamentoModel>) pegaDados.getSerializable("ArrayR");
 
         ListaAdapterLancamento adaptador;
         ListView listView = (ListView) findViewById(R.id.listaLancamentos);

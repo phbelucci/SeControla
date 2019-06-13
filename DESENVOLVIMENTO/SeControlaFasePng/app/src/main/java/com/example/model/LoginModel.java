@@ -1,9 +1,15 @@
 package com.example.model;
 
+import com.example.DAO.ContaBancariaDAO;
 import com.example.DAO.GrupoFamiliarDAO;
+import com.example.DAO.LancamentoDAO;
+import com.example.entity.ContaBancaria;
 import com.example.entity.GrupoFamiliar;
+import com.example.entity.Lancamento;
 import com.example.entity.Usuario;
 import com.example.DAO.LoginDAO;
+
+import java.util.List;
 
 public class LoginModel {
 
@@ -38,6 +44,21 @@ public class LoginModel {
             return false;
         }
 
+        //Carrega lista de contas a partir do banco de dados
+        ContaBancariaDAO CBdao = new ContaBancariaDAO();
+        grupo.setContasGrupo(CBdao.getContasBancarias(grupo.getCodGrupo()));
+
+        //Carrega lista de Lancamentos a partir do banco de dados
+        LancamentoDAO Ldao = new LancamentoDAO();
+        grupo.setLancamentosGrupo(Ldao.getLancamentosGrupo(grupo.getCodGrupo()));
+
+        /*Debug
+        List<Lancamento> contas = grupo.getLancamentosGrupo();
+        for (Lancamento c:contas) {
+            System.out.println("LANC: " + c.getDataString());
+        }*/
+
+
         mensagem = "Login efetuado!";
         return true;
     }
@@ -47,5 +68,8 @@ public class LoginModel {
     }
     public Usuario getUsuario(){
         return usuario;
+    }
+    public GrupoFamiliar getGrupo(){
+        return grupo;
     }
 }

@@ -1,7 +1,6 @@
 package com.example.model;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,12 @@ import com.example.controller.R;
 
 import java.util.ArrayList;
 
-public class ListaAdapterLancamento extends ArrayAdapter<Lancamento> {
+public class ListaAdapterLancamento extends ArrayAdapter<LancamentoModel> {
 
     private Context context;
-    private ArrayList<Lancamento> lista;
+    private ArrayList<LancamentoModel> lista;
 
-    public ListaAdapterLancamento(Context context, ArrayList<Lancamento> lista) {
+    public ListaAdapterLancamento(Context context, ArrayList<LancamentoModel> lista) {
         super(context,0,lista);
         this.context = context;
         this.lista = lista;
@@ -26,7 +25,7 @@ public class ListaAdapterLancamento extends ArrayAdapter<Lancamento> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Lancamento lancPosicao = this.lista.get(position);
+        LancamentoModel lancPosicao = this.lista.get(position);
         convertView = LayoutInflater.from(this.context).inflate(R.layout.lancamentolinha,null);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.avatar);
         imageView.setImageResource(lancPosicao.getImagem());

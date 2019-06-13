@@ -3,7 +3,7 @@ package com.example.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Lancamento implements Serializable {
+public class LancamentoModel implements Serializable {
 
     private String categoria;
     private String valor;
@@ -12,14 +12,14 @@ public class Lancamento implements Serializable {
     private int tipo;
     //1 - GASTO OU 2 - RECEITA
 
-    public Lancamento(int imagem,String categoria,String valor,String formaPagto,int tipo){
+    public LancamentoModel(int imagem, String categoria, String valor, String formaPagto, int tipo){
         this.tipo = tipo;
         this.imagem = imagem;
         this.categoria = categoria;
         this.valor = valor;
         this.formaPagto = formaPagto;
     }
-    public Lancamento(){
+    public LancamentoModel(){
 
     }
 
