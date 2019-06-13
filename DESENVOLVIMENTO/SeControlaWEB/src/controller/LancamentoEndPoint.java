@@ -41,6 +41,7 @@ public class LancamentoEndPoint {
         return g.toJson(dao.buscarSomaLancamentosUsuario(codUs));
     }
 
+
     @GET
     @Path("/get/soma/grupo/{codGrupo}")
     @Produces("applicattion/json")
@@ -49,6 +50,7 @@ public class LancamentoEndPoint {
         Gson g = new Gson();
         return g.toJson(dao.buscarSomaLancamentosGrupo(codGrupo));
     }
+
 
     @POST
     @Path("/post/{codUs}/{data}/{codCat}/{codSubCat:(/codSubCat/[^/]+?)?}/{valor}/{codConta}/{codPagamento}/{codGrupo}/{tipoLanc}")

@@ -3,13 +3,11 @@ package dao;
 import com.mysql.cj.jdbc.CallableStatement;
 import connection.BDFabricaConexao;
 import entity.Lancamento;
-import entity.Usuario;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -215,7 +213,7 @@ public class LancamentoDAO {
 
             ResultSet rs = (ResultSet) conectaBD(sqlUpadate, "FU", true);
 
-            while(rs.next()) {
+            while (rs.next()) {
                 return rs.getDouble(1);
             }
         } catch (SQLException e) {
@@ -225,6 +223,7 @@ public class LancamentoDAO {
         return null;
 
     }
+
 
     public Double buscarSomaLancamentosGrupo(Integer codGrupo) {
 
@@ -233,7 +232,7 @@ public class LancamentoDAO {
 
             ResultSet rs = (ResultSet) conectaBD(sqlUpadate, "FU", true);
 
-            while(rs.next()) {
+            while (rs.next()) {
                 return rs.getDouble(1);
             }
         } catch (SQLException e) {
@@ -243,4 +242,5 @@ public class LancamentoDAO {
         return null;
 
     }
+
 }
