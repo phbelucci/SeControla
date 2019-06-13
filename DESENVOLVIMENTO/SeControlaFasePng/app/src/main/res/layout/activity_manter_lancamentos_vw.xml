@@ -53,14 +53,12 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/cardview_shadow_start_color"
-
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/btnGastoVwManterLancmentos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout9">
-
 
     </ListView>
 
@@ -85,7 +83,8 @@
             android:background="#E2FF001A"
             android:text="DESPESAS"
             android:textColor="#FFFFFF"
-            android:textStyle="" />
+            android:textStyle=""
+            android:onClick="chamaAlerta"/>
 
         <Button
             android:id="@+id/btnListarReceitas"
@@ -94,7 +93,8 @@
             android:layout_gravity="right"
             android:background="#DF04F800"
             android:text="RECEITAS"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:onClick="chamaAlerta"/>
 
     </FrameLayout>
 

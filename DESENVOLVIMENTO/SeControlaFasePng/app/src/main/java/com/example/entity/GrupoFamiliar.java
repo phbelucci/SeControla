@@ -6,7 +6,7 @@ import java.util.List;
 
 public class GrupoFamiliar implements Serializable {
 
-    private final Integer codGrupo;
+    private Integer codGrupo;
     private Integer codAdmGrupo;
     //private HashMap<String, List<com.example.primeiroprojeto.entity.Usuario>> usuariosGrupo;
     private List<Usuario> usuariosGrupo;
@@ -16,23 +16,28 @@ public class GrupoFamiliar implements Serializable {
 
     public GrupoFamiliar(Integer codGrupo, Usuario admin) {
         this.codGrupo = codGrupo;
-        usuariosGrupo = new ArrayList<>();
         usuariosGrupo.add(admin);
-        contasGrupo = new ArrayList<>();
-        lancamentosGrupo = new ArrayList<>();
     }
 
 
     public Integer getCodGrupo() {
         return codGrupo;
     }
-
     public Integer getCodAdmGrupo() {
         return codAdmGrupo;
     }
     public void setCodAdmGrupo(Integer codAdmGrupo) {
         this.codAdmGrupo = codAdmGrupo;
     }
+
+    //Metodos para criar as listas
+    public void setUsuariosGrupo(List<Usuario> usuariosGrupo) { this.usuariosGrupo = usuariosGrupo; }
+    public void setLancamentosGrupo(List<Lancamento> lancamentosGrupo) { this.lancamentosGrupo = lancamentosGrupo; }
+    public void setContasGrupo(List<ContaBancaria> contasGrupo) {
+        this.contasGrupo = contasGrupo;
+    }
+    //Metodos para criar as listas
+
 
     private boolean verificaUsuario(Integer codUsuario){
         for (Usuario u:usuariosGrupo) {

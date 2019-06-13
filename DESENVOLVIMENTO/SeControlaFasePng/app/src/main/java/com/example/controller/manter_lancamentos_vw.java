@@ -9,16 +9,16 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.entity.GrupoFamiliar;
+import com.example.entity.Lancamento;
 import com.example.entity.Usuario;
-import com.example.model.Lancamento;
-import com.example.model.ListaAdapterLancamento;
+import com.example.model.LancamentoModel;
+//import com.example.model.ListaAdapterLancamento;
 import java.util.ArrayList;
 
 
 public class manter_lancamentos_vw extends AppCompatActivity {
 
     ListView lista;
-    ArrayList<Lancamento> a = new ArrayList<Lancamento>();
     private int tipo;
     private Usuario u;
     private GrupoFamiliar g;
@@ -38,40 +38,18 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         g = (GrupoFamiliar) pegaDados.getSerializable("Grupo");
         System.out.println("TESTE: " + u.getNomeUs());
 
-
-
-        /********************
-         *
-         *
-         *       Função que retorna Lista de lançamentos do grupo
-         *       g.getLancamentosGrupo();
-         *
-         *       Função para adicionar lancamento à lista de lacamentos
-         *       g.addLancamentosGrupo(lancamento);
-         *
-         *
-         * *******************/
-
-
-
-
-        //getSerializable pega o valor do parametro, atraves da chave informada na outra tela
-        //neste caso getSerializable, mas poderia ser getInt, getString, etc.
-        //Lancamento novo = (Lancamento) pegaLancamento.getSerializable("novoGasto");
-
-        ArrayList<Lancamento> novoArrayG = (ArrayList<Lancamento>) pegaDados.getSerializable("ArrayG");
-        ArrayList<Lancamento> novoArrayR = (ArrayList<Lancamento>) pegaDados.getSerializable("ArrayR");
-
+        /*
         ListaAdapterLancamento adaptador;
         ListView listView = (ListView) findViewById(R.id.listaLancamentos);
+        /*
         if(tipo == 1){
-            adaptador = new ListaAdapterLancamento(this,novoArrayG);
+            adaptador = new ListaAdapterLancamento(this, g.getLancamentosGrupo());
             listView.setAdapter(adaptador);
         } if (tipo == 2){
             adaptador = new ListaAdapterLancamento(this,novoArrayR);
             listView.setAdapter(adaptador);
         }
-
+        */
         if(tipo ==1){
             Button Gasto = findViewById(R.id.btnListarDespesas);
             Gasto.setBackgroundColor(Color.parseColor("#FA001A"));
