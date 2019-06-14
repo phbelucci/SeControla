@@ -28,7 +28,6 @@ public class login_vw extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_vw);
-
     }
 
     public void chamarTelaInicio(View view){

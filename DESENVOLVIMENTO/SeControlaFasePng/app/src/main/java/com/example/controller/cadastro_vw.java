@@ -98,7 +98,7 @@ public class cadastro_vw extends AppCompatActivity {
                 g = cadastro.getGrupo();
             }
 
-            chamarTelaInicio(v);
+            chamarTelaLogin(v);
 
             /*
             if(cadastro.cadastrar(nomeUser, senhaRepete)){
