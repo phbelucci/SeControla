@@ -5,15 +5,18 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Lancamento;
 import com.example.entity.Usuario;
-import com.example.model.LancamentoModel;
-//import com.example.model.ListaAdapterLancamento;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+//import com.example.model.ListaAdapterLancamento;
 
 
 public class manter_lancamentos_vw extends AppCompatActivity {
@@ -28,7 +31,7 @@ public class manter_lancamentos_vw extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manter_lancamentos_vw);
-        novoLancamento_vw n = new novoLancamento_vw();
+
         //Cria o Bundle para pegar os dados da tela anterior
         //getIntent pega a Intent criada na outra tela
         //getExtras pega o Bundle carreagado
@@ -38,18 +41,14 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         g = (GrupoFamiliar) pegaDados.getSerializable("Grupo");
         System.out.println("TESTE: " + u.getNomeUs());
 
-        /*
-        ListaAdapterLancamento adaptador;
+        ArrayList<String> novaLista = new ArrayList<>();
+
+        preecheArrayString(novaLista);
         ListView listView = (ListView) findViewById(R.id.listaLancamentos);
-        /*
-        if(tipo == 1){
-            adaptador = new ListaAdapterLancamento(this, g.getLancamentosGrupo());
-            listView.setAdapter(adaptador);
-        } if (tipo == 2){
-            adaptador = new ListaAdapterLancamento(this,novoArrayR);
-            listView.setAdapter(adaptador);
-        }
-        */
+        ArrayAdapter adapter =  new ArrayAdapter(this, R.layout.lancamentolinha,novaLista);
+        listView.setAdapter(adapter);
+
+
         if(tipo ==1){
             Button Gasto = findViewById(R.id.btnListarDespesas);
             Gasto.setBackgroundColor(Color.parseColor("#FA001A"));
@@ -105,6 +104,56 @@ public class manter_lancamentos_vw extends AppCompatActivity {
         intent.putExtras(parametros);
         startActivity(intent);
 
+    }
+
+    public ArrayList<String> preecheArrayString(ArrayList novaLista){
+
+        for(Iterator iterator = g.getLancamentosGrupo().iterator();iterator.hasNext();){
+            Lancamento l = (Lancamento) iterator.next();
+            int contadorCat = l.getCat();
+            String categoria;
+            switch (contadorCat){
+                case 1:
+                    categoria = "Taxas";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 2:
+                    categoria = "Casa";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 3:
+                    categoria = "comida";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 4:
+                    categoria = "carro";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 5:
+                    categoria = "livros";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 6:
+                    categoria = "saude";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 7:
+                    categoria = "diversao";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 8:
+                    categoria = "higiene";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+                case 9:
+                    categoria = "outros";
+                    novaLista.add(String.format(categoria + "\t" + l.getDataString() + " \t R$ " +l.getValor().toString()));
+                    break;
+            }
+
+        }
+
+        return novaLista;
     }
 
 }
