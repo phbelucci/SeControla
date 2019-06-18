@@ -36,7 +36,7 @@ public class HTTPServicePOST extends AsyncTask<Void, Void, String>{
 
         try {
             //URL url = new URL("http://scbhostname.ddns.net:8080/se_controla/" + path);
-            URL url = new URL("http://192.168.67.98:8080/se_controla/" + path);
+            URL url = new URL("http://192.168.66.242:8080/se_controla/" + path);
             System.out.println("TESTE URL: " + url.toString());
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();

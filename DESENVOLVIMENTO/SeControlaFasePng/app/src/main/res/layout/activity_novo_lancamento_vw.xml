@@ -53,7 +53,7 @@
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/btnpadrao"
         android:drawableLeft="@drawable/ok"
         android:onClick="chamarTelaManterLancamentos"
@@ -255,7 +255,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="46dp"
         android:text="R$"
         android:textColor="#FFFFFF"
@@ -268,8 +268,7 @@
         android:id="@+id/tableRow2"
         android:layout_width="232dp"
         android:layout_height="52dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btnCadastrarCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -281,9 +280,8 @@
             android:layout_height="50dp"
             android:layout_gravity="right|top"
             android:layout_marginRight="10dp"
-            android:onClick="setAvatar1"
             android:background="@drawable/avatarum"
-           />
+            android:onClick="setAvatar1" />
 
         <ImageView
             android:id="@+id/avatar2"
@@ -291,9 +289,8 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|center|top"
             android:layout_marginRight="10dp"
-            android:onClick="setAvatar2"
             android:background="@drawable/avatardois"
-             />
+            android:onClick="setAvatar2" />
 
         <ImageView
             android:id="@+id/avatar3"
@@ -302,17 +299,15 @@
             android:layout_gravity="center|top"
             android:layout_marginRight="10dp"
             android:background="@drawable/avatartres"
-            android:onClick="setAvatar3"
-         />
+            android:onClick="setAvatar3" />
 
         <ImageView
             android:id="@+id/avatarum"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
-            android:onClick="setavatarum"
             android:background="@drawable/avatarquatro"
-          />
+            android:onClick="setavatarum" />
     </TableRow>
 
     <LinearLayout
@@ -321,7 +316,7 @@
         android:layout_height="281dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="110dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="1dp"
@@ -337,8 +332,7 @@
             android:layout_height="90dp"
             android:background="@drawable/cartao"
             android:contentDescription="1"
-            android:onClick="setFormaPagtoCartao"
-            />
+            android:onClick="setFormaPagtoCartao" />
 
         <Button
             android:id="@+id/btnDinheiroVwLancamento"
@@ -346,7 +340,7 @@
             android:layout_height="90dp"
             android:background="@drawable/dinheiro"
             android:contentDescription="2"
-            android:onClick="setFormaPagtoDinheiro"/>
+            android:onClick="setFormaPagtoDinheiro" />
 
         <Button
             android:id="@+id/btnTransVwLancamento"
@@ -354,7 +348,7 @@
             android:layout_height="90dp"
             android:background="@drawable/transfer"
             android:contentDescription="3"
-            android:onClick="setFormaPagtoTransf"/>
+            android:onClick="setFormaPagtoTransf" />
     </LinearLayout>
 
     <TextView
@@ -363,7 +357,7 @@
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="90dp"
         android:layout_marginRight="90dp"
         android:layout_marginBottom="23dp"
