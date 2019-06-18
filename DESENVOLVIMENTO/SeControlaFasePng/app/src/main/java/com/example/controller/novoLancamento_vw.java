@@ -75,7 +75,13 @@ public class novoLancamento_vw extends AppCompatActivity {
 
         LancamentoModel lancamento = new LancamentoModel();
         //(codUs, cat, subCat,   valor,  codConta, formaPagamento,  codGrupo,  tipoLanc, listaLancamentos)
-        valorFinalDouble = 10.0;
+        String str = valorFinalVw;
+        str = str.replace(".", "");
+        str = str.replace("R$", "");
+        str = str.replace(",",".");
+        str = str.replace("\\s", "");
+        valorFinalDouble = Double.parseDouble(str);
+        System.out.println("TESTE DOUBLE: "+str);
         if(!lancamento.salvar(u.getCodUs(), categoriaFinalInt, 1, valorFinalDouble,
                 1, formaPagtoFinalInt, g.getCodGrupo(), tipo, g.getLancamentosGrupo())){
             System.out.println(lancamento.getMensagem());
@@ -102,6 +108,7 @@ public class novoLancamento_vw extends AppCompatActivity {
         //e o parametro
         novoLancamento.putSerializable("Usuario", u);
         novoLancamento.putSerializable("Grupo", g);
+        novoLancamento.putString("tipoEscolhido",tipo);
 
         //Intent padrao para chamar a nova tela
         Intent intent = new Intent(this, manter_lancamentos_vw.class);

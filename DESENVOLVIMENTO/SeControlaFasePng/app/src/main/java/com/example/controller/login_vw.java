@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.DAO.GrupoFamiliarDAO;
+import com.example.entity.ContaBancaria;
 import com.example.entity.GrupoFamiliar;
+import com.example.entity.Lancamento;
 import com.example.entity.Usuario;
 import com.example.model.LoginModel;
 
@@ -19,6 +21,8 @@ import org.w3c.dom.Text;
 import java.io.CharArrayWriter;
 import java.io.Serializable;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 
 public class login_vw extends AppCompatActivity {
 
@@ -28,7 +32,6 @@ public class login_vw extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_vw);
-
     }
 
     public void chamarTelaInicio(View view){
@@ -66,6 +69,10 @@ public class login_vw extends AppCompatActivity {
 
         Usuario u = login.getUsuario();
         GrupoFamiliar g = login.getGrupo();
+
+        if(g.getContasGrupo()== null){ g.setContasGrupo(new ArrayList<ContaBancaria>()); }
+        if(g.getLancamentosGrupo()== null){ g.setLancamentosGrupo(new ArrayList<Lancamento>()); }
+        if(g.getUsuariosGrupo()== null){ g.setUsuariosGrupo(new ArrayList<Usuario>()); }
 
         Bundle parametros = new Bundle();
         parametros.putSerializable("Usuario", u);

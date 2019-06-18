@@ -27,14 +27,12 @@ public class LancamentoModel implements Serializable {
                        List<Lancamento> lista){
 
         //Gera a data do lancamento
-        String dataString = "2019-06-13";
-        /*
-        SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd");
         Date data = new Date();
         String dataString = formataData.format(data);
-        */
 
-        //Manda pro DAO e Recebe json completo
+
+        //Manda pro DAO e Objeto ou null
         LancamentoDAO dao = new LancamentoDAO();
         Lancamento lanc =  dao.salvar(codUs,  dataString,  cat, subCat,   valor,
                 codConta, formaPagamento,  codGrupo,  tipoLanc);

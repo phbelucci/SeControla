@@ -46,6 +46,8 @@ public class inicio_vw extends AppCompatActivity {
         Bundle parametros = new Bundle();
         parametros.putSerializable("Usuario", u);
         parametros.putSerializable("Grupo", g);
+        String tipo = "DESPESA";
+        parametros.putString("tipoEscolhido",tipo);
 
         Intent intent = new Intent(this, manter_lancamentos_vw.class);
         intent.putExtras(parametros);
