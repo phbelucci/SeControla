@@ -107,9 +107,12 @@ public class manter_lancamentos_vw extends AppCompatActivity {
     }
 
     public ArrayList<String> preecheArrayString(ArrayList novaLista){
-
+        Double totalDesp = 0.0;
+        Double totalRec = 0.0;
         for(Iterator iterator = g.getLancamentosGrupo().iterator();iterator.hasNext();){
             Lancamento l = (Lancamento) iterator.next();
+            if(l.getTipoLancamentoEnum().equals("RECEITA"))totalRec += l.getValor();
+            if(l.getTipoLancamentoEnum().equals("DESPESA"))totalDesp += l.getValor();
             int contadorCat = l.getCat();
             String categoria;
             switch (contadorCat){
