@@ -108,6 +108,7 @@ public class novoLancamento_vw extends AppCompatActivity {
         //e o parametro
         novoLancamento.putSerializable("Usuario", u);
         novoLancamento.putSerializable("Grupo", g);
+        novoLancamento.putString("tipoEscolhido",tipo);
 
         //Intent padrao para chamar a nova tela
         Intent intent = new Intent(this, manter_lancamentos_vw.class);

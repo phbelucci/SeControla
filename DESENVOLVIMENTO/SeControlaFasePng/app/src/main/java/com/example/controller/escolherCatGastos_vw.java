@@ -18,7 +18,7 @@ public class escolherCatGastos_vw extends AppCompatActivity {
     private String nomeCat;
     private String categoriaFinalVw;
     private Integer categoriaFinalInt;
-    private final String tipo = "DESPESA";
+    private String tipo;
     private Usuario u;
     private GrupoFamiliar g;
 
@@ -28,6 +28,7 @@ public class escolherCatGastos_vw extends AppCompatActivity {
         u = (Usuario) parametros.getSerializable("Usuario");
         g = (GrupoFamiliar) parametros.getSerializable("Grupo");
         System.out.println("TESTE: " + u.getNomeUs());
+        tipo = "DESPESA";
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_cat_gastos_vw);

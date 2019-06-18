@@ -81,10 +81,10 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:background="#E2FF001A"
+            android:onClick="atualizarListViewDesp"
             android:text="DESPESAS"
             android:textColor="#FFFFFF"
-            android:textStyle=""
-            android:onClick="chamaAlerta"/>
+            android:textStyle="" />
 
         <Button
             android:id="@+id/btnListarReceitas"
@@ -94,7 +94,7 @@
             android:background="#DF04F800"
             android:text="RECEITAS"
             android:textColor="#FFFFFF"
-            android:onClick="chamaAlerta"/>
+            android:onClick="atualizarListViewRec"/>
 
     </FrameLayout>
 

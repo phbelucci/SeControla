@@ -15,7 +15,7 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
     private String nomeCat;
     private String categoriaFinalVw;
     private Integer categoriaFinalInt;
-    private final String tipo = "RECEITA";
+    private String tipo;
     private Usuario u;
     private GrupoFamiliar g;
     @Override
@@ -24,6 +24,7 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
         u = (Usuario) parametros.getSerializable("Usuario");
         g = (GrupoFamiliar) parametros.getSerializable("Grupo");
         System.out.println("TESTE: " + u.getNomeUs());
+        tipo = "RECEITA";
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolher_cat_receitas_vw);
