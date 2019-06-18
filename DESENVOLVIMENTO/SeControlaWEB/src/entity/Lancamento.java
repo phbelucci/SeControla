@@ -38,33 +38,15 @@ public class Lancamento {
         this.formaPagamento = formaPagamento;
     }*/
 
-    public Integer getCodLanc() {
-        return codLanc;
-    }
-
     public void setCodLanc(Integer codLanc) {
         this.codLanc = codLanc;
     }
 
-    public Integer getCodUs() {
-        return codUs;
-    }
 
     public void setCodUs(Integer codUs) {
         this.codUs = codUs;
     }
 
-    public Integer getCodMoeda() {
-        return codMoeda;
-    }
-
-    public void setCodMoeda(Integer codMoeda) {
-        this.codMoeda = codMoeda;
-    }
-
-    public Integer getCodConta() {
-        return codConta;
-    }
 
     public void setCodConta(Integer codConta) {
         this.codConta = codConta;
@@ -94,32 +76,16 @@ public class Lancamento {
         this.valor = valor;
     }
 
-    public Integer getCat() {
-        return cat;
-    }
-
     public void setCat(Integer cat) {
         this.cat = cat;
-    }
-
-    public Integer getSubCat() {
-        return subCat;
     }
 
     public void setSubCat(Integer subCat) {
         this.subCat = subCat;
     }
 
-    public String getTipoLancamentoEnum() {
-        return tipoLancamentoEnum;
-    }
-
     public void setTipoLancamentoEnum(String tipoLancamentoEnum) {
         this.tipoLancamentoEnum = tipoLancamentoEnum;
-    }
-
-    public Integer getFormaPagamento() {
-        return formaPagamento;
     }
 
     public void setFormaPagamento(Integer formaPagamento) {

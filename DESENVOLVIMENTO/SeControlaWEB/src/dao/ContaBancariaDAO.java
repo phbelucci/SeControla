@@ -19,7 +19,6 @@ public class ContaBancariaDAO {
     Connection con;
     Statement stm;
     CallableStatement stmt;
-    ResultSet rsetGet;
 
     int rset;
     ResultSet rsetAux;

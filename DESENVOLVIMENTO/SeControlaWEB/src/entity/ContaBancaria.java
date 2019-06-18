@@ -12,23 +12,6 @@ public class ContaBancaria {
     public ContaBancaria() {
     }
 
-    public ContaBancaria(Integer codConta, Integer numAgencia, Integer numConta, Integer codMoeda, Integer codGrupo, Double saldo) {
-        this.codConta = codConta;
-        this.numAgencia = numAgencia;
-        this.numConta = numConta;
-        this.codMoeda = codMoeda;
-        this.codGrupo = codGrupo;
-        this.saldo = saldo;
-    }
-
-    public ContaBancaria(Integer codGrupo) {
-        this.codGrupo = codGrupo;
-    }
-
-    public Integer getNumAgencia() {
-        return numAgencia;
-    }
-
     public void setNumAgencia(Integer numAgencia) {
         this.numAgencia = numAgencia;
     }
@@ -49,32 +32,12 @@ public class ContaBancaria {
         this.codConta = codConta;
     }
 
-    public Integer getnumAgencia() {
-        return numAgencia;
-    }
-
-    public void setnumAgencia(Integer numAgencia) {
-        this.numAgencia = numAgencia;
-    }
-
     public Integer getNumConta() {
         return numConta;
     }
 
     public void setNumConta(Integer numConta) {
         this.numConta = numConta;
-    }
-
-    public Integer getCodMoeda() {
-        return codMoeda;
-    }
-
-    public void setCodMoeda(Integer codMoeda) {
-        this.codMoeda = codMoeda;
-    }
-
-    public Double getSaldo() {
-        return saldo;
     }
 
     public void setSaldo(Double saldo) {
