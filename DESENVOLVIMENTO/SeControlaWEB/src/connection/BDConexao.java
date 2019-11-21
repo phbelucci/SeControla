@@ -2,9 +2,6 @@ package connection;
 
 import java.sql.Connection;
 
-/**
- * @author Lucas Tardioli
- */
 public abstract class BDConexao {
 
     protected Connection con;
