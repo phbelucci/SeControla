@@ -13,3 +13,11 @@
 /gson
 **/out/
 DESENVOLVIMENTO/SeControlaWEB/.idea/codeStyles/Project.xml
+DESENVOLVIMENTO/SeControlaFasePng/.gradle
+DESENVOLVIMENTO/SeControlaFasePng/.idea
+DESENVOLVIMENTO/SeControlaFasePng/*.iml
+DESENVOLVIMENTO/SeControlaFasePng/local.properties
+DESENVOLVIMENTO/SeControlaFasePng/.*DS_Store
+DESENVOLVIMENTO/SeControlaFasePng/build
+DESENVOLVIMENTO/SeControlaFasePng/captures
+DESENVOLVIMENTO/SeControlaFasePng/*.externalNativeBuild
