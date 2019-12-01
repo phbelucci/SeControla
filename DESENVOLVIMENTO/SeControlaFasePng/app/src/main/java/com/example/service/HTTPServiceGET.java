@@ -29,7 +29,8 @@ public class HTTPServiceGET extends AsyncTask<Void, Void, String>{
 
         try {
             //URL url = new URL("http://scbhostname.ddns.net:8080/se_controla/" + path);
-            URL url = new URL("http://192.168.0.15:8080/se_controla/" + path);
+            URL url = new URL("http://localhost:8080/" + path);
+            //URL url = new URL("http://192.168.0.34:8080/" + path);
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod(method);

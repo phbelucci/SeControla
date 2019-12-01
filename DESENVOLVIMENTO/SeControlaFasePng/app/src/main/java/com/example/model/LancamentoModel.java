@@ -21,10 +21,15 @@ public class LancamentoModel implements Serializable {
 
     }
 
-    public Boolean salvar(Integer codUs, Integer cat,
-                       Integer subCat,  Double valor, Integer codConta,
-                       Integer formaPagamento, Integer codGrupo, String tipoLanc,
-                       List<Lancamento> lista){
+    public Boolean salvar(Integer codUs,                // CODIGO
+                          Integer cat,                  // CATEGORIA
+                          Integer subCat,               // SUBCATEGORIA
+                          Double valor,                 // VALOR
+                          Integer codConta,             // CONTA
+                          Integer formaPagamento,       // FORMA DE PAGAMENTO
+                          Integer codGrupo,             // GRUPO
+                          String tipoLanc,              // TIPO DE LANCAMENTO
+                          List<Lancamento> lista){      // LISTA DE LANCAMENTOS
 
         //Gera a data do lancamento
         SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd");
@@ -34,8 +39,15 @@ public class LancamentoModel implements Serializable {
 
         //Manda pro DAO e Objeto ou null
         LancamentoDAO dao = new LancamentoDAO();
-        Lancamento lanc =  dao.salvar(codUs,  dataString,  cat, subCat,   valor,
-                codConta, formaPagamento,  codGrupo,  tipoLanc);
+        Lancamento lanc =  dao.salvar(  codUs,              // CODIGO
+                                        dataString,         // DATA
+                                        cat,                // CATEGORIA
+                                        subCat,             // SUBCATEGORIA
+                                        valor,              // VALOR
+                                        codConta,           // CONTA
+                                        formaPagamento,     // FORMA DE PAGAMENTO
+                                        codGrupo,           // GRUPO
+                                        tipoLanc);          // TIPO DE LANCAMENTO
 
         if (lanc == null){
             mensagem = "Erro ao criar lancamento. Tente novamente.";
