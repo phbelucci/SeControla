@@ -26,4 +26,18 @@ public class UsuarioDAO {
         return new Gson().fromJson(resposta, new TypeToken<List<Usuario>>(){}.getType());
     }
 
+    public String deletar(int codUs){
+        String resposta = "";
+
+        HTTPService requisicao = HTTPServiceFactory.criaHTTPService("DELETE",
+                "usuario/delete/"+codUs);
+
+        try {
+            resposta = requisicao.execute().get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resposta;
+    }
+
 }

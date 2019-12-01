@@ -13,11 +13,14 @@ public class HTTPServiceUPDATE extends HTTPService{
 
     protected String executaRequisacao() {
         StringBuilder resposta = new StringBuilder();
+        /*
         try {
-            URL url = new URL(URLBase + path);
 
+            URL url = new URL(URLBase + path);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+            connection.setDoOutput(true);
+            connection.setRequestMethod("PUT");
+
             if(returnType.equals("TEXT"))connection.setRequestProperty("Accept", "application/text");
             else if(returnType.equals("JSON"))connection.setRequestProperty("Accept", "application/json");
             connection.setConnectTimeout(5000);
@@ -36,6 +39,7 @@ public class HTTPServiceUPDATE extends HTTPService{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
         return resposta.toString();
 
     }

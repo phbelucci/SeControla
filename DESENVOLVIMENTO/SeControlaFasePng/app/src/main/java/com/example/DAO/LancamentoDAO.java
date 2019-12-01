@@ -1,15 +1,13 @@
 package com.example.DAO;
-
-import com.example.entity.ContaBancaria;
+import android.util.Log;
 import com.example.entity.Lancamento;
-import com.example.entity.Usuario;
 import com.example.service.HTTPService;
 import com.example.service.HTTPServiceFactory;
-import com.example.service.HTTPServiceGET;
-import com.example.service.HTTPServicePOST;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.Console;
 import java.util.List;
 
 public class LancamentoDAO {
@@ -48,6 +46,20 @@ public class LancamentoDAO {
 
         //Converte Json em Usuario e retorna
         return new Gson().fromJson(resposta, Lancamento.class);
+    }
+
+    public String deletar(int codLanc){
+        String resposta = "";
+
+        HTTPService requisicao = HTTPServiceFactory.criaHTTPService("DELETE",
+                "lancamento/delete/"+codLanc);
+
+        try {
+            resposta = requisicao.execute().get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resposta;
     }
 
 }

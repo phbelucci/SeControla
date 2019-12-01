@@ -15,7 +15,7 @@ public class HTTPServiceFactory {
                 novoServico = new HTTPServiceUPDATE(path, "JSON");
                 break;
             case "DELETE":
-                novoServico = new HTTPServiceDELETE(path, "JSON");
+                novoServico = new HTTPServiceDELETE(path, "TEXT");
                 break;
         }
         return novoServico;
