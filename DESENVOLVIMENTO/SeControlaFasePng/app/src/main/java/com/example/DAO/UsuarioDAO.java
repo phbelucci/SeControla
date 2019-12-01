@@ -26,6 +26,20 @@ public class UsuarioDAO {
         return new Gson().fromJson(resposta, new TypeToken<List<Usuario>>(){}.getType());
     }
 
+    public String atualizar(int codUs, String nomeUs, String senhaUs, int codNivelAcesso, int codGrupo){
+        String resposta = "";
+
+        HTTPService requisicao = HTTPServiceFactory.criaHTTPService("UPDATE",
+                "usuario/update/"+codUs+"/"+nomeUs+"/"+senhaUs+"/"+codNivelAcesso+"/"+codGrupo);
+
+        try {
+            resposta = requisicao.execute().get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resposta;
+    }
+
     public String deletar(int codUs){
         String resposta = "";
 

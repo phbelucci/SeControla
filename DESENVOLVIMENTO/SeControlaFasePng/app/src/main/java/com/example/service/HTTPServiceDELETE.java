@@ -15,7 +15,6 @@ public class HTTPServiceDELETE extends HTTPService{
     protected String executaRequisacao() {
         StringBuilder resposta = new StringBuilder();
         try {
-            String urlParameters = "4";
             URL url = new URL(URLBase + path);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoInput(true);
@@ -28,26 +27,10 @@ public class HTTPServiceDELETE extends HTTPService{
             BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println("LINE: "+line);
                 resposta.append(line);
             }
             br.close();
             connection.disconnect();
-
-            /*
-            URL url = new URL(URLBase + path);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoOutput(true);
-            connection.setRequestProperty(
-                    "Content-Type", "application/x-www-form-urlencoded" );
-            connection.setRequestMethod("DELETE");
-            connection.setConnectTimeout(5000);
-            connection.connect();
-            Scanner scanner = new Scanner(url.openStream());
-            while (scanner.hasNext()){
-                resposta.append(scanner.next());
-            }
-            */
 
             System.out.println(resposta);
 
