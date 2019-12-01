@@ -1,18 +1,13 @@
 package com.example.service;
 
-import android.os.AsyncTask;
-
-import com.example.entity.Usuario;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HTTPServiceGET extends HTTPService{
-
-    public HTTPServiceGET(String path, String returnType) {
+public class HTTPServiceDELETE extends HTTPService{
+    public HTTPServiceDELETE(String path, String returnType) {
         super(path, returnType);
     }
 
@@ -22,7 +17,7 @@ public class HTTPServiceGET extends HTTPService{
             URL url = new URL(URLBase + path);
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+            connection.setRequestMethod("DELETE");
             if(returnType.equals("TEXT"))connection.setRequestProperty("Accept", "application/text");
             else if(returnType.equals("JSON"))connection.setRequestProperty("Accept", "application/json");
             connection.setConnectTimeout(5000);

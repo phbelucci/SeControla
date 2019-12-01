@@ -16,34 +16,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HTTPServicePOST extends AsyncTask<Void, Void, String>{
+public class HTTPServicePOST extends HTTPService{
 
-    private String method;
-    private String path;
-    private String returnType;
-    private final String USER_AGENT = "Mozilla/5.0";
-
-    public HTTPServicePOST(String method, String path, String returnType) {
-        this.path = path;
-        this.method = method;
-        this.returnType = returnType;
+    public HTTPServicePOST(String path, String returnType){
+        super(path, returnType);
     }
 
-    @Override
-    protected String doInBackground(Void ... voids){
-
+    protected String executaRequisacao(){
         StringBuilder resposta = new StringBuilder();
-
         try {
-            //URL url = new URL("http://scbhostname.ddns.net:8080/se_controla/" + path);
-            URL url = new URL("http://localhost:8080/" + path);
-            //URL url = new URL("http://192.168.0.34:8080/" + path);
-
-            System.out.println("TESTE URL: " + url.toString());
+            URL url = new URL(URLBase + path);
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            connection.setRequestMethod(method);
+            connection.setRequestMethod("POST");
             if(returnType.equals("TEXT"))connection.setRequestProperty("Content-Type", "application/text");
             else if(returnType.equals("JSON"))connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("User-Agent", USER_AGENT);

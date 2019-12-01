@@ -1,18 +1,13 @@
 package com.example.service;
 
-import android.os.AsyncTask;
-
-import com.example.entity.Usuario;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HTTPServiceGET extends HTTPService{
-
-    public HTTPServiceGET(String path, String returnType) {
+public class HTTPServiceUPDATE extends HTTPService{
+    public HTTPServiceUPDATE(String path, String returnType) {
         super(path, returnType);
     }
 

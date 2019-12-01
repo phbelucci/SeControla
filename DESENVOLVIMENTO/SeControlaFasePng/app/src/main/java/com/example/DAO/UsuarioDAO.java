@@ -1,7 +1,8 @@
 package com.example.DAO;
 
 import com.example.entity.Usuario;
-import com.example.service.HTTPServiceGET;
+import com.example.service.HTTPService;
+import com.example.service.HTTPServiceFactory;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -12,7 +13,8 @@ public class UsuarioDAO {
     public List<Usuario> getUsuariosGrupo(Integer codGrupo) {
         String resposta = "";
 
-        HTTPServiceGET requisicao = new HTTPServiceGET("GET", "usuario/get/us/"+codGrupo, "JSON");
+        HTTPService requisicao = HTTPServiceFactory.criaHTTPService("GET",
+                "usuario/get/us/"+codGrupo);
 
         try {
             resposta = requisicao.execute().get();

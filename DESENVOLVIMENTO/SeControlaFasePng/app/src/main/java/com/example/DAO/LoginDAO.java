@@ -2,8 +2,9 @@ package com.example.DAO;
 //Tarefa em segundo plano para conexão
 //Trabalhar com Json
 import com.example.entity.Usuario;
-import com.example.service.HTTPServiceGET;
-        import com.google.gson.Gson;
+import com.example.service.HTTPService;
+import com.example.service.HTTPServiceFactory;
+import com.google.gson.Gson;
 //Requisição HTTP
 //Utilidades
 
@@ -20,7 +21,8 @@ public class LoginDAO{
 
     public Usuario logar() {
         String resposta = "";
-        HTTPServiceGET requisicao = new HTTPServiceGET("GET", "usuario/get/"+nome+"/"+senha, "JSON");
+        HTTPService requisicao = HTTPServiceFactory.criaHTTPService("GET",
+                "usuario/get/"+nome+"/"+senha);
 
         try {
             resposta = requisicao.execute().get();
