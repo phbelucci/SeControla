@@ -30,9 +30,8 @@ public class HTTPServiceDELETE extends HTTPService{
                 resposta.append(line);
             }
             br.close();
+            respCode = connection.getResponseCode();
             connection.disconnect();
-
-            System.out.println(resposta);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -40,6 +39,9 @@ public class HTTPServiceDELETE extends HTTPService{
             e.printStackTrace();
         }
         return resposta.toString();
+    }
 
+    public int getResponseCode(){
+        return respCode;
     }
 }

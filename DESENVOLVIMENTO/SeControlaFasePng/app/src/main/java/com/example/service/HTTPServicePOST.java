@@ -42,7 +42,7 @@ public class HTTPServicePOST extends HTTPService{
             wr.flush();
             wr.close();
 
-            int responseCode = connection.getResponseCode();
+            respCode = connection.getResponseCode();
 
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
@@ -62,6 +62,9 @@ public class HTTPServicePOST extends HTTPService{
         }
 
         return resposta.toString();
+    }
 
+    public int getResponseCode(){
+        return respCode;
     }
 }

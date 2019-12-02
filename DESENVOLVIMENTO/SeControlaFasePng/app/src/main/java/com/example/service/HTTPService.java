@@ -23,9 +23,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public abstract class HTTPService extends AsyncTask<Void, Void, String> {
+public abstract class HTTPService extends AsyncTask<Void, Void, String> implements iHTTPService{
     protected String path;
     protected String returnType;
+    protected int respCode = 0;
     protected final String USER_AGENT = "Mozilla/5.0";
     //protected String URLBase = "http://localhost:8080/";
     //protected String URLBase = "http://scbhostname.ddns.net:8080/se_controla/";

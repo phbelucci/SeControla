@@ -35,6 +35,7 @@ public class HTTPServiceGET extends HTTPService{
             }
 
             System.out.println(resposta);
+            respCode = connection.getResponseCode();
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -42,6 +43,9 @@ public class HTTPServiceGET extends HTTPService{
             e.printStackTrace();
         }
         return resposta.toString();
+    }
 
+    public int getResponseCode(){
+        return respCode;
     }
 }
