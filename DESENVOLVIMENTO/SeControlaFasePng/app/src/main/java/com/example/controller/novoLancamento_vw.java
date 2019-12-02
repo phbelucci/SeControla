@@ -88,6 +88,7 @@ public class novoLancamento_vw extends AppCompatActivity {
             return;
         }
 
+
         /*
         //Novo Objeto
         if (tipo == 1) {
@@ -116,6 +117,16 @@ public class novoLancamento_vw extends AppCompatActivity {
         intent.putExtras(novoLancamento);
         //Chama nova tela
         startActivity(intent);
+    }
+
+    public void chamarTelaManterPerfil(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
+
+        Intent intent = new Intent(this, cadastro_vw.class);
+        intent.putExtras(parametros);
+        startActivity(new Intent(intent));
     }
 
     public void mostrarNumTela(String n) {

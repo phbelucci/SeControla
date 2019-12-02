@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.DAO.UsuarioDAO;
 import com.example.entity.GrupoFamiliar;
 import com.example.entity.Usuario;
 import com.example.model.CadastroModel;
@@ -40,7 +41,6 @@ public class cadastro_vw extends AppCompatActivity {
     }
 
     public void chamarTelaLogin(View view){
-
         Intent intent = new Intent(this,login_vw.class);
         startActivity(intent);
     }
@@ -59,7 +59,7 @@ public class cadastro_vw extends AppCompatActivity {
     //Função será responsável por cadastrar um novo usuário no banco
     //Levar em consideração que pode ser primeiro cadastro (Usuario sem grupo)
     // ou usuario dependente (Grupo já existe)
-    public void cadastrarNovoUsuario(View v){
+    public void cadastrarNovoUsuario(View view){
 
         EditText pegaNome = findViewById(R.id.inputNomeVwCadastro);
         nomeUser = pegaNome.getText().toString();
@@ -87,32 +87,19 @@ public class cadastro_vw extends AppCompatActivity {
         if(senha.equals(senhaRepete)){
             TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
 
-            if(!cadastro.cadastrar(nomeUser, senhaRepete)) {
-                mensagemErro.setText(cadastro.getMensagem());
-                return;
-            }
-
             //Se for primeiro cadastro
             if(u == null){
+                if(!cadastro.cadastrar(nomeUser, senhaRepete)) {
+                    mensagemErro.setText(cadastro.getMensagem());
+                    return;
+                }
                 u = cadastro.getUsuario();
                 g = cadastro.getGrupo();
+                chamarTelaLogin(view);
+            }else{
+                u.atualizar(nomeUser, senhaRepete);
+                chamarTelaInicio(view);
             }
-
-            chamarTelaLogin(v);
-
-            /*
-            if(cadastro.cadastrar(nomeUser, senhaRepete)){
-                //fazer ação da tela depois
-
-                //abrir inicio
-
-            }else {
-                //permanece na cadastro
-                //mostrar na tela cadastro.getMensagem();
-                TextView mensagemErro = findViewById(R.id.mensagemErroVwCadastro);
-                mensagemErro.setText(cadastro.getMensagem());
-
-            }*/
         }
 
 

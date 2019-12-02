@@ -104,7 +104,13 @@ public class manter_lancamentos_vw extends AppCompatActivity {
     }
 
     public void chamarTelaManterPerfil(View view){
+        Bundle parametros = new Bundle();
+        parametros.putSerializable("Usuario", u);
+        parametros.putSerializable("Grupo", g);
 
+        Intent intent = new Intent(this, cadastro_vw.class);
+        intent.putExtras(parametros);
+        startActivity(new Intent(intent));
     }
 
     public void chamarTelaInicio(View view){

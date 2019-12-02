@@ -15,7 +15,7 @@ public class listarLancamentos_vw extends AppCompatActivity {
 
     public void chamarTelaManterPerfil(View view){
 
-        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        Intent intent = new Intent(getBaseContext(), cadastro_vw.class);
         startActivity(intent);
 
     }

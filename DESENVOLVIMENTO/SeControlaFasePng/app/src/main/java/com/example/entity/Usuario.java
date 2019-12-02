@@ -2,6 +2,8 @@ package com.example.entity;
 
 import android.media.Image;
 
+import com.example.DAO.UsuarioDAO;
+
 import java.io.Serializable;
 
 /*
@@ -91,6 +93,13 @@ public class Usuario implements Serializable {
             return true;
         }
         return false;
+    }
+
+    public String atualizar(String nomeUs, String senhaUs){
+        this.nomeUs = nomeUs;
+        this.senhaUs = senhaUs;
+        UsuarioDAO dao = new UsuarioDAO();
+        return dao.atualizar(this.codUs, this.nomeUs, this.senhaUs, this.codNivelAcesso, this.codGrupo);
     }
 
 }

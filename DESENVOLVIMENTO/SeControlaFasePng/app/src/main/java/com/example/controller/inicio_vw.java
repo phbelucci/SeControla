@@ -39,6 +39,8 @@ public class inicio_vw extends AppCompatActivity {
 
     }
     public void chamarTelaLogin(View v){
+        u = null;
+        g= null;
         startActivity(new Intent(getBaseContext(),login_vw.class));
     }
 
@@ -70,11 +72,11 @@ public class inicio_vw extends AppCompatActivity {
         parametros.putSerializable("Usuario", u);
         parametros.putSerializable("Grupo", g);
 
-        Intent intent = new Intent(this, manterPerfil_vw.class);
+        Intent intent = new Intent(this, cadastro_vw.class);
         intent.putExtras(parametros);
         startActivity(new Intent(intent));
-
     }
+
     public void chamarTelaInicio(View view){
         Bundle parametros = new Bundle();
         parametros.putSerializable("Usuario", u);

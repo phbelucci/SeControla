@@ -27,9 +27,9 @@ public class resumoLancamento_vw extends AppCompatActivity {
         parametros.putSerializable("Usuario", u);
         parametros.putSerializable("Grupo", g);
 
-        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        Intent intent = new Intent(this, cadastro_vw.class);
         intent.putExtras(parametros);
-        startActivity(intent);
+        startActivity(new Intent(intent));
 
     }
     public void chamarTelaInicio(View view){

@@ -65,7 +65,7 @@ public class escolherCatReceitas_vw extends AppCompatActivity {
         parametros.putSerializable("Usuario", u);
         parametros.putSerializable("Grupo", g);
 
-        Intent intent = new Intent(getBaseContext(), manterPerfil_vw.class);
+        Intent intent = new Intent(getBaseContext(), cadastro_vw.class);
         intent.putExtras(parametros);
         startActivity(intent);
     }
